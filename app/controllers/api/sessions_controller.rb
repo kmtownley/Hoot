@@ -11,6 +11,7 @@ class Api::SessionsController < ApplicationController
       render 'api/users/show'
     else
       render json: ["Invalid username and/or password"], status: 401
+    end 
   end
 
   def destroy
@@ -26,4 +27,3 @@ class Api::SessionsController < ApplicationController
   def show
   end
 end
-s

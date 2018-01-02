@@ -3,7 +3,7 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
 
   before_validation :ensure_session_token
-  
+
   has_many :posts
   has_many :businesses
 
@@ -21,7 +21,7 @@ class User < ApplicationRecord
   end
 
   def is_password?(password)
-    BCrypt::Password.new(password).is_password?(password)
+    BCrypt::Password.new(self.password_digest).is_password?(password)
   end
 
   def reset_session_token!
