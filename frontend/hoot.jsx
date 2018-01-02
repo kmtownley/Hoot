@@ -7,4 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // const store = configureStore();
   const root = document.getElementById("root");
   ReactDOM.render(<h1>Welcome to Hoot</h1>, root);
+  // window.dispatch = store.dispatch
+  window.$ = $ 
 });
