@@ -1,7 +1,16 @@
+
+<script type="text/javascript">
+
+</script>
+
 <script type="text/javascript">
   <% if logged_in? %>
     window.currentUser = <%= render("api/users/user.json.jbuilder",       user: current_user).html_safe %>
   <% end %>
+
+  window.staticImages = {
+    headerImage: "<%= image_url("hoot-logo-final.png") %>"
+  }
 </script>
 
 <main id="root">Welcome</main>

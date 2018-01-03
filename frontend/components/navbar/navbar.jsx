@@ -5,11 +5,15 @@ const sessionLinks = () => (
   <div className="top-red-bar">
     <header>
        <div className="hoot-div">
-         <Link to={'/'} className="hoot-link">hoot</Link>
+         <Link to={'/'} className="hoot-link-image">
+         <img src={window.staticImages.headerImage} />
+        </Link>
        </div>
     </header>
-    <nav className="login-signup">
+    <nav className="login">
       <Link to="/login"> Login </Link>
+    </nav>
+    <nav className="signup">
       <Link to="/signup"> Sign Up </Link>
     </nav>
   </div>

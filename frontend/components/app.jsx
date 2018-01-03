@@ -10,7 +10,7 @@ import NavbarContainer from './navbar/navbar_container';
 const App = () => (
   <div>
     <header >
-      <Link to={'/'}></Link>
+      <Link to={"/"}></Link>
       <h1 className="hoot-logo"></h1>
       <NavbarContainer />
     </header>
