@@ -6,7 +6,7 @@ const mapStateToProps = ({ session }) => ({
   currentUser: session.currentUser
 });
 
-const mapDispatchToProps = dipsatch => ({
+const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout())
 });
 
