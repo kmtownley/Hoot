@@ -1,3 +1,84 @@
 // Place all the styles related to the api/sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+  font-size: 22px;
+}
+
+div {
+  display: block;
+}
+
+.signup-wrapper {
+  padding: 120px 250px;
+  overflow: hidden;
+  display: flex;
+
+
+}
+
+.top-red-bar {
+  padding: 15px 15px 15px 15px;
+  position: relative;
+  background-color: #d32323;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hoot-link {
+  align-content: center;
+}
+
+.session_form_container {
+  max-width: 300px;
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+
+}
+
+.hoot-link {
+  align-content: center;
+}
+
+.header-login-hoot {
+  font-weight: bold;
+  font-family: sans-serif;
+  margin-bottom: 6px;
+  color: #d32323;
+  font-size: 24px;
+}
+
+.subheader-text {
+
+}
+
+.submit-button {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #d32323;
+  width: 85%;
+  display: flex;
+  justify-content: center;
+  border-radius: 3px;
+  margin: 18px 18px 18px;
+  padding: 12px 18px 13px;
+  font-size: 16px;
+}
+
+.login-input {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 85%;
+  margin: 18px;
+  padding: 5px 9px;
+  background: #fff;
+  border: 1px solid #999;
+  border-radius: 3px;
+  font-size: 14px;
+}
