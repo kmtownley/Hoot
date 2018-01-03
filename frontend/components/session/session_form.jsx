@@ -49,35 +49,60 @@ class SessionForm extends React.Component {
     );
   }
 
+  notMemberMessage() {
+    if (this.props.formType === '/login') {
+      return (
+        <div className="alternate-login-signup"> New to Hoot?
+          <Link to={'/signup'} className="not-member-link"> Sign Up</Link>
+        </div>
+      )
+    } else {
+      return (
+        <div className="alternate-login-signup"> Already on Hoot?
+          <Link to={'/login'} className="not-member-link"> Login </Link>
+        </div>
+      )
+    }
+  }
+
   render() {
+    const text = this.props.formType === '/signup' ? "Sign Up" : "Login";
     return (
-      <div class="signup-wrapper">
+      <div className="signup-wrapper">
         <form onSubmit={this.handleSubmit} className="session_form_container">
           <h2 className="header-login-hoot">Login to Hoot</h2>
-          <p className="subheader-text">New to Hoot?</p>
-          <Link to={'/signup'} className="sign-up-link">Sign up</Link>
+          <p className="subheader-text">New to Hoot?
+          <Link to={'/signup'} className="signup-link"> Sign up</Link>
+          </p>
           <br/>
-          <h3>{this.navLink()}</h3>
-          {this.renderErrors()}
+          <ul>
+            <li>{this.renderErrors()}</li>
+          </ul>
           <div className="login-form">
-            <label>Username:
+            <label>
               <input className="login-input"
                 type="text"
+                placeholder="username"
                 value={this.state.username}
                 onChange={this.update('username')}
               />
             </label>
             <br/>
-            <label>Password:
+            <label>
               <input className="login-input"
                 type="password"
+                placeholder="password"
                 value={this.state.password}
                 onChange={this.update('password')}
               />
             </label>
             <br/>
-            <input className="submit-button" type="submit" value="Submit" />
+            <input className="submit-button" type="submit" value={text} />
+            <section className="small-closing">
+              {this.notMemberMessage()}
+            </section>
           </div>
+
         </form>
     </div>
   )};

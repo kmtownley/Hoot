@@ -2,20 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1 {
-  font-size: 22px;
-}
-
-div {
-  display: block;
-}
-
 .signup-wrapper {
-  padding: 120px 250px;
+  padding: 120px 240px;
   overflow: hidden;
   display: flex;
-
-
 }
 
 .top-red-bar {
@@ -31,54 +21,77 @@ div {
 }
 
 .session_form_container {
-  max-width: 300px;
-  background-color: blue;
+  width: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
-
-
 }
 
-.hoot-link {
-  align-content: center;
+.login-form {
+  width: 350px;
 }
-
 .header-login-hoot {
   font-weight: bold;
   font-family: sans-serif;
   margin-bottom: 6px;
   color: #d32323;
   font-size: 24px;
+  padding-left: 15px;
+  padding-right: 15px;
+
 }
 
 .subheader-text {
-
 }
 
 .submit-button {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   background-color: #d32323;
-  width: 85%;
+  width: calc(100% - 36px);
   display: flex;
   justify-content: center;
   border-radius: 3px;
   margin: 18px 18px 18px;
-  padding: 12px 18px 13px;
+  padding: 12px;
   font-size: 16px;
+  font-weight: bold;
+  color: #f5f5f5;
 }
 
 .login-input {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 85%;
+  width: calc(100% - 36px);
   margin: 18px;
   padding: 5px 9px;
   background: #fff;
   border: 1px solid #999;
   border-radius: 3px;
   font-size: 14px;
+}
+
+::placeholder {
+  color: grey;
+}
+
+.signup-link {
+  font-weight: bold;
+}
+
+.alternate-login-signup {
+  font-size: 11px;
+  color: #999;
+}
+
+.not-member-link {
+  color: #0073bb;
+}
+
+.small-closing {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 16px;
 }
