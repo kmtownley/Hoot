@@ -2,7 +2,9 @@ import { combineReducers } from 'redux';
 import session from './session_reducer';
 import errors from './errors_reducer';
 
-export default combineReducers({
+const rootReducer = combineReducers({
   session,
-  errors 
+  errors
 });
+
+export default rootReducer;
