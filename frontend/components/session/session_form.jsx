@@ -94,7 +94,8 @@ class SessionForm extends React.Component {
             </ul>
             <div className="login-form">
               <label>
-                <input className="login-input"
+                <input
+                  className="login-input"
                   type="text"
                   placeholder="username"
                   value={this.state.username}
@@ -103,7 +104,8 @@ class SessionForm extends React.Component {
               </label>
               <br/>
               <label>
-                <input className="login-input"
+                <input
+                  className="login-input"
                   type="password"
                   placeholder="password"
                   value={this.state.password}
@@ -111,8 +113,14 @@ class SessionForm extends React.Component {
                 />
               </label>
               <br/>
-              <input className="submit-button" type="submit" value={text} />
-              <button className="demo-login-button" onClick={this.handleDemo()} type="submit" value="Guest Login">Guest Login</button>
+                <input
+                  className="submit-button"
+                  type="submit"
+                  value={text}
+                />
+                <button
+                  className="demo-login-button"      onClick={this.handleDemo()} type="submit" value="Guest Login">Guest Login
+                </button>
               <section className="small-closing">
                 {this.notMemberMessage()}
               </section>
