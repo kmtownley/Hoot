@@ -1,3 +1,37 @@
 // Place all the styles related to the api/businesses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.landing-main-content {
+  margin-bottom: 25px;
+}
+
+.biz-index-title {
+  color: #d32323;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.business-index-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.business-index-item {
+  width: 330px;
+  height: 320px;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  background: #fff;
+  margin: 10px;
+  padding: 12px 12px 0;
+  position: relative;
+}
+
+.biz-index-name {
+  color: #0073bb;
+  font-weight: bold;
+
+}

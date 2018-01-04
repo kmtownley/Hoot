@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import NavbarContainer from '../navbar/navbar_container';
 import BusinessIndexItem from './business_index_item';
+import HomepageContainer from '../homepage/homepage_container';
 
 
 class BusinessIndex extends React.Component {
@@ -18,11 +19,18 @@ class BusinessIndex extends React.Component {
     const businesses = this.props.businesses;
 
     return (
-      <main>
-        <ul>
+      <main className="business-index-container">
+        <HomepageContainer />
+        <section
+          className="biz-index-title">
+          Hot & Awesome Businesses
+        </section>
+
+        <ul className="business-index-list">
           {
             businesses.map(business => (
               <BusinessIndexItem
+                className="business-index-item"
                 key={business.id}
                 business={business}
               />

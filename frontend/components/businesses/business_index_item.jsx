@@ -12,19 +12,31 @@ class BusinessIndexItem extends React.Component {
   }
 
   render() {
-    const { biz_name, address, description, image_url } = this.props.business;
+    const { biz_name, rating, cuisine, address, city, state, zipcode, description, image_url } = this.props.business;
 
     return (
-      <div
+      <li
         className="business-index-item"
         onClick={this.handleClick}>
         <section className="business-index-categories">
           <span className="biz-index-name">{biz_name}</span>
-          <span className="biz-index-address">{address}</span>
+          <br/>
+          <span className="rating">Rating: {rating}</span>
+          <br/>
+          <span>{cuisine}</span>
+          <div className="biz-index-address">
+            <span className="biz-index-street">{address}</span>
+            <br/>
+            <span className="biz-index-city">{city}</span>
+            <span className="biz-index-state">{state}</span>
+            <br/>
+            <span className="biz-index-zipcode">{zipcode}</span>
+          </div>
+          <br/>
           <span className="biz-index-description">{description}</span>
         </section>
         <img src={image_url} />
-      </div>
+      </li>
     )
   }
 
