@@ -81,56 +81,61 @@ class SessionForm extends React.Component {
   render() {
     const text = this.props.formType === '/signup' ? "Sign Up" : "Login";
     return (
-      <section className="content-container">
-        <div className="signup-wrapper">
-          <form onSubmit={this.handleSubmit} className="session_form_container">
-            <h2 className="header-login-hoot">Login to Hoot </h2>
-            <p className="subheader-text">New to Hoot?
-            <Link to={'/signup'} className="signup-link"> Sign up</Link>
-            </p>
-            <br/>
-            <ul>
-              <li>{this.renderErrors()}</li>
-            </ul>
-            <div className="login-form">
-              <label>
-                <input
-                  className="login-input"
-                  type="text"
-                  placeholder="username"
-                  value={this.state.username}
-                  onChange={this.update('username')}
-                />
-              </label>
+      <div className="content-container">
+        <header className="session-header">
+          <img src={window.staticImages.headerImage} />
+        </header>
+          <main className="main-content">
+          <div className="signup-wrapper">
+            <form onSubmit={this.handleSubmit} className="session_form_container">
+              <h2 className="header-login-hoot">Login to Hoot </h2>
+              <p className="subheader-text">New to Hoot?
+              <Link to={'/signup'} className="signup-link"> Sign up</Link>
+              </p>
               <br/>
-              <label>
-                <input
-                  className="login-input"
-                  type="password"
-                  placeholder="password"
-                  value={this.state.password}
-                  onChange={this.update('password')}
-                />
-              </label>
-              <br/>
-                <input
-                  className="submit-button"
-                  type="submit"
-                  value={text}
-                />
-                <button
-                  className="demo-login-button"      onClick={this.handleDemo()} type="submit" value="Guest Login">Guest Login
-                </button>
-              <section className="small-closing">
-                {this.notMemberMessage()}
-              </section>
-            </div>
-          </form>
-      </div>
-      <div className="owl-pic">
-        <img src={window.staticImages.owlImage} />
-      </div>
-    </section>
+              <ul>
+                <li>{this.renderErrors()}</li>
+              </ul>
+              <div className="login-form">
+                <label>
+                  <input
+                    className="login-input"
+                    type="text"
+                    placeholder="username"
+                    value={this.state.username}
+                    onChange={this.update('username')}
+                  />
+                </label>
+                <br/>
+                <label>
+                  <input
+                    className="login-input"
+                    type="password"
+                    placeholder="password"
+                    value={this.state.password}
+                    onChange={this.update('password')}
+                  />
+                </label>
+                <br/>
+                  <input
+                    className="submit-button"
+                    type="submit"
+                    value={text}
+                  />
+                  <button
+                    className="demo-login-button"      onClick={this.handleDemo()} type="submit" value="Guest Login">Guest Login
+                  </button>
+                <section className="small-closing">
+                  {this.notMemberMessage()}
+                </section>
+              </div>
+            </form>
+        </div>
+        <section className="owl-pic">
+          <img src={window.staticImages.owlImage} />
+        </section>
+      </main>
+    </div>
   )};
 }
 

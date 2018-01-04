@@ -2,18 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-.top-red-bar {
-  padding: 15px 15px 15px 15px;
-  position: relative;
+.session-header {
+  width: 100%;
   background-color: #d32323;
+  height: 60px;
+}
+
+.session-header img {
+  margin: auto;
+  width: 8%;
+  height: 100%;
 }
 
 .hoot-link {
   align-content: center;
 }
 
-.content-container {
+.main-content {
   display: flex;
   justify-content: center;
 }
