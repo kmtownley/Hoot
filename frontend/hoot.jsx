@@ -4,9 +4,8 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 
-import { signup, login, logout } from './actions/business_actions';
 import { fetchBusinesses } from
-'./util/business_api_util';
+'./actions/business_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -22,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.$ = $;
   window.dispatch = store.dispatch;
-  window.getState = store.dispatch;
+  window.getState = store.getState;
   window.fetchBusinesses = fetchBusinesses;
 
 });

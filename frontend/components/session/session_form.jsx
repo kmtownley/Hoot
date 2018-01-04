@@ -90,7 +90,7 @@ class SessionForm extends React.Component {
           <main className="main-content">
           <div className="signup-wrapper">
             <form onSubmit={this.handleSubmit} className="session_form_container">
-              <h2 className="header-login-hoot">Login to Hoot </h2>
+              <h2 className="header-login-hoot">{text} to Hoot </h2>
               <p className="subheader-text">New to Hoot?
               <Link to={'/signup'} className="signup-link"> Sign up</Link>
               </p>
