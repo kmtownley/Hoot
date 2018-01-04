@@ -3,7 +3,8 @@
   height: 40px;
   padding: 15px 15px 15px 15px;
   position: relative;
-  background-color: #d32323;
+  background-color: transparent;
+
 }
 
 
@@ -13,14 +14,16 @@
   border-radius: 4px;
   font-size: 16px;
   font-weight: bold;
-  color: #f5f5f5;
-  background-color: #a71c1c;
   min-width: 80px;
   text-align: center;
   line-height: 24px;
-  padding: 6px 18px;
+  padding: 8px 24px;
   position: absolute;
-  right: 12px;
+  right: 150px;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  background: transparent;
+  color: #f5f5f5;
 
 }
 
@@ -33,28 +36,16 @@
   font-size: 16px;
   font-weight: bold;
   color: #f5f5f5;
-  background-color: #a71c1c;
+  background-color: transparent;
   min-width: 80px;
   text-align: center;
   line-height: 24px;
-  padding: 6px 18px;
+  padding: 8px 24px;
   position: absolute;
-  right: 130px;
-}
-
-.hoot-div {
-  width: 70px;
-  height: 40px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  right: 320px;
 }
 
 
-.hoot-link-image {
-  width: 100%;
-  height: auto;
-}
 
 .login-signup:hover {
   color: grey;

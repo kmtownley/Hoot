@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  biz_name: MyString
+  description: MyString
+  image_url: MyString
+  owner_id: MyString
+  cuisine: MyString
+  rating: 1
+
+two:
+  biz_name: MyString
+  description: MyString
+  image_url: MyString
+  owner_id: MyString
+  cuisine: MyString
+  rating: 1

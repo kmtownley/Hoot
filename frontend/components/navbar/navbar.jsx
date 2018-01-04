@@ -3,12 +3,6 @@ import { Link } from 'react-router-dom';
 
 const sessionLinks = () => (
   <div className="top-red-bar">
-    <div className="hoot-div">
-      <Link to={'/'} className="hoot-link-image">
-        <img src={window.staticImages.headerImage} />
-      </Link>
-    </div>
-
     <nav className="login">
       <Link to="/login"> Login </Link>
     </nav>

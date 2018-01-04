@@ -1,0 +1,44 @@
+class Api::BusinessesController < ApplicationController
+  after_initialize :require_login
+
+  def create
+    @business = Business.new(business_params)
+    @link.owner_id = current_user.id
+    if @business.save!
+      render :show
+    else
+      render json @business.errors.full_messages, status: 422
+    end
+  end
+
+  def destroy
+    business = Business.find(params[:id])
+    if currentUser.businesses.include?(business)
+      business.destroy
+      render 'api/users/show'
+    else
+      render json: ['Sorry, you must be the owner to delete.'], status: 401
+    end
+  end
+
+  def update
+  end
+
+  def edit
+  end
+
+  def show
+    @business = Business.find(params[:id])
+    render :show
+  end
+
+  def index
+    @businesses = Business.all
+  end
+
+  private
+
+  def business_params
+    params.require(:business).permit(:biz_name, :address, :city, :state, :zipcode, :description)
+  end
+end
