@@ -5,8 +5,6 @@
 .signup {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  display: flex;
-  justify-content: flex-end;
   border-radius: 4px;
   font-size: 16px;
   font-weight: bold;
@@ -16,6 +14,10 @@
   text-align: center;
   line-height: 24px;
   padding: 6px 18px;
+
+  position: absolute;
+  right: 12px;
+
 }
 
 .login {
@@ -31,20 +33,24 @@
   min-width: 80px;
   text-align: center;
   line-height: 24px;
-  padding: 6px 18px
+  padding: 6px 18px;
+  position: absolute;
+  right: 130px;
 }
 
 .hoot-div {
   width: 70px;
   height: 40px;
   display: flex;
-  justify-content: center;
+  justify-content: center
 }
 
-/* resize images */
+
 .hoot-link-image {
   width: 100%;
   height: auto;
+
+
 }
 
 .login-signup:hover {

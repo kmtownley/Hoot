@@ -2,24 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.signup-wrapper {
-  padding: 120px 240px;
-  overflow: hidden;
-  display: flex;
-}
 
 .top-red-bar {
   padding: 15px 15px 15px 15px;
   position: relative;
   background-color: #d32323;
-  display: flex;
-  justify-content: space-between;
 }
 
 .hoot-link {
   align-content: center;
 }
 
+.content-container {
+  display: flex;
+  justify-content: center;
+}
+
+.signup-wrapper {
+  padding-left: 120px;
+  padding-top: 80px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
 .session_form_container {
   width: 350px;
   display: flex;
@@ -94,4 +99,8 @@
   display: flex;
   justify-content: flex-end;
   padding-right: 16px;
+}
+
+.owl-pic {
+  padding-top: 20px;
 }

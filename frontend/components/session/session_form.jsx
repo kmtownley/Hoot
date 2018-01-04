@@ -70,8 +70,7 @@ class SessionForm extends React.Component {
   render() {
     const text = this.props.formType === '/signup' ? "Sign Up" : "Login";
     return (
-      <section>
-        
+      <section className="content-container">
         <div className="signup-wrapper">
           <form onSubmit={this.handleSubmit} className="session_form_container">
             <h2 className="header-login-hoot">Login to Hoot</h2>
@@ -106,8 +105,10 @@ class SessionForm extends React.Component {
                 {this.notMemberMessage()}
               </section>
             </div>
-
           </form>
+      </div>
+      <div className="owl-pic">
+        <img src={window.staticImages.owlImage} />
       </div>
     </section>
   )};
