@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import  BusinessIndex from './business_index;';
-import { fetchBusinesses } from '../actions/business_actions';
+import  BusinessIndex from './business_index';
+import { fetchBusinesses } from '../../actions/business_actions';
 
 const mapStateToProps = state => ({
-  businesses: state.entitites.businesses
+  businesses: Object.values(state.entities.businesses)
 });
 
-const mapDispatchToProps = dispatch ({
+const mapDispatchToProps = dispatch => ({
   fetchBusinesses: () => dispatch(fetchBusinesses())
 });
 
