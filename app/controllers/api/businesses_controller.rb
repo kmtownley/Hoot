@@ -2,7 +2,7 @@ class Api::BusinessesController < ApplicationController
 
   def create
     @business = Business.new(business_params)
-    @link.owner_id = current_user.id
+    @business.owner_id = current_user.id
     if @business.save!
       render :show
     else
@@ -33,6 +33,7 @@ class Api::BusinessesController < ApplicationController
 
   def index
     @businesses = Business.all
+    render :index
   end
 
   private
