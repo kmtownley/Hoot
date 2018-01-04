@@ -14,9 +14,8 @@ const sessionLinks = () => (
 
 const navbarMessage = (currentUser, logout) => (
   <div className="header-navbar">
-    <h3 className="header-name"> Welcome, { currentUser.username }!</h3>
     <button
-      className="header-button"
+      className="header-logout"
       onClick={logout}>Logout
     </button>
   </div>

@@ -1,3 +1,11 @@
+.header-navbar {
+  display: flex;
+  height: 40px;
+  padding: 15px 15px 15px 15px;
+  position: relative;
+  background-color: transparent;
+}
+
 .top-red-bar {
   display: flex;
   height: 40px;
@@ -50,4 +58,29 @@
 .login-signup:hover {
   color: grey;
   cursor: pointer;
+}
+
+.header-logout {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #f5f5f5;
+  background-color: transparent;
+  min-width: 80px;
+  text-align: center;
+  line-height: 24px;
+  padding: 8px 24px;
+  position: absolute;
+  right: 200px;
+  border: 2px solid #fff;
+}
+
+.header-logout:hover {
+  background-color: #fff;
+  cursor: pointer;
+  color: #333;
 }
