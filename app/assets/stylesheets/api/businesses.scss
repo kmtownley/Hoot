@@ -26,11 +26,20 @@
   border-radius: 4px;
   background: #fff;
   margin: 10px;
-  padding: 12px 12px 0;
+  padding: 12px 12px;
   position: relative;
 }
 
 .biz-index-name {
   color: #0073bb;
   font-weight: bold;
+}
+
+.biz-index-name:hover {
+  text-decoration: underline;
+}
+
+.business-index-item img {
+  height: 170px;
+  padding-bottom: 10px;
 }

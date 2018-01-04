@@ -18,6 +18,7 @@ class BusinessIndexItem extends React.Component {
       <li
         className="business-index-item"
         onClick={this.handleClick}>
+        <img src={image_url} />
         <section className="business-index-categories">
           <span className="biz-index-name">{biz_name}</span>
           <br/>
@@ -35,7 +36,6 @@ class BusinessIndexItem extends React.Component {
           <br/>
           <span className="biz-index-description">{description}</span>
         </section>
-        <img src={image_url} />
       </li>
     )
   }

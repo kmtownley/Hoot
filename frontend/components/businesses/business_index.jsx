@@ -28,12 +28,14 @@ class BusinessIndex extends React.Component {
 
         <ul className="business-index-list">
           {
-            businesses.map(business => (
-              <BusinessIndexItem
-                className="business-index-item"
-                key={business.id}
-                business={business}
-              />
+            businesses.map((business, idx) => (
+              <ul key={`${idx}`}>
+                <BusinessIndexItem
+                  className="business-index-item"
+                  key={business.id}
+                  business={business}
+                />
+              </ul>
             ))
           }
         </ul>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180104142532) do
+ActiveRecord::Schema.define(version: 20180104214215) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20180104142532) do
   create_table "businesses", force: :cascade do |t|
     t.string "biz_name", null: false
     t.string "description", null: false
-    t.string "image_url"
     t.string "owner_id"
     t.string "cuisine"
     t.integer "rating"
@@ -31,6 +30,10 @@ ActiveRecord::Schema.define(version: 20180104142532) do
     t.float "long"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["city"], name: "index_businesses_on_city"
     t.index ["cuisine"], name: "index_businesses_on_cuisine"
     t.index ["rating"], name: "index_businesses_on_rating"
