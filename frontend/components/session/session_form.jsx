@@ -83,7 +83,9 @@ class SessionForm extends React.Component {
     return (
       <div className="content-container">
         <header className="session-header">
-          <img src={window.staticImages.headerImage} />
+          <Link to="/">
+            <img src={window.staticImages.headerImage} />
+          </Link>
         </header>
           <main className="main-content">
           <div className="signup-wrapper">
