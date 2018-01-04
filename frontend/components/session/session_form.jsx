@@ -44,7 +44,8 @@ class SessionForm extends React.Component {
     return(
       <ul>
         {this.props.errors.map((error, idx) => (
-          <li key={`error-${idx}`}>
+          <li className="session-errors" key={`${idx}`}>
+            <img src={window.staticImages.errorImage} />
             {error}
           </li>
         ))}
@@ -77,6 +78,8 @@ class SessionForm extends React.Component {
       )
     }
   }
+
+
 
   render() {
     const text = this.props.formType === '/signup' ? "Sign Up" : "Login";
