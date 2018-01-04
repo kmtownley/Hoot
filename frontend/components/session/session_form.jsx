@@ -12,6 +12,7 @@ class SessionForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handldDemo = this.handleDemo.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -51,6 +52,16 @@ class SessionForm extends React.Component {
     );
   }
 
+  handleDemo() {
+    return (e) => {
+      e.preventDefault();
+      this.setState({username: "guest", password: "password"}, () => {
+        const user = Object.assign({}, this.state);
+        this.props.processForm(user, 'login');
+      });
+    };
+  }
+
   notMemberMessage() {
     if (this.props.formType === '/login') {
       return (
@@ -73,7 +84,7 @@ class SessionForm extends React.Component {
       <section className="content-container">
         <div className="signup-wrapper">
           <form onSubmit={this.handleSubmit} className="session_form_container">
-            <h2 className="header-login-hoot">Login to Hoot</h2>
+            <h2 className="header-login-hoot">Login to Hoot </h2>
             <p className="subheader-text">New to Hoot?
             <Link to={'/signup'} className="signup-link"> Sign up</Link>
             </p>
@@ -101,6 +112,7 @@ class SessionForm extends React.Component {
               </label>
               <br/>
               <input className="submit-button" type="submit" value={text} />
+              <button className="demo-login-button" onClick={this.handleDemo()} type="submit" value="Guest Login">Guest Login</button>
               <section className="small-closing">
                 {this.notMemberMessage()}
               </section>

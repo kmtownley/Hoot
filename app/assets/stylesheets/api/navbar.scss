@@ -1,5 +1,6 @@
 .top-red-bar {
   display: flex;
+  height: 40px;
 }
 
 .signup {
@@ -14,7 +15,6 @@
   text-align: center;
   line-height: 24px;
   padding: 6px 18px;
-
   position: absolute;
   right: 12px;
 
@@ -41,16 +41,16 @@
 .hoot-div {
   width: 70px;
   height: 40px;
-  display: flex;
-  justify-content: center
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+
 }
 
 
 .hoot-link-image {
   width: 100%;
   height: auto;
-
-
 }
 
 .login-signup:hover {
