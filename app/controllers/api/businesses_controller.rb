@@ -1,5 +1,5 @@
 class Api::BusinessesController < ApplicationController
-  # after_initialize :require_login
+
 
   def create
     @business = Business.new(business_params)
