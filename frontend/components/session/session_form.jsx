@@ -8,11 +8,14 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
+      first_name: "",
+      last_name: "",
+      email: "",
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handldDemo = this.handleDemo.bind(this);
+    this.nameInputs = this.nameInputs.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -36,7 +39,7 @@ class SessionForm extends React.Component {
 
   update(field) {
     return (e) => {
-      this.setState({[field]: e.currentTarget.value})
+      this.setState({[field]: e.target.value})
     }
   }
 
@@ -56,7 +59,7 @@ class SessionForm extends React.Component {
   handleDemo() {
     return (e) => {
       e.preventDefault();
-      this.setState({username: "guest", password: "password"}, () => {
+      this.setState({email: "guest@hoot.com", password: "password", first_name: "guest", last_name: "guest"}, () => {
         const user = Object.assign({}, this.state);
         this.props.login(user);
       });
@@ -77,6 +80,31 @@ class SessionForm extends React.Component {
         </div>
       )
     }
+  }
+
+  nameInputs() {
+    return (
+      <ul className="name-container">
+        <li className='inputs'>
+          <input
+            className="first-name"
+            type="text"
+            placeholder="First Name"
+            value={this.state.first_name}
+            onChange={this.update('first_name')}
+          />
+        </li>
+        <li className='inputs'>
+          <input
+            className="last-name"
+            type="text"
+            placeholder="Last Name"
+            value={this.state.last_name}
+            onChange={this.update('last_name')}
+          />
+        </li>
+      </ul>
+    )
   }
 
 
@@ -102,13 +130,17 @@ class SessionForm extends React.Component {
                 <li>{this.renderErrors()}</li>
               </ul>
               <div className="login-form">
+                <div>
+                  {this.props.formType === "/signup" ? this.nameInputs() : "" }
+                </div>
+                <br/>
                 <label>
                   <input
                     className="login-input"
                     type="text"
-                    placeholder="username"
-                    value={this.state.username}
-                    onChange={this.update('username')}
+                    placeholder="Email"
+                    value={this.state.email}
+                    onChange={this.update('email')}
                   />
                 </label>
                 <br/>
@@ -116,7 +148,7 @@ class SessionForm extends React.Component {
                   <input
                     className="login-input"
                     type="password"
-                    placeholder="password"
+                    placeholder="Password"
                     value={this.state.password}
                     onChange={this.update('password')}
                   />

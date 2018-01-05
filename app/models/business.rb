@@ -1,5 +1,5 @@
 class Business < ApplicationRecord
-  validates :biz_name, :address, :city, :state, :zipcode, :description, presence: true
+  validates :biz_name, :address, :city, :state, :zipcode, presence: true
 
   has_attached_file :image, default_url: "default_biz_image.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/

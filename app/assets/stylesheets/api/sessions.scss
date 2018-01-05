@@ -53,9 +53,6 @@
 
 }
 
-.subheader-text {
-}
-
 .submit-button {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -76,6 +73,28 @@
   box-sizing: border-box;
   width: calc(100% - 36px);
   margin: 18px;
+  padding: 5px 9px;
+  background: #fff;
+  border: 1px solid #999;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.name-container {
+  display: flex;
+  box-sizing: border-box;
+  width: calc(100% - 36px);
+  margin: 18px 18px 0px;
+  background: #fff;
+  border-radius: 3px;
+  font-size: 14px;
+
+}
+
+.inputs {
+  display: block;
+  box-sizing: border-box;
+  width: 50%;
   padding: 5px 9px;
   background: #fff;
   border: 1px solid #999;

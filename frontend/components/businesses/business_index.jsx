@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Link } from 'react-router-dom';
 import NavbarContainer from '../navbar/navbar_container';
 import BusinessIndexItem from './business_index_item';
