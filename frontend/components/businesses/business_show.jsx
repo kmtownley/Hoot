@@ -30,7 +30,7 @@ class BusinessShow extends React.Component {
           <div>
             <div className="city-state">{business.city}</div>,&nbsp;
             <div className="city-state">{business.state}</div>, &nbsp;
-            <div>{business.zipcode}{business.phone_number}</div>
+            <div>{business.zipcode}</div>
           </div>
         </span>
       </ul>
@@ -70,6 +70,7 @@ class BusinessShow extends React.Component {
           <span className="location-with-imgs">
             <ul className="location-container">
               {this.address()}
+              <div className="phone">{business.phone_number}</div>
             </ul>
             <img className="biz-image"  src={this.props.business.image_url} />
           </span>
