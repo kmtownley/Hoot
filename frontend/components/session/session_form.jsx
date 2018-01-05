@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-import NavbarContainer from '../navbar/navbar_container';
+import auth_navbarContainer from '../auth_navbar/auth_nav_container';
 
 class SessionForm extends React.Component {
 
@@ -14,7 +14,7 @@ class SessionForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handldDemo = this.handleDemo.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
     this.nameInputs = this.nameInputs.bind(this);
   }
 

@@ -43,3 +43,131 @@
   height: 170px;
   padding-bottom: 10px;
 }
+
+.biz-content-container {
+  width: 960px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.biz-show-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 13px;
+  font-size: 16px;
+  line-height: 1.3125em;
+}
+
+.biz-header-container {
+  display: flex;
+  align-items: center;
+}
+.biz-header {
+
+  width: 500px;
+  padding-right: 30px;
+}
+
+.biz-header li {
+  margin-right: 6px;
+  margin-top: 9px;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.biz-show-title {
+  display: inline;
+  padding-top: 0;
+  margin-bottom: 6px;
+  text-shadow: 0 1px rgba(255,255,255,0.7);
+
+  font-weight: bold;
+  margin-bottom: 6px;
+  font-size: 30px;
+  line-height: 1.2em;
+  color: #333;
+}
+
+.biz-cuisine {
+  color: #0073bb;
+  margin-bottom: 12px;
+}
+
+.location {
+  display: flex
+}
+
+.biz-image {
+  height: 250px;
+  width: 250px;
+  display: flex;
+
+}
+
+.location-with-imgs {
+  display: flex;
+  align-items: center;
+}
+.location-container {
+  padding: 5px;
+  background: #fff;
+  border: 1px solid #ccc;
+  height: 370px;
+  width: 300;
+}
+
+.map-box {
+  padding: 5px;
+  background: #fff;
+  border: 1px solid #ccc;
+  display: flex;
+  height: 135px;
+  width: 286px;
+}
+
+.street-address {
+  font-weight: bold;
+  line-height: 18px;
+  margin-left: 24px !important;
+  font-size: 12px;
+}
+
+.street-address div {
+  padding-bottom: 2px;
+  display: flex;
+  flex-direction: row;
+}
+
+.city-state {
+  display: flex;
+}
+
+.review-button-container {
+  display: flex
+}
+
+.write-review-button {
+  color: white;
+  border-color: #8d0005;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  background-color: #c91400;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid;
+  font-weight: bold;
+  text-align: center;
+  user-select: none;
+  font-size: 14px;
+  line-height: 1.28571em;
+  padding: 8px 19px 9px;
+  border-radius: 3px;
+}
+
+.write-review-button:hover {
+  background-color: #d90007;
+}
