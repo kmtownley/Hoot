@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Business.destroy!
+
+biz1 = Business.create!(biz_name: "Chip NYC", address: "353 W 14th St
+Gansevoort Market", city: "New York",  state: "NY", zipcode: "10014", cuisine: "Desert")
