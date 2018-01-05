@@ -2,7 +2,6 @@
 
 one:
   biz_name: MyString
-  description: MyString
   image_url: MyString
   owner_id: MyString
   cuisine: MyString
@@ -10,7 +9,6 @@ one:
 
 two:
   biz_name: MyString
-  description: MyString
   image_url: MyString
   owner_id: MyString
   cuisine: MyString

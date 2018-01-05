@@ -12,7 +12,7 @@ class BusinessIndexItem extends React.Component {
   }
 
   render() {
-    const { biz_name, rating, cuisine, address, city, state, zipcode, description, image_url } = this.props.business;
+    const { biz_name, rating, cuisine, address, city, state, zipcode, image_url } = this.props.business;
     const business = this.props.business;
 
     return (
@@ -35,7 +35,6 @@ class BusinessIndexItem extends React.Component {
             <span className="biz-index-zipcode">{zipcode}</span>
           </div>
           <br/>
-          <span className="biz-index-description">{description}</span>
         </section>
       </li>
     )
