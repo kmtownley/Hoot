@@ -1,16 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AuthNavContainer from '../auth_nav_container';
+import AuthNavContainer from '../auth_navbar/auth_nav_container';
 
-class Navbar extends Reach.Components {
-  contructor(props) {
-    super(props);
-  }
+class Navbar extends React.Component {
+
+
 
   render() {
     return (
-  
-    )
+      <AuthNavContainer />
+    );
   }
 }
 

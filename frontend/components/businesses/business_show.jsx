@@ -53,7 +53,6 @@ class BusinessShow extends React.Component {
     }
     return (
       <div>
-        <AuthNavContainer />
         <main className="biz-content-container">
           <section className="biz-header-container">
             <div className="biz-header">
