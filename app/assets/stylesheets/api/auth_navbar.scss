@@ -18,7 +18,15 @@
   background-color: #d32323;
 }
 
-.hoot-logo-container {
+.nav-business-show {
+  display: flex;
+  height: 40px;
+  padding: 15px 15px 15px 15px;
+  position: relative;
+  background-color: #d32323;
+}
+
+.hoot-logo-container-center {
   display: flex;
   height: 100%;
   width: 100%;
@@ -26,11 +34,21 @@
   justify-content: center;
 }
 
-.hoot-logo-container img {
+.hoot-logo-container-left {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 220px;
+  padding-right: 220px;
+
+}
+
+.hoot-logo img {
   width: 70px;
   height: 60px;
   display: flex;
-
 }
 
 .signup {
@@ -79,7 +97,6 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   display: flex;
-  justify-content: flex-end;
   border-radius: 4px;
   font-size: 16px;
   font-weight: bold;
@@ -89,7 +106,6 @@
   text-align: center;
   line-height: 24px;
   padding: 8px 24px;
-  position: absolute;
   right: 100px;
   border: 2px solid #fff;
 }
