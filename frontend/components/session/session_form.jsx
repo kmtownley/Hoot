@@ -14,14 +14,28 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
     this.nameInputs = this.nameInputs.bind(this);
+    this.clearInputs = this.clearInputs.bind(this);
   }
+
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn) {
       this.props.history.push('/');
+      this.clearInputs();
     }
   }
 
+  componentWillUnmount() {
+  }
+
+  clearInputs() {
+    this.setState({
+      first_name: "",
+      last_name: "",
+      email: "",
+      password: ""
+    });
+  }
   navLink() {
     if (this.props.formType === 'login') {
       return <Link to="/signup"> Sign Up </Link>;

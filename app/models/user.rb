@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :businesses
+  has_many :reviews
 
   attr_reader :password
 

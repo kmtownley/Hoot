@@ -22,6 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.$ = $;
   window.dispatch = store.dispatch;
   window.getState = store.getState;
-  window.fetchBusinesses = fetchBusinesses;
+  window.fetchReviews = fetchReviews;
 
 });

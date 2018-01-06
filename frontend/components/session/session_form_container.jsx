@@ -5,6 +5,7 @@ import SessionForm from './session_form';
 
 const mapStateToProps = (state, ownProps) => {
   let formType;
+  let clearErrors;
   if (ownProps.location.pathname === '/login') {
     formType = '/login';
   } else {
@@ -21,12 +22,14 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   if (ownProps.location.pathname === '/login') {
     return {
       processForm: user => dispatch(login(user)),
-      login: user => dispatch(login(user))
+      login: user => dispatch(login(user)),
+      clearErrors: () => dispatch(clearErrors())
     };
   } else {
     return {
       processForm: user => dispatch(signup(user)),
-      login: user => dispatch(login(user))
+      login: user => dispatch(login(user)),
+      clearErrors: () => dispatch(clearErrors())
     };
   }
 };

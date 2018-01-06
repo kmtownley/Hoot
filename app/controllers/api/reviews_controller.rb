@@ -4,6 +4,11 @@ class Api::ReviewsController < ApplicationController
     @review = Review.new
   end
 
+  def index
+    @reviews = Review.find_by(business_id: params[:business_id])
+    render json: @reviews
+  end
+
   def show
     @review = Review.find(params[:id])
   end
