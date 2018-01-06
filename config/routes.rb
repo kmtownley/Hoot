@@ -4,7 +4,10 @@ Rails.application.routes.draw do
 
     resource :users, only: [:create, :destroy]
     resource :session, only: [:create, :destroy, :show]
-    resources :businesses
+    resources :businesses do
+      resources :reviews, except: [:show, :destroy]
+    end
+    resources :reviews, only: [:show, :destroy]
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
