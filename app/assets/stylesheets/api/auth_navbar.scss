@@ -1,18 +1,18 @@
-.header-auth-navbar {
-  display: flex;
+.nav-landing {
+  background-size:cover;
+  min-height: 100%;
+  min-width: 100%;
+  background-color: transparent;
   height: 40px;
   padding: 15px 15px 15px 15px;
-  position: relative;
-  background-color: transparent;
 }
 
-.top-red-bar {
+.nav-regular {
   display: flex;
   height: 40px;
   padding: 15px 15px 15px 15px;
   position: relative;
-  background-color: transparent;
-
+  background-color: #d32323;
 }
 
 
@@ -52,8 +52,6 @@
   position: absolute;
   right: 320px;
 }
-
-
 
 .login-signup:hover {
   color: grey;

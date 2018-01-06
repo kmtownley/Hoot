@@ -2,20 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.session-header {
-  width: 100%;
-  background-color: #d32323;
-  height: 60px;
-}
 
-.session-header img {
+.hoot-link-img {
   margin: auto;
   width: 6%;
   height: 100%;
-}
-
-.hoot-link {
-  align-content: center;
 }
 
 .main-content {
@@ -42,7 +33,7 @@
 .login-form {
   width: 350px;
 }
-.header-login-hoot {
+.header-login-text {
   font-weight: bold;
   font-family: sans-serif;
   margin-bottom: 6px;

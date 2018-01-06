@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import AuthNavContainer from '../auth_navbar/auth_nav_container'
-// import NavbarContainer from '../navbar/navbar_container';
+
 
 class BusinessShow extends React.Component {
   constructor(props) {
@@ -53,7 +53,6 @@ class BusinessShow extends React.Component {
     }
     return (
       <div>
-        <AuthNavContainer />
         <main className="biz-content-container">
           <section className="biz-header-container">
             <div className="biz-header">
