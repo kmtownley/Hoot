@@ -36,6 +36,7 @@ class SessionForm extends React.Component {
       password: ""
     });
   }
+
   navLink() {
     if (this.props.formType === 'login') {
       return <Link to="/signup"> Sign Up </Link>;
@@ -43,6 +44,7 @@ class SessionForm extends React.Component {
       return <Link to="/login"> Login </Link>
     }
   }
+  
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);

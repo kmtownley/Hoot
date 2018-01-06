@@ -6,9 +6,9 @@ const AuthNavbar = (props) => {
   let navContents;
   let navClass;
   const hootLogo = (
-      <a className="hoot-logo" href="/" >
+      <Link to="/" className="hoot-logo">
         <img src={window.staticImages.headerImage} />
-      </a>
+      </Link>
   )
 
   if (props.location.pathname === '/') {
@@ -25,7 +25,8 @@ const AuthNavbar = (props) => {
         {hootLogo}
         <button
           className="header-logout"
-          onClick={props.logout}>Logout
+          onClick={props.logout}>
+          <Link to="/">Logout</Link>
         </button>
       </div>
     )
