@@ -5,6 +5,7 @@ export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
 export const REMOVE_REVIEW = "REMOVE_REVIEW";
 
 export const fetchReviews = businessId => dispatch => {
+  debugger
   return (
     ReviewAPIUtil.fetchReviews(businessId).then(reviews => dispatch(receiveAllReviews(reviews)))
   );
@@ -32,12 +33,10 @@ const receiveReview = review => ({
   review
 });
 
-const receiveAllReviews = reviews => {
-  return {
+const receiveAllReviews = reviews => ({
     type: RECEIVE_ALL_REVIEWS,
     reviews
-  };
-};
+});
 
 window.fetchReviews = fetchReviews;
 window.fetchReview = fetchReview;

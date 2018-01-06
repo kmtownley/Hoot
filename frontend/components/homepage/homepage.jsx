@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import AuthNavbarContainer from '../auth_navbar/auth_nav_container';
 
 export default class Homepage extends React.Component {
   render() {

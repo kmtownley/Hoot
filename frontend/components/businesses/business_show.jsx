@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AuthNavContainer from '../auth_navbar/auth_nav_container'
-
+import ReviewIndexContainer from '../reviews/review_index_container';
 
 class BusinessShow extends React.Component {
   constructor(props) {
@@ -84,7 +83,8 @@ class BusinessShow extends React.Component {
           </span>
           <section>
             {this.businessDetails()}
-            <div className="reviews-container">
+            <div className="reviews-main">
+              <ReviewIndexContainer />
             </div>
           </section>
         </main>

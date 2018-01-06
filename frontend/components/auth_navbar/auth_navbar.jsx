@@ -13,7 +13,7 @@ const AuthNavbar = (props) => {
 
   if (props.location.pathname === '/') {
     navClass = "nav-landing";
-  } else if (props.location.pathname === '/businesess/:businessId') {
+  } else if (props.location.pathname === '/businesess/:business_id') {
     navClass = "nav-business-show"
   } else {
     navClass = 'nav-regular';
