@@ -29,11 +29,15 @@ const AuthNavbar = (props) => {
         </button>
       </div>
     )
-  } else if (props.currentUser){
-    navContents = <button
-      className="header-logout"
-      onClick={props.logout}>Logout
-    </button>
+  } else if (props.currentUser) {
+    navContents = (
+      <div className="nav-landing-container">
+        <button
+          className="header-logout"
+          onClick={props.logout}>Logout
+        </button>
+      </div>
+    )
   } else if (props.location.pathname === '/login' || props.location.pathname === '/signup') {
     navContents = (
       <div className="hoot-logo-container-center">
