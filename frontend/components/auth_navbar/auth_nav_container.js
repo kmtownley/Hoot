@@ -4,7 +4,7 @@ import AuthNavbar from './auth_navbar';
 import { withRouter } from 'react-router-dom';
 
 
-const mapStateToProps = ({ session }) => ({
+const mapStateToProps = ({session}) => ({
   currentUser: session.currentUser
 });
 

@@ -1,0 +1,88 @@
+.location-with-imgs {
+  display: flex;
+  align-items: center;
+  padding-bottom: 25px;
+}
+.location-container {
+  padding: 5px;
+  background: #fff;
+  border: 1px solid #ccc;
+  height: 370px;
+  width: 300;
+}
+
+.map-box {
+  padding: 5px;
+  background: #fff;
+  border: 1px solid #ccc;
+  display: flex;
+  height: 135px;
+  width: 286px;
+}
+
+.street-address {
+  font-weight: bold;
+  line-height: 18px;
+  margin-left: 24px !important;
+  font-size: 12px;
+}
+
+.street-address div {
+  padding-bottom: 2px;
+  display: flex;
+  flex-direction: row;
+}
+
+.city-state {
+  display: flex;
+}
+
+.phone {
+  font-size: 12px;
+}
+
+.review-button-container {
+  display: flex
+}
+
+.write-review-button {
+  color: white;
+  border-color: #8d0005;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  background-color: #c91400;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px #333 solid ;
+  font-weight: bold;
+  text-align: center;
+  user-select: none;
+  font-size: 14px;
+  line-height: 1.28571em;
+  padding: 8px 19px 9px;
+  border-radius: 3px;
+}
+
+.write-review-button:hover {
+  background-color: #d90007;
+}
+
+.biz-details-container {
+  display: flex;
+  padding: 5px;
+  background: #fff;
+  border: 1px solid #ccc;
+  width: 300px;
+  height: 200px;
+  float: right;
+}
+
+.reviews-container {
+  display: flex;
+  padding: 5px;
+  background: #fff;
+  border-top: 1px solid #ccc;
+  width: 615px;
+  height: 950px;
+  float: left;
+}

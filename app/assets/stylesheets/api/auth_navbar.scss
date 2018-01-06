@@ -1,20 +1,37 @@
-.header-auth-navbar {
+.nav-landing {
+  background-size:cover;
+  min-height: 40px;
+  min-width: 100%;
+  background-color: transparent;
+  padding: 15px 15px 15px 15px;
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-regular {
   display: flex;
   height: 40px;
   padding: 15px 15px 15px 15px;
   position: relative;
-  background-color: transparent;
+  background-color: #d32323;
 }
 
-.top-red-bar {
+.hoot-logo-container {
   display: flex;
-  height: 40px;
-  padding: 15px 15px 15px 15px;
-  position: relative;
-  background-color: transparent;
-
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
+.hoot-logo-container img {
+  width: 70px;
+  height: 60px;
+  display: flex;
+
+}
 
 .signup {
   -moz-box-sizing: border-box;
@@ -52,8 +69,6 @@
   position: absolute;
   right: 320px;
 }
-
-
 
 .login-signup:hover {
   color: grey;

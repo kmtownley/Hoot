@@ -3,13 +3,8 @@
   background-image: image-url("waffles.jpg");
   background-size: cover;
   background-position: center;
-}
-
-.auth_nav_container {
-  position: fixed;
-  display: flex;
-  opacity: 0;
-
+  position: relative;
+  top: -1; 
 }
 
 .logo-title {

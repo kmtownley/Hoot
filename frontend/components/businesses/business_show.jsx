@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import AuthNavContainer from '../auth_navbar/auth_nav_container'
-// import NavbarContainer from '../navbar/navbar_container';
+
 
 class BusinessShow extends React.Component {
   constructor(props) {
@@ -46,13 +46,22 @@ class BusinessShow extends React.Component {
     )
   }
 
+  businessDetails() {
+    return (
+      <div className="biz-details-container">
+        <ul className="biz-details">
+          <div>Soon to be Details</div>
+        </ul>
+      </div>
+    )
+  }
+
   render() {
     const business = this.props.business;
     if (!business) {
       return <div>Loading</div>
     }
     return (
-      <div>
         <main className="biz-content-container">
           <section className="biz-header-container">
             <div className="biz-header">
@@ -73,8 +82,13 @@ class BusinessShow extends React.Component {
             </ul>
             <img className="biz-image"  src={this.props.business.image_url} />
           </span>
+          <section>
+            {this.businessDetails()}
+            <div className="reviews-container">
+            </div>
+          </section>
         </main>
-      </div>
+
     )
   }
 }

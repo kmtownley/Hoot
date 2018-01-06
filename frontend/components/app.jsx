@@ -4,7 +4,7 @@ import { Route, HashRouter, Link, Switch } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 
 import SessionFormContainer from './session/session_form_container';
-import auth_navbarContainer from './auth_navbar/auth_nav_container';
+import AuthNavbarContainer from './auth_navbar/auth_nav_container';
 import HomepageContainer from './homepage/homepage_container';
 import BusinessIndexContainer from './businesses/business_index_container';
 import BusinessShowContainer from './businesses/business_show_container';
@@ -14,7 +14,7 @@ import NavbarContainer from './navbar/navbar_container.jsx';
 const App = () => (
   <div>
     <header >
-      <NavbarContainer />
+      <AuthNavbarContainer />
     </header>
 
     <Switch>

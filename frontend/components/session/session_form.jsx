@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-import auth_navbarContainer from '../auth_navbar/auth_nav_container';
-
 class SessionForm extends React.Component {
 
   constructor(props) {
@@ -113,15 +111,10 @@ class SessionForm extends React.Component {
     const text = this.props.formType === '/signup' ? "Sign Up" : "Login";
     return (
       <div className="content-container">
-        <header className="session-header">
-          <Link to="/">
-            <img src={window.staticImages.headerImage} />
-          </Link>
-        </header>
-          <main className="main-content">
+        <main className="main-content">
           <div className="signup-wrapper">
             <form onSubmit={this.handleSubmit} className="session_form_container">
-              <h2 className="header-login-hoot">{text} to Hoot </h2>
+              <h2 className="header-login-text">{text} to Hoot </h2>
               <p className="subheader-text">New to Hoot?
               <Link to={'/signup'} className="signup-link"> Sign up</Link>
               </p>
