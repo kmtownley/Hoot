@@ -1,21 +1,13 @@
 // Place all the styles related to the api/sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-
-.hoot-link-img {
-  margin: auto;
-  width: 6%;
-  height: 100%;
-}
-
 .main-content {
   display: flex;
   justify-content: center;
 }
 
 .signup-wrapper {
-  padding-left: 120px;
+  padding-left: 130px;
   padding-top: 80px;
   overflow: hidden;
   display: flex;
@@ -145,5 +137,6 @@
 }
 
 .owl-pic {
-  padding-top: 20px;
+  padding-top: 30px;
+  padding-left: 10px;
 }
