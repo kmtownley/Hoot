@@ -1,28 +1,28 @@
-import React from 'react';
-import BusinessIndex from '../businesses/business_index';
-import BusinessMap from '../business_map/business_map';
-
-
-// class Search extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
+// import React from 'react';
+// import BusinessIndex from '../businesses/business_index';
+// import BusinessMap from '../business_map/business_map';
 //
 //
-//
-//   render() {
-//     return (
-//       <div className="search-businesses-container">
-//         <div className="right-half">
-//           <BusinessMap
-//           />
-//         </div>
-//         <div className="left-half">
-//           <BusinessIndex businesses={businesses} />
-//         </div>
-//     </div>
-//     )
-//   }
-// };
-//
+// // class Search extends React.Component {
+// //   constructor(props) {
+// //     super(props);
+// //   }
+// //
+// //
+// //
+// //   render() {
+// //     return (
+// //       <div className="search-businesses-container">
+// //         <div className="right-half">
+// //           <BusinessMap
+// //           />
+// //         </div>
+// //         <div className="left-half">
+// //           <BusinessIndex businesses={businesses} />
+// //         </div>
+// //     </div>
+// //     )
+// //   }
+// // };
+// //
 // export default Search;
