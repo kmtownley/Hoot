@@ -7,13 +7,14 @@ const mapStateToProps = (state, ownProps) => {
   return {
     reviews: Object.values(state.reviews),
     business: ownProps.business,
-    author: state.session.currentUser.first_name
+    currentUser: state.session.currentUser
   };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchReviews: (businessId) => dispatch(fetchReviews(businessId)),
+    deleteReview: (reviewId) => dispatch(deleteReview(reviewId))
   };
 };
 
