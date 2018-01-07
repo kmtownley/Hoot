@@ -24,7 +24,7 @@ class BusinessShow extends React.Component {
     return (
         <span className="street-address">
           <div className="first-line-address">
-            <img className="address-icon" src={window.staticImages.mapIconImage} />
+            <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
             <span>{business.address}</span>&nbsp;
           </div>
           <div className="second-line-address">
@@ -40,7 +40,7 @@ class BusinessShow extends React.Component {
     const business = this.props.business;
     return (
       <div className="phone">
-        <img className="address-icon" src={window.staticImages.phoneIconImage} />
+        <i class="fa fa-phone fa-2x"></i>
         <div>{business.phone_number}</div>
       </div>
     )
@@ -67,7 +67,9 @@ class BusinessShow extends React.Component {
   render() {
     const business = this.props.business;
     if (!business) {
-      return <div>Loading</div>
+      return <div>Loading...
+         <i class="fas fa-spinner fa-pulse"></i>
+        </div>
     }
     return (
         <main className="biz-content-container">

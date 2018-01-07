@@ -34,10 +34,11 @@
 
 .first-line-address {
   flex-direction: row;
+  line-height: 30px;
 }
 
 .second-line-address {
-  margin-left: 27px;
+  margin-left: 22px;
 }
 
 .street-address span {
@@ -54,21 +55,23 @@
   display: flex;
   align-items: center;
 }
-.address-icon {
-  height: 20px;
+
+
+
+.first-line-address i {
   width: 20px;
-  display: flex;
-  padding-right: 5px;
 }
 
-.new-line-address {
-
-
-}
 
 
 .phone {
   font-size: 12px;
+}
+
+.phone i {
+  width: 20px;
+  display: flex;
+  padding-right: 5px;
 }
 
 .review-button-container {
