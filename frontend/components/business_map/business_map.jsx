@@ -25,7 +25,7 @@ class BusinessMap extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="map-box">
         <div id="map" ref={ map => this.mapNode = map }> </div>
       </div>
     )
