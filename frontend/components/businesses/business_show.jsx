@@ -49,7 +49,7 @@ class BusinessShow extends React.Component {
   reviewButton() {
     return (
       <div>
-        <Link className="write-review-button" to="/">Write a Review</Link>
+        <Link className="write-review-button" to="/businesses/:businessId/reviews/new">Write a Review</Link>
       </div>
     )
   }

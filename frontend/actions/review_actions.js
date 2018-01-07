@@ -46,3 +46,4 @@ const receiveAllReviews = reviews => ({
 window.fetchReviews = fetchReviews;
 window.fetchReview = fetchReview;
 window.deleteReview = deleteReview;
+window.createReview = createReview;

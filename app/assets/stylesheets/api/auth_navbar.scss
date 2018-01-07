@@ -58,6 +58,44 @@
   height: 50px;
   display: flex;
 }
+.signup-signin-no-user {
+  display: flex;
+}
+
+.login-no-user {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  min-width: 80px;
+  text-align: center;
+  line-height: 24px;
+  padding: 8px 24px;
+  position: relative;
+  right: 150px;
+  border-radius: 4px;
+  background: transparent;
+  color: #f5f5f5;
+}
+
+.signup-no-user {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  min-width: 80px;
+  text-align: center;
+  line-height: 24px;
+  padding: 8px 24px;
+  position: relative;
+  right: 150px;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  background: transparent;
+  color: #f5f5f5;
+}
 
 .signup {
   -moz-box-sizing: border-box;
@@ -77,6 +115,7 @@
   color: #f5f5f5;
 
 }
+
 
 .login {
   -moz-box-sizing: border-box;

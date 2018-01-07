@@ -24,5 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.getState = store.getState;
   window.fetchReviews = fetchReviews;
   window.fetchBusiness = fetchBusiness;
+  window.createReview = createReview;
 
 });

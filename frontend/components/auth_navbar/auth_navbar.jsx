@@ -63,7 +63,14 @@ const AuthNavbar = (props) => {
     navContents =
     <div className="hoot-logo-container-left">
       {hootLogo}
-      {login_signup}
+      <div className="signup-signin-no-user">
+        <nav className="login-no-user">
+          <Link to="/login"> Login </Link>
+        </nav>
+        <nav className="signup-no-user">
+          <Link to="/signup"> Sign Up </Link>
+        </nav>
+      </div>
     </div>
   } else {
     navContents = (
