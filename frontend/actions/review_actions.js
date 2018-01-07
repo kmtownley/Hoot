@@ -5,7 +5,6 @@ export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
 export const REMOVE_REVIEW = "REMOVE_REVIEW";
 
 export const fetchReviews = businessId => dispatch => {
-  debugger
   return (
     ReviewAPIUtil.fetchReviews(businessId).then(reviews => dispatch(receiveAllReviews(reviews)))
   );

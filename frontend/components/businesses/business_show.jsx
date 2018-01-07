@@ -23,13 +23,26 @@ class BusinessShow extends React.Component {
     const business = this.props.business;
     return (
         <span className="street-address">
-          <div>{business.address}</div>
-          <div>
-            <div className="city-state">{business.city}</div>,&nbsp;
-            <div className="city-state">{business.state}</div>, &nbsp;
+          <div className="first-line-address">
+            <img className="address-icon" src={window.staticImages.mapIconImage} />
+            <span>{business.address}</span>&nbsp;
+          </div>
+          <div className="second-line-address">
+            <div>{business.city}</div>,&nbsp;
+            <div>{business.state}</div>,&nbsp;
             <div>{business.zipcode}</div>
           </div>
         </span>
+    )
+  }
+
+  phone() {
+    const business = this.props.business;
+    return (
+      <div className="phone">
+        <img className="address-icon" src={window.staticImages.phoneIconImage} />
+        <div>{business.phone_number}</div>
+      </div>
     )
   }
 
@@ -71,11 +84,13 @@ class BusinessShow extends React.Component {
           </span>
         </section>
           <span className="location-with-imgs">
-            <ul className="location-container">
-              <li><BusinessMap/></li>
-              <li className="complete-address">{this.address()}</li>
-              <div className="phone">{business.phone_number}</div>
-            </ul>
+            <div className="location-container">
+              <BusinessMap/>
+              <ul className="location-container-text">
+                <li>{this.address()}</li>
+                <li>{this.phone()}</li>
+              </ul>
+            </div>
             <img className="biz-image"  src={this.props.business.image_url} />
           </span>
           <section>
