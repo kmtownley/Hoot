@@ -10,7 +10,7 @@ export default class Homepage extends React.Component {
           <img src={window.staticImages.headerImage} />
         </div>
         <div className="home-search-bar">
-          <SearchFromContainer />
+          <SearchFormContainer />
         </div>
       </main>
     );
