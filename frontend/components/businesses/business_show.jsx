@@ -22,19 +22,14 @@ class BusinessShow extends React.Component {
   address() {
     const business = this.props.business;
     return (
-    <div>
-      <ul>
-        <li className="map-box">Map</li>
         <span className="street-address">
-          <li>{business.address}</li>
+          <div>{business.address}</div>
           <div>
             <div className="city-state">{business.city}</div>,&nbsp;
             <div className="city-state">{business.state}</div>, &nbsp;
             <div>{business.zipcode}</div>
           </div>
         </span>
-      </ul>
-    </div>
     )
   }
 
@@ -77,9 +72,8 @@ class BusinessShow extends React.Component {
         </section>
           <span className="location-with-imgs">
             <ul className="location-container">
-              <BusinessMap
-              />
-              {this.address()}
+              <li><BusinessMap/></li>
+              <li className="complete-address">{this.address()}</li>
               <div className="phone">{business.phone_number}</div>
             </ul>
             <img className="biz-image"  src={this.props.business.image_url} />

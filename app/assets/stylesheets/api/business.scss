@@ -1,7 +1,7 @@
 .location-with-imgs {
   display: flex;
   align-items: center;
-  padding-bottom: 25px;
+  padding-bottom: 100px;
 }
 .location-container {
   padding: 5px;
@@ -20,6 +20,9 @@
   width: 286px;
 }
 
+.complete-address {
+  padding-top: 20px;
+}
 .street-address {
   font-weight: bold;
   line-height: 18px;
