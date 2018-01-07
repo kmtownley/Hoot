@@ -5,11 +5,32 @@ import { Link } from 'react-router-dom';
 const AuthNavbar = (props) => {
   let navContents;
   let navClass;
+
   const hootLogo = (
-      <Link to="/" className="hoot-logo">
-        <img src={window.staticImages.headerImage} />
-      </Link>
+    <Link to="/" className="hoot-logo">
+      <img src={window.staticImages.headerImage} />
+    </Link>
   )
+
+  const logout = (
+    <button
+      className="header-logout"
+      onClick={props.logout}>
+      <Link to="/">Logout</Link>
+    </button>
+  )
+
+  const login_signup = (
+    <div>
+      <nav className="login">
+        <Link to="/login"> Login </Link>
+      </nav>
+      <nav className="signup">
+        <Link to="/signup"> Sign Up </Link>
+      </nav>
+    </div>
+  )
+
 
   if (props.location.pathname === '/') {
     navClass = "nav-landing";
@@ -23,20 +44,13 @@ const AuthNavbar = (props) => {
     navContents = (
       <div className="hoot-logo-container-left">
         {hootLogo}
-        <button
-          className="header-logout"
-          onClick={props.logout}>
-          <Link to="/">Logout</Link>
-        </button>
+        {logout}
       </div>
     )
   } else if (props.currentUser) {
     navContents = (
       <div className="nav-landing-container">
-        <button
-          className="header-logout"
-          onClick={props.logout}>Logout
-        </button>
+        {logout}
       </div>
     )
   } else if (props.location.pathname === '/login' || props.location.pathname === '/signup') {
@@ -45,15 +59,16 @@ const AuthNavbar = (props) => {
         {hootLogo}
       </div>
     )
+  } else if (!props.currentUser && navClass !== "nav-landing"){
+    navContents =
+    <div className="hoot-logo-container-left">
+      {hootLogo}
+      {login_signup}
+    </div>
   } else {
     navContents = (
     <div>
-      <nav className="login">
-        <Link to="/login"> Login </Link>
-      </nav>
-      <nav className="signup">
-        <Link to="/signup"> Sign Up </Link>
-      </nav>
+      {login_signup}
     </div>
     )
   }
