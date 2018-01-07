@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ReviewIndexContainer from '../reviews/review_index_container';
+import BusinessMap from '../business_map/business_map';
 
 class BusinessShow extends React.Component {
   constructor(props) {
@@ -76,6 +77,8 @@ class BusinessShow extends React.Component {
         </section>
           <span className="location-with-imgs">
             <ul className="location-container">
+              <BusinessMap
+              />
               {this.address()}
               <div className="phone">{business.phone_number}</div>
             </ul>

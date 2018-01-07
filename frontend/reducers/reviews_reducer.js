@@ -12,7 +12,6 @@ const reviewReducer = (state = {}, action ) => {
 
   switch(action.type) {
     case RECEIVE_ALL_REVIEWS:
-      debugger
       return merge({}, action.reviews);
     case RECEIVE_REVIEW:
       return merge({}, state, {[action.review.id]: action.review });

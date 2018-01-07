@@ -9,6 +9,7 @@ import HomepageContainer from './homepage/homepage_container';
 import BusinessIndexContainer from './businesses/business_index_container';
 import BusinessShowContainer from './businesses/business_show_container';
 import NavbarContainer from './navbar/navbar_container.jsx';
+import SearchContainer from './search/search_container'
 
 
 const App = () => (
@@ -19,6 +20,7 @@ const App = () => (
 
     <Switch>
       <Route exact path="/" component={BusinessIndexContainer} />
+      <Route exect path="/search" component={SearchContainer} />
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <Route exact path="/businesses/:businessId" component={BusinessShowContainer}/>
