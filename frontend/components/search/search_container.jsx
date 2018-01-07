@@ -1,7 +1,7 @@
-import { connect } from 'react-redux';
-import Search from './search';
-import { fetchBusinesses } from '../../actions/business_actions';
-import { logout } from '../../actions/session_actions';
+// import { connect } from 'react-redux';
+// import Search from './search';
+// import { fetchBusinesses } from '../../actions/business_actions';
+// import { logout } from '../../actions/session_actions';
 
 
 // const mapStateToProps = (state, ownProps) => {
