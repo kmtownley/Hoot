@@ -17,7 +17,7 @@ class ReviewForm extends React.Component {
   }
 
   componentDidMount() {
-    debuggr
+    debugger
     this.props.fetchBusiness(this.props.match.params.businessId);
     if (this.props.match.params.ReviewId) {
       this.props.fetchReview(this.props.match.params.reviewId);
@@ -30,7 +30,6 @@ class ReviewForm extends React.Component {
     if (this.props.formType != newProps.formType) {
       this.setState(newProps.review);
     }
-    this.clearState();
   }
 
   update(field) {
@@ -46,11 +45,19 @@ class ReviewForm extends React.Component {
 
   render () {
     debugger
+    if (!this.props.business) {
+      return (
+        <div className="Loading">
+          <h2>Loading...</h2>
+          <i className="fa fa-spinner"></i>
+        </div>
+      );
+    };
    const text = this.props.formType === 'new' ? "Create Review" : "Update Review";
    return (
-     <div>
-       <h3>{this.props.business.biz_name}</h3>
-       <h2 className="review-title">{text}</h2>
+     <div className="review-form-conatiner">
+       <h3 className = "review-form-title">{this.props.business.biz_name}</h3>
+       <h2 className="review-form-type">{text}</h2>
        <form onSubmit={this.handleSubmit}>
          <label>Select a rating to get started
            <input
