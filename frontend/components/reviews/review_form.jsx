@@ -65,7 +65,7 @@ class ReviewForm extends React.Component {
            <label>Select a rating to get started
            </label>
            <input
-             className="reivews-stars"
+             className="reivew-stars"
              type="text"
              value={this.state.user_rating}
              onChange={this.update('userRating')} />
