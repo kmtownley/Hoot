@@ -24,7 +24,7 @@ class BusinessShow extends React.Component {
     return (
         <span className="street-address">
           <div className="first-line-address">
-            <i className="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
             <span>{business.address}</span>&nbsp;
           </div>
           <div className="second-line-address">
@@ -40,7 +40,7 @@ class BusinessShow extends React.Component {
     const business = this.props.business;
     return (
       <div className="phone">
-        <i className="fa fa-phone fa-2x"></i>
+        <i class="fa fa-phone fa-2x"></i>
         <div>{business.phone_number}</div>
       </div>
     )
@@ -49,7 +49,7 @@ class BusinessShow extends React.Component {
   reviewButton() {
     return (
       <div>
-        <Link className="write-review-button" to="/businesses/:businessId/reviews/new">Write a Review</Link>
+        <Link className="write-review-button" to={`/businesses/${this.props.business.id}/reviews/new`}>Write a Review</Link>
       </div>
     )
   }
