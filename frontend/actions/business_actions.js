@@ -5,7 +5,9 @@ export const RECEIVE_BUSINESS = "RECEIVE_BUSINESS";
 export const REMOVE_BUSINESS = "REMOVE_BUSINESS";
 
 export const fetchBusinesses = () => dispatch => {
+  debugger
   return (
+
     BizAPIUtil.fetchBusinesses().then(businesses => dispatch(receiveAllBusinesses(businesses)))
   );
 };

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import { withRouter } from 'react-router-dom';
+import { withRouter, link } from 'react-router-dom';
 
 import { createReview, fetchReview } from '../../actions/review_actions';
 import { fetchBusiness, fetchBusinesses } from '../../actions/business_actions';
@@ -15,7 +15,11 @@ const mapStateToProps = (state, ownProps) => {
   //   review = state.reviews[ownProps.match.params.reviewId];
   //   formType = 'edit';
   // }
-  return { review, formType};
+  return {
+    business: state.entities.businesses[ownProps.match.params.businessId],
+    review,
+    formType
+  };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {

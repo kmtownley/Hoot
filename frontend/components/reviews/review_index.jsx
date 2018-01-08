@@ -11,10 +11,15 @@ export default class ReviewIndex extends React.Component {
   }
 
   render() {
-    const review = this.props.reviews
+    const reviews = this.props.reviews.map(review => {
+        return (
+          <p> {review.body}</p>
+        );
+      }
+    );
     return (
       <section className="review-content-container">
-        {this.props.reviews}
+        {reviews}
       </section>
     )
   }

@@ -17,6 +17,7 @@ class ReviewForm extends React.Component {
   }
 
   componentDidMount() {
+    debuggr
     this.props.fetchBusiness(this.props.match.params.businessId);
     if (this.props.match.params.ReviewId) {
       this.props.fetchReview(this.props.match.params.reviewId);
@@ -25,6 +26,7 @@ class ReviewForm extends React.Component {
 
 
   componentWillReceiveProps(newProps) {
+    debugger
     if (this.props.formType != newProps.formType) {
       this.setState(newProps.review);
     }
@@ -43,10 +45,12 @@ class ReviewForm extends React.Component {
   }
 
   render () {
+    debugger
    const text = this.props.formType === 'new' ? "Create Review" : "Update Review";
    return (
      <div>
-       <h3>{text}</h3>
+       <h3>{this.props.business.biz_name}</h3>
+       <h2 className="review-title">{text}</h2>
        <form onSubmit={this.handleSubmit}>
          <label>Select a rating to get started
            <input
@@ -56,7 +60,7 @@ class ReviewForm extends React.Component {
          </label>
 
          <label>
-           <textarea
+           <textarea className="review-body"
              value={this.state.body}
              placeholder="Your review will help others find great local businesses. Please don't review this business if you have received a freebie or are in anyway connected to the establishment :)"
              onChange={this.update('body')} />
