@@ -44,7 +44,7 @@ class SessionForm extends React.Component {
       return <Link to="/login"> Login </Link>
     }
   }
-  
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);

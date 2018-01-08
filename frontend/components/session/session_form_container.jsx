@@ -11,6 +11,7 @@ const mapStateToProps = (state, ownProps) => {
   } else {
     formType = '/signup';
   }
+  debugger
   return {
     loggedIn: Boolean(state.session.currentUser),
     errors: state.errors.session,
