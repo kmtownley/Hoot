@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import dateFormat from 'dateFormat';
+import dateFormat from 'dateformat';
 
 class ReviewIndexItem extends React.Component {
   constructor(props) {
