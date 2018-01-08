@@ -23,9 +23,13 @@ class SessionForm extends React.Component {
       this.props.history.push('/');
       this.clearInputs();
     }
+    if (this.props.formType !== nextProps.formType) {
+      this.props.clearErrors();
+    }
   }
 
   componentWillUnmount() {
+    this.props.clearErrors();
   }
 
   clearInputs() {
