@@ -47,9 +47,10 @@ class ReviewForm extends React.Component {
     debugger
     if (!this.props.business) {
       return (
-        <div className="Loading">
-          <h2>Loading...</h2>
+        <div className="loading-container">
+          <h2 className="loading">Loading...
           <i className="fa fa-spinner"></i>
+          </h2>
         </div>
       );
     };

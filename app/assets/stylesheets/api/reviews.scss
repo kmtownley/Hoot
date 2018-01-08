@@ -17,3 +17,23 @@
   color: #0073bb;
   font-size: 40px;
 }
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  height: 800px;
+  padding-top: 100px;
+
+}
+
+.loading {
+  display: flex;
+  font-weight: bold;
+  font-size: 60px;
+  align-self: center;
+  color: grey;
+}
+
+.loading i {
+  padding-left: 10px;
+}
