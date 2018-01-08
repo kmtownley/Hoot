@@ -8,8 +8,6 @@ import reviewsReducer from './reviews_reducer';
 const rootReducer = combineReducers({
   entities: entitiesReducer,
   session: sessionReducer,
-  businesses: businessesReducer,
-  reviews: reviewsReducer,
   errors: errorsReducer
 });
 

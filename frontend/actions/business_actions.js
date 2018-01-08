@@ -6,6 +6,7 @@ export const REMOVE_BUSINESS = "REMOVE_BUSINESS";
 
 export const fetchBusinesses = () => dispatch => {
   return (
+
     BizAPIUtil.fetchBusinesses().then(businesses => dispatch(receiveAllBusinesses(businesses)))
   );
 };

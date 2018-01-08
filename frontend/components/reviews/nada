@@ -1,0 +1,45 @@
+//     <ul>
+//       <li>
+//         <div>
+//           <div className="star-rating container">
+//             <div className="star-rating">
+//               Rating: {review.user_rating}
+//             </div>
+//             <div>
+//               Date
+//             </div>
+//           </div>
+//           <p> {review.body}</p>
+//         </div>
+//       </li>
+//     </ul>
+//     );
+//   }
+// );
+
+
+if (this.props.review) {
+  const reviews = this.props.map(review => {
+    return
+      <div className="review-wrapper">
+        <ReviewIndexItem
+          key={review.id}
+          businessId={this.props.business.id}
+          review={review}
+          user={this.props.currentUser}
+        />
+      </div>
+  });
+}
+return (
+  <section className="reviews">
+    <div className="review-index-container">
+      <h2>Recommended Reviews
+        <div className="review-index">
+          for {this.props.business.biz_name}
+        </div>
+      </h2>
+    </div>
+    {reviews}
+</section>
+)

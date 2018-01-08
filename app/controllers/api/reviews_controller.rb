@@ -5,8 +5,8 @@ class Api::ReviewsController < ApplicationController
   end
 
   def index
-    @reviews = Review.find_by(business_id: params[:business_id])
-    render json: @reviews
+    @reviews = Review.where(business_id: params[:business_id])
+    render :index
   end
 
   def show

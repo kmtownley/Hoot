@@ -49,7 +49,7 @@ class BusinessShow extends React.Component {
   reviewButton() {
     return (
       <div>
-        <Link className="write-review-button" to="/businesses/:businessId/reviews/new">Write a Review</Link>
+        <Link className="write-review-button" to={`/businesses/${this.props.business.id}/reviews/new`}>Write a Review</Link>
       </div>
     )
   }
@@ -68,7 +68,7 @@ class BusinessShow extends React.Component {
     const business = this.props.business;
     if (!business) {
       return <div>Loading...
-         <i className="fas fa-spinner fa-pulse"></i>
+         <i className="fa fa-spinner fa-pulse"></i>
         </div>
     }
     return (

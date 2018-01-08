@@ -1,3 +1,106 @@
 // Place all the styles related to the Api::reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.review-form-container {
+  background-color: #fff;
+  min-width: 1020px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 230px;
+}
+
+.review-form-type {
+  font-size: 20px;
+  line-height: 23px;
+  padding-top: 20px;
+}
+.review-form-title {
+  padding-bottom: 12px;
+  color: #0073bb;
+  font-size: 40px;
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  height: 800px;
+  padding-top: 100px;
+
+}
+
+.review-star-container {
+  width: 100%;
+  box-sizing: border-box;
+  display: table-cell;
+  padding-bottom: 18px;
+}
+
+.review-star-container label {
+  margin: 8px 0 0 9px;
+  float: left;
+  font-size: 12px;
+}
+
+.review-body {
+  font-size: 18px;
+  line-height: 1.33333em;
+  line-height: 1.44em;
+  border: 0;
+  outline: none;
+  padding: 0;
+  resize: none;
+  width: 100%;
+  min-height: 258px;
+  margin: 0;
+  font-weight: 400;
+}
+
+.review-input-container {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: text;
+  padding: 18px;
+  max-width: 630px;
+}
+
+.review-form-button-container {
+  padding: 18px 0;
+  background-color: #fff;
+  position: relative;
+  height: 80px;
+}
+
+.submit-review-button {
+  color: #fff;
+  border-color: #8d0005;
+  box-shadow: 0 1px 1px rgba(0,0,0,.3);
+  background-color: #c91400;
+  padding: 20px 78px 20px 78px;
+  font-size: 16px;
+  line-height: 1.3125em;
+  cursor: pointer;
+  border: 1px solid;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.submit-review-button:hover {
+  background-color: #d90007;
+}
+
+.loading {
+  display: flex;
+  font-weight: bold;
+  font-size: 60px;
+  align-self: center;
+  color: grey;
+}
+
+.loading i {
+  padding-left: 10px;
+}
