@@ -6,7 +6,7 @@ import ReviewIndex from './review_index';
 const mapStateToProps = (state, ownProps) => {
   return {
     reviews: Object.values(state.entities.reviews),
-    business: ownProps.business,
+    business: state.entities.businesses[ownProps.match.params.businessId],
     currentUser: state.session.currentUser
   };
 };

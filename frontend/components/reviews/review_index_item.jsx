@@ -1,19 +1,44 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import dateFormat from 'dateFormat';
 
 class ReviewIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
   }
 
-  render() {
+  userInfo() {
     return (
-      <ul>
-        <li>this.props.review.user_rating</li>
-        <li>this.props.review.body</li>
-      </ul>
+      <div className="user-info-container">
+        {this.props.review.first_name}
+      </div>
     )
+
+  }
+
+
+  render() {
+    const date = dateFormat(this.props.review.created_at, 'mm/dd/yyyy');
+    return (
+        <ul>
+          <li>
+            <div className="total-review-info">
+                {this.userInfo()}
+              <div>
+                <div className="star-rating-container">
+                  <div className="star-rating">
+                    Rating: {this.props.review.user_rating}
+                  </div>
+                  <div className="review-date">
+                    {date}
+                  </div>
+                </div>
+              </div>
+              <p> {this.props.review.body}</p>
+            </div>
+          </li>
+          </ul>
+    );
   }
 }
 
