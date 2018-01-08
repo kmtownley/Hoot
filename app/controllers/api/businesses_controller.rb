@@ -33,6 +33,7 @@ class Api::BusinessesController < ApplicationController
 
   def index
     @businesses = Business.all
+    # @businesses = Bench.in_bounds(params[:bounds])
     render :index
   end
 

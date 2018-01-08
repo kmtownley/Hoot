@@ -3,7 +3,9 @@ import BusinessShow from './business_show';
 import { fetchBusiness } from '../../actions/business_actions';
 
 const mapStateToProps = (state, ownProps) => ({
-  business: state.entities.businesses[ownProps.match.params.businessId]
+  businesses: state.entities.businesses,
+  business: state.entities.businesses[ownProps.match.params.businessId],
+  businessId: parseInt(ownProps.match.params.benchId)
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
