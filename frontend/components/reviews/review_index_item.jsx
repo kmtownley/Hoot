@@ -10,7 +10,10 @@ class ReviewIndexItem extends React.Component {
   userInfo() {
     return (
       <div className="user-info-container">
-        {this.props.review.first_name}
+        <div className="review-user-name">{this.props.review.first_name}</div>
+        <br/>
+        <span>{this.props.review.city}</span>&nbsp;
+        <span>{this.props.review.state}</span>
       </div>
     )
 

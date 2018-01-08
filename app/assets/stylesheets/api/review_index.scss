@@ -60,6 +60,19 @@
   box-sizing: border-box;
   width: 37.5%;
 }
+.review-user-name {
+  color: #0073bb;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.28571em;
+  font-weight: bold;
+}
+
+.user-info-container span {
+  font-size: 12px;
+  line-height: 1.28571em;
+  font-weight: bold;
+}
 
 .total-review-info p {
   width: 100%;
