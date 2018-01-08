@@ -7,7 +7,6 @@ import { fetchBusiness, fetchBusinesses } from '../../actions/business_actions';
 import ReviewForm from './review_form';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   let formType = 'new';
   let review = { user_rating: "", body: "", business_id: ownProps.match.params.businessId, user_id: state.session.currentUser};
 
@@ -23,7 +22,6 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  debugger
   const action = ownProps.match.path === "/" ? createReview : createReview;
   return {
     fetchReview: id => dispatch(fetchReview(id)),

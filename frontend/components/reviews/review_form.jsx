@@ -17,7 +17,6 @@ class ReviewForm extends React.Component {
   }
 
   componentDidMount() {
-    debugger
     this.props.fetchBusiness(this.props.match.params.businessId);
     if (this.props.match.params.ReviewId) {
       this.props.fetchReview(this.props.match.params.reviewId);
@@ -26,7 +25,6 @@ class ReviewForm extends React.Component {
 
 
   componentWillReceiveProps(newProps) {
-    debugger
     if (this.props.formType != newProps.formType) {
       this.setState(newProps.review);
     }
@@ -44,7 +42,6 @@ class ReviewForm extends React.Component {
   }
 
   render () {
-    debugger
     if (!this.props.business) {
       return (
         <div className="loading-container">
@@ -54,18 +51,25 @@ class ReviewForm extends React.Component {
         </div>
       );
     };
-   const text = this.props.formType === 'new' ? "Create Review" : "Update Review";
+   const text = this.props.formType === 'new' ? "Write a Review" : "Update Review";
    return (
-     <div className="review-form-conatiner">
-       <h3 className = "review-form-title">{this.props.business.biz_name}</h3>
+     <div className="review-form-container">
        <h2 className="review-form-type">{text}</h2>
-       <form onSubmit={this.handleSubmit}>
-         <label>Select a rating to get started
+       <h3
+         className = "review-form-title">{this.props.business.biz_name}
+       </h3>
+
+       <form
+         className="review-input-container" onSubmit={this.handleSubmit}>
+         <div className="review-star-container">
+           <label>Select a rating to get started
+           </label>
            <input
+             className="reivews-stars"
              type="text"
              value={this.state.user_rating}
              onChange={this.update('userRating')} />
-         </label>
+         </div>
 
          <label>
            <textarea className="review-body"
@@ -73,9 +77,14 @@ class ReviewForm extends React.Component {
              placeholder="Your review will help others find great local businesses. Please don't review this business if you have received a freebie or are in anyway connected to the establishment :)"
              onChange={this.update('body')} />
          </label>
-
-         <input type="submit" value={text} />
        </form>
+       <div className="review-form-button-container">
+         <button
+           className="submit-review-button"
+           type="submit"
+           value="submit">{text}
+         </button>
+       </div>
      </div>
    );
  }
