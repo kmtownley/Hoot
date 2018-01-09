@@ -20,6 +20,15 @@ class Api::BusinessesController < ApplicationController
     end
   end
 
+  def search
+    debugger
+    @bizType = Business.where(:biz_name : params[:query])
+    @cuisineType = Business.where(:cuisineType : param[:query])
+    @businesses = @bizType.or(@cuisineType)
+    debugger
+    render :index
+  end
+
   def update
   end
 
@@ -32,8 +41,7 @@ class Api::BusinessesController < ApplicationController
   end
 
   def index
-    @businesses = Business.all
-    # @businesses = Bench.in_bounds(params[:bounds])
+    @businesses = bounds ? Business.in_bounds(bounds) : Business.all
     render :index
   end
 
@@ -41,5 +49,9 @@ class Api::BusinessesController < ApplicationController
 
   def business_params
     params.require(:business).permit(:biz_name, :address, :city, :state, :zipcode, :phone_number, :latitude, :longitude)
+  end
+
+  def bounds
+    params[:bounds]
   end
 end

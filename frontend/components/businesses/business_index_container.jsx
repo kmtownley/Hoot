@@ -7,9 +7,11 @@ const mapStateToProps = state => ({
   businesses: Object.values(state.entities.businesses)
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = dispatch => {
+  return {
   fetchBusinesses: () => dispatch(fetchBusinesses())
-});
+  };
+};
 
 export default connect(
   mapStateToProps,
