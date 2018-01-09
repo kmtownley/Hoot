@@ -1,16 +1,23 @@
 export default class MarkerManager {
   constructor(map) {
     this.map = map;
-    this.markers = {};
+    this.markers = [];
+    this.updateMarkers = this.updateMarkers.bind(this);
   }
 
   updateMarkers(businesses){
-    console.log('time to update');
-    this.createMarkerFromBusiness(business);
+    // Object.keys(businesses).forEach( key => {
+    //   let latLng = { lat: businesses[key].latitude, lng: businesses[key].longitude};
+    Object.values(businesses).forEach(business => {
+      this.markers.push(this.createMarkerFromBusiness(business));
+      debugger
+      console.log()
+    });
   }
 
   createMarkerFromBusiness(business) {
-    const position = new google.maps.LatLng(business.lat, business.lng);
+    debugger
+    const position = { lat: business.latitude, lng: business.longitude };
     const marker = new google.maps.Marker({
       position,
       map: this.map,
