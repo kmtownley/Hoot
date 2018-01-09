@@ -8,7 +8,8 @@ export const changeBounds = (bounds, value) => ({
   value
 });
 
-export const updateBounds = (bounds, value) => (dispatch, getState) => {
-  dispatch(changeBounds(bounds, value));
-  return fetchBusinesses(getState().bounds)(dispatch);
+export const updateBounds = ( value) => (dispatch, getState) => {
+  console.log(value);
+  //dispatch(changeBounds(bounds, value));
+  //return fetchBusinesses(getState().bounds)(dispatch);
 };

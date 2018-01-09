@@ -16,6 +16,7 @@ class Search extends React.Component {
         <div className="right-half">
           <BusinessMap
             businesses={businesses}
+            updateBounds={this.props.updateBounds}
           />
         </div>
         <div className="left-half">

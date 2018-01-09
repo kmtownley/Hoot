@@ -38,6 +38,7 @@ class BusinessMap extends React.Component {
 
   componentDidUpdate() {
     // this.MarkerManager.updateMarkers(this.props.business);
+    this.props.updateBounds(this.map.getBounds());
   }
 
   componentWillReceiveProps(nextProps) {
