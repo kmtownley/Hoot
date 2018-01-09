@@ -35,14 +35,24 @@
 .review-star-container {
   width: 100%;
   box-sizing: border-box;
-  display: table-cell;
   padding-bottom: 18px;
+  display: flex;
 }
 
 .review-star-container label {
   margin: 8px 0 0 9px;
   float: left;
   font-size: 12px;
+  display: flex;
+}
+
+.review-stars-wrapper input {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
 }
 
 .reviews-star {
@@ -54,6 +64,7 @@
   padding: 0;
   width: 100%;
 }
+
 .review-body {
   font-size: 18px;
   line-height: 1.33333em;

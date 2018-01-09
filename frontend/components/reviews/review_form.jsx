@@ -1,4 +1,5 @@
 import React from 'react';
+import {RadioGroup, Radio} from 'react-radio-group';
 
 
 class ReviewForm extends React.Component {
@@ -6,6 +7,7 @@ class ReviewForm extends React.Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = this.props.review;
+    this.starText = this.starText.bind(this);
 
   }
 
@@ -36,7 +38,6 @@ class ReviewForm extends React.Component {
       this.setState({[field]: e.target.value});
 
     };
-
   }
 
   handleSubmit(e) {
@@ -44,41 +45,73 @@ class ReviewForm extends React.Component {
     this.props.action(this.state).then(() => this.props.history.push('/'));
   }
 
+  starText(value) {
+    let text;
+    switch (value) {
+    case "1":
+      text = "Eek! Me thinks not.";
+      return text;
+    case "2":
+      text = "Meh... I have experienced better.";
+      return text;
+    case "3":
+      text = "A-OK.";
+      return text;
+    case "4":
+      text = "Yay! I am a fan!";
+      return text;
+    case "5":
+      text = "Woohoo. As good as it gets!";
+      return text;
+    default:
+      return text = "Select a rating to get started";
+    }
+  }
+
   starReview() {
     return (
-    <div>
-      <label class="star-container">One
+      <div className="review-stars-wrapper">
         <input
+          value={this.state.userRating}
+          onChange={this.update('user_rating')}
           type="radio"
+          name="userRating"
           value="1"
         />
-        <span class="checkmark"></span>
-      </label>
-
-      <label class="star-container">Two
         <input
+          value={this.state.userRating}
+          onChange={this.update('user_rating')}
           type="radio"
+          name="userRating"
           value="2"
         />
-        <span class="star"></span>
-      </label>
-
-      <label class="star-container">Three
-        <input type="radio"></input>
-        <span class="star"></span>
-      </label>
-
-      <label class="star-container">Four
-        <input type="radio"></input>
-        <span class="star"></span>
-      </label>
-
-      <label value={this.state.user_review} class="star-container">Five
-        <input type="star"></input>
-        <span class="star"></span>
-      </label>
-    </div>
+        <input
+          value={this.state.userRating}
+          onChange={this.update('user_rating')}
+          type="radio"
+          name="userRating"
+          value="3"
+        />
+        <input
+          value={this.state.userRating}
+          onChange={this.update('user_rating')}
+          type="radio"
+          name="userRating"
+          value="4"
+        />
+        <input
+          value={this.state.userRating}
+          onChange={this.update('user_rating')}
+          type="radio"
+          name="userRating"
+          value="5"
+        />
+      </div>
     )
+  };
+
+  updateRadioButton(value) {
+    this.setState({ radio: value });
   }
 
   render () {
@@ -102,16 +135,10 @@ class ReviewForm extends React.Component {
        <form
          className="review-input-container" onSubmit={this.handleSubmit}>
          <div className="review-star-container">
-           <label>Select a rating to get started
-
-           <input
-             className="reivews-stars"
-             type="text"
-             placeholder="rating"
-             value={this.state.userRating}
-             onChange={this.update('user_rating')}
-            />
-            </label>
+             {this.starReview()}
+             <label>
+               {this.starText(this.state.user_rating)}
+             </label>
          </div>
 
          <label>
