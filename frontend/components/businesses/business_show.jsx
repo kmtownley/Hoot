@@ -92,6 +92,7 @@ class BusinessShow extends React.Component {
               <BusinessMap
                 businesses={this.props.businesses}
                 business={business}
+                path={this.props.match.path}
                 singleBusiness={true}
                 fetchBusiness={fetchBusiness}
               />
