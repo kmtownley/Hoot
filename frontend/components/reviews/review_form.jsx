@@ -17,8 +17,9 @@ class ReviewForm extends React.Component {
   }
 
   componentDidMount() {
+
     this.props.fetchBusiness(this.props.match.params.businessId);
-    if (this.props.match.params.ReviewId) {
+    if (this.props.match.params.reviewId) {
       this.props.fetchReview(this.props.match.params.reviewId);
     }
   }
@@ -33,12 +34,51 @@ class ReviewForm extends React.Component {
   update(field) {
     return (e) => {
       this.setState({[field]: e.target.value});
+
     };
+
   }
 
   handleSubmit(e) {
     e.preventDefault();
     this.props.action(this.state).then(() => this.props.history.push('/'));
+  }
+
+  starReview() {
+    return (
+    <div>
+      <label class="star-container">One
+        <input
+          type="radio"
+          value="1"
+        />
+        <span class="checkmark"></span>
+      </label>
+
+      <label class="star-container">Two
+        <input
+          type="radio"
+          value="2"
+        />
+        <span class="star"></span>
+      </label>
+
+      <label class="star-container">Three
+        <input type="radio"></input>
+        <span class="star"></span>
+      </label>
+
+      <label class="star-container">Four
+        <input type="radio"></input>
+        <span class="star"></span>
+      </label>
+
+      <label value={this.state.user_review} class="star-container">Five
+        <input type="star"></input>
+        <span class="star"></span>
+      </label>
+    </div>
+    )
   }
 
   render () {
@@ -63,12 +103,15 @@ class ReviewForm extends React.Component {
          className="review-input-container" onSubmit={this.handleSubmit}>
          <div className="review-star-container">
            <label>Select a rating to get started
-           </label>
+
            <input
              className="reivews-stars"
              type="text"
-             value={this.state.user_rating}
-             onChange={this.update('userRating')} />
+             placeholder="rating"
+             value={this.state.userRating}
+             onChange={this.update('user_rating')}
+            />
+            </label>
          </div>
 
          <label>
@@ -77,14 +120,16 @@ class ReviewForm extends React.Component {
              placeholder="Your review will help others find great local businesses. Please don't review this business if you have received a freebie or are in anyway connected to the establishment :)"
              onChange={this.update('body')} />
          </label>
-       </form>
-       <div className="review-form-button-container">
-         <button
-           className="submit-review-button"
-           type="submit"
-           value="submit">{text}
-         </button>
-       </div>
+
+         <div className="review-form-button-container">
+           <button
+             className="submit-review-button"
+             type="submit"
+             value="submit">{text}
+           </button>
+          </div>
+         </form>
+
      </div>
    );
  }

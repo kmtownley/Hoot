@@ -10,13 +10,13 @@ export default class MarkerManager {
     //   let latLng = { lat: businesses[key].latitude, lng: businesses[key].longitude};
     Object.values(businesses).forEach(business => {
       this.markers.push(this.createMarkerFromBusiness(business));
-      debugger
+      
       console.log()
     });
   }
 
   createMarkerFromBusiness(business) {
-    debugger
+    
     const position = { lat: business.latitude, lng: business.longitude };
     const marker = new google.maps.Marker({
       position,

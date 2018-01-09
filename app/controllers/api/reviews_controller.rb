@@ -21,7 +21,7 @@ class Api::ReviewsController < ApplicationController
       business = @review.business
       render json: business
     else
-      render json: @review.full_messages, status: 422
+      render json: @review.errors.full_messages, status: 422
     end
   end
 
@@ -36,12 +36,12 @@ class Api::ReviewsController < ApplicationController
     if @review.update(review_params)
       render :show
     else
-      render json: @review.full_messages, status: 422
+      render json: @review.errors.full_messages, status: 422
     end
   end
 
   private
   def review_params
-    params.require(:review).permit(:user_rating, :body)
+    params.require(:review).permit(:user_rating, :body, :user_id, :business_id)
   end
 end

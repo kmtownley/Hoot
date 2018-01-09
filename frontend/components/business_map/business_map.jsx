@@ -16,7 +16,7 @@ class BusinessMap extends React.Component {
 
   componentDidMount() {
     let mapOptions;
-    debugger
+    
     if (this.props.path === "/businesses/:businessId") {
       mapOptions = {
         center : { lat: this.props.business.latitude, lng: this.props.business.longitude},
@@ -31,7 +31,7 @@ class BusinessMap extends React.Component {
     // wrap the mapDOMNode in a Google Map
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
-    debugger
+    
     this.MarkerManager.updateMarkers(this.props.businesses);
   }
 
@@ -44,7 +44,7 @@ class BusinessMap extends React.Component {
   }
 
   render() {
-    debugger
+    
     return (
       <div className="map-box">
         <div id="map" ref={ map => this.mapNode = map }> </div>
