@@ -24,8 +24,8 @@ export const createBusiness = business => (
 export const searchBusinesses = (query) => {
   $.ajax({
     method: "GET",
-    url: `/businesses/search/${query}`,
-    data: { query: query }
+    url: `/businesses/search/`,
+    data: { query }
   });
 };
 

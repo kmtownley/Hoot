@@ -10,7 +10,7 @@ class BusinessIndex extends React.Component {
   constructor(props) {
     super(props);
   }
-  
+
   render() {
 
     const businesses = this.props.businesses;
@@ -39,6 +39,7 @@ class BusinessIndex extends React.Component {
         <section className="business-index-map">
           <BusinessMap
             businesses={businesses}
+            singleBusiness={false}
             />
         </section>
       </main>

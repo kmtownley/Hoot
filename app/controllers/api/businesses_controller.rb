@@ -22,11 +22,11 @@ class Api::BusinessesController < ApplicationController
 
   def search
     debugger
-    @bizType = Business.where(:biz_name : params[:query])
+    @bizName = Business.where(:biz_name : params[:query])
     @cuisineType = Business.where(:cuisineType : param[:query])
-    @businesses = @bizType.or(@cuisineType)
     debugger
-    render :index
+    @businesses = @bizName.or(@cuisineType)
+    render json: :index
   end
 
   def update

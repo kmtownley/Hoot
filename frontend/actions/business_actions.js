@@ -3,6 +3,7 @@ import * as BizAPIUtil from '../util/business_api_util';
 export const RECEIVE_ALL_BUSINESSES = "RECEIVE_ALL_BUSINESSES";
 export const RECEIVE_BUSINESS = "RECEIVE_BUSINESS";
 export const REMOVE_BUSINESS = "REMOVE_BUSINESS";
+export const RECEIVE_SEARCHED_BUSINESSES = "RECEIVE_SEARCHED_BUSINESSES";
 
 export const fetchBusinesses = () => dispatch => {
   return (
@@ -24,13 +25,18 @@ export const deleteBusiness = businessId => dispatch => {
 
 export const searchBusinesses = query => dispatch => {
   return (
-  BizAPIUtil.searchBusinesses(query).then(businesses => dispatch(receiveAllBusiness(businesses)))
+  BizAPIUtil.searchBusinesses(query).then(businesses => dispatch(receiveSearchedBusinesses(businesses)))
   );
 };
 
 const removeBusiness = businessId => ({
   type: REMOVE_BUSINESS,
   businessId
+});
+
+const receiveSearchedBusinesses = query => ({
+  type: RECEIVE_SEARCHED_BUSINESSES,
+  query
 });
 
 const receiveBusiness = business => ({

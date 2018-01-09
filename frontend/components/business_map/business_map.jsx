@@ -23,6 +23,7 @@ class BusinessMap extends React.Component {
         zoom: 13
       };
     } else {
+      // this.addMapListeners();
       mapOptions = {
         center: { lat: 40.7629471996736, lng: -73.97823811645509 },
           zoom: 13
@@ -41,31 +42,32 @@ class BusinessMap extends React.Component {
       const bounds = {
         northEast: { lat:north, lng: east },
         southWest: { lat: south, lng: west } };
-      this.props.updateFilter('bounds', bounds);
+      this.props.updateBounds('bounds', bounds);
     });
-    google.maps.event.addListener(this.map, 'click', (event) => {
-      const coords = getCoordsObj(event.latLng);
-      this.handleClick(coords);
-    });
-}
+    // google.maps.event.addListener(this.map, 'click', (event) => {
+    //   const coords = getCoordsObj(event.latLng);
+    //   this.handleClick(coords);
+    // });
   }
 
   componentDidUpdate() {
-    // this.MarkerManager.updateMarkers(this.props.business);
+    if (this.props.singleBusiness) {
+      const targetBusinessKey = Object.key(this.props.businesses[0]);
+      const targetBusiness = this.props.businesses[targetBusinessKey];
+      this.MarkerManager.updateMarkers([targetBusiness]);
+    } else {
+      this.MarkerManager.updateMarkers(this.props.businesses);
+    }
   }
 
-  componentWillReceiveProps(nextProps) {
-    // this.MarkerManager.updateMarkers(newProps.businesses);
-  }
-  // componentDidUpdate() {
-  //   if (this.props.singleBusiness) {
-  //     const targetBusinessesKey = Object.keys(this.props.businesses)[0];
-  //     const targetBusiness = this.props.businesses[targetBusinessKey];
-  //     this.MarkerManager.updateMarkers([targetBusiness]); //grabs only that one business
-  //   } else {
-  //     this.MarkerManager.updateMarkers(this.props.businesses);
-  //   }
+  // handleClick(coords) {
+  //   this.props.history.push({
+  //     pathname: 'businesses/new',
+  //     search: `lat=${coords.lat}&lng=${coords.lng}`
+  //   });
   // }
+
+
 
   render() {
 

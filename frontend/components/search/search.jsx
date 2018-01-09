@@ -7,24 +7,35 @@ class Search extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.searchedBusinesses();
+  }
+
   render() {
     const businesses = this.props.businesses;
     debugger
     return (
-      <div className="search-businesses-container">
-        <div className="right-half">
-          <BusinessMap
-            businesses={businesses}
-            singleBusiness={false}
-            updateBounds={updateBounds}
+      <div>
+        <form onSubmit={this.handleSubmit}>
+        <input ref="srch" type="search"  placeholder="Search..." />
+        <button type="submit">Go</button>
+
+        </form>
+        <div className="search-businesses-container">
+          <div className="right-half">
+            <BusinessMap
+              businesses={businesses}
+              singleBusiness={false}
+              updateBounds={this.props.updateBounds}
+            />
+          </div>
+          <div className="left-half">
+            <BusinessIndex
+              businesses={businesses}
+              fe
           />
-        </div>
-        <div className="left-half">
-          <BusinessIndex
-            businesses={businesses}
-            fe
-        />
-        </div>
+          </div>
+      </div>
     </div>
     )
   }
