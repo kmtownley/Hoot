@@ -10,6 +10,10 @@ class BusinessIndex extends React.Component {
   constructor(props) {
     super(props);
   }
+  componentDidMount() {
+    debugger
+    this.props.fetchBusinesses();
+  }
 
   render() {
 
@@ -40,6 +44,8 @@ class BusinessIndex extends React.Component {
           <BusinessMap
             businesses={businesses}
             singleBusiness={false}
+            updateBounds={this.props.updateBounds}
+
             />
         </section>
       </main>

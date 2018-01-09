@@ -21,9 +21,9 @@ class BusinessMap extends React.Component {
       mapOptions = {
         center : { lat: this.props.business.latitude, lng: this.props.business.longitude},
         zoom: 13
+
       };
     } else {
-      // this.addMapListeners();
       mapOptions = {
         center: { lat: 40.7629471996736, lng: -73.97823811645509 },
           zoom: 13
@@ -34,15 +34,18 @@ class BusinessMap extends React.Component {
     this.MarkerManager = new MarkerManager(this.map);
 
     this.MarkerManager.updateMarkers(this.props.businesses);
+    // this.addMapListeners();
   }
 
   addMapListeners() {
+    const that = this
     google.maps.event.addListener(this.map, 'idle', () => {
       const { north, south, east, west } = this.map.getBounds().toJSON();
       const bounds = {
         northEast: { lat:north, lng: east },
         southWest: { lat: south, lng: west } };
-      this.props.updateBounds('bounds', bounds);
+        debugger
+      that.props.updateBounds('bounds', bounds);
     });
     // google.maps.event.addListener(this.map, 'click', (event) => {
     //   const coords = getCoordsObj(event.latLng);

@@ -8,7 +8,7 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
-    this.searchedBusinesses();
+    //this.searchedBusinesses();
   }
 
   render() {
@@ -32,7 +32,6 @@ class Search extends React.Component {
           <div className="left-half">
             <BusinessIndex
               businesses={businesses}
-              fe
           />
           </div>
       </div>
