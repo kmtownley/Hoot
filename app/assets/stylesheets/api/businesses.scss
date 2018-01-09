@@ -110,3 +110,23 @@
   display: flex;
 
 }
+
+.business-index-map {
+  padding: 5px;
+  background: #fff;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.business-index-map img {
+  height: 100%;
+  width: 100%;
+}
+
+.business-index-map div {
+  display: flex;
+  align-self: center;
+}

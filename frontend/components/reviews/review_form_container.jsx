@@ -7,8 +7,9 @@ import { fetchBusiness, fetchBusinesses } from '../../actions/business_actions';
 import ReviewForm from './review_form';
 
 const mapStateToProps = (state, ownProps) => {
+
   let formType = 'new';
-  let review = { user_rating: "", body: "", business_id: ownProps.match.params.businessId, user_id: state.session.currentUser};
+  let review = { user_rating: "", body: "", business_id: ownProps.match.params.businessId, user_id: state.session.currentUser.id};
 
   // if (ownProps.match.path === '/businesses/:businessId/reviews/edit') {
   //   review = state.reviews[ownProps.match.params.reviewId];

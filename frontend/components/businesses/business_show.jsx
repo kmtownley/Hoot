@@ -15,6 +15,7 @@ class BusinessShow extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.match.params.businessId !== nextProps.match.params.businessId) {
+      this.props.fetchBusinesses();
       this.props.fetchBusiness(nextProps.match.params.businessId);
     }
   }
@@ -65,6 +66,7 @@ class BusinessShow extends React.Component {
   }
 
   render() {
+    
     const business = this.props.business;
     if (!business) {
       return <div>Loading...
@@ -89,7 +91,8 @@ class BusinessShow extends React.Component {
             <div className="location-container">
               <BusinessMap
                 businesses={this.props.businesses}
-                businessId={this.props.businessId}
+                business={business}
+                path={this.props.match.path}
                 singleBusiness={true}
                 fetchBusiness={fetchBusiness}
               />

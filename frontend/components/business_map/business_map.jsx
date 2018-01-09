@@ -15,15 +15,32 @@ class BusinessMap extends React.Component {
   }
 
   componentDidMount() {
-    debugger
-    const mapOptions = {
-      center: { lat: 40.7629471996736, lng: -73.97823811645509 },
+    let mapOptions;
+
+    if (this.props.path === "/businesses/:businessId") {
+      mapOptions = {
+        center : { lat: this.props.business.latitude, lng: this.props.business.longitude},
         zoom: 13
       };
-      // wrap the mapDOMNode in a Google Map
+    } else {
+      mapOptions = {
+        center: { lat: 40.7629471996736, lng: -73.97823811645509 },
+          zoom: 13
+        };
+      }
+    // wrap the mapDOMNode in a Google Map
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
-    // this.MarkerManager.updateMarkers(this.props.businesses);
+
+    this.MarkerManager.updateMarkers(this.props.businesses);
+  }
+
+  componentWillReceiveProps(newProps) {
+
+  }
+
+  componentDidUpdate() {
+    // this.MarkerManager.updateMarkers(this.props.business);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -40,6 +57,7 @@ class BusinessMap extends React.Component {
   // }
 
   render() {
+
     return (
       <div className="map-box">
         <div id="map" ref={ map => this.mapNode = map }> </div>
