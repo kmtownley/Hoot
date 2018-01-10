@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import Search from './search';
+import SearchBar from './searchbar';
+import { withRouter } from 'react-router-dom';
 import { fetchBusinesses } from '../../actions/business_actions';
 import { updateBounds } from '../../actions/filter_actions';
 import { logout } from '../../actions/session_actions';
@@ -22,7 +23,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   };
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(Search);
+)(SearchBar));

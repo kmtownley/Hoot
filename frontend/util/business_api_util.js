@@ -1,9 +1,10 @@
-export const fetchBusinesses = () => (
-  $.ajax({
+export const fetchBusinesses = (queries) => {
+  return $.ajax({
     method: "GET",
     url: 'api/businesses',
-  })
-);
+    data: queries
+  });
+};
 
 export const fetchBusiness = id => (
   $.ajax({
@@ -20,6 +21,13 @@ export const createBusiness = business => (
   })
 );
 
+export const searchBusinesses = (query) => {
+  $.ajax({
+    method: "GET",
+    url: `/businesses/search/`,
+    data: { query }
+  });
+};
 
 export const deleteBusiness = businessId => (
   $.ajax({
@@ -29,5 +37,3 @@ export const deleteBusiness = businessId => (
 );
 
 window.fetchBusinesses = fetchBusinesses;
-window.fetchBusiness = fetchBusiness;
-window.deleteBusiness = deleteBusiness; 

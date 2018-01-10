@@ -12,6 +12,7 @@ import MarkerManager from '../../util/marker_manager';
 class BusinessMap extends React.Component {
   constructor(props) {
     super(props);
+    this.updateBounds = this.updateBounds.bind(this);
   }
 
   componentDidMount() {
@@ -21,6 +22,7 @@ class BusinessMap extends React.Component {
       mapOptions = {
         center : { lat: this.props.business.latitude, lng: this.props.business.longitude},
         zoom: 13
+
       };
     } else {
       mapOptions = {
@@ -31,37 +33,71 @@ class BusinessMap extends React.Component {
     // wrap the mapDOMNode in a Google Map
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
-
+    this.map.addListener("idle", this.updateBounds);
     this.MarkerManager.updateMarkers(this.props.businesses);
   }
 
+  componentsWillReceiveProps(newProps) {
+    this.MarkerManager.updateMarkers(newProps.businesses);
+  }
+
+  updateBounds() {
+
+    let latLng = this.map.getBounds();
+
+    let ne = latLng.getNorthEast();
+    let sw = latLng.getSouthWest();
+
+    this.props.updateBounds({
+      north: ne.lat(),
+      east: ne.lng(),
+      south: sw.lat(),
+      west: sw.lng()
+    });
+  }
 
   componentDidUpdate() {
-    // this.MarkerManager.updateMarkers(this.props.business);
-    this.props.updateBounds(this.map.getBounds());
+    // if (this.props.singleBusiness) {
+    //   const targetBusinessKey = Object.key(this.props.businesses[0]);
+    //   const targetBusiness = this.props.businesses[targetBusinessKey];
+    //   this.MarkerManager.updateMarkers([targetBusiness]);
+    // } else {
+    //   this.MarkerManager.updateMarkers(this.props.businesses);
+    // }
   }
 
-  componentWillReceiveProps(nextProps) {
-    // this.MarkerManager.updateMarkers(newProps.businesses);
-  }
-  // componentDidUpdate() {
-  //   if (this.props.singleBusiness) {
-  //     const targetBusinessesKey = Object.keys(this.props.businesses)[0];
-  //     const targetBusiness = this.props.businesses[targetBusinessKey];
-  //     this.MarkerManager.updateMarkers([targetBusiness]); //grabs only that one business
-  //   } else {
-  //     this.MarkerManager.updateMarkers(this.props.businesses);
-  //   }
+  // handleClick(coords) {
+  //   this.props.history.push({
+  //     pathname: 'businesses/new',
+  //     search: `lat=${coords.lat}&lng=${coords.lng}`
+  //   });
   // }
+  mapStyle() {
+
+    let classStyle;
+    let mapContainer;
+    if (this.props.pathname === '/businesses/:businessId') {
+      return (
+        classStyle="map-box"
+      );
+    } else {
+      return (
+        classStyle="search-map-box"
+      );
+    }
+  }
+
 
   render() {
 
     return (
-      <div className="map-box">
+      <section className="search-map-container">
+      <div className={this.mapStyle()}>
         <div id="map" ref={ map => this.mapNode = map }> </div>
       </div>
-    )
+      </section>
+    );
   }
 }
 
-export default BusinessMap;
+export default withRouter(BusinessMap);

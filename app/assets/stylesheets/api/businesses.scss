@@ -2,8 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.landing-main-content {
-  margin-bottom: 25px;
+
+
+.business-index-container {
+  width: 990px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  padding-top: 15px;
+  padding-bottom: 36px;
 }
 
 .biz-index-title {
@@ -19,7 +26,7 @@
   justify-content: center;
 }
 
-.business-index-item {
+.biz-hot-item {
   width: 330px;
   height: 320px;
   border: 1px solid #e6e6e6;
@@ -30,7 +37,7 @@
   position: relative;
 }
 
-.biz-index-name {
+.biz-hot-name {
   color: #0073bb;
   font-weight: bold;
 }

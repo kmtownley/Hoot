@@ -4,6 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 
+import { updateBounds } from './actions/filter_actions';
 import { fetchBusinesses } from
 './actions/business_actions';
 
@@ -22,8 +23,5 @@ document.addEventListener("DOMContentLoaded", () => {
   window.$ = $;
   window.dispatch = store.dispatch;
   window.getState = store.getState;
-  window.fetchReviews = fetchReviews;
-  window.fetchBusiness = fetchBusiness;
-  window.createReview = createReview;
 
 });

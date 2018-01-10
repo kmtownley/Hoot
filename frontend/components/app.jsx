@@ -10,7 +10,7 @@ import BusinessIndexContainer from './businesses/business_index_container';
 import BusinessShowContainer from './businesses/business_show_container';
 import NavbarContainer from './navbar/navbar_container.jsx';
 import ReviewFormContainer from './reviews/review_form_container';
-import SearchContainer from './search/search_container'
+import SearchContainer from './search/search_container';
 
 
 const App = () => (
@@ -20,7 +20,8 @@ const App = () => (
     </header>
 
     <Switch>
-      <Route exact path="/" component={BusinessIndexContainer} />
+      <Route exact path="/" component={HomepageContainer} />
+      <Route path="/search" component={SearchContainer} />
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <ProtectedRoute path="/businesses/:businessId/reviews/new" component={ReviewFormContainer}/>

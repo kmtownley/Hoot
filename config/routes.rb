@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :businesses do
       resources :reviews, except: [:show, :destroy]
     end
+    get "/search", to: "businesses#search"
     resources :reviews, only: [:show, :destroy]
   end
 
