@@ -2,9 +2,9 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import auth_navbarContainer from '../auth_navbar/auth_nav_container';
 import BusinessIndexItem from './business_index_item';
-import HomepageContainer from '../homepage/homepage_container';
+// import HomepageContainer from '../homepage/homepage_container';
 import BusinessMap from '../business_map/business_map';
-// import SearchContainer from '../search/search_container';
+import SearchContainer from '../search/search_container';
 
 class BusinessIndex extends React.Component {
   constructor(props) {
@@ -12,22 +12,23 @@ class BusinessIndex extends React.Component {
 
   }
   componentDidMount() {
-    let query = "";
 
-    this.props.fetchBusinesses();
+    // this.props.fetchBusinesses();
   }
 
+
+
   bizListStyle() {
-    // let className;
-    // if (this.props.pathname === '/businesses/:businessId') {
-    //   return (
-    //     className = "business-index-list"
-    //   );
-    // } else {
-    //   return (
-    //     className = "biz-hot-list"
-    //   );
-    // }
+    let className;
+    if (this.props.pathname === '/businesses/:businessId') {
+      return (
+        className = "business-index-list"
+      );
+    } else {
+      return (
+        className = "biz-hot-list"
+      );
+    }
   }
 
   render() {
@@ -37,7 +38,7 @@ class BusinessIndex extends React.Component {
     return (
       <main className="business-index-container">
 
-        <ul className="business-index-item">
+        <ul>
           {
             businesses.map((business, idx) => (
               <ul key={`${idx}`}>
@@ -45,6 +46,7 @@ class BusinessIndex extends React.Component {
                   className="business-index-item"
                   key={business.id}
                   business={business}
+                  pathname={this.props.location.pathname}
                 />
               </ul>
             ))

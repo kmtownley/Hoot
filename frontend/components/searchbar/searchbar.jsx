@@ -4,23 +4,32 @@ class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      queryType: "",
-      query: ""
+      contentQuery: "",
+      areaQuery: ""
     };
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange.bind(this);
   }
 
-  handleChange(e){
-    this.setState({query: e.target.value});
+  handleChange(query){
+    return (e) => {
+     this.setState({[query]: e.target.value})
+    };
   }
 
 
   handleSubmit(e) {
+    //
+    const state1 = Object.assign({}, this.state);
+    // state1.contentQuery = state1.contentQuery.toLowercase();
+    // state1.areaQuery = s tate1.areaQuery.toLowercase();
     e.preventDefault();
-    this.props.fetchBusinesses(this.state.query).then(() => this.props.history.push('/search'));
+    this.props.fetchBusinesses(state1).then(() => this.props.history.push('/search'));
+
   }
   render() {
+
     return (
     <div className="searchbar-wrapper">
       <form
@@ -30,19 +39,20 @@ class SearchBar extends React.Component {
           className="search-type"
           type="text"
           placeholder="Find"
-          value = {this.state.query}
+          value = {this.state.contentQuery}
+          onChange={this.handleChange("contentQuery")}
         />
         <input
           className="search-text-area"
           type="text"
           placeholder="Near"
-          value={this.state.query}
-          onChange={this.handleChange}
+          value={this.state.areaQuery}
+          onChange={this.handleChange("areaQuery")}
           />
         <button
           type="submit"
-          value={this.state.query}>
-          <i class="icon-search"></i>
+          value="submit">
+          <i className="icon-search"></i>
 
         </button>
       </form>

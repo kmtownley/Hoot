@@ -11,7 +11,7 @@ export const mapStateToProps = state => {
 };
 //fill in tomorrow
 export const mapDispatchToProps = dispatch => ({
-  fetchBusinesses: (query) => dispatch(fetchBusinesses(query))
+  fetchBusinesses: (queries) => dispatch(fetchBusinesses(queries))
 });
 
 export default withRouter(connect(

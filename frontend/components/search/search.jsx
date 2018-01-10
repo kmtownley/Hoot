@@ -1,37 +1,28 @@
 import React from 'react';
-import BusinessIndex from '../businesses/business_index';
+import BusinessIndexContainer from '../businesses/business_index_container';
 import BusinessMap from '../business_map/business_map';
+
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  componentDidMount() {
+  componentDidUpdate() {
 
   }
 
   render() {
+
     const businesses = this.props.businesses;
 
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-        <input ref="search" type="search"  placeholder="Search..." />
-        <button type="submit">Go</button>
-
-        </form>
         <div className="search-businesses-container">
-          <div className="right-half">
-            <BusinessMap
+          <div className="main-search-container">
+            <BusinessIndexContainer
               businesses={businesses}
-              singleBusiness={false}
-              updateBounds={this.props.updateBounds}
-            />
-          </div>
-          <div className="left-half">
-            <BusinessIndex
-              businesses={businesses}
+              pathname={this.props.location.pathname}
           />
           </div>
       </div>

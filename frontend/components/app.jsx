@@ -21,7 +21,7 @@ const App = () => (
 
     <Switch>
       <Route exact path="/" component={HomepageContainer} />
-      <Route path="/search" component={BusinessIndexContainer} />
+      <Route path="/search" component={SearchContainer} />
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <ProtectedRoute path="/businesses/:businessId/reviews/new" component={ReviewFormContainer}/>

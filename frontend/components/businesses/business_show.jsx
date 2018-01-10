@@ -6,14 +6,17 @@ import BusinessMap from '../business_map/business_map';
 class BusinessShow extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = this.props.business;
   }
 
   componentDidMount() {
+
     this.props.fetchBusiness(this.props.match.params.businessId);
   }
 
   componentWillReceiveProps(nextProps) {
+
     if (this.props.match.params.businessId !== nextProps.match.params.businessId) {
       this.props.fetchBusinesses();
       this.props.fetchBusiness(nextProps.match.params.businessId);
@@ -66,7 +69,7 @@ class BusinessShow extends React.Component {
   }
 
   render() {
-    
+
     const business = this.props.business;
     if (!business) {
       return <div>Loading...
@@ -94,7 +97,6 @@ class BusinessShow extends React.Component {
                 business={business}
                 path={this.props.match.path}
                 singleBusiness={true}
-                fetchBusiness={fetchBusiness}
               />
               <ul className="location-container-text">
                 <li>{this.address()}</li>

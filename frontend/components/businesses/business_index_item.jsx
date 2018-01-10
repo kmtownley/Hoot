@@ -4,11 +4,13 @@ import { withRouter, Link } from 'react-router-dom';
 class BusinessIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    this.listStyle = this.listStyle.bind(this);
   }
 
   listStyle() {
+
     let className;
-    if (this.props.pathname === "/businesses/:businessId") {
+    if (this.props.pathname === "/businesses/:businessId" || this.props.pathname === "/search") {
       return (
         className = "biz-index-item"
       );
@@ -21,7 +23,7 @@ class BusinessIndexItem extends React.Component {
 
   listItemImg() {
     let bizImg;
-    if (this.props.pathname === "/businesses/:businessId") {
+    if (this.props.pathname === "/businesses/:businessId" || this.props.pathname === "/search") {
       return (
         bizImg = "biz-show-image"
       );
@@ -33,17 +35,24 @@ class BusinessIndexItem extends React.Component {
   }
 
   render() {
+
     const { biz_name, rating, cuisine, address, city, state, zipcode, image_url, price } = this.props.business;
     const business = this.props.business;
     return (
       <li
         className={this.listStyle()}
         onClick={this.handleClick}>
-        <div className={this.listItemImg()} style={{backgroundImage: `url(${image_url})`}}></div>
-        <section className="business-index-categories">
-          <Link to={`businesses/${business.id}`}  className="biz-index-name">{biz_name}</Link>
+        <div
+          className={this.listItemImg()}
+          style={{backgroundImage: `url(${image_url})`}}>
+        </div>
+        <section
+          className="business-index-categories">
+            <Link to={`businesses/${business.id}`}  className="biz-index-name">{biz_name}</Link>
           <br/>
-          <span className="rating">Rating: {rating}</span>
+          <span
+            className="rating">Rating: {rating}
+          </span>
           <br/>
           <span>{cuisine}</span>
           <div className="biz-index-city">{city}</div>

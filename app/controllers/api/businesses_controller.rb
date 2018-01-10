@@ -36,14 +36,28 @@ class Api::BusinessesController < ApplicationController
   end
 
   def index
-    
-    if (params[:query])
-      @bizName = Business.where(biz_name: params[:query])
-      @cuisineType = Business.where(cuisine: params[:query])
 
+    if (!params[:areaQuery] || !params[:contentQuery])
+      @businesses = Business.all
+
+    elsif (params[:contentQuery] != "" && params[:areaQuery] != "")
+      @bizName = Business.where(biz_name: params[:contentQuery])
+      @cuisineType = Business.where(cuisine: params[:contentQuery])
+      @bizCity = Business.where(city: params[:areaQuery])
+      @bizState = Business.where(state: params[:areaQuery])
+      @businesses = @bizCity.or(@bizState).or(@bizCity).or(@bizState)
+    elsif (params[:contentQuery] != "")
+      @bizName = Business.where("LOWER(biz_name) LIKE LOWER(:biz_name)", biz_name: "%#{params[:contentQuery]}%")
+      # Business.where("biz_name LIKE %e%")
+
+      @cuisineType = Business.where(cuisine: params[:contentQuery])
       @businesses = @bizName.or(@cuisineType)
+    elsif (params[:areaQuery] != "")
+      @bizCity = Business.where(city: params[:areaQuery])
+      @bizState = Business.where(state: params[:areaQuery])
+      @businesses = @bizCity.or(@bizState)
     else
-    @businesses = Business.all
+      @businesses = Business.all
     # bounds ? Business.in_bounds(bounds) : Business.all
     end
     render :index

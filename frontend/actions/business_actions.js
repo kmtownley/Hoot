@@ -5,13 +5,15 @@ export const RECEIVE_BUSINESS = "RECEIVE_BUSINESS";
 export const REMOVE_BUSINESS = "REMOVE_BUSINESS";
 export const RECEIVE_SEARCHED_BUSINESSES = "RECEIVE_SEARCHED_BUSINESSES";
 
-export const fetchBusinesses = (query) => dispatch => {
+export const fetchBusinesses = (queries) => dispatch => {
+
   return (
-    BizAPIUtil.fetchBusinesses(query).then(businesses => dispatch(receiveAllBusinesses(businesses)))
+    BizAPIUtil.fetchBusinesses(queries).then(businesses => dispatch(receiveAllBusinesses(businesses)))
   );
 };
 
 export const fetchBusiness = id => dispatch => {
+  
   return (
   BizAPIUtil.fetchBusiness(id).then(business => dispatch(receiveBusiness(business)))
   );
@@ -47,3 +49,5 @@ const receiveAllBusinesses = businesses => {
     businesses
   };
 };
+
+window.fetchBusinesses = fetchBusinesses;

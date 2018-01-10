@@ -1,8 +1,8 @@
-export const fetchBusinesses = (query) => {
+export const fetchBusinesses = (queries) => {
   return $.ajax({
     method: "GET",
     url: 'api/businesses',
-    data: { query }
+    data: queries
   });
 };
 
@@ -35,3 +35,5 @@ export const deleteBusiness = businessId => (
     url: `apu/businesses/${businessId}`
   })
 );
+
+window.fetchBusinesses = fetchBusinesses;

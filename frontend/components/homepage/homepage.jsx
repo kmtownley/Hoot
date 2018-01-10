@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import Searchbar from '../searchbar/searchbar';
+import SearchbarContainer from '../searchbar/searchbar_container';
 import BusinessIndexContainer from '../businesses/business_index_container';
 import BusinessIndexItem from '../businesses/business_index_item';
 
@@ -47,9 +47,8 @@ export default class Homepage extends React.Component {
           </Link>
         </div>
         <div className="home-search-bar">
-          <Searchbar
+          <SearchbarContainer
             className="searchbar-container"
-            businesses={this.props.businesses}
           />
         </div>
         <section
