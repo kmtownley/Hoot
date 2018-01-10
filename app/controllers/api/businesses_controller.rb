@@ -43,7 +43,7 @@ class Api::BusinessesController < ApplicationController
     elsif (params[:contentQuery] != "" && params[:areaQuery] != "")
       @bizName = Business.where(biz_name: params[:contentQuery])
       @cuisineType = Business.where(cuisine: params[:contentQuery])
-      @bizCity = Business.where(city: params[:areaQuery])
+      @bizCity = Business.where("LOWER(city) LIKE LOWER(:city)", city: "%#{params[:areaQuery]}%")
       @bizState = Business.where(state: params[:areaQuery])
       @businesses = @bizCity.or(@bizState).or(@bizCity).or(@bizState)
     elsif (params[:contentQuery] != "")

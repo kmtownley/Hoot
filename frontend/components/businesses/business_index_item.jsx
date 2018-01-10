@@ -5,6 +5,8 @@ class BusinessIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.listStyle = this.listStyle.bind(this);
+    this.categoryStyle = this.categoryStyle.bind(this);
+    this.bizNameStyle = this.bizNameStyle.bind(this);
   }
 
   listStyle() {
@@ -34,6 +36,32 @@ class BusinessIndexItem extends React.Component {
     }
   }
 
+  categoryStyle() {
+    let categoryStyle;
+    if (this.props.pathname === "/businesses/:businessId" || this.props.pathname === "/search") {
+      return (
+        categoryStyle= "biz-show-categories"
+      );
+    } else {
+      return (
+      categoryStyle = "hot-biz-category"
+      )
+    }
+  }
+
+  bizNameStyle() {
+    let bizNameStyle;
+    if (this.props.pathname === "/businesses/:businessId" || this.props.pathname === "/search") {
+      return (
+        bizNameStyle = "biz-index-name"
+      );
+    } else {
+      return (
+        bizNameStyle = "biz-hot-name"
+      );
+    }
+  }
+
   render() {
 
     const { biz_name, rating, cuisine, address, city, state, zipcode, image_url, price } = this.props.business;
@@ -47,8 +75,8 @@ class BusinessIndexItem extends React.Component {
           style={{backgroundImage: `url(${image_url})`}}>
         </div>
         <section
-          className="business-index-categories">
-            <Link to={`businesses/${business.id}`}  className="biz-index-name">{biz_name}</Link>
+          className={this.categoryStyle()}>
+            <Link to={`businesses/${business.id}`}  className={this.bizNameStyle()}>{biz_name}</Link>
           <br/>
           <span
             className="rating">Rating: {rating}

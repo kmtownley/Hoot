@@ -1,17 +1,28 @@
-
-
 .biz-index-item {
   border-top: 1px solid #e6e6e6;
   padding-top: 17px;
-  width: 400px;
+  width: 630px;
+  display: flex;
 }
 
 .biz-show-image {
   border-radius: 4px;
   height: 90px;
   width: 90px;
+  background-size: cover;
+  background-position: center;
 }
 
 .search-business-container {
   width: 400px;
+}
+
+.biz-show-categories {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+.biz-index-name {
+  color: #0073bb;
 }
