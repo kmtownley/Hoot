@@ -13,7 +13,7 @@ class Search extends React.Component {
 
   render() {
     const businesses = this.props.businesses;
-    debugger
+
     return (
       <div>
         <form onSubmit={this.handleSubmit}>

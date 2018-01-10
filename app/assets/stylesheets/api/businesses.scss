@@ -5,7 +5,12 @@
 
 
 .business-index-container {
-
+  width: 990px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  padding-top: 15px;
+  padding-bottom: 36px;
 }
 
 .biz-index-title {

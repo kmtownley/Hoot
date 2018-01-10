@@ -9,18 +9,18 @@ import BusinessMap from '../business_map/business_map';
 class BusinessIndex extends React.Component {
   constructor(props) {
     super(props);
-    debugger
+    
   }
   componentDidMount() {
     let query = "";
-    debugger
+    
     this.props.fetchBusinesses();
   }
 
   render() {
 
     const businesses = this.props.businesses;
-    debugger
+    
     return (
       <main className="business-index-container">
 

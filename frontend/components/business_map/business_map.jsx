@@ -42,7 +42,7 @@ class BusinessMap extends React.Component {
   }
 
   updateBounds() {
-    debugger
+
     let latLng = this.map.getBounds();
 
     let ne = latLng.getNorthEast();
@@ -72,15 +72,30 @@ class BusinessMap extends React.Component {
   //     search: `lat=${coords.lat}&lng=${coords.lng}`
   //   });
   // }
+  mapStyle() {
 
+    let classStyle;
+    let mapContainer;
+    if (this.props.pathname === '/businesses/:businessId') {
+      return (
+        classStyle="map-box"
+      );
+    } else {
+      return (
+        classStyle="search-map-box"
+      );
+    }
+  }
 
 
   render() {
-
+    debugger
     return (
-      <div className="map-box">
+      <section className="search-map-container">
+      <div className={this.mapStyle()}>
         <div id="map" ref={ map => this.mapNode = map }> </div>
       </div>
+      </section>
     );
   }
 }

@@ -17,7 +17,7 @@ export default class Homepage extends React.Component {
   }
 
   awesomeBizs() {
-    debugger
+
     let hotBizs;
     return (
         <main className="business-index-list">
