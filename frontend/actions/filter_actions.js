@@ -10,6 +10,6 @@ export const changeBounds = (bounds, value) => ({
 
 export const updateBounds = (bounds, value) => (dispatch, getState) => {
   debugger
-  return dispatch(changeBounds(bounds, value));
-  //return fetchBusinesses(getState().bounds)(dispatch);
+  dispatch(changeBounds(bounds, value));
+  return fetchBusinesses(getState().bounds)(dispatch);
 };

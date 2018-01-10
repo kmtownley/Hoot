@@ -13,8 +13,12 @@ export default class Homepage extends React.Component {
         </div>
         <div className="home-search-bar">
         </div>
-        <BusinessIndexContainer />
-        
+
+        <section
+          className="biz-index-title">
+          Hot & Awesome Businesses
+        </section>
+
       </main>
     );
   }

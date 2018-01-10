@@ -21,11 +21,7 @@ class Api::BusinessesController < ApplicationController
   end
 
   def search
-    @bizName = Business.where(biz_name: params[:query])
-    @cuisineType = Business.where(cuisineType: params[:query])
-    debugger
-    @businesses = @bizName.or(@cuisineType)
-    render json: :index
+
   end
 
   def update
@@ -40,8 +36,16 @@ class Api::BusinessesController < ApplicationController
   end
 
   def index
+    if (params[:query])
+      @bizName = Business.where(biz_name: params[:query])
+      @cuisineType = Business.where(cuisine: params[:query])
+      debugger
+      @businesses = @bizName.or(@cuisineType)
+
+    else
     @businesses = Business.all
     # bounds ? Business.in_bounds(bounds) : Business.all
+    end
     render :index
   end
 

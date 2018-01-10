@@ -4,7 +4,8 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  top: -1; 
+  top: -1;
+  margin-bottom: 25px;
 }
 
 .logo-title {
@@ -21,7 +22,131 @@
   width: 100%;
   height: 50%;
   z-index: -1;
+  position: relative
+}
+
+.biz-index-title {
+  color: #d32323;
+  text-align: center;
+  margin-bottom: 12px;
+  margin-top: 380px;
+}
+
+.business-index-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.business-index-item {
+  width: 330px;
+  height: 320px;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  background: #fff;
+  margin: 10px;
+  padding: 12px 12px;
   position: relative;
+}
 
+.biz-index-name {
+  color: #0073bb;
+  font-weight: bold;
+}
 
+.biz-index-name:hover {
+  text-decoration: underline;
+}
+
+.biz-image-2 {
+  height: 170px;
+  padding-bottom: 10px;
+  background-size: cover;
+  background-position: center;
+}
+
+.biz-content-container {
+  width: 980px;
+  margin: 0 auto;
+  padding: 10px 40px 0 40px;
+
+}
+.biz-show-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 13px;
+  font-size: 16px;
+  line-height: 1.3125em;
+}
+
+.biz-header-container {
+  display: flex;
+  align-items: center;
+}
+.biz-header {
+
+  width: 500px;
+  padding-right: 30px;
+}
+
+.biz-header li {
+  margin-right: 6px;
+  margin-top: 9px;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.biz-show-title {
+  display: inline;
+  padding-top: 0;
+  margin-bottom: 6px;
+  text-shadow: 0 1px rgba(255,255,255,0.7);
+
+  font-weight: bold;
+  margin-bottom: 6px;
+  font-size: 30px;
+  line-height: 1.2em;
+  color: #333;
+}
+
+.biz-cuisine {
+  color: #0073bb;
+  margin-bottom: 12px;
+}
+
+.location {
+  display: flex
+}
+
+.biz-image {
+  height: 250px;
+  width: 250px;
+  display: flex;
+
+}
+
+.business-index-map {
+  padding: 5px;
+  background: #fff;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.business-index-map img {
+  height: 100%;
+  width: 100%;
+}
+
+.business-index-map div {
+  display: flex;
+  align-self: center;
 }
