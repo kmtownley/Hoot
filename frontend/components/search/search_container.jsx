@@ -6,6 +6,7 @@ import { logout } from '../../actions/session_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
+  debugger
   return {
     businesses: Object.values(state.entities.businesses),
     currentUser: state.session.currentUser
@@ -13,10 +14,10 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-
+  debugger
   return {
-  updateBounds: (filter, value) => dispatch(updateBounds(filter, value)),
-  fetchBusinesses: (filters) => dispatch(fetchBusinesses(filters)),
+  updateBounds: (bounds) => dispatch(updateBounds(bounds)),
+  fetchBusinesses: () => dispatch(fetchBusinesses()),
   searchBusinesses: query => dispatch(searchBusinesses(query)),
   clearErrors: () => dispatch(clearErrors())
   };

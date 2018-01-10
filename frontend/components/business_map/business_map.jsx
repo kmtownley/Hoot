@@ -12,6 +12,7 @@ import MarkerManager from '../../util/marker_manager';
 class BusinessMap extends React.Component {
   constructor(props) {
     super(props);
+    this.updateBounds = this.updateBounds.bind(this);
   }
 
   componentDidMount() {
@@ -32,35 +33,37 @@ class BusinessMap extends React.Component {
     // wrap the mapDOMNode in a Google Map
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
-
+    this.map.addListener("idle", this.updateBounds);
     this.MarkerManager.updateMarkers(this.props.businesses);
-    // this.addMapListeners();
   }
 
-  addMapListeners() {
-    const that = this
-    google.maps.event.addListener(this.map, 'idle', () => {
-      const { north, south, east, west } = this.map.getBounds().toJSON();
-      const bounds = {
-        northEast: { lat:north, lng: east },
-        southWest: { lat: south, lng: west } };
-        
-      that.props.updateBounds('bounds', bounds);
+  componentsWillReceiveProps(newProps) {
+    this.MarkerManager.updateMarkers(newProps.businesses);
+  }
+
+  updateBounds() {
+    debugger
+    let latLng = this.map.getBounds();
+
+    let ne = latLng.getNorthEast();
+    let sw = latLng.getSouthWest();
+
+    this.props.updateBounds({
+      north: ne.lat(),
+      east: ne.lng(),
+      south: sw.lat(),
+      west: sw.lng()
     });
-    // google.maps.event.addListener(this.map, 'click', (event) => {
-    //   const coords = getCoordsObj(event.latLng);
-    //   this.handleClick(coords);
-    // });
   }
 
   componentDidUpdate() {
-    if (this.props.singleBusiness) {
-      const targetBusinessKey = Object.key(this.props.businesses[0]);
-      const targetBusiness = this.props.businesses[targetBusinessKey];
-      this.MarkerManager.updateMarkers([targetBusiness]);
-    } else {
-      this.MarkerManager.updateMarkers(this.props.businesses);
-    }
+    // if (this.props.singleBusiness) {
+    //   const targetBusinessKey = Object.key(this.props.businesses[0]);
+    //   const targetBusiness = this.props.businesses[targetBusinessKey];
+    //   this.MarkerManager.updateMarkers([targetBusiness]);
+    // } else {
+    //   this.MarkerManager.updateMarkers(this.props.businesses);
+    // }
   }
 
   // handleClick(coords) {
@@ -78,8 +81,8 @@ class BusinessMap extends React.Component {
       <div className="map-box">
         <div id="map" ref={ map => this.mapNode = map }> </div>
       </div>
-    )
+    );
   }
 }
 
-export default BusinessMap;
+export default withRouter(BusinessMap);
