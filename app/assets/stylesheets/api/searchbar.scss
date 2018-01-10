@@ -1,0 +1,25 @@
+.home-search-bar {
+  display: flex;
+  justify-content: center;
+}
+.searchbar-wrapper {
+  align-self: center;
+  height: 40px;
+  width: 100%;
+  margin: 10px 225px 10px 225px;
+  padding: 15px;
+}
+
+.searchbar-form {
+  border-radius: 4px 0 0 4px;
+  position: relative;
+  padding: 11px;
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+  background: #fff;
+}
+
+.searchbar-form input {
+  width: 400px;
+}

@@ -39,9 +39,8 @@ class Api::BusinessesController < ApplicationController
     if (params[:query])
       @bizName = Business.where(biz_name: params[:query])
       @cuisineType = Business.where(cuisine: params[:query])
-      debugger
-      @businesses = @bizName.or(@cuisineType)
 
+      @businesses = @bizName.or(@cuisineType)
     else
     @businesses = Business.all
     # bounds ? Business.in_bounds(bounds) : Business.all

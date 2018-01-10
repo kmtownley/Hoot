@@ -44,7 +44,7 @@ class BusinessMap extends React.Component {
       const bounds = {
         northEast: { lat:north, lng: east },
         southWest: { lat: south, lng: west } };
-        debugger
+        
       that.props.updateBounds('bounds', bounds);
     });
     // google.maps.event.addListener(this.map, 'click', (event) => {

@@ -11,21 +11,16 @@ class BusinessIndex extends React.Component {
     super(props);
   }
   componentDidMount() {
-    debugger
+    
     this.props.fetchBusinesses();
   }
 
   render() {
 
     const businesses = this.props.businesses;
-    debugger
+    
     return (
       <main className="business-index-container">
-
-        <section
-          className="biz-index-title">
-          Hot & Awesome Businesses
-        </section>
 
         <ul className="business-index-list">
           {
