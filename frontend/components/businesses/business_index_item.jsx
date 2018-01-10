@@ -12,7 +12,7 @@ class BusinessIndexItem extends React.Component {
   }
 
   render() {
-    const { biz_name, rating, cuisine, address, city, state, zipcode, image_url } = this.props.business;
+    const { biz_name, rating, cuisine, address, city, state, zipcode, image_url, price } = this.props.business;
     const business = this.props.business;
     return (
       <li

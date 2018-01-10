@@ -17,7 +17,7 @@ class Search extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-        <input ref="srch" type="search"  placeholder="Search..." />
+        <input ref="search" type="search"  placeholder="Search..." />
         <button type="submit">Go</button>
 
         </form>

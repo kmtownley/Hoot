@@ -18,8 +18,38 @@
   border: none;
   border-radius: 0;
   background: #fff;
+  display: flex;
+  flex-direction: row;
 }
 
 .searchbar-form input {
+  font-size: 18px
+}
+
+.search-type {
+  width: 500px;
+  border-right: 1px solid #999;
+}
+.search-text-area  {
+  float: right;
   width: 400px;
+  padding-left: 6px;
+}
+
+.searchbar-form button {
+  display: flex;
+  background: #d90007;
+  border-radius: 0 4px 4px 0;
+  border: 0;
+  padding: 14px 20px 13px;
+  box-shadow: none;
+}
+
+.searchbar-form button:hover {
+  background: #be2020
+}
+
+.searchbar-form button i {
+  width: 10px;
+  height: 10px;
 }
