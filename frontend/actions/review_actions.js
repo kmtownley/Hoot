@@ -3,6 +3,7 @@ import * as ReviewAPIUtil from '../util/review_api_util';
 export const RECEIVE_ALL_REVIEWS = "RECEIVE_ALL_REVIEWS";
 export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
 export const REMOVE_REVIEW = "REMOVE_REVIEW";
+export const RECEIVE_REVIEW_ERRORS = "RECEIVE_REVIEW_ERRORS";
 
 export const fetchReviews = businessId => dispatch => {
   return (
@@ -18,7 +19,7 @@ export const fetchReview = id => dispatch => {
 
 export const createReview = review => dispatch => {
   return (
-    ReviewAPIUtil.createReview(review).then(review = dispatch(receiveReview(review)))
+    ReviewAPIUtil.createReview(review).then(review = dispatch(receiveReview(review)), err => dispatch(receiveErrors(err.responseJSON)))
   );
 };
 
@@ -43,7 +44,11 @@ const receiveAllReviews = reviews => ({
     reviews
 });
 
-window.fetchReviews = fetchReviews;
-window.fetchReview = fetchReview;
-window.deleteReview = deleteReview;
-window.createReview = createReview;
+export const receiveErrors = err => ({
+  type: RECEIVE_REVIEW_ERRORS,
+  err
+});
+
+export const clearErrors = () => (
+  {type: CLEAR_ERRORS}
+);

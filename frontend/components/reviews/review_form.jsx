@@ -7,6 +7,7 @@ class ReviewForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = this.props.review;
     this.starText = this.starText.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
 
   }
 
@@ -38,9 +39,24 @@ class ReviewForm extends React.Component {
     };
   }
 
+  renderErrors() {
+    debugger
+    return(
+      <ul className="review-errors-container">
+        {this.props.errors.map((error, idx) => (
+          <li className="review-errors" key={`${idx}`}>
+            <img src={window.staticImages.errorImage} />
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   handleSubmit(e) {
+    debugger
     e.preventDefault();
-    this.props.action(this.state).then(() => this.props.history.push('/'));
+    this.props.action(this.state).then(() => this.props.history.push('/businesses/:businessId'));
   }
 
   starText(value) {
@@ -124,34 +140,38 @@ class ReviewForm extends React.Component {
     };
    const text = this.props.formType === 'new' ? "Write a Review" : "Update Review";
    return (
-     <div className="review-form-container">
+     <div className="review-main">
        <h2 className="review-form-type">{text}</h2>
        <h3
          className = "review-form-title">{this.props.business.biz_name}
        </h3>
-
+       <ul>
+         <li>{this.renderErrors()}</li>
+       </ul>
        <form
-         className="review-input-container" onSubmit={this.handleSubmit}>
-         <div className="review-star-container">
-             {this.starReview()}
-             <label>
-               {this.starText(this.state.user_rating)}
-             </label>
-         </div>
+         className="review-form-container" onSubmit={this.handleSubmit}>
+         <div className="review-input-container">
+           <div className="review-star-container">
+               {this.starReview()}
+               <label>
+                 {this.starText(this.state.user_rating)}
+               </label>
+           </div>
 
-         <label>
-           <textarea className="review-body"
-             value={this.state.body}
-             placeholder="Your review will help others find great local businesses. Please don't review this business if you have received a freebie or are in anyway connected to the establishment :)"
-             onChange={this.update('body')} />
-         </label>
+           <label>
+             <textarea className="review-body"
+               value={this.state.body}
+               placeholder="Your review will help others find great local businesses. Please don't review this business if you have received a freebie or are in anyway connected to the establishment :)"
+               onChange={this.update('body')} />
+           </label>
 
-         <div className="review-form-button-container">
-           <button
-             className="submit-review-button"
-             type="submit"
-             value="submit">{text}
-           </button>
+           <div className="review-form-button-container">
+             <button
+               className="submit-review-button"
+               type="submit"
+               value="submit">{text}
+             </button>
+            </div>
           </div>
          </form>
 

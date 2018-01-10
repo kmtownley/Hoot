@@ -11,6 +11,7 @@ import BusinessShowContainer from './businesses/business_show_container';
 import NavbarContainer from './navbar/navbar_container.jsx';
 import ReviewFormContainer from './reviews/review_form_container';
 import SearchContainer from './search/search_container';
+import UserShowContainer from "./user/user_show_container";
 
 
 const App = () => (
@@ -24,6 +25,7 @@ const App = () => (
       <Route path="/search" component={SearchContainer} />
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
+      <ProtectedRoute exact path="/user" component={UserShowContainer} />
       <ProtectedRoute path="/businesses/:businessId/reviews/new" component={ReviewFormContainer}/>
       <Route exact path="/businesses/:businessId" component={BusinessShowContainer}/>
     </Switch>

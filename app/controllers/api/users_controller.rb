@@ -10,11 +10,26 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if (current_user.id != @user.id)
+      render json: ["You can only update your own profile silly"]
+    elsif (@user.update(user_params))
+      render :show
+    else
+      render json: @user.errros.full_messages, status, 422
+    end
+  end
+
   def destroy
   end
 
   private
   def user_params
-    params.require(:user).permit(:email, :password, :first_name, :last_name, :city, :state)
+    params.require(:user).permit(:email, :password, :first_name, :last_name, :city, :state, :zipcode, :image_url)
   end
 end

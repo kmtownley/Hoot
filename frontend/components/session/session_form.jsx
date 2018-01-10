@@ -15,6 +15,7 @@ class SessionForm extends React.Component {
     this.handleDemo = this.handleDemo.bind(this);
     this.nameInputs = this.nameInputs.bind(this);
     this.clearInputs = this.clearInputs.bind(this);
+    this.signUpInfo = this.signUpInfo.bind(this);
   }
 
 
@@ -125,6 +126,20 @@ class SessionForm extends React.Component {
     )
   }
 
+  signUpInfo() {
+    if (this.props.formType === "/signup") {
+      return (
+        <input
+          className="login-input"
+          type="text"
+          placeholder="Zipcode"
+          value={this.state.zipcode}
+          onChange={this.update('zipcode')}
+        />
+      );
+    }
+  }
+
 
 
   render() {
@@ -165,6 +180,9 @@ class SessionForm extends React.Component {
                     value={this.state.password}
                     onChange={this.update('password')}
                   />
+                </label>
+                <label>
+                  {this.signUpInfo()}
                 </label>
                 <br/>
                   <input
