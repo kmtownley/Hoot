@@ -3,7 +3,10 @@ import React from 'react';
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { query: ""};
+    this.state = {
+      queryType: "",
+      query: ""
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange.bind(this);
   }
@@ -27,12 +30,14 @@ class SearchBar extends React.Component {
           className="search-type"
           type="text"
           placeholder="Find"
-            />
+          value = {this.state.query}
+        />
         <input
           className="search-text-area"
           type="text"
           placeholder="Near"
-
+          value={this.state.query}
+          onChange={this.handleChange}
           />
         <button
           type="submit"

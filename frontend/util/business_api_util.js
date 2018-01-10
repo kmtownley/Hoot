@@ -1,10 +1,10 @@
-export const fetchBusinesses = (query) => (
-  $.ajax({
+export const fetchBusinesses = (query) => {
+  return $.ajax({
     method: "GET",
     url: 'api/businesses',
     data: { query }
-  })
-);
+  });
+};
 
 export const fetchBusiness = id => (
   $.ajax({
@@ -35,7 +35,3 @@ export const deleteBusiness = businessId => (
     url: `apu/businesses/${businessId}`
   })
 );
-
-window.fetchBusinesses = fetchBusinesses;
-window.fetchBusiness = fetchBusiness;
-window.deleteBusiness = deleteBusiness;

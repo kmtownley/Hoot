@@ -9,22 +9,35 @@ import BusinessMap from '../business_map/business_map';
 class BusinessIndex extends React.Component {
   constructor(props) {
     super(props);
-    
+
   }
   componentDidMount() {
     let query = "";
-    
+
     this.props.fetchBusinesses();
+  }
+
+  bizListStyle() {
+    // let className;
+    // if (this.props.pathname === '/businesses/:businessId') {
+    //   return (
+    //     className = "business-index-list"
+    //   );
+    // } else {
+    //   return (
+    //     className = "biz-hot-list"
+    //   );
+    // }
   }
 
   render() {
 
     const businesses = this.props.businesses;
-    
+
     return (
       <main className="business-index-container">
 
-        <ul className="business-index-list">
+        <ul className="business-index-item">
           {
             businesses.map((business, idx) => (
               <ul key={`${idx}`}>

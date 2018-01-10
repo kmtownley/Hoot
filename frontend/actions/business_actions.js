@@ -5,9 +5,9 @@ export const RECEIVE_BUSINESS = "RECEIVE_BUSINESS";
 export const REMOVE_BUSINESS = "REMOVE_BUSINESS";
 export const RECEIVE_SEARCHED_BUSINESSES = "RECEIVE_SEARCHED_BUSINESSES";
 
-export const fetchBusinesses = () => dispatch => {
+export const fetchBusinesses = (query) => dispatch => {
   return (
-    BizAPIUtil.fetchBusinesses().then(businesses => dispatch(receiveAllBusinesses(businesses)))
+    BizAPIUtil.fetchBusinesses(query).then(businesses => dispatch(receiveAllBusinesses(businesses)))
   );
 };
 

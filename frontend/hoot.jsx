@@ -23,9 +23,5 @@ document.addEventListener("DOMContentLoaded", () => {
   window.$ = $;
   window.dispatch = store.dispatch;
   window.getState = store.getState;
-  window.fetchReviews = fetchReviews;
-  window.fetchBusiness = fetchBusiness;
-  window.createReview = createReview;
-  window.updateBounds = updateBounds;
 
 });

@@ -89,7 +89,7 @@ class BusinessMap extends React.Component {
 
 
   render() {
-    debugger
+
     return (
       <section className="search-map-container">
       <div className={this.mapStyle()}>

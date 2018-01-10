@@ -8,7 +8,6 @@ class BusinessIndexItem extends React.Component {
 
   listStyle() {
     let className;
-    let biz_image;
     if (this.props.pathname === "/businesses/:businessId") {
       return (
         className = "biz-index-item"
@@ -20,6 +19,19 @@ class BusinessIndexItem extends React.Component {
     }
   }
 
+  listItemImg() {
+    let bizImg;
+    if (this.props.pathname === "/businesses/:businessId") {
+      return (
+        bizImg = "biz-show-image"
+      );
+    } else {
+      return (
+      bizImg =  "biz-hot-img"
+      );
+    }
+  }
+
   render() {
     const { biz_name, rating, cuisine, address, city, state, zipcode, image_url, price } = this.props.business;
     const business = this.props.business;
@@ -27,7 +39,7 @@ class BusinessIndexItem extends React.Component {
       <li
         className={this.listStyle()}
         onClick={this.handleClick}>
-        <div className="biz-image-2" style={{backgroundImage: `url(${image_url})`}}></div>
+        <div className={this.listItemImg()} style={{backgroundImage: `url(${image_url})`}}></div>
         <section className="business-index-categories">
           <Link to={`businesses/${business.id}`}  className="biz-index-name">{biz_name}</Link>
           <br/>

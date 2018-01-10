@@ -7,7 +7,7 @@ export const mapStateToProps = state => {
 
   return {
   businesses: Object.values(state.entities.businesses)
-};
+  };
 };
 //fill in tomorrow
 export const mapDispatchToProps = dispatch => ({

@@ -36,6 +36,7 @@ class Api::BusinessesController < ApplicationController
   end
 
   def index
+    
     if (params[:query])
       @bizName = Business.where(biz_name: params[:query])
       @cuisineType = Business.where(cuisine: params[:query])
