@@ -4,11 +4,20 @@ import { withRouter, Link } from 'react-router-dom';
 class BusinessIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
-
+  listStyle() {
+    let className;
+    let biz_image;
+    if (this.props.pathname === "/businesses/:businessId") {
+      return (
+        className = "biz-index-item"
+      );
+      } else {
+      return (
+        className = "biz-hot-item"
+      );
+    }
   }
 
   render() {
@@ -16,7 +25,7 @@ class BusinessIndexItem extends React.Component {
     const business = this.props.business;
     return (
       <li
-        className="business-index-item"
+        className={this.listStyle()}
         onClick={this.handleClick}>
         <div className="biz-image-2" style={{backgroundImage: `url(${image_url})`}}></div>
         <section className="business-index-categories">
@@ -29,7 +38,7 @@ class BusinessIndexItem extends React.Component {
           <br/>
         </section>
       </li>
-    )
+    );
   }
 
 }
