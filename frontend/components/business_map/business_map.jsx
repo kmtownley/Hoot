@@ -17,14 +17,11 @@ class BusinessMap extends React.Component {
   }
 
   componentDidMount() {
-
     let mapOptions;
-
     if (this.props.path === "/businesses/:businessId") {
       mapOptions = {
         center : { lat: this.props.business.latitude, lng: this.props.business.longitude},
-        zoom: 13
-
+        zoom: 16
       };
     } else {
       mapOptions = {

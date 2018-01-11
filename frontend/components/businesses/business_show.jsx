@@ -6,7 +6,6 @@ import BusinessMap from '../business_map/business_map';
 class BusinessShow extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = this.props.business;
   }
 

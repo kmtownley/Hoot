@@ -3,6 +3,7 @@ import React from 'react';
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
+    debugger
     this.state = {
       contentQuery: "",
       areaQuery: ""
@@ -10,6 +11,7 @@ class SearchBar extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange.bind(this);
+    this.switchContainerStyle = this.switchContainerStyle.bind(this);
   }
 
   handleChange(query){
@@ -25,10 +27,24 @@ class SearchBar extends React.Component {
     this.props.history.push(`/search?contentQuery=${this.state.contentQuery}&areaQuery=${this.state.areaQuery}`);
 
   }
+
+  switchContainerStyle() {
+    debugger
+    let className;
+    if (this.props.businesses.length === 1 || this.props.location.pathname === '/search' ) {
+      return (
+        className = "nav-searchbar"
+      );
+    } else {
+      return (
+        className = "searchbar-wrapper"
+      );
+    }
+  }
   render() {
 
     return (
-    <div className="searchbar-wrapper">
+    <div className={this.switchContainerStyle()}>
       <form
         className="searchbar-form"
         onSubmit={this.handleSubmit}>

@@ -7,13 +7,13 @@
   height: 40px;
   width: 100%;
   margin: 10px 225px 10px 225px;
-  padding: 15px;
+  padding: 60px;
 }
 
 .searchbar-form {
   border-radius: 4px 0 0 4px;
   position: relative;
-  padding: 11px;
+  padding: 8px;
   box-shadow: none;
   border: none;
   border-radius: 0;
@@ -52,4 +52,9 @@
 .searchbar-form button i {
   width: 10px;
   height: 10px;
+}
+
+.nav-searchbar {
+  width: 650px;
+  margin-bottom: 2px;
 }

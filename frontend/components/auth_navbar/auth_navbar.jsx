@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SearchBarContainer from '../searchbar/searchbar_container';
 
 
 const AuthNavbar = (props) => {
@@ -10,7 +11,7 @@ const AuthNavbar = (props) => {
     <Link to="/" className="hoot-logo">
       <img src={window.staticImages.headerImage} />
     </Link>
-  )
+  );
 
   const logout = (
     <button
@@ -41,7 +42,7 @@ const AuthNavbar = (props) => {
 
   if (props.location.pathname === '/') {
     navClass = "nav-landing";
-  } else if (props.location.pathname === '/businesess/:business_id') {
+  } else if (props.location.pathname === '/businesess/') {
     navClass = "nav-business-show";
   } else {
     navClass = 'nav-regular';
@@ -53,11 +54,12 @@ const AuthNavbar = (props) => {
         {hootLogo}
         {logout}
       </div>
-    )
+    );
   } else if (props.currentUser && navClass !== "nav-landing")  {
     navContents = (
       <div className="hoot-logo-container-left">
         {hootLogo}
+          <SearchBarContainer />
         <div className="profile-logout-container">
         {profile}
         {logout}
@@ -81,6 +83,9 @@ const AuthNavbar = (props) => {
     navContents =
     <div className="hoot-logo-container-left">
       {hootLogo}
+      <div className="nav-searchbar">
+        <SearchBarContainer />
+      </div>
       <div className="signup-signin-no-user">
         <nav className="login-no-user">
           <Link to="/login"> Login </Link>
