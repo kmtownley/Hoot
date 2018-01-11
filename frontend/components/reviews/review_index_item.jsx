@@ -33,6 +33,10 @@ class ReviewIndexItem extends React.Component {
   }
 
 
+
+
+
+
   render() {
     const date = dateFormat(this.props.review.created_at, 'mm/dd/yyyy');
     return (
@@ -42,8 +46,7 @@ class ReviewIndexItem extends React.Component {
                 {this.userInfo()}
               <div>
                 <div className="star-rating-container">
-                  <div className="star-rating">
-                    Rating: {this.props.review.user_rating}
+                  <div className={`star-rating-${this.props.review.user_rating}`}>
                   </div>
                   <div className="review-date">
                     {date}

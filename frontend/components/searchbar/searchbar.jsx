@@ -22,6 +22,7 @@ class SearchBar extends React.Component {
 
 
   handleSubmit(e) {
+    debugger
     const state1 = Object.assign({}, this.state);
     e.preventDefault();
     this.props.history.push(`/search?contentQuery=${this.state.contentQuery}&areaQuery=${this.state.areaQuery}`);
@@ -29,7 +30,6 @@ class SearchBar extends React.Component {
   }
 
   switchContainerStyle() {
-    debugger
     let className;
     if (this.props.location.pathname.length === 15 || this.props.location.pathname === '/search' ) {
       return (
