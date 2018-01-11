@@ -17,7 +17,7 @@ class BusinessMap extends React.Component {
   }
 
   componentDidMount() {
-    
+
     let mapOptions;
 
     if (this.props.path === "/businesses/:businessId") {
@@ -37,6 +37,7 @@ class BusinessMap extends React.Component {
     this.MarkerManager = new MarkerManager(this.map);
     this.map.addListener("idle", this.updateBounds);
     this.MarkerManager.updateMarkers(this.props.businesses);
+    // this.MarkerManager.markers;
   }
 
   componentsWillReceiveProps(newProps) {
@@ -88,16 +89,6 @@ class BusinessMap extends React.Component {
       );
     }
   }
-
-  // addInfoWindow(marker, message) {
-  //
-  //   let content = "Let's try it out"
-  //   let infoWindow = new google.maps.InfoWindow({
-  //       content: "here is a business"
-  //   }
-  // };
-
-
 
   render() {
 

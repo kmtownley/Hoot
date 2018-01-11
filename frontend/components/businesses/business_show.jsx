@@ -37,7 +37,7 @@ class BusinessShow extends React.Component {
             <div>{business.zipcode}</div>
           </div>
         </span>
-    )
+    );
   }
 
   phone() {
@@ -47,7 +47,7 @@ class BusinessShow extends React.Component {
         <i className="fa fa-phone fa-2x"></i>
         <div>{business.phone_number}</div>
       </div>
-    )
+    );
   }
 
   reviewButton() {
@@ -55,7 +55,7 @@ class BusinessShow extends React.Component {
       <div>
         <Link className="write-review-button" to={`/businesses/${this.props.business.id}/reviews/new`}>Write a Review</Link>
       </div>
-    )
+    );
   }
 
   businessDetails() {
@@ -65,7 +65,7 @@ class BusinessShow extends React.Component {
           <div>Soon to be Details</div>
         </ul>
       </div>
-    )
+    );
   }
 
   render() {

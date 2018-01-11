@@ -8,6 +8,14 @@ class Search extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    const areaQuery = this.props.location.search.slice(this.props.location.search.indexOf("areaQuery" + 10));
+
+    const contentQuery = this.props.location.search.slice(this.props.location.search.indexOf("contentQuery=" + 13));
+
+    this.props.fetchBusinesses(contentQuery, areaQuery);
+  }
+
   componentDidUpdate() {
 
   }

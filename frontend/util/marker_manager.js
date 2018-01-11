@@ -7,15 +7,12 @@ export default class MarkerManager {
   }
 
   updateMarkers(businesses){
-
-    // Object.keys(businesses).forEach( key => {
-    //   let latLng = { lat: businesses[key].latitude, lng: businesses[key].longitude};
     Object.values(businesses).forEach(business => {
+      this.markers.push(this.createMarkerFromBusiness(business));
 
-      this.markers.push(this.createMarkerFromBusiness(business)).bind(this);
-      
     });
   }
+
 
   createMarkerFromBusiness(business) {
     const position = { lat: business.latitude, lng: business.longitude };
@@ -23,5 +20,12 @@ export default class MarkerManager {
       position,
       map: this.map,
     });
+    let infoWindow = new google.maps.InfoWindow({
+        content: business.biz_name
+    });
+    marker.addListener('click', () => {
+      infoWindow.open(this.map, marker);
+    });
+    return marker;
   }
 }

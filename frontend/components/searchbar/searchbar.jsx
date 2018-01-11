@@ -14,18 +14,15 @@ class SearchBar extends React.Component {
 
   handleChange(query){
     return (e) => {
-     this.setState({[query]: e.target.value})
+     this.setState({[query]: e.target.value});
     };
   }
 
 
   handleSubmit(e) {
-    //
     const state1 = Object.assign({}, this.state);
-    // state1.contentQuery = state1.contentQuery.toLowercase();
-    // state1.areaQuery = s tate1.areaQuery.toLowercase();
     e.preventDefault();
-    this.props.fetchBusinesses(state1).then(() => this.props.history.push('/search'));
+    this.props.history.push(`/search?contentQuery=${this.state.contentQuery}&areaQuery=${this.state.areaQuery}`);
 
   }
   render() {
