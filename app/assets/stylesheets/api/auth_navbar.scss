@@ -4,7 +4,7 @@
   min-width: 100%;
   background-color: transparent;
   padding: 15px 15px 15px 15px;
-  position: fixed;
+  position: absolute;
   z-index: 1;
   display: flex;
   justify-content: center;
@@ -32,6 +32,10 @@
   width: 80%;
   align-items: center;
   justify-content: flex-end;
+}
+
+.nav-landing-container button {
+  margin-left: 8px;
 }
 
 .hoot-logo-container-center {
@@ -140,7 +144,7 @@
   cursor: pointer;
 }
 
-.header-logout {
+.header-button {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   display: flex;
@@ -157,7 +161,7 @@
   border: 2px solid #fff;
 }
 
-.header-logout:hover {
+.header-button:hover {
   background-color: #fff;
   cursor: pointer;
   color: #333;

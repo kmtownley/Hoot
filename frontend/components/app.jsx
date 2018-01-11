@@ -16,7 +16,7 @@ import UserShowContainer from "./user/user_show_container";
 
 const App = () => (
   <div>
-    <header >
+    <header className="header-auth">
       <AuthNavbarContainer />
     </header>
 
