@@ -12,6 +12,7 @@ import NavbarContainer from './navbar/navbar_container.jsx';
 import ReviewFormContainer from './reviews/review_form_container';
 import SearchContainer from './search/search_container';
 import UserShowContainer from "./user/user_show_container";
+import SearchBarContainer from './searchbar/searchbar_container';
 
 
 const App = () => (
