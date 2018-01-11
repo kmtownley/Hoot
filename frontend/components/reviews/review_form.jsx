@@ -40,7 +40,7 @@ class ReviewForm extends React.Component {
   }
 
   renderErrors() {
-    debugger
+
     return(
       <ul className="review-errors-container">
         {this.props.errors.map((error, idx) => (
@@ -54,7 +54,7 @@ class ReviewForm extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger
+
     e.preventDefault();
     this.props.action(this.state).then(() => this.props.history.push('/businesses/:businessId'));
   }

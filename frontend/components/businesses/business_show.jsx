@@ -77,7 +77,7 @@ class BusinessShow extends React.Component {
         </div>
     }
     return (
-        <main className="biz-content-container">
+        <main className="main-content-container">
           <section className="biz-header-container">
             <div className="biz-header">
               <span className="biz-show-title">{business.biz_name}</span>

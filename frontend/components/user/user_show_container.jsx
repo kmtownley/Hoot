@@ -4,14 +4,14 @@ import { updateUser } from '../../actions/user_actions';
 import UserShow from './user_show';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
+
   return {
     currentUser: state.session.currentUser
   };
 };
 
 const mapDispatchToProps = (state, ownProps) => {
-  debugger
+
   return {
     updateUser: user => dispatch(updateUser(user))
   };
