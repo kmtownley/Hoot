@@ -121,8 +121,8 @@ class ReviewForm extends React.Component {
           value="5"
         />
       </div>
-    )
-  };
+    );
+  }
 
   updateRadioButton(value) {
     this.setState({ radio: value });
@@ -137,7 +137,7 @@ class ReviewForm extends React.Component {
           </h2>
         </div>
       );
-    };
+    }
    const text = this.props.formType === 'new' ? "Write a Review" : "Update Review";
    return (
      <div className="review-main">

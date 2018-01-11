@@ -8,14 +8,27 @@ class ReviewIndexItem extends React.Component {
   }
 
   userInfo() {
+
     return (
       <div className="user-info-container">
-        <div className="review-user-name">{this.props.review.first_name}</div>
-        <br/>
-        <span>{this.props.review.city}</span>&nbsp;
-        <span>{this.props.review.state}</span>
+        <div className="user-info-sidebar-container">
+          <div className="review-profile-pic-container">
+            <img
+              className="user-review-profile-img"
+              src={this.props.review.user_img}
+            />
+          </div>
+          <div className="user-sidebar-content">
+            <div
+              className="review-user-name">{this.props.review.first_name}
+            </div>
+            <br/>
+            <span>{this.props.review.city}</span>&nbsp;
+            <span>{this.props.review.state}</span>
+          </div>
+        </div>
       </div>
-    )
+    );
 
   }
 

@@ -16,10 +16,11 @@ export default class ReviewIndex extends React.Component {
       <section>
         this.currentUser.user_name
       </section>
-    )
+    );
   }
 
   render() {
+    
     const reviews = this.props.reviews.map(review => {
       return (
         <div className="review-wrapper">
@@ -30,14 +31,14 @@ export default class ReviewIndex extends React.Component {
             currentUser={this.props.currentUser}
             />
         </div>
-      )
+      );
     });
     if (reviews.length === 0) {
       return (
         <div>Loading...
            <i className="fa fa-spinner fa-pulse"></i>
         </div>
-      )
+      );
     }
 
 
@@ -54,6 +55,6 @@ export default class ReviewIndex extends React.Component {
           {reviews}
         </div>
     </section>
-    )
+    );
   }
 }
