@@ -7,39 +7,73 @@ class UserShow extends React.Component {
     this.state = {
       first_name: props.currentUser.first_name,
       last_name: props.currentUser.last_name,
-      savedMessage: ""
+      savedMessage: "",
+      imageFile: null,
+      user_img: props.currentUser.user_img
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateFile = this.updateFile.bind(this);
   }
+
 
   componentWillReceiveProps(nextProps) {
 
   }
+
   handleSubmit(e) {
-    debugger
     e.preventDefault();
+    const formData = new FormData ();
+    formData.append("user[user_img]", this.state.imageFile);
+    formData.append("user[firstName]", this.state.first_name);
+    formData.append("user[lastName]", this.state.last_name);
     this.setState({
       savedMessage: "Changes saved"
     });
-    const user = Object.assign({}, this.state);
-    delete user["savedMessage"];
-    this.props.updateUser(user);
+    // const user = Object.assign({}, this.state);
+    // delete user["savedMessage"];
+    this.props.updateUser(formData);
   }
+
   update(field) {
     return (e) => {
       this.setState({[field]: e.target.value});
     };
   }
 
+  updateFile(e) {
+    let file;
+    // if (!this.state.user_img) {
+    //   file = <i className="fa fa-user" aria-hidden="true"></i>;
+    // } else {
+    file = e.currentTarget.files[0];
+    // }
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({imageFile: file, user_img: fileReader.result});
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+
 
   updateUserInfo() {
+
     const currentUser = this.props.currentUser;
     return (
       <form className="update-user-container">
         <span>{this.state.savedMessage}</span>
+
         <div className="user-image-container">
-          <i className="fa fa-user" aria-hidden="true"></i>
+          <input
+            type="file"
+            title=" "
+            onChange={this.updateFile}
+            />
+          <img
+            className="user-profile-img" src={this.state.user_img} />
         </div>
+
         <div className="user-input">
         <label>First Name
           <input
@@ -75,6 +109,7 @@ class UserShow extends React.Component {
     return (
       <div className="user-show-container">
         <div className="account-settings-container">
+          <img src={this.state.imageUrl}></img>
           <div className="title-nav-content"
             >{currentUser.first_name}
             <br/>

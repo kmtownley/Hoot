@@ -15,6 +15,7 @@ class Api::UsersController < ApplicationController
   end
 
   def update
+    
     @user = current_user
     if (current_user.id != @user.id)
       render json: ["You can only update your own profile silly"]
@@ -30,6 +31,6 @@ class Api::UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:email, :password, :first_name, :last_name, :city, :state, :zipcode, :image_url)
+    params.require(:user).permit(:email, :password, :first_name, :last_name, :city, :state, :zipcode, :user_img)
   end
 end

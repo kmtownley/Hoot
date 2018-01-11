@@ -9,8 +9,8 @@
 Business.destroy_all
 
 biz1 = Business.new(biz_name: "Chip NYC", address: "353 W 14th St Gansevoort Market", phone_number: "(212) 546-0978", city: "New York",  state: "NY", zipcode: "10014", cuisine: "Desert", price: 2, rating: 4, latitude: 40.740905, longitude: -74.004708)
-file=File.open("./app/assets/images/chip1.jpg")
-biz1.image = file
+# file=File.open("./app/assets/images/chip1.jpg")
+# biz1.image = file
 biz1.save!
 
 biz2 = Business.create!(biz_name: "Ginger and Lemongrass", phone_number: "(212) 432-1688", address: "816 Broadway", city: "New York",  state: "NY", zipcode: "10003", cuisine: "Thai", price: 2, rating: 3, latitude: 40.732762, longitude: -73.990936)

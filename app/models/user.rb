@@ -11,6 +11,9 @@ class User < ApplicationRecord
 
   attr_reader :password
 
+  has_attached_file :user_img, default_url: "user_img_missing.png"
+  validates_attachment_content_type :user_img, content_type: /\Aimage\/.*\Z/
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     return nil unless user && user.is_password?(password)

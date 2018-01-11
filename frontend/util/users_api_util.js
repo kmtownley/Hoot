@@ -1,7 +1,10 @@
-export const updateUser = user => (
-  $.ajax({
+export const updateUser = user => {
+
+  return  $.ajax({
     method: "PATCH",
     url: "/api/users",
-    data: { user }
-  })
-);
+    contentType: false,
+    processData: false,
+    data: user
+  });
+};
