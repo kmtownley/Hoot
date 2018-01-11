@@ -51,12 +51,26 @@
   height: 100%;
   width: 100%;
   align-items: center;
-  justify-content: space-between;
   padding-left: 220px;
   padding-right: 220px;
+  justify-content: space-between;
 
 }
 
+.profile-logout-container {
+  display: flex;
+  padding-left: 600px;
+
+}
+
+.profile-logout-container button {
+  margin-left: 5px;
+}
+
+.hoot-logo-container-left button {
+  display: flex;
+
+}
 .hoot-logo img {
   width: 60px;
   height: 50px;

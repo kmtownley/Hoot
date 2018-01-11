@@ -58,8 +58,10 @@ const AuthNavbar = (props) => {
     navContents = (
       <div className="hoot-logo-container-left">
         {hootLogo}
+        <div className="profile-logout-container">
         {profile}
         {logout}
+        </div>
       </div>
     );
   } else if (props.currentUser) {
