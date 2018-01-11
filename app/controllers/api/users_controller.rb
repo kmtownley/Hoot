@@ -15,14 +15,14 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    
+    debugger
     @user = current_user
     if (current_user.id != @user.id)
       render json: ["You can only update your own profile silly"]
     elsif (@user.update(user_params))
       render :show
     else
-      render json: @user.errros.full_messages, status: 422
+      render json: @user.errors.full_messages, status: 422
     end
   end
 

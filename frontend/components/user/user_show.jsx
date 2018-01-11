@@ -23,14 +23,14 @@ class UserShow extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData ();
-    formData.append("user[user_img]", this.state.imageFile);
-    formData.append("user[firstName]", this.state.first_name);
-    formData.append("user[lastName]", this.state.last_name);
+    if (this.state.imageFile) {
+       formData.append("user[user_img]", this.state.imageFile);
+     }
+    formData.append("user[first_name]", this.state.first_name);
+    formData.append("user[last_name]", this.state.last_name);
     this.setState({
       savedMessage: "Changes saved"
     });
-    // const user = Object.assign({}, this.state);
-    // delete user["savedMessage"];
     this.props.updateUser(formData);
   }
 
@@ -62,7 +62,9 @@ class UserShow extends React.Component {
     const currentUser = this.props.currentUser;
     return (
       <form className="update-user-container">
-        <span>{this.state.savedMessage}</span>
+        <div className="changes-saved-container">
+          <span className="changes-saved-text">{this.state.savedMessage}</span>
+        </div>
 
         <div className="user-image-container">
           <input
