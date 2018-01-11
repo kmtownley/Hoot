@@ -13,9 +13,11 @@ class BusinessMap extends React.Component {
   constructor(props) {
     super(props);
     this.updateBounds = this.updateBounds.bind(this);
+
   }
 
   componentDidMount() {
+    
     let mapOptions;
 
     if (this.props.path === "/businesses/:businessId") {
@@ -86,6 +88,15 @@ class BusinessMap extends React.Component {
       );
     }
   }
+
+  // addInfoWindow(marker, message) {
+  //
+  //   let content = "Let's try it out"
+  //   let infoWindow = new google.maps.InfoWindow({
+  //       content: "here is a business"
+  //   }
+  // };
+
 
 
   render() {

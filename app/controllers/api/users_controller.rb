@@ -15,7 +15,7 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    debugger
+    
     @user = current_user
     if (current_user.id != @user.id)
       render json: ["You can only update your own profile silly"]

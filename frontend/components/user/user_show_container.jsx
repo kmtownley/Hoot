@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (state, ownProps) => {
-  debugger
+  
   return {
     updateUser: user => dispatch(updateUser(user))
   };
