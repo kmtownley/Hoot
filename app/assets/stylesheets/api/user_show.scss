@@ -18,8 +18,8 @@
   float: left;
 }
 
-.user-info-container {
-  width: 69%;
+.user-profile-container {
+  float: right
 }
 .profile-text {
   font-weight: bold;
@@ -31,8 +31,10 @@
   width: 100%;
 }
 
-.user-info-container div {
+.user-profile-container div {
   margin-bottom: 11px;
+  display: flex;
+  flex-direction: column;
 }
 
 .fa-user::before {

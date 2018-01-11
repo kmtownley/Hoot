@@ -80,7 +80,7 @@ class UserShow extends React.Component {
             <br/>
             <span>Account Settings</span>
           </div>
-          <div className="user-info-container">
+          <div className="user-profile-container">
             <div className="profile-text">Profile</div>
             <div>{this.updateUserInfo()}</div>
           </div>
