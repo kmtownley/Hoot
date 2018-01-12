@@ -79,7 +79,7 @@ class BusinessIndexItem extends React.Component {
             <Link to={`businesses/${business.id}`}  className={this.bizNameStyle()}>{biz_name}</Link>
           <br/>
           <span
-            className="rating">Rating: {rating}
+            className={`star-rating-search-${rating}`}>
           </span>
           <br/>
           <span>{cuisine}</span>

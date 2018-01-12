@@ -3,7 +3,6 @@ import React from 'react';
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       contentQuery: "",
       areaQuery: ""
@@ -11,39 +10,28 @@ class SearchBar extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange.bind(this);
-    this.switchContainerStyle = this.switchContainerStyle.bind(this);
   }
 
   handleChange(query){
     return (e) => {
-     this.setState({[query]: e.target.value});
+     this.setState({[query]: e.target.value})
     };
   }
 
 
   handleSubmit(e) {
-    debugger
+    //
     const state1 = Object.assign({}, this.state);
+    // state1.contentQuery = state1.contentQuery.toLowercase();
+    // state1.areaQuery = s tate1.areaQuery.toLowercase();
     e.preventDefault();
-    this.props.fetchBusinesses(state1).then( () => this.props.history.push(`/search?contentQuery=${this.state.contentQuery}&areaQuery=${this.state.areaQuery}`));
+    this.props.fetchBusinesses(state1).then(() => this.props.history.push('/search'));
 
-  }
-
-  switchContainerStyle() {
-    let className;
-    if (this.props.location.pathname.length === 15 || this.props.location.pathname === '/search' ) {
-      return (
-        className = "nav-searchbar"
-      );
-    } else {
-      return (
-        className = "searchbar-wrapper"
-      );
-    }
   }
   render() {
+
     return (
-    <div className={this.switchContainerStyle()}>
+    <div className="searchbar-wrapper">
       <form
         className="searchbar-form"
         onSubmit={this.handleSubmit}>
