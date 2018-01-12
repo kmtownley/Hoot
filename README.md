@@ -1,6 +1,6 @@
 # hoot README
 
-### hoot is a hub for discovering local enterprises and incorporates crowd-sourced reviews to help users find the best options available at a time where many individuals are indundated with choices. Hoot is a full-stack web application Yelp clone.
+### hoot is a hub for discovering local businesses, which incorporates crowd-sourced reviews to help users find the best options available at a time where many individuals are indundated with choices. Hoot is a full-stack web application Yelp clone.
 ![alt text](https://github.com/kmtownley/Hoot/blob/master/app/assets/images/hoot-frontpage.png "Logo Title Text 1")
 
 ## Introduction
@@ -21,7 +21,5 @@
 
 ## Map
  The interactive google map that will display results visually based on the specified search queries.  
+<<<<<<< HEAD
  ![alt text](https://github.com/kmtownley/Hoot/blob/master/app/assets/images/readme_map.png "component 2")
-
-
-##
