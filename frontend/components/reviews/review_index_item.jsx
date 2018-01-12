@@ -38,7 +38,7 @@ class ReviewIndexItem extends React.Component {
 
 
   render() {
-    debugger
+
     const date = dateFormat(this.props.review.created_at, 'mm/dd/yyyy');
     return (
         <ul>
