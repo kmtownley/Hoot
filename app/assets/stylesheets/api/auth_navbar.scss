@@ -13,9 +13,11 @@
 .nav-regular {
   display: flex;
   height: 40px;
-  padding: 16px 99px 16px 89px;
+  padding: 16px 0px 16px 0px;
   position: relative;
   background-color: #d32323;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .nav-business-show {
