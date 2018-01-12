@@ -1,5 +1,6 @@
 class Api::UsersController < ApplicationController
   def create
+    debugger
     @user = User.new(user_params)
 
     if @user.save
@@ -15,7 +16,7 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    
+
     @user = current_user
     if (current_user.id != @user.id)
       render json: ["You can only update your own profile silly"]
