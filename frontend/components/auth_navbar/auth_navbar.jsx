@@ -83,7 +83,7 @@ const AuthNavbar = (props) => {
     <div className="hoot-logo-container-left">
       {hootLogo}
       <div className="no-user-searchbar">
-        
+        <SearchBarContainer />
       </div>
       <div className="signup-signin-no-user">
         <nav className="login-no-user">
