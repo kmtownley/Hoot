@@ -4,12 +4,20 @@
 ![alt text](https://github.com/kmtownley/Hoot/blob/master/app/assets/images/hoot-frontpage.png "Logo Title Text 1")
 
 ## Introduction
-  To help connect users with local businesses, hoot provides a poweruful search 
-component and
+  To help connect users with local businesses, hoot provides a poweruful search component and allows users to add their own reviews and corresponding ratings to businesses they have visited
+  
+## Features
+- Search by city, state, type of cuisine and business name
+- Access user-generated reviews and ratins
+- Create and Edit a user profile and picture
+- Display visual locations of filtered search results
+- Create reviews
+- Sign up and sign in :)
 
 
 ## Map 
  The interactive google map that will display results visually based on the specified search queries.  
+ ![alt text](https://github.com/kmtownley/Hoot/blob/master/app/assets/images/readme_map.png "Logo Title Text 1")
  This README would normally document whatever steps are necessary to get the
  application up and running.
 
