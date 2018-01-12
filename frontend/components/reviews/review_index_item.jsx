@@ -32,7 +32,16 @@ class ReviewIndexItem extends React.Component {
 
   }
 
+  renderNoReviews() {
 
+    if (!this.props.review) {
+      return (
+        <div className="no-review-error-message">
+          Be the first to review this business!
+        </div>
+      );
+    }
+  }
 
 
 
@@ -42,6 +51,7 @@ class ReviewIndexItem extends React.Component {
     const date = dateFormat(this.props.review.created_at, 'mm/dd/yyyy');
     return (
         <ul>
+          {this.renderNoReviews()}
           <li>
             <div className="total-review-info">
                 {this.userInfo()}

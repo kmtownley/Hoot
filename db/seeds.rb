@@ -27,11 +27,27 @@ file=File.open("./app/assets/images/amelie.jpg")
 biz4.image = file
 biz4.save!
 biz5 = Business.create!(biz_name: "Tonchin NEW YORK", phone_number: "(646) 692-9912", address: "13 W 36th", city: "New York",  state: "NY", zipcode: "10018", cuisine: "American (New)", price: 5, rating: 4)
-file=File.open("./app/assets/images/tonchin.jpg", latitude: 40.674812, longitude: -74.109845)
+file=File.open("./app/assets/images/tonchin.jpg", latitude: 40.759223, longitude: -73.952605 )
 biz5.image = file
 biz5.save!
 biz6 = Business.create!(biz_name: "The Smith", phone_number: "(212) 644-2700", address: "956 2nd Ave", city: "New York",  state: "NY", zipcode: "10022", cuisine: "Tapas Bar", price: 4, rating: 3, latitude: 40.740905, longitude: -74.004708 )
 file=File.open("./app/assets/images/smith.jpg")
+biz6.image = file
+biz6.save!
+biz7 = Business.create!(biz_name: "La Contenta Oeste", phone_number: "(212) 544-2740", address: "78 W 11th St", city: "New York",  state: "NY", zipcode: "10022", cuisine: "Mexican", price: 2, rating: 3, latitude: 40.735148, longitude: -73.998075)
+file=File.open("./app/assets/images/oeste.jpg")
+biz7.image = file
+biz7.save!
+biz8 = Business.create!(biz_name: "Thai Villa", phone_number: "(212) 645-2720", address: "5 E 19th St", city: "New York",  state: "NY", zipcode: "10042", cuisine: "Thai", price: 3, rating: 3, latitude: 40.739008, longitude: -73.990664 )
+file=File.open("./app/assets/images/thai_villa.jpg")
+biz8.image = file
+biz8.save!
+biz9 = Business.create!(biz_name: "Wafa's", phone_number: "(212) 644-2700", address: "812 Grand St", city: "Brooklyn",  state: "NY", zipcode: "11211", cuisine: "Vegetarian", price: 2, rating: 1, latitude: 40.714770, longitude: -74.072011 )
+file=File.open("./app/assets/images/wafas.jpg")
+biz9.image = file
+biz9.save!
+biz10 = Business.create!(biz_name: "Soco", phone_number: "(212) 634-2900", address: "509 Myrtle Ave", city: "Brooklyn",  state: "NY", zipcode: "10044", cuisine: "Cajun", price: 3, rating: 4, latitude: 40.693846, longitude: -73.964513 )
+file=File.open("./app/assets/images/soco.jpg")
 biz6.image = file
 biz6.save!
 

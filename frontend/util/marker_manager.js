@@ -7,6 +7,7 @@ export default class MarkerManager {
   }
 
   updateMarkers(businesses){
+    
     Object.values(businesses).forEach(business => {
       this.markers.push(this.createMarkerFromBusiness(business));
 
@@ -16,6 +17,7 @@ export default class MarkerManager {
 
 
   createMarkerFromBusiness(business) {
+
     const position = { lat: business.latitude, lng: business.longitude };
     const marker = new google.maps.Marker({
       position,

@@ -17,8 +17,9 @@ class BusinessMap extends React.Component {
   }
 
   componentDidMount() {
+
     let mapOptions;
-    if (this.props.path === "/businesses/:businessId") {
+    if (this.props.location.pathname !== "/search") {
       mapOptions = {
         center : { lat: this.props.business.latitude, lng: this.props.business.longitude},
         zoom: 16
@@ -26,7 +27,7 @@ class BusinessMap extends React.Component {
     } else {
       mapOptions = {
         center: { lat: 40.7629471996736, lng: -73.97823811645509 },
-          zoom: 13
+          zoom: 12
         };
       }
     // wrap the mapDOMNode in a Google Map
@@ -72,11 +73,25 @@ class BusinessMap extends React.Component {
   //     search: `lat=${coords.lat}&lng=${coords.lng}`
   //   });
   // }
-  mapStyle() {
 
+  renderBizShowContainer() {
+    let containerStyle;
+    if (this.props.location.pathname !== '/search') {
+      return (
+        conatinerStyle = "map-container-biz"
+      );
+    } else {
+      return (
+        containerStyle = "location-container"
+      );
+    }
+  }
+  
+  mapStyle() {
+    debugger
     let classStyle;
     let mapContainer;
-    if (this.props.pathname === '/businesses/:businessId') {
+    if (this.props.location.pathname !== '/search') {
       return (
         classStyle="map-box"
       );
@@ -88,7 +103,7 @@ class BusinessMap extends React.Component {
   }
 
   render() {
-
+    debugger
     return (
       <section className="search-map-container">
       <div className={this.mapStyle()}>

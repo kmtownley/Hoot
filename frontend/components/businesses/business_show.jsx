@@ -68,6 +68,7 @@ class BusinessShow extends React.Component {
   }
 
   render() {
+
     const business = this.props.business;
     if (!business) {
       return <div>Loading...

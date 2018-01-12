@@ -16,11 +16,10 @@ export default class ReviewIndex extends React.Component {
       <section>
         this.currentUser.user_name
       </section>
-    );
+    )
   }
 
   render() {
-    
     const reviews = this.props.reviews.map(review => {
       return (
         <div className="review-wrapper">
@@ -55,6 +54,6 @@ export default class ReviewIndex extends React.Component {
           {reviews}
         </div>
     </section>
-    );
+    )
   }
 }
