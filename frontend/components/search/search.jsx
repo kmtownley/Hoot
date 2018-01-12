@@ -10,12 +10,14 @@ class Search extends React.Component {
 
   componentDidMount() {
 
+    // const queries = this.props.location.search.slice(this.props.loaction.search.indexOf("="));
     const areaQuery = this.props.location.search.slice(this.props.location.search.indexOf("areaQuery" + 10));
 
     const contentQuery = this.props.location.search.slice(this.props.location.search.indexOf("contentQuery=" + 13));
 
-    // if (this.props.location.search !== )
-    // this.props.fetchBusinesses(contentQuery, areaQuery);
+    // if (this.props.location.search !== 15 ) {
+    //   this.props.fetchBusinesses(contentQuery, areaQuery);
+    // }
   }
 
   // componentWillReceiveProps(nextProps) {
@@ -27,6 +29,16 @@ class Search extends React.Component {
   //     this.props.fetchBusinesses(contentQuery, areaQuery);
   //   }
   // }
+  findBusinesses() {
+    let businesses;
+
+    if (this.props.businesses.length === 0 ) {
+      return (
+        <div className="no-biz-message">Sorry, no businesss meet those criteria : (
+        </div>
+      );
+    }
+  }
 
   render() {
     const businesses = this.props.businesses;
@@ -34,6 +46,7 @@ class Search extends React.Component {
     return (
       <div>
         <div className="search-businesses-container">
+          {this.findBusinesses()}
           <div className="main-search-container">
             <BusinessIndexContainer
               businesses={businesses}
