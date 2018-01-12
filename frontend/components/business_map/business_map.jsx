@@ -86,9 +86,9 @@ class BusinessMap extends React.Component {
       );
     }
   }
-  
+
   mapStyle() {
-    debugger
+
     let classStyle;
     let mapContainer;
     if (this.props.location.pathname !== '/search') {
@@ -103,7 +103,7 @@ class BusinessMap extends React.Component {
   }
 
   render() {
-    debugger
+
     return (
       <section className="search-map-container">
       <div className={this.mapStyle()}>

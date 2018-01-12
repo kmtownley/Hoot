@@ -28,7 +28,6 @@ class SearchBar extends React.Component {
 
 
   switchContainerStyle() {
-
     let className;
     if (this.props.location.pathname.length === 15 || this.props.location.pathname === '/search' ) {
       return (
@@ -40,6 +39,21 @@ class SearchBar extends React.Component {
       );
     }
   }
+
+  switchButtonStyle() {
+    // debugger
+    // let buttonStyle;
+    // if (this.props.location.pathname.length !== 14 || this.props.location.pathname !== '/search' ) {
+    //   return (
+    //      buttonStyle = "home-search-button"
+    //   );
+    // } else {
+    //   return (
+    //      buttonStyle = "search-button"
+    //   );
+    // }
+  }
+
 
   handleSubmit(e) {
 
@@ -71,10 +85,10 @@ class SearchBar extends React.Component {
           onChange={this.handleChange("areaQuery")}
           />
         <button
-          className="search-button"
+          className={this.switchButtonStyle()}
           type="submit"
           value="submit">
-          <i class="fa fa-search" aria-hidden="true"></i>
+          <i className="fa fa-search" aria-hidden="true"></i>
 
 
         </button>
