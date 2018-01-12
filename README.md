@@ -8,7 +8,7 @@
 
 ## Features
 - Search by city, state, type of cuisine and business name
-- Access user-generated reviews and ratins
+- Access user-generated reviews, ratings and business details
 - Create and Edit a user profile and picture
 - Display visual locations of filtered search results
 - Create reviews
@@ -17,7 +17,7 @@
 ## Search
   This multi-field search allows users to filter search result by location, cuisine type as well as business name.
   ![alt text](https://github.com/kmtownley/Hoot/blob/master/app/assets/images/multi-field-search.png "component 1")
-  ![alt text](https://github.com/kmtownley/Hoot/blob/master/app/assets/images/search-results.png "component 1b")
+  ![alt text](https://github.com/kmtownley/Hoot/blob/master/app/assets/images/search_results.png "component 1b")
 
 ## Map
  The interactive google map that will display results visually based on the specified search queries.  
@@ -27,7 +27,9 @@
 ## User profile
   Allows users to upload profile pictures and edit certain aspects of their account.
 
-##
+## Business
+  The business show page provides specific details and an updated map for the location of the business.
+
 
 ## Future Updates
   -Implement auto filtering by setting the bounds for the Map
