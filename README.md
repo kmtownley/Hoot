@@ -23,3 +23,14 @@
  The interactive google map that will display results visually based on the specified search queries.  
 <<<<<<< HEAD
  ![alt text](https://github.com/kmtownley/Hoot/blob/master/app/assets/images/readme_map.png "component 2")
+
+## User profile
+  Allows users to upload profile pictures and edit certain aspects of their account.
+
+##
+
+## Future Updates
+  -Implement auto filtering by setting the bounds for the Map
+  -Add scrollable, additional images for businesses
+  -Allow users to filter businesses by price and delivery
+  -Add updating and delete functions to reviews
