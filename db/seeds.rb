@@ -8,29 +8,29 @@
 
 Business.destroy_all
 
-biz1 = Business.new(biz_name: "Chip NYC", address: "353 W 14th St Gansevoort Market", phone_number: "(212) 546-0978", city: "New York",  state: "NY", zipcode: "10014", cuisine: "Desert", price: 2, rating: 4, latitude: 40.740905, longitude: -74.004708, zipcode: 10044)
+biz1 = Business.new(biz_name: "Chip NYC", address: "353 W 14th St Gansevoort Market", phone_number: "(212) 546-0978", city: "New York",  state: "NY", zipcode: "10014", cuisine: "Desert", price: 2, rating: 4, latitude: 40.740905, longitude: -74.004708)
 file=File.open("./app/assets/images/chip1.jpg")
 biz1.image = file
 biz1.save!
 
 biz2 = Business.create!(biz_name: "Ginger and Lemongrass", phone_number: "(212) 432-1688", address: "816 Broadway", city: "New York",  state: "NY", zipcode: "10003", cuisine: "Thai", price: 2, rating: 3, latitude: 40.732762, longitude: -73.990936)
-file=File.open("./app/assets/images/lemon_ginger.jpg", zipcode: 10027)
+file=File.open("./app/assets/images/lemon_ginger.jpg")
 biz2.image = file
 biz2.save!
-biz3 = Business.create!(biz_name: "Outro", phone_number: "(646) 876-1237", address: "153 Rivington St", city: "New York",  state: "NY", zipcode: "10002", cuisine: "Cafe", price: 4, rating: 5, latitude: 40.719116, longitude: -73.985672, zipcode: 10023)
+biz3 = Business.create!(biz_name: "Outro", phone_number: "(646) 876-1237", address: "153 Rivington St", city: "New York",  state: "NY", zipcode: "10002", cuisine: "Cafe", price: 4, rating: 5, latitude: 40.719116, longitude: -73.985672)
 file=File.open("./app/assets/images/example_biz.jpg")
 biz3.image = file
 biz3.save!
 biz4 = Business.create!(biz_name: "Amelie", phone_number: "(212)
-533-2962", address: "22 W 8th St", city: "New York",  state: "NY", zipcode: "10011", cuisine: "French", price: 4, rating: 4,latitude: 40.7629471996736, longitude: -73.97823811645509,  zipcode: 10023)
+533-2962", address: "22 W 8th St", city: "New York",  state: "NY", zipcode: "10011", cuisine: "French", price: 4, rating: 4,latitude: 40.7629471996736, longitude: -73.97823811645509)
 file=File.open("./app/assets/images/amelie.jpg")
 biz4.image = file
 biz4.save!
 biz5 = Business.create!(biz_name: "Tonchin NEW YORK", phone_number: "(646) 692-9912", address: "13 W 36th", city: "New York",  state: "NY", zipcode: "10018", cuisine: "American (New)", price: 5, rating: 4)
-file=File.open("./app/assets/images/tonchin.jpg", latitude: 40.674812, longitude: -74.109845 zipcode: 10023)
+file=File.open("./app/assets/images/tonchin.jpg", latitude: 40.674812, longitude: -74.109845)
 biz5.image = file
 biz5.save!
-biz6 = Business.create!(biz_name: "The Smith", phone_number: "(212) 644-2700", address: "956 2nd Ave", city: "New York",  state: "NY", zipcode: "10022", cuisine: "Tapas Bar", price: 4, rating: 3, latitude: 40.740905, longitude: -74.004708 zipcode: 10023)
+biz6 = Business.create!(biz_name: "The Smith", phone_number: "(212) 644-2700", address: "956 2nd Ave", city: "New York",  state: "NY", zipcode: "10022", cuisine: "Tapas Bar", price: 4, rating: 3, latitude: 40.740905, longitude: -74.004708 )
 file=File.open("./app/assets/images/smith.jpg")
 biz6.image = file
 biz6.save!
@@ -41,26 +41,26 @@ biz6.save!
 User.destroy_all
 
 user1 = User.new(email: 'guest@hoot.com', password: "password", first_name: "guest", last_name: "guest", city: "New York", state: "NY")
-file=File.open("./app/assets/images/harry.jpg")
+file=File.open("./app/assets/images/harry.jpg", zipcode: 10023)
 user1.user_img = file
 user1.save!
 user2 = User.create!(email: 'kati', password: "password", first_name: "Kati", last_name: "Townley", city: "New York", state: "NY")
-file=File.open("./app/assets/images/hermione.jpg")
+file=File.open("./app/assets/images/hermione.jpg", zipcode: 10023)
 user2.user_img = file
 user2.save!
-user3 = User.create!(email: 'bobby@yahoo.com', password: "123456", first_name: "Bobby", last_name: "O'Conner", city: "New York", state: "NY")
+user3 = User.create!(email: 'bobby@yahoo.com', password: "123456", first_name: "Bobby", last_name: "O'Conner", city: "New York", state: "NY",  zipcode: 10023)
 file=File.open("./app/assets/images/ron.jpg")
 user3.user_img = file
 user3.save!
-user4 = User.create!(email: 'andrea.roselli@gmail.com', password: "hoothoot", first_name: "Andrea", last_name: "Townley", city: "Brooklyn", state: "NY")
+user4 = User.create!(email: 'andrea.roselli@gmail.com', password: "hoothoot", first_name: "Andrea", last_name: "Townley", city: "Brooklyn", state: "NY", zipcode: 10023)
 file=File.open("./app/assets/images/dumbledore.jpg")
 user4.user_img = file
 user4.save!
-user5 = User.create!(email: 'gwen.corner@denveru.com', password: "belieber", first_name: "Gwen", last_name: "Corner", city: "Brooklyn", state: "NY")
+user5 = User.create!(email: 'gwen.corner@denveru.com', password: "belieber", first_name: "Gwen", last_name: "Corner", city: "Brooklyn", state: "NY", zipcode: 10027)
 file=File.open("./app/assets/images/snape.jpg")
 user5.user_img = file
 user5.save!
-user6 = User.create!(email: 'mgntown@yahoo.com', password: "Dumbledore", first_name: "Megan", last_name: "Townley", city: "New York", state: "NY")
+user6 = User.create!(email: 'mgntown@yahoo.com', password: "Dumbledore", first_name: "Megan", last_name: "Townley", city: "New York", state: "NY", zipcode: 10044)
 file=File.open("./app/assets/images/mcgon.jpg")
 user6.user_img = file
 user6.save!
