@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180112044905) do
+ActiveRecord::Schema.define(version: 20180112004821) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20180112044905) do
     t.string "user_img_content_type"
     t.integer "user_img_file_size"
     t.datetime "user_img_updated_at"
-    t.string "zipcode"
+    t.string "zipcode", null: false
     t.index ["email"], name: "index_users_on_email"
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end
