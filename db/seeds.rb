@@ -64,7 +64,7 @@ user6 = User.create!(email: 'mgntown@yahoo.com', password: "Dumbledore", first_n
 file=File.open("./app/assets/images/mcgon.jpg")
 user6.user_img = file
 user6.save!
-user7 = User.create!(email: 'stevo@yahoo.com', password: "broncos", first_name: "Steve", last_name: "Cookie", city: "Indianapolis", state: "IN")
+user7 = User.create!(email: 'stevo@yahoo.com', password: "broncos", first_name: "Steve", last_name: "Cookie", city: "Indianapolis", state: "IN", zipcode: 10013)
 
 Review.destroy_all
 
