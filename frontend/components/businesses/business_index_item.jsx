@@ -10,7 +10,6 @@ class BusinessIndexItem extends React.Component {
   }
 
   listStyle() {
-
     let className;
     if (this.props.pathname === "/businesses/:businessId" || this.props.pathname === "/search") {
       return (
@@ -45,7 +44,7 @@ class BusinessIndexItem extends React.Component {
     } else {
       return (
       categoryStyle = "hot-biz-category"
-      )
+      );
     }
   }
 
