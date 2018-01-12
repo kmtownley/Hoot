@@ -12,14 +12,23 @@ class SearchBar extends React.Component {
     this.handleChange.bind(this);
   }
 
+  clearInputs() {
+    this.setState({
+      contentQuery: "",
+      areaQuery: ""
+    });
+  }
+
   handleChange(query){
     return (e) => {
-     this.setState({[query]: e.target.value})
+     this.setState({[query]: e.target.value});
     };
   }
 
+
+
   switchContainerStyle() {
-    debugger
+
     let className;
     if (this.props.location.pathname.length === 15 || this.props.location.pathname === '/search' ) {
       return (
@@ -33,12 +42,10 @@ class SearchBar extends React.Component {
   }
 
   handleSubmit(e) {
-    //
     const state1 = Object.assign({}, this.state);
-    // state1.contentQuery = state1.contentQuery.toLowercase();
-    // state1.areaQuery = s tate1.areaQuery.toLowercase();
     e.preventDefault();
     this.props.fetchBusinesses(state1).then(() => this.props.history.push('/search'));
+    this.clearInputs();
 
   }
   render() {

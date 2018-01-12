@@ -36,6 +36,7 @@ class Api::BusinessesController < ApplicationController
   end
 
   def index
+
     if (!params[:areaQuery] || !params[:contentQuery])
       @businesses = Business.all
 
@@ -47,9 +48,8 @@ class Api::BusinessesController < ApplicationController
       @businesses = @bizCity.or(@bizState).or(@bizCity).or(@bizState)
     elsif (params[:contentQuery] != "")
       @bizName = Business.where("LOWER(biz_name) LIKE LOWER(:biz_name)", biz_name: "%#{params[:contentQuery]}%")
-      # Business.where("biz_name LIKE %e%")
-
-      @cuisineType = Business.where(cuisine: params[:contentQuery])
+      # Business.where("biz_name LIKE %e%"
+      @cuisineType = Business.where("LOWER(cuisine) LIKE LOWER(:cuisine)", cuisine: "%#{params[:contentQuery]}%")
       @businesses = @bizName.or(@cuisineType)
     elsif (params[:areaQuery] != "")
       @bizCity = Business.where("LOWER(city) LIKE LOWER(:city)", city: "%#{params[:areaQuery]}%")
