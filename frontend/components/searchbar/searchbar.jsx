@@ -28,7 +28,7 @@ class SearchBar extends React.Component {
 
 
   switchContainerStyle() {
-    debugger
+
     let className;
     if (this.props.location.pathname !== "/" || this.props.location.pathname === '/search' ) {
       return (
