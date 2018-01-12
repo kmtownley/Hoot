@@ -17,7 +17,6 @@ class BusinessMap extends React.Component {
   }
 
   componentDidMount() {
-
     let mapOptions;
     if (this.props.location.pathname !== "/search") {
       mapOptions = {
@@ -38,7 +37,8 @@ class BusinessMap extends React.Component {
     // this.MarkerManager.markers;
   }
 
-  componentsWillReceiveProps(newProps) {
+  componentWillReceiveProps(newProps) {
+    
     this.MarkerManager.updateMarkers(newProps.businesses);
   }
 

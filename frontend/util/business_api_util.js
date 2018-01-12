@@ -1,8 +1,8 @@
-export const fetchBusinesses = (queries) => {
+export const fetchBusinesses = (areaQuery, contentQuery) => {
   return $.ajax({
     method: "GET",
     url: 'api/businesses',
-    data: queries
+    data: {areaQuery, contentQuery}
   });
 };
 

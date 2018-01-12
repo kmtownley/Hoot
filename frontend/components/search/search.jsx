@@ -9,19 +9,24 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
-
-    // const queries = this.props.location.search.slice(this.props.loaction.search.indexOf("="));
-    // const areaQuery = this.props.location.search.slice(this.props.location.search.indexOf("areaQuery=" + 10));
-    //
-    // const contentQuery = this.props.location.search.slice(this.props.location.search.indexOf("contentQuery=" + 13));
-
+    // debugger
+    const queries = this.props.location.search.split("&");
+    const contentQuery = queries[0].slice(queries[0].indexOf("=") + 1);
+    const areaQuery = queries[1].slice(queries[1].indexOf("=") + 1);
     // if (this.props.location.search !== 15 ) {
-    //   this.props.fetchBusinesses(contentQuery, areaQuery);
+      this.props.fetchBusinesses(areaQuery, contentQuery);
     // }
   }
 
-  // componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps) {
+    const queries = nextProps.location.search.split("&");
+    const contentQuery = queries[0].slice(queries[0].indexOf("=") + 1);
+    const areaQuery = queries[1].slice(queries[1].indexOf("=") + 1);
+    if (this.props.location.search !== nextProps.location.search ) {
+      this.props.fetchBusinesses(areaQuery, contentQuery);
+    }
   //
+  }
   //   const areaQuery = nextProps.location.search.slice(this.props.location.search.indexOf("areaQuery" + 10));
   //   const contentQuery = nextProps.location.search.slice(this.props.location.search.indexOf("contentQuery=" + 13));
   //
