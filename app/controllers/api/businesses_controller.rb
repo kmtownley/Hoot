@@ -36,7 +36,6 @@ class Api::BusinessesController < ApplicationController
   end
 
   def index
-
     if (!params[:areaQuery] || !params[:contentQuery])
       @businesses = Business.all
 
@@ -60,7 +59,7 @@ class Api::BusinessesController < ApplicationController
       @businesses = Business.all
     # bounds ? Business.in_bounds(bounds) : Business.all
     end
-    render :index
+    # render :index
   end
 
   private

@@ -9,19 +9,26 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
+    debugger
     const areaQuery = this.props.location.search.slice(this.props.location.search.indexOf("areaQuery" + 10));
 
     const contentQuery = this.props.location.search.slice(this.props.location.search.indexOf("contentQuery=" + 13));
 
-    this.props.fetchBusinesses(contentQuery, areaQuery);
+    // if (this.props.location.search !== )
+    // this.props.fetchBusinesses(contentQuery, areaQuery);
   }
 
-  componentDidUpdate() {
-
-  }
+  // componentWillReceiveProps(nextProps) {
+  //
+  //   const areaQuery = nextProps.location.search.slice(this.props.location.search.indexOf("areaQuery" + 10));
+  //   const contentQuery = nextProps.location.search.slice(this.props.location.search.indexOf("contentQuery=" + 13));
+  //
+  //   if (this.props.location.search !== nextProps.props.location.search) {
+  //     this.props.fetchBusinesses(contentQuery, areaQuery);
+  //   }
+  // }
 
   render() {
-
     const businesses = this.props.businesses;
 
     return (
@@ -35,8 +42,8 @@ class Search extends React.Component {
           </div>
       </div>
     </div>
-    )
+  );
   }
-};
+}
 
 export default Search;

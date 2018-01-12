@@ -25,7 +25,7 @@ class SearchBar extends React.Component {
     debugger
     const state1 = Object.assign({}, this.state);
     e.preventDefault();
-    this.props.history.push(`/search?contentQuery=${this.state.contentQuery}&areaQuery=${this.state.areaQuery}`);
+    this.props.fetchBusinesses(state1).then( () => this.props.history.push(`/search?contentQuery=${this.state.contentQuery}&areaQuery=${this.state.areaQuery}`));
 
   }
 
@@ -42,7 +42,6 @@ class SearchBar extends React.Component {
     }
   }
   render() {
-
     return (
     <div className={this.switchContainerStyle()}>
       <form
