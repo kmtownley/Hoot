@@ -48,8 +48,8 @@ biz9.image = file
 biz9.save!
 biz10 = Business.create!(biz_name: "Soco", phone_number: "(212) 634-2900", address: "509 Myrtle Ave", city: "Brooklyn",  state: "NY", zipcode: "10044", cuisine: "Cajun", price: 3, rating: 4, latitude: 40.693846, longitude: -73.964513 )
 file=File.open("./app/assets/images/soco.jpg")
-biz6.image = file
-biz6.save!
+biz10.image = file
+biz10.save!
 
 
 
@@ -94,3 +94,11 @@ Review.create!(user_id: user3.id, business_id: biz2.id, user_rating: 5, body: "I
 Review.create!(user_id: user4.id, business_id: biz6.id, user_rating: 5, body: "Simply spectacular. The plates are a bit on the pricey side but totally worth the experience. I've been a fan of the head chef for years and he continues to impress.")
 Review.create!(user_id: user5.id, business_id: biz4.id, user_rating: 4, body: "If you like authentic French cuisine you will not be disappointed. Don't miss their French Onion Soup. ")
 Review.create!(user_id: user5.id, business_id: biz3.id, user_rating: 3, body: "Outro always too crowded for my taste. It took over an hour to receive our drinks. Will definitely not be returning.")
+Review.create!(user_id: user1.id, business_id: biz7.id, user_rating: 4, body: "If you've been to Contenta in Lower East Side, you know what to expect in Contenta Oeste.  On the basis of two initial experiences (one dinner and one brunch) Contenta Oeste delivers and some more.  Everything that made Contenta great - great food using the freshest of ingredients and wonderful cocktails that you can't really get elsewhere coupled with excellent service - is here.  Additionally, the much larger space (and kitchen I assume) makes for comfortable dining, and gives us a menu that goes a bit deeper.  I was glad to see the old stand-bys (the chilaquiles, the fish tacos) together with the reappearance of dishes such as the crab tostada that at some point disappeared from the menu.   I am also excited to see new dishes (such as the breakfast item of eggs with nopal that will get me coming here at breakfast time!)")
+Review.create!(user_id: user7.id, business_id: biz7.id, user_rating: 4, body: "I came here for brunch and got the Tequila Sunrise Mimosa and Poblano Benedict. Both absolutely delicious! Service was friendly and warm. There was a difficult customer at another table and I watched the staff working to make sure she was satisfied and taken care of. I can't wait to come back!")
+Review.create!(user_id: user7.id, business_id: biz8.id, user_rating: 4, body: "Save you money and save your time. I was so disappointed with the overall experience and food. How is this place still open???")
+Review.create!(user_id: user6.id, business_id: biz8.id, user_rating: 4, body: "Simply scrumptious. Can't say enough good things about Thai noodles. Their green curry is amazing as are their spring rolls. I will for sure be a regualar here.")
+Review.create!(user_id: user6.id, business_id: biz9.id, user_rating: 4, body: "Wafa for life! As a vegetarian, I am always looking for new veggie-friendly restaurants. This one exceeded my expectations :). Try the tofu scramble!")
+Review.create!(user_id: user5.id, business_id: biz10.id, user_rating: 4, body: "Soco is generally delicious but a tad overpriced for the versy small portion sizes. However, they make up for it with their incredible dessert options.")
+Review.create!(user_id: user6.id, business_id: biz10.id, user_rating: 4, body: "Soco is so great! Highly recommend it!")
+Review.create!(user_id: user3.id, business_id: biz9.id, user_rating: 3, body: "Wafa is decent! Though the service could be improved.")

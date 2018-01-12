@@ -13,7 +13,6 @@
 .searchbar-form {
   border-radius: 4px 0 0 4px;
   position: relative;
-  padding: 8px;
   box-shadow: none;
   border: none;
   border-radius: 0;
@@ -23,7 +22,8 @@
 }
 
 .searchbar-form input {
-  font-size: 18px
+  font-size: 18px;
+  padding: 9px;
 }
 
 .search-type {
@@ -38,18 +38,18 @@
 
 .searchbar-form button {
   display: flex;
-  background: #d90007;
-  border-radius: 0 4px 4px 0;
+  color: white;
   border: 0;
   padding: 14px 20px 13px;
   box-shadow: none;
+  background-color: #bd1f1f;
 }
 
 .searchbar-form button:hover {
-  background: #be2020
+  background: #bd1f1f;
 }
 
-.searchbar-form button i {
+.search-map-contai{
   width: 10px;
   height: 10px;
 }
@@ -57,4 +57,9 @@
 .nav-searchbar {
   width: 650px;
   margin-bottom: 2px;
+}
+
+.search-button {
+
+  background-color: #bd1f1f;
 }

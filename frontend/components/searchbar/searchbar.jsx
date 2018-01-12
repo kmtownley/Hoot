@@ -71,9 +71,11 @@ class SearchBar extends React.Component {
           onChange={this.handleChange("areaQuery")}
           />
         <button
+          className="search-button"
           type="submit"
           value="submit">
-          <i className="icon-search"></i>
+          <i class="fa fa-search" aria-hidden="true"></i>
+
 
         </button>
       </form>
