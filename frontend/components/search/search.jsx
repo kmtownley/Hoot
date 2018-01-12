@@ -9,7 +9,7 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
-    debugger
+
     const areaQuery = this.props.location.search.slice(this.props.location.search.indexOf("areaQuery" + 10));
 
     const contentQuery = this.props.location.search.slice(this.props.location.search.indexOf("contentQuery=" + 13));

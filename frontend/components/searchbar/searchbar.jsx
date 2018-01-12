@@ -18,6 +18,19 @@ class SearchBar extends React.Component {
     };
   }
 
+  switchContainerStyle() {
+
+    let className;
+    if (this.props.businesses.length === 1 || this.props.location.pathname === '/search' ) {
+      return (
+        className = "nav-searchbar"
+      );
+    } else {
+      return (
+        className = "searchbar-wrapper"
+      );
+    }
+  }
 
   handleSubmit(e) {
     //
@@ -31,7 +44,7 @@ class SearchBar extends React.Component {
   render() {
 
     return (
-    <div className="searchbar-wrapper">
+    <div className={this.switchContainerStyle()}>
       <form
         className="searchbar-form"
         onSubmit={this.handleSubmit}>
