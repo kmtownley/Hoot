@@ -30,7 +30,7 @@ class SearchBar extends React.Component {
   switchContainerStyle() {
     debugger
     let className;
-    if (this.props.location.pathname.length === 13 || this.props.location.pathname === '/search' ) {
+    if (this.props.location.pathname !== "/" || this.props.location.pathname === '/search' ) {
       return (
         className = "nav-searchbar"
       );
