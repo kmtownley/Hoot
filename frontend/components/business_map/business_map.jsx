@@ -26,7 +26,7 @@ class BusinessMap extends React.Component {
     } else {
       mapOptions = {
         center: { lat: 40.7629471996736, lng: -73.97823811645509 },
-          zoom: 12
+          zoom: 11
         };
       }
     // wrap the mapDOMNode in a Google Map
@@ -38,7 +38,7 @@ class BusinessMap extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    
+
     this.MarkerManager.updateMarkers(newProps.businesses);
   }
 
