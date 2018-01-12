@@ -56,31 +56,31 @@ biz10.save!
 
 User.destroy_all
 
-user1 = User.new(email: 'guest@hoot.com', password: "password", first_name: "guest", last_name: "guest", city: "New York", state: "NY")
-file=File.open("./app/assets/images/harry.jpg", zipcode: 10023)
+user1 = User.new(email: 'guest@hoot.com', password: "password", first_name: "guest", last_name: "guest", city: "New York", state: "NY", zipcode: "10023")
+file=File.open("./app/assets/images/harry.jpg")
 user1.user_img = file
 user1.save!
-user2 = User.create!(email: 'kati', password: "password", first_name: "Kati", last_name: "Townley", city: "New York", state: "NY")
-file=File.open("./app/assets/images/hermione.jpg", zipcode: 10023)
+user2 = User.create!(email: 'kati', password: "password", first_name: "Kati", last_name: "Townley", city: "New York", state: "NY", zipcode: "10023")
+file=File.open("./app/assets/images/hermione.jpg")
 user2.user_img = file
 user2.save!
-user3 = User.create!(email: 'bobby@yahoo.com', password: "123456", first_name: "Bobby", last_name: "O'Conner", city: "New York", state: "NY",  zipcode: 10023)
+user3 = User.create!(email: 'bobby@yahoo.com', password: "123456", first_name: "Bobby", last_name: "O'Conner", city: "New York", state: "NY",  zipcode: "10023")
 file=File.open("./app/assets/images/ron.jpg")
 user3.user_img = file
 user3.save!
-user4 = User.create!(email: 'andrea.roselli@gmail.com', password: "hoothoot", first_name: "Andrea", last_name: "Townley", city: "Brooklyn", state: "NY", zipcode: 10023)
+user4 = User.create!(email: 'andrea.roselli@gmail.com', password: "hoothoot", first_name: "Andrea", last_name: "Townley", city: "Brooklyn", state: "NY", zipcode: "10023")
 file=File.open("./app/assets/images/dumbledore.jpg")
 user4.user_img = file
 user4.save!
-user5 = User.create!(email: 'gwen.corner@denveru.com', password: "belieber", first_name: "Gwen", last_name: "Corner", city: "Brooklyn", state: "NY", zipcode: 10027)
+user5 = User.create!(email: 'gwen.corner@denveru.com', password: "belieber", first_name: "Gwen", last_name: "Corner", city: "Brooklyn", state: "NY", zipcode: "10027")
 file=File.open("./app/assets/images/snape.jpg")
 user5.user_img = file
 user5.save!
-user6 = User.create!(email: 'mgntown@yahoo.com', password: "Dumbledore", first_name: "Megan", last_name: "Townley", city: "New York", state: "NY", zipcode: 10044)
+user6 = User.create!(email: 'mgntown@yahoo.com', password: "Dumbledore", first_name: "Megan", last_name: "Townley", city: "New York", state: "NY", zipcode: "10044")
 file=File.open("./app/assets/images/mcgon.jpg")
 user6.user_img = file
 user6.save!
-user7 = User.create!(email: 'stevo@yahoo.com', password: "broncos", first_name: "Steve", last_name: "Cookie", city: "Indianapolis", state: "IN", zipcode: 10013)
+user7 = User.create!(email: 'stevo@yahoo.com', password: "broncos", first_name: "Steve", last_name: "Cookie", city: "Indianapolis", state: "IN", zipcode: "10013")
 
 Review.destroy_all
 
