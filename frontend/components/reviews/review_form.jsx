@@ -19,7 +19,7 @@ class ReviewForm extends React.Component {
   }
 
   componentDidMount() {
-
+    this.clearErrors();
     this.props.fetchBusiness(this.props.match.params.businessId);
     if (this.props.match.params.reviewId) {
       this.props.fetchReview(this.props.match.params.reviewId);
@@ -28,9 +28,11 @@ class ReviewForm extends React.Component {
 
 
   componentWillReceiveProps(newProps) {
+    debugger
     if (this.props.formType != newProps.formType) {
       this.setState(newProps.review);
     }
+    this.clearErrors();
   }
 
   update(field) {
@@ -54,7 +56,7 @@ class ReviewForm extends React.Component {
   }
 
   handleSubmit(e) {
-    
+
     e.preventDefault();
     this.props.action(this.state).then(() => this.props.history.push(`/businesses/${this.props.business.id}`));
   }

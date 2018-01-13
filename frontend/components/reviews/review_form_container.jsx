@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session_actions';
+import { logout, clearErrors } from '../../actions/session_actions';
 import { withRouter, link } from 'react-router-dom';
 
 import { createReview, fetchReview } from '../../actions/review_actions';
 import { fetchBusiness, fetchBusinesses } from '../../actions/business_actions';
 import ReviewForm from './review_form';
 
+
 const mapStateToProps = (state, ownProps) => {
-  
+
   let formType = 'new';
   let review = { user_rating: "", body: "", business_id: ownProps.match.params.businessId, user_id: state.session.currentUser.id};
 
@@ -28,7 +29,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchReview: id => dispatch(fetchReview(id)),
     fetchBusiness: (businessId) => dispatch(fetchBusiness(businessId)),
-    action: post => dispatch(action(post))
+    action: post => dispatch(action(post)),
+    clearErrors: () => dispatch(clearErrors())
   };
 };
 
