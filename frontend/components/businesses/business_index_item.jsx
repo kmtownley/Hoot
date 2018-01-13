@@ -4,8 +4,21 @@ import { withRouter, Link } from 'react-router-dom';
 class BusinessIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    debugger
   }
 
+  createBizNumber() {
+    debugger
+    let bizName;
+    let num;
+    this.props.businesses.each(key => {
+      return (
+        <div>
+          idx. businesses[key].biz_name
+        </div>
+      );
+    });
+  }
   renderHompageBizCard() {
     const { biz_name, rating, cuisine, address, city, state, zipcode, image_url, price } = this.props.business;
     const business = this.props.business;
@@ -19,7 +32,7 @@ class BusinessIndexItem extends React.Component {
         </div>
         <section
           className="hot-biz-category">
-            <Link to={`businesses/${business.id}`}  className="biz-hot-name">{biz_name}</Link>
+            <Link to={`businesses/${business.id}`}  className="biz-hot-name">{this.props.num}{biz_name}</Link>
           <br/>
           <span
             className={`star-rating-search-${rating}`}>
@@ -38,36 +51,37 @@ class BusinessIndexItem extends React.Component {
     const business = this.props.business;
     if (this.props.pathname === "/businesses/:businessId" || this.props.pathname === "/search") {
     return (
-      <li
-        className="biz-index-item"
-        onClick={this.handleClick}>
-        <div
-          className="biz-index-img"
-          style={{backgroundImage: `url(${image_url})`}}>
-        </div>
+      <li className="biz-index-item">
+        <section>
+          <div
+            className="biz-index-img"
+            style={{backgroundImage: `url(${image_url})`}}>
+          </div>
+        </section>
         <section
           className="biz-show-categories">
-            <Link to={`businesses/${business.id}`}  className="biz-index-name">{biz_name}</Link>
+            <Link to={`businesses/${business.id}`}  className="biz-index-name">{this.props.num}. {biz_name}</Link>
           <br/>
           <span
             className={`star-rating-search-${rating}`}>
           </span>
+          <div className="search-biz-cuisine">{cuisine}</div>
           <br/>
-          <span>{cuisine}</span>
-          <div className="search-biz-address-container">
+          </section>
+          <section className="search-biz-address-container">
             <ul className="search-biz-address">
               <li>{address}</li>
               <li>{city}, {state}, {zipcode}</li>
             </ul>
-          </div>
+          </section>
           <br/>
-        </section>
       </li>
       );
     }
   }
 
   render() {
+    debugger
     if (this.props.pathname === "/businesses/:businessId" || this.props.pathname === "/search") {
     return (
       <div>

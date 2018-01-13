@@ -46,6 +46,7 @@ class BusinessIndex extends React.Component {
                   className="business-index-item"
                   key={business.id}
                   business={business}
+                  num ={idx + 1}
                   pathname={this.props.location.pathname}
                 />
               </ul>

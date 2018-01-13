@@ -14,13 +14,15 @@
 }
 
 .search-business-container {
-  width: 400px;
+  width: 630px;
+  height: 171px;
 }
 
 .biz-show-categories {
   display: flex;
   flex-direction: column;
   padding-left: 20px;
+  width: 237px;
 }
 
 .biz-index-name {
@@ -30,6 +32,10 @@
 .biz-show-categories span {
   width: 132px;
   height: 24px;
+}
+
+.search-biz-cuisine {
+  padding-top: 11px;
 }
 
 .star-rating-search-1 {
@@ -50,5 +56,5 @@
 }
 .star-rating-search-5 {
   background: asset-url("rating-stars.png");
-  background-position: -25px -215px;
+  background-position: 0px -215px;
 }
