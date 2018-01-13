@@ -50,10 +50,10 @@ export default class ReviewIndex extends React.Component {
             </div>
           </h2>
         </div>
-        <div className="single reviews">
+        <div className="single-reviews">
           {reviews}
         </div>
     </section>
-    )
+    );
   }
 }

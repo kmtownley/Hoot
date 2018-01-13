@@ -16,9 +16,9 @@ export const logout = () => dispatch => (
   APIUtil.logout().then(user => dispatch(receiveCurrentUser(null)))
 );
 
-export const clearErrors = () => (
-  {type: CLEAR_ERRORS}
-);
+export const clearErrors = () => ({
+  type: CLEAR_ERRORS
+});
 
 export const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,

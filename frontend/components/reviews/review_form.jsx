@@ -19,7 +19,7 @@ class ReviewForm extends React.Component {
   }
 
   componentDidMount() {
-    this.clearErrors();
+    debugger
     this.props.fetchBusiness(this.props.match.params.businessId);
     if (this.props.match.params.reviewId) {
       this.props.fetchReview(this.props.match.params.reviewId);
@@ -28,11 +28,15 @@ class ReviewForm extends React.Component {
 
 
   componentWillReceiveProps(newProps) {
-    debugger
     if (this.props.formType != newProps.formType) {
       this.setState(newProps.review);
+      this.props.clearErrors();
     }
-    this.clearErrors();
+  }
+
+
+  componentWillUnmount() {
+    this.props.clearErrors();
   }
 
   update(field) {
