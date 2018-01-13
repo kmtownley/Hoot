@@ -53,7 +53,7 @@ class BusinessShow extends React.Component {
     return (
       <div>
         <Link className="write-review-button" to={`/businesses/${this.props.business.id}/reviews/new`}>
-          <i class="fa fa-star" aria-hidden="true"></i>
+          <i className="fa fa-star" aria-hidden="true"></i>
           Write a Review
         </Link>
       </div>
@@ -115,7 +115,7 @@ class BusinessShow extends React.Component {
           </section>
         </main>
 
-    )
+    );
   }
 }
 
