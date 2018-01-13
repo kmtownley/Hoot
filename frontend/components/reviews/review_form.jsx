@@ -88,7 +88,7 @@ class ReviewForm extends React.Component {
 
 
   starReview() {
-    debugger
+
     return (
       <div>
         <div class="stars">
