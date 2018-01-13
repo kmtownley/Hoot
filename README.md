@@ -4,7 +4,9 @@
 ![alt text](https://github.com/kmtownley/Hoot/blob/master/app/assets/images/hoot-frontpage.png "Logo Title Text 1")
 
 ## Introduction
-  To help connect users with local businesses, hoot provides a poweruful search component and allows users to add their own reviews and corresponding ratings to businesses they have visited
+  To help connect users with local businesses, hoot provides a poweruful search component and allows users to add their own reviews and corresponding ratings to businesses they have visited.
+
+  Link to live demo (https://app-hoot.herokuapp.com/#/ "Hoot") 
 
 ## Features
 - Search by city, state, type of cuisine and business name
