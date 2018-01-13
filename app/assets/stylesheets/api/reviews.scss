@@ -46,28 +46,86 @@
 .review-star-container label {
   margin: 8px 0 0 9px;
   float: left;
-  font-size: 12px;
+  font-size: 16px;
+  align-self: center;
   display: flex;
 }
 
-.review-stars-wrapper input {
-  border: none;
-  margin: 0;
-  padding: 0;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-}
 
-.reviews-star {
-  font-size: 18px;
-  line-height: 1.33333em;
-  line-height: 1.44em;
-  border: 0;
-  outline: none;
-  padding: 0;
-  width: 100%;
+
+.stars {
+	direction: rtl;
+	margin: 0 auto;
+  display: flex;
+
+	label {
+		cursor: pointer;
+		margin: 5px;
+    width: 30px;
+    height: 30px;
+	}
+
+	.fa {
+    text-shadow: 0 0 5px grey;
+    font-size: 30px;
+    padding: 2px;
+    background: #999;
+    color: #f5f5f5;
+    margin: auto;
+    border: none;
+    margin: -3px;
+    padding: 4px;
+    width: 47px;
+    border-radius: 4px;
+
+	}
+
+  .stars .fa:hover {
+    background: red;
+  }
+
+  .fa-star:before {
+    padding: 0;
+  }
+
+	input:not(:checked) ~ label:not([for="userRating-1"]) > .fa-star { display: none; }
+
+	label:hover > .fa-star-o,
+	label:hover ~ label > .fa-star-o,
+	input:checked ~ label > .fa-star-o { display: none; }
+
+	label:hover > .fa-star,
+	label:hover ~ label > .fa-star,
+	input:checked ~ label > .fa-star { display: inline-block !important; background: red; }
 }
+// .review-stars-wrapper input {
+//   border: none;
+//   margin: 0;
+//   padding: 0;
+//   width: 30px;
+//   height: 30px;
+//   cursor: pointer;
+// }
+
+// .reviews-star {
+//   font-size: 18px;
+//   line-height: 1.33333em;
+//   line-height: 1.44em;
+//   border: 0;
+//   outline: none;
+//   padding: 0;
+//   width: 100%;
+// }
+
+// .stars input {
+//     float: right;
+//     width: 16px;
+//     height: 16px;
+//     padding: 0;
+//     margin: 0 0 0 -16px;
+//     opacity: 0;
+// }
+
 
 .review-body {
   font-size: 18px;

@@ -58,8 +58,8 @@ class SessionForm extends React.Component {
 
   update(field) {
     return (e) => {
-      this.setState({[field]: e.target.value})
-    }
+      this.setState({[field]: e.target.value});
+    };
   }
 
   renderErrors() {
@@ -91,13 +91,13 @@ class SessionForm extends React.Component {
         <div className="alternate-login-signup"> New to Hoot?
           <Link to={'/signup'} className="not-member-link"> Sign Up</Link>
         </div>
-      )
+      );
     } else {
       return (
         <div className="alternate-login-signup"> Already on Hoot?
           <Link to={'/login'} className="not-member-link"> Login </Link>
         </div>
-      )
+      );
     }
   }
 
@@ -123,7 +123,7 @@ class SessionForm extends React.Component {
           />
         </li>
       </ul>
-    )
+    );
   }
 
   signUpInfo() {
@@ -198,13 +198,14 @@ class SessionForm extends React.Component {
                 </section>
               </div>
             </form>
-        </div>
+          </div>
         <section className="owl-pic">
           <img src={window.staticImages.owlImage} />
         </section>
       </main>
     </div>
-  )};
+    );
+  }
 }
 
 export default withRouter(SessionForm);

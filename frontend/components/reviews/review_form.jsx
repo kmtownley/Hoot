@@ -19,7 +19,7 @@ class ReviewForm extends React.Component {
   }
 
   componentDidMount() {
-    debugger
+
     this.props.fetchBusiness(this.props.match.params.businessId);
     if (this.props.match.params.reviewId) {
       this.props.fetchReview(this.props.match.params.reviewId);
@@ -46,7 +46,6 @@ class ReviewForm extends React.Component {
   }
 
   renderErrors() {
-
     return(
       <ul className="review-errors-container">
         {this.props.errors.map((error, idx) => (
@@ -60,7 +59,6 @@ class ReviewForm extends React.Component {
   }
 
   handleSubmit(e) {
-
     e.preventDefault();
     this.props.action(this.state).then(() => this.props.history.push(`/businesses/${this.props.business.id}`));
   }
@@ -88,46 +86,111 @@ class ReviewForm extends React.Component {
     }
   }
 
+
   starReview() {
+    debugger
     return (
-      <div className="review-stars-wrapper">
-        <input
-          value={this.state.userRating}
-          onChange={this.update('user_rating')}
-          type="radio"
-          name="userRating"
-          value="1"
-        />
-        <input
-          value={this.state.userRating}
-          onChange={this.update('user_rating')}
-          type="radio"
-          name="userRating"
-          value="2"
-        />
-        <input
-          value={this.state.userRating}
-          onChange={this.update('user_rating')}
-          type="radio"
-          name="userRating"
-          value="3"
-        />
-        <input
-          value={this.state.userRating}
-          onChange={this.update('user_rating')}
-          type="radio"
-          name="userRating"
-          value="4"
-        />
-        <input
-          value={this.state.userRating}
-          onChange={this.update('user_rating')}
-          type="radio"
-          name="userRating"
-          value="5"
-        />
-      </div>
+      <div>
+        <div class="stars">
+        	<input type="radio"
+            onChange={this.update('user_rating')}
+            name="userRating"
+            value="5"
+            id="user-rating-5"
+            hidden />
+          <label for="user-rating-5">
+        		<i class="fa fa-star"></i>
+         		<i class="fa fa-star-o"></i>
+        	</label>
+        	<input type="radio"
+            onChange={this.update('user_rating')}
+            name="userRating"
+            value="4"
+            id="user-rating-4"
+            hidden />
+        	<label for="user-rating-4">
+             <i class="fa fa-star"></i>
+             <i class="fa fa-star-o"></i>
+          </label>
+        	<input
+            type="radio"
+            onChange={this.update('user_rating')}
+            name="userRating"
+            value="3"
+             id="user-rating-3"
+             hidden />
+           <label for="user-rating-3">
+             <i class="fa fa-star"></i>
+             <i class="fa fa-star-o"></i>
+          </label>
+        	<input
+            type="radio"
+            onChange={this.update('user_rating')}
+            name="userRating"
+            value="2"
+            id="user-rating-2"
+            hidden />
+          <label for="user-rating-2">
+          	 <i class="fa fa-star"></i>
+             <i class="fa fa-star-o"></i>
+          </label>
+        	<input
+            type="radio"
+            onChange={this.update('user_rating')}
+            name="userRating"
+            value="1"
+            id="user-rating-1"
+            hidden />
+          <label for="user-rating-1">
+          	 <i class="fa fa-star"></i>
+             <i class="fa fa-star-o"></i>
+          </label>
+        </div>
+    </div>
+
     );
+
+
+    // return (
+      // <div className="review-stars-wrapper">
+      //   <span className="stars">
+      //     <input
+            // value={this.state.userRating}
+            // onChange={this.update('user_rating')}
+            // name="userRating"
+            // value="1"
+      //     />
+      //     <input
+      //       value={this.state.userRating}
+      //       onChange={this.update('user_rating')}
+      //       type="radio"
+      //       name="userRating"
+      //       value="2"
+      //     />
+    //       <input
+    //         value={this.state.userRating}
+    //         onChange={this.update('user_rating')}
+    //         type="radio"
+    //         name="userRating"
+    //         value="3"
+    //       />
+    //       <input
+    //         value={this.state.userRating}
+    //         onChange={this.update('user_rating')}
+    // //         type="radio"
+    // //         name="userRating"
+    // //         value="4"
+    //       />
+    //       <input
+    //         value={this.state.userRating}
+    //         onChange={this.update('user_rating')}
+    //         type="radio"
+    //         name="userRating"
+    //         value="5"
+    //       />
+    //   </span>
+    //   </div>
+    // );
   }
 
   updateRadioButton(value) {

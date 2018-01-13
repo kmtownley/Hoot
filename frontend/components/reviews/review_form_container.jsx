@@ -26,7 +26,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   const action = ownProps.match.path === "/" ? createReview : createReview;
-  debugger
+  
   return {
     fetchReview: id => dispatch(fetchReview(id)),
     fetchBusiness: (businessId) => dispatch(fetchBusiness(businessId)),

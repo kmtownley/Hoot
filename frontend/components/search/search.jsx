@@ -9,7 +9,7 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
+    // 
     const queries = this.props.location.search.split("&");
     const contentQuery = queries[0].slice(queries[0].indexOf("=") + 1);
     const areaQuery = queries[1].slice(queries[1].indexOf("=") + 1);

@@ -58,7 +58,7 @@ class ReviewIndexItem extends React.Component {
               <div>
                 <div className="star-rating-container">
                   <div
-                    id={`star-rating-${this.props.review.user_rating}`} className={`star-rating-${this.props.review.user_rating}`}>
+                     className={`star-rating-${this.props.review.user_rating}`}>
                   </div>
                   <div className="review-date">
                     {date}
