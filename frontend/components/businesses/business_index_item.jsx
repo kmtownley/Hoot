@@ -4,11 +4,11 @@ import { withRouter, Link } from 'react-router-dom';
 class BusinessIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    debugger
+
   }
 
   createBizNumber() {
-    debugger
+
     let bizName;
     let num;
     this.props.businesses.each(key => {
@@ -47,7 +47,7 @@ class BusinessIndexItem extends React.Component {
   }
 
   renderBizSearchIndex() {
-    const { biz_name, rating, cuisine, address, city, state, zipcode, image_url, price } = this.props.business;
+    const { biz_name, rating, cuisine, address, city, state, zipcode, image_url, price, phone_number } = this.props.business;
     const business = this.props.business;
     if (this.props.pathname === "/businesses/:businessId" || this.props.pathname === "/search") {
     return (
@@ -72,6 +72,7 @@ class BusinessIndexItem extends React.Component {
             <ul className="search-biz-address">
               <li>{address}</li>
               <li>{city}, {state}, {zipcode}</li>
+              <li>{phone_number}</li>
             </ul>
           </section>
           <br/>
@@ -81,7 +82,7 @@ class BusinessIndexItem extends React.Component {
   }
 
   render() {
-    debugger
+
     if (this.props.pathname === "/businesses/:businessId" || this.props.pathname === "/search") {
     return (
       <div>
