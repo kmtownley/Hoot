@@ -31,7 +31,7 @@
 .nav-landing {
   background-size:cover;
   min-height: 40px;
-  min-width: 90%;
+  min-width: 92%;
   background-color: transparent;
   padding: 15px 15px 15px 15px;
   position: absolute;
@@ -113,18 +113,17 @@
   display: flex;
 }
 
-.signup-signin-no-user {
+.login-signup-reg {
   display: flex;
-
+  margin-right: 223px;
 }
 
 .login-no-user {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  border-radius: 4px;
   font-size: 16px;
   font-weight: bold;
-  min-width: 80px;
+  min-width: 100px;
   text-align: center;
   line-height: 24px;
   padding: 8px 24px;
@@ -136,17 +135,12 @@
 }
 
 .signup-no-user {
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  border-radius: 4px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
-  min-width: 80px;
+  min-width: 110px;
   text-align: center;
-  line-height: 24px;
-  padding: 8px 24px;
+  line-height: 43px;
   position: relative;
-  right: 150px;
   border: 2px solid #fff;
   border-radius: 4px;
   background: transparent;
@@ -206,10 +200,10 @@
   font-weight: bold;
   color: #f5f5f5;
   background-color: transparent;
-  min-width: 80px;
+  min-width: 110px;
   text-align: center;
   line-height: 24px;
-  padding: 7px 18px;
+  padding: 11px 22px;
   right: 100px;
   border: 2px solid #fff;
 }

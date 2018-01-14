@@ -27,22 +27,26 @@ const AuthNavbar = (props) => {
         className="header-button">
         <Link to="/user">Profile</Link>
       </button>
-      <button
-        className="header-button"
-        onClick={props.logout}>
-        <Link to="/">Logout</Link>
-      </button>
+      {logout}
     </div>
   );
 
-  const login_signup = (
-    <div>
-      <nav className="login">
-        <Link to="/login"> Login </Link>
-      </nav>
-      <nav className="signup">
-        <Link to="/signup"> Sign Up </Link>
-      </nav>
+  const login = (
+    <button className="login">
+      <Link to="/login"> Login</Link>
+    </button>
+  );
+
+  const signup = (
+    <button className="signup">
+      <Link to="/signup"> Sign Up </Link>
+    </button>
+  );
+
+  const loginSignupLanding = (
+    <div className="header-button-container">
+      {login}
+      {signup}
     </div>
   );
 
@@ -86,20 +90,16 @@ const AuthNavbar = (props) => {
     navContents =
     <div className="hoot-logo-container-left">
       {hootLogo}
-        <SearchBarContainer />
-      <div className="header-button-container">
-        <nav className="header-button">
-          <Link to="/login"> Login </Link>
-        </nav>
-        <nav className="header-button">
-          <Link to="/signup"> Sign Up </Link>
-        </nav>
+      <SearchBarContainer />
+      <div className="login-signup-reg">
+      {login}
+      {signup}
       </div>
     </div>
   } else {
     navContents = (
     <div>
-      {login_signup}
+      {loginSignupLanding}
     </div>
     );
   }
