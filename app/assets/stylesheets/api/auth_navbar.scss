@@ -28,10 +28,16 @@
   display: flex;
   height: 47px;
 }
+
+.nav-main-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
 .nav-landing {
   background-size:cover;
   min-height: 40px;
-  min-width: 92%;
+  min-width: 75%;
   background-color: transparent;
   padding: 15px 15px 15px 15px;
   position: absolute;

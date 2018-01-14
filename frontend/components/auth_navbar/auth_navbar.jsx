@@ -107,9 +107,11 @@ const AuthNavbar = (props) => {
 
   if (props.location.pathname === '/') {
     return (
-      <div className="main-content-wrapper">
-        <div className={navClass}>
-            {navContents}
+      <div class="nav-main-container">
+        <div className="main-content-wrapper">
+          <div className={navClass}>
+              {navContents}
+          </div>
         </div>
       </div>
     );
