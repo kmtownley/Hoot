@@ -1,7 +1,37 @@
+.main-nav-container {
+  min-width: 1020px;
+  z-index: 6;
+  justify-content: center;
+}
+
+.main-header-container {
+  z-index: 1011;
+  background: #d32323;
+  background-size: 1135px auto, 100%;
+  padding: 12px 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.main-content-wrapper {
+  margin-left: -18px;
+  margin-right: -18px;
+  border-collapse: separate;
+  border-spacing: 18px 0;
+  display: table;
+  min-width: 100%;
+  table-layout: auto;
+}
+
+.header-button-container {
+  display: flex;
+  height: 47px;
+}
 .nav-landing {
   background-size:cover;
   min-height: 40px;
-  min-width: 100%;
+  min-width: 90%;
   background-color: transparent;
   padding: 15px 15px 15px 15px;
   position: absolute;
@@ -11,9 +41,7 @@
 }
 
 .nav-regular {
-  display: flex;
   height: 40px;
-  padding: 16px 0px 16px 0px;
   position: relative;
   background-color: #d32323;
   justify-content: space-between;
@@ -42,32 +70,35 @@
 
 .hoot-logo-container-center {
   display: flex;
-  height: 100%;
-  width: 100%;
-  align-items: center;
   justify-content: center;
 }
 
 .hoot-logo-container-left {
+  width: 960px;
+  margin: 0 auto;
+  padding: 0 15px;
   display: flex;
-  height: 100%;
-  width: 100%;
-  align-items: center;
-  padding-left: 220px;
-  padding-right: 63px;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .hoot-logo {
-  padding-right: 26px;
+  padding-right: 14px;
+}
+
+.hoot-logo-logout {
+  display: flex;
+  justify-content: space-between;
 }
 .profile-logout-container {
   display: flex;
-  // padding-left: 600px;
   padding-right: 262px;
-
 }
 
+.profile-header-contents {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+}
 .profile-logout-container button {
   margin-left: 5px;
 }
@@ -178,9 +209,14 @@
   min-width: 80px;
   text-align: center;
   line-height: 24px;
-  padding: 8px 24px;
+  padding: 7px 18px;
   right: 100px;
   border: 2px solid #fff;
+}
+
+.header-button:first-of-type {
+  margin-right: 6px;
+  margin-right: 6px;
 }
 
 .header-button:hover {

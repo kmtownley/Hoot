@@ -63,27 +63,27 @@ class SearchBar extends React.Component {
     this.clearInputs();
 
   }
-  render() {
 
+  render() {
     return (
     <div className={this.switchContainerStyle()}>
       <form
         className="searchbar-form"
         onSubmit={this.handleSubmit}>
-        <input
-          className="search-type"
-          type="text"
-          placeholder="Find"
-          value = {this.state.contentQuery}
-          onChange={this.handleChange("contentQuery")}
-        />
-        <input
-          className="search-text-area"
-          type="text"
-          placeholder="Near"
-          value={this.state.areaQuery}
-          onChange={this.handleChange("areaQuery")}
+          <input
+            className="search-type"
+            type="text"
+            placeholder="Find"
+            value = {this.state.contentQuery}
+            onChange={this.handleChange("contentQuery")}
           />
+          <input
+            className="search-text-area"
+            type="text"
+            placeholder="Near"
+            value={this.state.areaQuery}
+            onChange={this.handleChange("areaQuery")}
+            />
         <button
           className={this.switchButtonStyle()}
           type="submit"

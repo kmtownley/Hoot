@@ -11,31 +11,27 @@
 }
 
 .searchbar-form {
-  border-radius: 4px 0 0 4px;
   position: relative;
   box-shadow: none;
   border: none;
-  border-radius: 0;
-  background: #fff;
   display: flex;
-  flex-direction: row;
-  margin-right: 42px;
 }
 
 .searchbar-form input {
+  background: #fff;
   font-size: 18px;
-  padding: 9px;
-  border-radius: 4px 0 0 4px;
+  padding-left: 7px;
 }
-
 .search-type {
   width: 500px;
   border-right: 1px solid #999;
+  border-radius: 4px 0 0 4px;
 }
 .search-text-area  {
   float: right;
   width: 400px;
   padding-left: 6px;
+  border-radius: 0px;
 }
 
 .searchbar-form button {
@@ -51,14 +47,13 @@
   background: #bd1f1f;
 }
 
-.search-map-contai{
-  width: 10px;
-  height: 10px;
-}
-
 .nav-searchbar {
-  width: 650px;
-  margin-bottom: 2px;
+  border-collapse: collapse;
+  border-spacing: 0 0;
+  width: 80%;
+  margin-left: 9px;
+  margin-right: 9px;
+  margin-top: 3px;
 }
 
 .search-button {
@@ -69,7 +64,7 @@
 .home-search-button {
   display: flex;
   color: white;
-  border: 0;
+  border-radius: 0 4px 4px 0;
   padding: 14px 40px 19px;
   box-shadow: none;
   background-color: #bd1f1f;

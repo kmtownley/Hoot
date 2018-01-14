@@ -21,6 +21,20 @@ const AuthNavbar = (props) => {
     </button>
   );
 
+  const profileLogout = (
+    <div className="header-button-container">
+      <button
+        className="header-button">
+        <Link to="/user">Profile</Link>
+      </button>
+      <button
+        className="header-button"
+        onClick={props.logout}>
+        <Link to="/">Logout</Link>
+      </button>
+    </div>
+  );
+
   const login_signup = (
     <div>
       <nav className="login">
@@ -48,29 +62,18 @@ const AuthNavbar = (props) => {
     navClass = 'nav-regular';
   }
 
-  if (props.currentUser && props.location.pathname === "/user") {
+   if (props.currentUser && navClass !== "nav-landing" )  {
     navContents = (
       <div className="hoot-logo-container-left">
         {hootLogo}
-        {logout}
-      </div>
-    );
-  } else if (props.currentUser && navClass !== "nav-landing" )  {
-    navContents = (
-      <div className="hoot-logo-container-left">
-        {hootLogo}
-        <div className="profile-logout-container">
-          <SearchBarContainer />
-        {profile}
-        {logout}
-        </div>
+        <SearchBarContainer />
+        {profileLogout}
       </div>
     );
   } else if (props.currentUser) {
     navContents = (
       <div className="nav-landing-container">
-        {profile}
-        {logout}
+        {profileLogout}
       </div>
     );
   } else if (props.location.pathname === '/login' || props.location.pathname === '/signup') {
@@ -83,14 +86,12 @@ const AuthNavbar = (props) => {
     navContents =
     <div className="hoot-logo-container-left">
       {hootLogo}
-      <div className="no-user-searchbar">
         <SearchBarContainer />
-      </div>
-      <div className="signup-signin-no-user">
-        <nav className="login-no-user">
+      <div className="header-button-container">
+        <nav className="header-button">
           <Link to="/login"> Login </Link>
         </nav>
-        <nav className="signup-no-user">
+        <nav className="header-button">
           <Link to="/signup"> Sign Up </Link>
         </nav>
       </div>
@@ -103,12 +104,30 @@ const AuthNavbar = (props) => {
     );
   }
 
-  return (
-    <div className={navClass}>
-      {navContents}
-    </div>
-  )
-}
 
+  if (props.location.pathname === '/') {
+    return (
+      <div className="main-content-wrapper">
+        <div className={navClass}>
+            {navContents}
+        </div>
+      </div>
+    );
+  } else {
+    return (
+    <div className="main-nav-container">
+      <div className="main-header-container">
+        <div className="main-content-wrapper">
+          <div className={navClass}>
+            <div>
+            {navContents}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    );
+  }
+}
 
 export default AuthNavbar;
