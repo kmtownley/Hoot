@@ -43,7 +43,6 @@
   position: absolute;
   z-index: 1;
   display: flex;
-  justify-content: center;
 }
 
 .nav-regular {
@@ -54,24 +53,12 @@
   width: 100%;
 }
 
-.nav-business-show {
-  display: flex;
-  height: 40px;
-  padding: 15px 15px 15px 15px;
-  position: relative;
-  background-color: #d32323;
-}
-
 .nav-landing-container {
   display: flex;
   height: 100%;
   width: 80%;
   align-items: center;
   justify-content: flex-end;
-}
-
-.nav-landing-container button {
-  margin-left: 8px;
 }
 
 .hoot-logo-container-center {

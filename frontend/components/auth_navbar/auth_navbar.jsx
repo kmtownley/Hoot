@@ -86,7 +86,7 @@ const AuthNavbar = (props) => {
         {hootLogo}
       </div>
     );
-  } else if (!props.currentUser && navClass !== "nav-landing"){
+  } else if (!props.currentUser && navClass !== "nav-landing") {
     navContents =
     <div className="hoot-logo-container-left">
       {hootLogo}

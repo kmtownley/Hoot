@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 class ReviewForm extends React.Component {
@@ -19,7 +20,6 @@ class ReviewForm extends React.Component {
   }
 
   componentDidMount() {
-
     this.props.fetchBusiness(this.props.match.params.businessId);
     if (this.props.match.params.reviewId) {
       this.props.fetchReview(this.props.match.params.reviewId);
@@ -88,7 +88,6 @@ class ReviewForm extends React.Component {
 
 
   starReview() {
-
     return (
       <div>
         <div class="stars">
@@ -147,50 +146,7 @@ class ReviewForm extends React.Component {
           </label>
         </div>
     </div>
-
     );
-
-
-    // return (
-      // <div className="review-stars-wrapper">
-      //   <span className="stars">
-      //     <input
-            // value={this.state.userRating}
-            // onChange={this.update('user_rating')}
-            // name="userRating"
-            // value="1"
-      //     />
-      //     <input
-      //       value={this.state.userRating}
-      //       onChange={this.update('user_rating')}
-      //       type="radio"
-      //       name="userRating"
-      //       value="2"
-      //     />
-    //       <input
-    //         value={this.state.userRating}
-    //         onChange={this.update('user_rating')}
-    //         type="radio"
-    //         name="userRating"
-    //         value="3"
-    //       />
-    //       <input
-    //         value={this.state.userRating}
-    //         onChange={this.update('user_rating')}
-    // //         type="radio"
-    // //         name="userRating"
-    // //         value="4"
-    //       />
-    //       <input
-    //         value={this.state.userRating}
-    //         onChange={this.update('user_rating')}
-    //         type="radio"
-    //         name="userRating"
-    //         value="5"
-    //       />
-    //   </span>
-    //   </div>
-    // );
   }
 
   updateRadioButton(value) {
@@ -198,7 +154,8 @@ class ReviewForm extends React.Component {
   }
 
   render () {
-    if (!this.props.business) {
+    const business = this.props.business;
+    if (!business) {
       return (
         <div className="loading-container">
           <h2 className="loading">Loading...
@@ -212,7 +169,9 @@ class ReviewForm extends React.Component {
      <div className="review-main">
        <h2 className="review-form-type">{text}</h2>
        <h3
-         className = "review-form-title">{this.props.business.biz_name}
+         className = "review-form-title">
+         <Link to={`/businesses/${business.id}`}>
+           {business.biz_name}</Link>
        </h3>
        <ul>
          <li>{this.renderErrors()}</li>
