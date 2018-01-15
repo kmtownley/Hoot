@@ -152,3 +152,34 @@
   display: flex;
   align-self: center;
 }
+
+.footer {
+  height: 150px;
+  background-color: lightgrey;
+}
+
+.git-link {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  margin: auto;
+}
+
+.fa-github {
+  padding-top: 15px
+}
+
+.footer-list {
+  display: flex;
+  justify-content: space-around;
+  margin-top: -18px;
+}
+.footer-title {
+  display: flex;
+  flex-direction: column;
+}
+.footer-list-content {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}

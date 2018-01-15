@@ -38,6 +38,20 @@ export default class Homepage extends React.Component {
     );
   }
 
+  renderFooter() {
+    return (
+    <ul className="footer_list">
+      <li className="footer-list-content">
+        <label className="footer-title"> VIEW THE CODE
+          <a className="git-link" href="https://github.com/kmtownley/Hoot">
+            <i className="fa fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </label>
+      </li>
+    </ul>
+    );
+  }
+
   render() {
 
     return (
@@ -56,8 +70,11 @@ export default class Homepage extends React.Component {
           Hot & Awesome Businesses
           <div>{this.awesomeBizs()}</div>
         </section>
-
+        <footer className="footer">
+          {this.renderFooter()}
+        </footer>
       </main>
+
     );
   }
 }
