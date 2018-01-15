@@ -7,7 +7,6 @@ export const RECEIVE_REVIEW_ERRORS = "RECEIVE_REVIEW_ERRORS";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
 export const fetchReviews = businessId => dispatch => {
-  debugger
   return (
     ReviewAPIUtil.fetchReviews(businessId).then(reviews => dispatch(receiveAllReviews(reviews)))
   );

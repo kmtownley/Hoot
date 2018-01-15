@@ -9,13 +9,10 @@ class BusinessShow extends React.Component {
     this.state = this.props.business;
   }
 
-  componentDidMount() {
-
-    this.props.fetchBusiness(this.props.match.params.businessId);
+  componentDidMount() {         this.props.fetchBusiness(this.props.match.params.businessId);
   }
 
   componentWillReceiveProps(nextProps) {
-
     if (this.props.match.params.businessId !== nextProps.match.params.businessId) {
       this.props.fetchBusinesses();
       this.props.fetchBusiness(nextProps.match.params.businessId);

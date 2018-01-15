@@ -9,13 +9,9 @@ import SearchContainer from '../search/search_container';
 class BusinessIndex extends React.Component {
   constructor(props) {
     super(props);
-    debugger
-    console.log('hello')
-
-
   }
+  
   componentDidMount() {
-
     // this.props.fetchBusinesses();
   }
 
