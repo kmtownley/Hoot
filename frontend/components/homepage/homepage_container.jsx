@@ -9,7 +9,7 @@ export const mapStateToProps = state => {
   businesses: Object.values(state.entities.businesses)
   };
 };
-//fill in tomorrow
+
 export const mapDispatchToProps = dispatch => ({
   fetchBusinesses: (queries) => dispatch(fetchBusinesses(queries))
 });

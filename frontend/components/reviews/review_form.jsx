@@ -34,7 +34,6 @@ class ReviewForm extends React.Component {
     }
   }
 
-
   componentWillUnmount() {
     this.props.clearErrors();
   }
@@ -90,7 +89,7 @@ class ReviewForm extends React.Component {
   starReview() {
     return (
       <div>
-        <div class="stars">
+        <div className="stars">
         	<input type="radio"
             onChange={this.update('user_rating')}
             name="userRating"
@@ -98,8 +97,8 @@ class ReviewForm extends React.Component {
             id="user-rating-5"
             hidden />
           <label for="user-rating-5">
-        		<i class="fa fa-star"></i>
-         		<i class="fa fa-star-o"></i>
+        		<i className="fa fa-star"></i>
+         		<i className="fa fa-star-o"></i>
         	</label>
         	<input type="radio"
             onChange={this.update('user_rating')}
@@ -108,8 +107,8 @@ class ReviewForm extends React.Component {
             id="user-rating-4"
             hidden />
         	<label for="user-rating-4">
-             <i class="fa fa-star"></i>
-             <i class="fa fa-star-o"></i>
+             <i className="fa fa-star"></i>
+             <i className="fa fa-star-o"></i>
           </label>
         	<input
             type="radio"
@@ -119,8 +118,8 @@ class ReviewForm extends React.Component {
              id="user-rating-3"
              hidden />
            <label for="user-rating-3">
-             <i class="fa fa-star"></i>
-             <i class="fa fa-star-o"></i>
+             <i className="fa fa-star"></i>
+             <i className="fa fa-star-o"></i>
           </label>
         	<input
             type="radio"
@@ -130,8 +129,8 @@ class ReviewForm extends React.Component {
             id="user-rating-2"
             hidden />
           <label for="user-rating-2">
-          	 <i class="fa fa-star"></i>
-             <i class="fa fa-star-o"></i>
+          	 <i className="fa fa-star"></i>
+             <i className="fa fa-star-o"></i>
           </label>
         	<input
             type="radio"
@@ -141,8 +140,8 @@ class ReviewForm extends React.Component {
             id="user-rating-1"
             hidden />
           <label for="user-rating-1">
-          	 <i class="fa fa-star"></i>
-             <i class="fa fa-star-o"></i>
+          	 <i className="fa fa-star"></i>
+             <i className="fa fa-star-o"></i>
           </label>
         </div>
     </div>

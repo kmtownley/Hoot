@@ -9,14 +9,10 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
-    //
     const queries = this.props.location.search.split("&");
     const contentQuery = queries[0].slice(queries[0].indexOf("=") + 1);
     const areaQuery = queries[1].slice(queries[1].indexOf("=") + 1);
-    // if (this.props.location.search !== 15 ) {
-      this.props.fetchBusinesses(areaQuery, contentQuery);
-
-    // }
+    this.props.fetchBusinesses(areaQuery, contentQuery);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -26,7 +22,6 @@ class Search extends React.Component {
     if (this.props.location.search !== nextProps.location.search ) {
       this.props.fetchBusinesses(areaQuery, contentQuery);
     }
-  //
   }
 
   findBusinesses() {
@@ -41,7 +36,6 @@ class Search extends React.Component {
 
 
   render() {
-
     const businesses = this.props.businesses;
     return (
       <div>
@@ -52,7 +46,7 @@ class Search extends React.Component {
               businesses={businesses}
               pathname={this.props.location.pathname}
               fetchReviews={this.props.fetchReviews}
-          />
+            />
           </div>
       </div>
     </div>

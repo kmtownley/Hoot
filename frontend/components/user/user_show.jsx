@@ -42,11 +42,7 @@ class UserShow extends React.Component {
 
   updateFile(e) {
     let file;
-    // if (!this.state.user_img) {
-    //   file = <i className="fa fa-user" aria-hidden="true"></i>;
-    // } else {
     file = e.currentTarget.files[0];
-    // }
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
       this.setState({imageFile: file, user_img: fileReader.result});
@@ -58,7 +54,6 @@ class UserShow extends React.Component {
 
 
   updateUserInfo() {
-
     const currentUser = this.props.currentUser;
     return (
       <form className="update-user-container">
@@ -106,7 +101,6 @@ class UserShow extends React.Component {
   }
 
   render() {
-
     const currentUser = this.props.currentUser;
     return (
       <div className="user-show-container">

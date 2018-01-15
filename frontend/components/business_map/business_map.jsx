@@ -13,27 +13,19 @@ class BusinessMap extends React.Component {
   constructor(props) {
     super(props);
     this.updateBounds = this.updateBounds.bind(this);
-
   }
 
   componentDidMount() {
     let mapOptions;
-    // if (this.props.location.pathname !== "/search") {
-    //   mapOptions = {
-    //     center : { lat: this.props.business.latitude, lng: this.props.business.longitude},
-    //     zoom: 16
-    //   };
-    // } else {
-      mapOptions = {
-        center: { lat: 40.7629471996736, lng: -73.97823811645509 },
-          zoom: 11
-        };
+    mapOptions = {
+      center: { lat: 40.7629471996736, lng: -73.97823811645509 },
+        zoom: 11
+      };
     // wrap the mapDOMNode in a Google Map
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
     this.map.addListener("idle", this.updateBounds);
     this.MarkerManager.updateMarkers(this.props.businesses);
-    // this.MarkerManager.markers;
   }
 
   componentWillReceiveProps(newProps) {
@@ -41,9 +33,7 @@ class BusinessMap extends React.Component {
   }
 
   updateBounds() {
-
     let latLngBounds = this.map.getBounds();
-
     let ne = latLngBounds.getNorthEast();
     let sw = latLngBounds.getSouthWest();
 
@@ -56,17 +46,9 @@ class BusinessMap extends React.Component {
   }
 
   componentDidUpdate() {
-
     this.MarkerManager.updateMarkers(this.props.businesses);
-
   }
 
-  // handleClick(coords) {
-  //   this.props.history.push({
-  //     pathname: 'businesses/new',
-  //     search: `lat=${coords.lat}&lng=${coords.lng}`
-  //   });
-  // }
 
   renderBizShowContainer() {
     let containerStyle;
@@ -81,23 +63,8 @@ class BusinessMap extends React.Component {
     }
   }
 
-  // mapStyle() {
-  //
-  //   let classStyle;
-  //   let mapContainer;
-  //   if (this.props.location.pathname !== '/search') {
-  //     return (
-  //       classStyle="map-box"
-  //     );
-  //   } else {
-  //     return (
-  //       classStyle="search-map-box"
-  //     );
-  //   }
-  // }
 
   render() {
-
     return (
       <section className="search-map-container">
       <div className="search-map-box">

@@ -6,9 +6,3 @@ export const updateBounds = (bounds) => ({
   type: UPDATE_BOUNDS,
   bounds
 });
-
-// export const updateBounds = (bounds, value) => (dispatch, getState) => {
-//
-//   dispatch(changeBounds(bounds, value));
-//   return fetchBusinesses(getState().bounds)(dispatch);
-// };

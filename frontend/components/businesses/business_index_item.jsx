@@ -6,12 +6,7 @@ class BusinessIndexItem extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    // this.props.fetchReviews(this.props.business.id)
-  }
-
   createBizNumber() {
-
     let bizName;
     let num;
     this.props.businesses.each(key => {
@@ -22,6 +17,7 @@ class BusinessIndexItem extends React.Component {
       );
     });
   }
+
   renderHompageBizCard() {
     const { biz_name, rating, cuisine, address, city, state, zipcode, image_url, price } = this.props.business;
     const business = this.props.business;
@@ -48,14 +44,7 @@ class BusinessIndexItem extends React.Component {
       </li>
     );
   }
-
-  renderReviewSnippet() {
-    // return (
-    // this.props.fetchReviews(this.props.business.id).then(reviews => (
-    // console.log(reviews))
-    // ));
-  }
-
+  
   renderBizSearchIndex() {
     const { biz_name, rating, cuisine, address, city, state, zipcode, image_url, price, phone_number } = this.props.business;
     const business = this.props.business;
