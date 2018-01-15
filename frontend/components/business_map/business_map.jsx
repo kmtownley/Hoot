@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import { withRouter } from 'react-router-dom';
 import MarkerManager from '../../util/marker_manager';
 
-// const getCoordsObj = latLng => ({
-//   lat: latLng.latitude(),
-//   lng: latLng.longitude()
-// });
+const getCoordsObj = latLng => ({
+  lat: latLng.latitude(),
+  lng: latLng.longitude()
+});
 
 
 class BusinessMap extends React.Component {
@@ -38,18 +38,19 @@ class BusinessMap extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-
+    if (this.props.businesses != newProps.businesses) {
     this.MarkerManager.updateMarkers(newProps.businesses);
+    }
   }
 
   updateBounds() {
 
-    let latLng = this.map.getBounds();
+    let latLngBounds = this.map.getBounds();
 
-    let ne = latLng.getNorthEast();
-    let sw = latLng.getSouthWest();
+    let ne = latLngBounds.getNorthEast();
+    let sw = latLngBounds.getSouthWest();
 
-    this.props.updateBounds({
+    this.props.updateBounds('bounds', {
       north: ne.lat(),
       east: ne.lng(),
       south: sw.lat(),
@@ -58,13 +59,9 @@ class BusinessMap extends React.Component {
   }
 
   componentDidUpdate() {
-    // if (this.props.singleBusiness) {
-    //   const targetBusinessKey = Object.key(this.props.businesses[0]);
-    //   const targetBusiness = this.props.businesses[targetBusinessKey];
-    //   this.MarkerManager.updateMarkers([targetBusiness]);
-    // } else {
-    //   this.MarkerManager.updateMarkers(this.props.businesses);
-    // }
+    debugger
+    this.MarkerManager.updateMarkers(this.props.businesses);
+
   }
 
   // handleClick(coords) {
