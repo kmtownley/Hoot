@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import auth_navbarContainer from '../auth_navbar/auth_nav_container';
 import BusinessIndexItem from './business_index_item';
-// import HomepageContainer from '../homepage/homepage_container';
 import BusinessMap from '../business_map/business_map';
 import SearchContainer from '../search/search_container';
 
@@ -10,12 +9,6 @@ class BusinessIndex extends React.Component {
   constructor(props) {
     super(props);
   }
-  
-  componentDidMount() {
-    // this.props.fetchBusinesses();
-  }
-
-
 
   bizListStyle() {
     let className;
@@ -31,12 +24,9 @@ class BusinessIndex extends React.Component {
   }
 
   render() {
-
     const businesses = this.props.businesses;
-
     return (
       <main className="business-index-container">
-
         <ul>
           {
             businesses.map((business, idx) => (
@@ -63,7 +53,7 @@ class BusinessIndex extends React.Component {
             />
         </section>
       </main>
-    )
+    );
   }
 }
 
