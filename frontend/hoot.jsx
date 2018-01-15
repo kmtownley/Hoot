@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-
+import fetchReviews from './actions/review_actions';
 
 import { updateBounds } from './actions/filter_actions';
 import { fetchBusinesses } from
@@ -23,5 +23,5 @@ document.addEventListener("DOMContentLoaded", () => {
   window.$ = $;
   window.dispatch = store.dispatch;
   window.getState = store.getState;
-
+  window.fetchReviews = fetchReviews;
 });

@@ -3,7 +3,7 @@ import Search from './search';
 import { fetchBusinesses } from '../../actions/business_actions';
 import { updateBounds } from '../../actions/filter_actions';
 import { logout, clearErrors } from '../../actions/session_actions';
-
+import { fetchReviews} from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
 
@@ -17,6 +17,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
   return {
   updateBounds: (bounds) => dispatch(updateBounds(bounds)),
+  fetchReviews: businessId => dispatch(fetchReviews(businessId)),
   fetchBusinesses: (areaQuery, contentQuery) => dispatch(fetchBusinesses(areaQuery, contentQuery)),
   clearErrors: () => dispatch(clearErrors())
   };

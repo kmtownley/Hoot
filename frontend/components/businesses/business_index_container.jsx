@@ -4,15 +4,18 @@ import  BusinessIndex from './business_index';
 import { fetchBusinesses } from '../../actions/business_actions';
 import { updateBounds } from '../../actions/filter_actions';
 
-const mapStateToProps = state => {
-
+const mapStateToProps = (state, ownProps) => {
+  debugger
+  return {
+  reviews: Object.values(state.entities.reviews)
   // return {
   // businesses: Object.values(state.entities.businesses)
   // };
+  };
 };
 
 const mapDispatchToProps = dispatch => {
-  debugger
+
   return {
   updateBounds: (bounds) => dispatch(updateBounds(bounds)),
   fetchBusinesses: () => dispatch(fetchBusinesses())
@@ -20,6 +23,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default withRouter(connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(BusinessIndex));

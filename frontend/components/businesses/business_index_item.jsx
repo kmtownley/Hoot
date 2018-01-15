@@ -4,6 +4,13 @@ import { withRouter, Link } from 'react-router-dom';
 class BusinessIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    debugger
+    console.log("hello")
+
+  }
+
+  componentDidMount() {
+    this.props.fetchReviews(this.props.business.id)
 
   }
 
@@ -46,7 +53,16 @@ class BusinessIndexItem extends React.Component {
     );
   }
 
+  renderReviewSnippet() {
+    debugger
+    return (
+    this.props.fetchReviews(this.props.business.id).then(reviews => (
+    console.log(reviews))
+    ));
+  }
+
   renderBizSearchIndex() {
+    debugger
     const { biz_name, rating, cuisine, address, city, state, zipcode, image_url, price, phone_number } = this.props.business;
     const business = this.props.business;
     if (this.props.pathname === "/businesses/:businessId" || this.props.pathname === "/search") {
@@ -76,6 +92,7 @@ class BusinessIndexItem extends React.Component {
             </ul>
           </section>
           <br/>
+          {this.props.review}
       </li>
       );
     }

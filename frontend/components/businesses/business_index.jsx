@@ -10,6 +10,8 @@ class BusinessIndex extends React.Component {
   constructor(props) {
     super(props);
     debugger
+    console.log('hello')
+
 
   }
   componentDidMount() {
@@ -49,6 +51,8 @@ class BusinessIndex extends React.Component {
                   business={business}
                   num ={idx + 1}
                   pathname={this.props.location.pathname}
+                  fetchReviews={this.props.fetchReviews}
+                  reviews={this.props.reviews}
                 />
               </ul>
             ))

@@ -11,20 +11,20 @@ export default class MarkerManager {
   }
 
   updateMarkers(businesses){
-    debugger
+
     const bizObject = {};
     if (businesses !== undefined) {
     businesses.forEach((business) => bizObject[business.id] = business);
     } else {
       bizObject[this.props.business.id] = business;
     }
-    debugger
+
     businesses
       .filter(business => !this.markers[business.id])
       .forEach((newBusiness,idx) =>
         this.createMarkerFromBusiness(newBusiness, idx+1, this.handleClick));
 
-        debugger
+
         Object.keys(this.markers)
          .filter((businessId) => !bizObject[businessId])
          .forEach((businessId) => this.removeMarker(this.markers[businessId]));
@@ -48,13 +48,13 @@ export default class MarkerManager {
     }
 
   removeMarker(marker) {
-    debugger
+
     this.markers[marker.businessId].setMap(null);
     delete this.markers[marker.businessId];
   }
 
   createMarkerFromBusiness(business) {
-    debugger
+
     const position = { lat: business.latitude, lng: business.longitude };
     const marker = new google.maps.Marker({
       position,

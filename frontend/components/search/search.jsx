@@ -15,6 +15,7 @@ class Search extends React.Component {
     const areaQuery = queries[1].slice(queries[1].indexOf("=") + 1);
     // if (this.props.location.search !== 15 ) {
       this.props.fetchBusinesses(areaQuery, contentQuery);
+
     // }
   }
 
@@ -50,6 +51,7 @@ class Search extends React.Component {
             <BusinessIndexContainer
               businesses={businesses}
               pathname={this.props.location.pathname}
+              fetchReviews={this.props.fetchReviews}
           />
           </div>
       </div>

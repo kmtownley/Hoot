@@ -41,7 +41,7 @@ class BusinessMap extends React.Component {
   }
 
   updateBounds() {
-    debugger
+
     let latLngBounds = this.map.getBounds();
 
     let ne = latLngBounds.getNorthEast();
@@ -56,7 +56,7 @@ class BusinessMap extends React.Component {
   }
 
   componentDidUpdate() {
-    debugger
+
     this.MarkerManager.updateMarkers(this.props.businesses);
 
   }
