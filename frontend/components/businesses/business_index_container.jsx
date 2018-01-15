@@ -12,7 +12,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-
+  debugger
   return {
   updateBounds: (bounds) => dispatch(updateBounds(bounds)),
   fetchBusinesses: () => dispatch(fetchBusinesses())

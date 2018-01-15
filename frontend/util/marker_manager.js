@@ -13,7 +13,11 @@ export default class MarkerManager {
   updateMarkers(businesses){
     debugger
     const bizObject = {};
+    if (businesses !== undefined) {
     businesses.forEach((business) => bizObject[business.id] = business);
+    } else {
+      bizObject[this.props.business.id] = business;
+    }
     debugger
     businesses
       .filter(business => !this.markers[business.id])

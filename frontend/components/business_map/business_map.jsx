@@ -18,17 +18,16 @@ class BusinessMap extends React.Component {
 
   componentDidMount() {
     let mapOptions;
-    if (this.props.location.pathname !== "/search") {
-      mapOptions = {
-        center : { lat: this.props.business.latitude, lng: this.props.business.longitude},
-        zoom: 16
-      };
-    } else {
+    // if (this.props.location.pathname !== "/search") {
+    //   mapOptions = {
+    //     center : { lat: this.props.business.latitude, lng: this.props.business.longitude},
+    //     zoom: 16
+    //   };
+    // } else {
       mapOptions = {
         center: { lat: 40.7629471996736, lng: -73.97823811645509 },
           zoom: 11
         };
-      }
     // wrap the mapDOMNode in a Google Map
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
@@ -38,19 +37,17 @@ class BusinessMap extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    if (this.props.businesses != newProps.businesses) {
     this.MarkerManager.updateMarkers(newProps.businesses);
-    }
   }
 
   updateBounds() {
-
+    debugger
     let latLngBounds = this.map.getBounds();
 
     let ne = latLngBounds.getNorthEast();
     let sw = latLngBounds.getSouthWest();
 
-    this.props.updateBounds('bounds', {
+    this.props.updateBounds({
       north: ne.lat(),
       east: ne.lng(),
       south: sw.lat(),
@@ -84,26 +81,26 @@ class BusinessMap extends React.Component {
     }
   }
 
-  mapStyle() {
-
-    let classStyle;
-    let mapContainer;
-    if (this.props.location.pathname !== '/search') {
-      return (
-        classStyle="map-box"
-      );
-    } else {
-      return (
-        classStyle="search-map-box"
-      );
-    }
-  }
+  // mapStyle() {
+  //
+  //   let classStyle;
+  //   let mapContainer;
+  //   if (this.props.location.pathname !== '/search') {
+  //     return (
+  //       classStyle="map-box"
+  //     );
+  //   } else {
+  //     return (
+  //       classStyle="search-map-box"
+  //     );
+  //   }
+  // }
 
   render() {
 
     return (
       <section className="search-map-container">
-      <div className={this.mapStyle()}>
+      <div className="search-map-box">
         <div id="map" ref={ map => this.mapNode = map }> </div>
       </div>
       </section>

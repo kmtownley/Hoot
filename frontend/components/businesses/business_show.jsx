@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ReviewIndexContainer from '../reviews/review_index_container';
-import BusinessMap from '../business_map/business_map';
+import BusinessShowMap from '../business_map/business_show_map';
 
 class BusinessShow extends React.Component {
   constructor(props) {
@@ -71,7 +71,7 @@ class BusinessShow extends React.Component {
   }
 
   render() {
-
+    debugger
     const business = this.props.business;
     if (!business) {
       return <div>Loading...
@@ -94,11 +94,10 @@ class BusinessShow extends React.Component {
         </section>
           <span className="location-with-imgs">
             <div className="location-container">
-              <BusinessMap
-                businesses={this.props.businesses}
+              <BusinessShowMap
                 business={business}
                 path={this.props.match.path}
-                singleBusiness={true}
+                updateBounds={this.props.updateBounds}
               />
               <ul className="location-container-text">
                 <li>{this.address()}</li>
