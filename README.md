@@ -23,7 +23,6 @@
 
 ## Map
  The interactive google map that will display results visually based on the specified search queries.  
-<<<<<<< HEAD
  ![alt text](https://github.com/kmtownley/Hoot/blob/master/app/assets/images/readme_map.png "component 2")
 
 ## User profile
