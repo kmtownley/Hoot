@@ -6,7 +6,7 @@
 ## Introduction
   To help connect users with local businesses, hoot provides a poweruful search component and allows users to add their own reviews and corresponding ratings to businesses they have visited.
 
-  Link to live demo (https://app-hoot.herokuapp.com/#/ "Hoot") 
+  Link to live demo (https://app-hoot.herokuapp.com/#/) 
 
 ## Features
 - Search by city, state, type of cuisine and business name
