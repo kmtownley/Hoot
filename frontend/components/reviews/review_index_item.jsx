@@ -47,7 +47,7 @@ class ReviewIndexItem extends React.Component {
       return null;
     } else if (this.props.currentUser.id === this.props.review.user_id) {
       return (
-        <div>
+        <div class="review-edits-container">
           <button onClick={() => this.props.deleteReview(this.props.review.id)}>
             <i className="fa fa-trash-o fa-2x" aria-hidden="true"></i>
           </button>
@@ -84,7 +84,7 @@ class ReviewIndexItem extends React.Component {
                 </div>
               </div>
             </div>
-            <p> {this.props.review.body}</p>
+            <p className="review-body-biz"> {this.props.review.body}</p>
           </div>
           <div class="edit-button">
             {this.renderUpdate()}
