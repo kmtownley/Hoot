@@ -27,8 +27,11 @@ class Api::ReviewsController < ApplicationController
 
   def destroy
     @review = current_user.reviews.find(params[:id])
-    business_id = @review.business_id
+    business = @review.business
+    # business_id = @review.business_id
     @review.destroy
+    # @reviews = Review.where(business_id: params[:business_id])
+    render json: business
   end
 
   def edit

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { fetchReviews, fetchReview } from '../../actions/review_actions';
+import { fetchReviews, fetchReview, deleteReview } from '../../actions/review_actions';
 import ReviewIndex from './review_index';
 
 const mapStateToProps = (state, ownProps) => {

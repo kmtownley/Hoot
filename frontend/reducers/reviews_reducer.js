@@ -16,6 +16,7 @@ const reviewReducer = (state = {}, action ) => {
     case RECEIVE_REVIEW:
       return merge({}, state, {[action.review.id]: action.review });
     case REMOVE_REVIEW:
+      debugger
       delete newState[action.reviewId];
       return newState;
     default:

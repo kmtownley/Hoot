@@ -20,6 +20,7 @@ export default class ReviewIndex extends React.Component {
   }
 
   render() {
+    debugger
     const reviews = this.props.reviews.map(review => {
       return (
         <div className="review-wrapper">

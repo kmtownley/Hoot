@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import dateFormat from 'dateformat';
+import { deleteReview } from '../../actions/review_actions';
+
 
 class ReviewIndexItem extends React.Component {
   constructor(props) {
@@ -46,14 +48,21 @@ class ReviewIndexItem extends React.Component {
       return null;
     } else if (this.props.currentUser.id === this.props.review.user_id) {
       return (
-        <Link to={`/businesses/${this.props.businessId}/reviews/${this.props.review.id}/edit`}>
-          <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
-        </Link>
+        <div>
+          <button onClick={deleteReview(this.props.review.id)}>
+            <i className="fa fa-trash-o fa-2x" aria-hidden="true"></i>
+          </button>
+          <Link to={`/businesses/${this.props.businessId}/reviews/${this.props.review.id}/edit`}>
+            <i className="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
+          </Link>
+        </div>
       );
     } else {
       return null;
     }
   }
+
+
 
 
 

@@ -25,22 +25,25 @@ export const createReview = review => dispatch => {
 };
 
 export const updateReview = review => dispatch => {
-  debugger
   return (
     ReviewAPIUtil.updateReview(review).then(review = dispatch(receiveReview(review)), err => dispatch(receiveErrors(err.responseJSON)))
   );
 };
 
 export const deleteReview = reviewId => dispatch => {
+  debugger
   return (
   ReviewAPIUtil.deleteReview(reviewId).then(review => dispatch(removeReview(reviewId)))
   );
 };
 
-const removeReview = reviewId => ({
+const removeReview = reviewId => {
+  debugger
+  return {
   type: REMOVE_REVIEW,
   reviewId
-});
+  };
+};
 
 const receiveReview = review => {
   debugger
