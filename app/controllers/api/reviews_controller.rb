@@ -31,10 +31,15 @@ class Api::ReviewsController < ApplicationController
     @review.destroy
   end
 
+  def edit
+    @review = Review.find(params[:id])
+  end
+
   def update
+    debugger
     @review = current_user.reviews.find(params[:id])
     if @review.update(review_params)
-      render :show
+      render json: business
     else
       render json: @review.errors.full_messages, status: 422
     end

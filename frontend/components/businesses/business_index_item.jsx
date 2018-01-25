@@ -44,7 +44,7 @@ class BusinessIndexItem extends React.Component {
       </li>
     );
   }
-  
+
   renderBizSearchIndex() {
     const { biz_name, rating, cuisine, address, city, state, zipcode, image_url, price, phone_number } = this.props.business;
     const business = this.props.business;

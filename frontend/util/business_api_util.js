@@ -21,11 +21,11 @@ export const createBusiness = business => (
   })
 );
 
-export const searchBusinesses = (query) => {
+export const searchBusinesses = bounds => {
   $.ajax({
     method: "GET",
-    url: `/businesses/search/`,
-    data: { query }
+    url: `/businesses/search`,
+    data: { bounds }
   });
 };
 

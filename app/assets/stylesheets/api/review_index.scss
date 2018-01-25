@@ -56,6 +56,11 @@
   font-weight: normal
 }
 
+.edit-button {
+  display: flex;
+  float: right;
+}
+
 .user-info-container {
   float: left;
   padding: 0 15px;
@@ -102,10 +107,16 @@
   font-weight: bold;
 }
 
+.fa-pencil-square-o {
+  color: #0073bb;
+}
+
 .total-review-info p {
   width: 100%;
   padding-left: 230px;
+  height: 89px;
 }
+
 
 
 .star-rating-1-sm {

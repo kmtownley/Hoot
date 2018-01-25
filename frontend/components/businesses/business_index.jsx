@@ -24,6 +24,7 @@ class BusinessIndex extends React.Component {
   }
 
   render() {
+
     const businesses = this.props.businesses;
     return (
       <main className="business-index-container">
@@ -39,6 +40,7 @@ class BusinessIndex extends React.Component {
                   pathname={this.props.location.pathname}
                   fetchReviews={this.props.fetchReviews}
                   reviews={this.props.reviews}
+
                 />
               </ul>
             ))

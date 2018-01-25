@@ -16,6 +16,7 @@ class BusinessMap extends React.Component {
   }
 
   componentDidMount() {
+
     let mapOptions;
     mapOptions = {
       center: { lat: 40.7629471996736, lng: -73.97823811645509 },
@@ -30,6 +31,7 @@ class BusinessMap extends React.Component {
 
   componentWillReceiveProps(newProps) {
     this.MarkerManager.updateMarkers(newProps.businesses);
+
   }
 
   updateBounds() {

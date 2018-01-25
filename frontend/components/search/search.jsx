@@ -28,7 +28,7 @@ class Search extends React.Component {
     let businesses;
     if (this.props.businesses.length === 0 ) {
       return (
-        <div className="no-biz-message">Sorry, no businesss meet those criteria : (
+        <div className="no-biz-message">Sorry, no businesses meet those criteria :(
         </div>
       );
     }

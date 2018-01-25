@@ -36,6 +36,7 @@ class Api::BusinessesController < ApplicationController
   end
 
   def index
+
     if (!params[:areaQuery] || !params[:contentQuery])
       @businesses = Business.all
     elsif (params[:contentQuery] != "" && params[:areaQuery] != "")

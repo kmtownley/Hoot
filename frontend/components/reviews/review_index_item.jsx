@@ -8,7 +8,6 @@ class ReviewIndexItem extends React.Component {
   }
 
   userInfo() {
-
     return (
       <div className="user-info-container">
         <div className="user-info-sidebar-container">
@@ -33,7 +32,6 @@ class ReviewIndexItem extends React.Component {
   }
 
   renderNoReviews() {
-
     if (!this.props.review) {
       return (
         <div className="no-review-error-message">
@@ -43,32 +41,48 @@ class ReviewIndexItem extends React.Component {
     }
   }
 
+  renderUpdate() {
+    if (!this.props.currentUser) {
+      return null;
+    } else if (this.props.currentUser.id === this.props.review.user_id) {
+      return (
+        <Link to={`/businesses/${this.props.businessId}/reviews/${this.props.review.id}/edit`}>
+          <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
+        </Link>
+      );
+    } else {
+      return null;
+    }
+  }
+
 
 
 
   render() {
-
     const date = dateFormat(this.props.review.created_at, 'mm/dd/yyyy');
     return (
-        <ul>
-          {this.renderNoReviews()}
-          <li>
-            <div className="total-review-info">
-                {this.userInfo()}
-              <div>
-                <div className="star-rating-container">
-                  <div
-                     className={`star-rating-${this.props.review.user_rating}-sm`}>
-                  </div>
-                  <div className="review-date">
-                    {date}
-                  </div>
+      <ul>
+        {this.renderNoReviews()}
+        <li>
+          <div className="total-review-info">
+              {this.userInfo()}
+            <div>
+              <div className="star-rating-container">
+                <div
+                   className={`star-rating-${this.props.review.user_rating}-sm`}>
+                </div>
+                <div className="review-date">
+                  {date}
                 </div>
               </div>
-              <p> {this.props.review.body}</p>
             </div>
-          </li>
-          </ul>
+            <p> {this.props.review.body}</p>
+          </div>
+          <div class="edit-button">
+            {this.renderUpdate()}
+          </div>
+        </li>
+      </ul>
     );
   }
 }

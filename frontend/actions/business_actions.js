@@ -6,14 +6,12 @@ export const REMOVE_BUSINESS = "REMOVE_BUSINESS";
 export const RECEIVE_SEARCHED_BUSINESSES = "RECEIVE_SEARCHED_BUSINESSES";
 
 export const fetchBusinesses = (areaQuery, contentQuery) => dispatch => {
-
   return (
     BizAPIUtil.fetchBusinesses(areaQuery, contentQuery).then(businesses => dispatch(receiveAllBusinesses(businesses)))
   );
 };
 
 export const fetchBusiness = id => dispatch => {
-
   return (
   BizAPIUtil.fetchBusiness(id).then(business => dispatch(receiveBusiness(business)))
   );
@@ -25,9 +23,10 @@ export const deleteBusiness = businessId => dispatch => {
   );
 };
 
-export const searchBusinesses = query => dispatch => {
+export const searchBusinesses = bounds => dispatch => {
+  
   return (
-  BizAPIUtil.searchBusinesses(query).then(businesses => dispatch(receiveSearchedBusinesses(businesses)))
+  BizAPIUtil.searchBusinesses(bounds).then(businesses => dispatch(receiveSearchedBusinesses(businesses)))
   );
 };
 
@@ -35,8 +34,6 @@ const removeBusiness = businessId => ({
   type: REMOVE_BUSINESS,
   businessId
 });
-
-
 
 const receiveBusiness = business => ({
   type: RECEIVE_BUSINESS,

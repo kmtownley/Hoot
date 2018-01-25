@@ -18,7 +18,6 @@ export default class MarkerManager {
       .forEach((newBusiness,idx) =>
         this.createMarkerFromBusiness(newBusiness, idx+1, this.handleClick));
 
-
         Object.keys(this.markers)
          .filter((businessId) => !bizObject[businessId])
          .forEach((businessId) => this.removeMarker(this.markers[businessId]));

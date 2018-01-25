@@ -16,7 +16,7 @@ export default class ReviewIndex extends React.Component {
       <section>
         this.currentUser.user_name
       </section>
-    )
+    );
   }
 
   render() {

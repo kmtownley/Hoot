@@ -10,6 +10,8 @@ class ReviewForm extends React.Component {
     this.starText = this.starText.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
 
+    debugger
+
   }
 
   clearState() {
@@ -20,10 +22,12 @@ class ReviewForm extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchBusiness(this.props.match.params.businessId);
     if (this.props.match.params.reviewId) {
       this.props.fetchReview(this.props.match.params.reviewId);
+      debugger
     }
+    this.props.fetchBusiness(this.props.match.params.businessId);
+    debugger
   }
 
 
@@ -59,6 +63,9 @@ class ReviewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    if (this.props.formType === 'edit') {
+
+    }
     this.props.action(this.state).then(() => this.props.history.push(`/businesses/${this.props.business.id}`));
   }
 
@@ -153,57 +160,59 @@ class ReviewForm extends React.Component {
   }
 
   render () {
+    debugger
     const business = this.props.business;
-    if (!business) {
-      return (
-        <div className="loading-container">
-          <h2 className="loading">Loading...
-          <i className="fa fa-spinner"></i>
-          </h2>
-        </div>
-      );
-    }
-   const text = this.props.formType === 'new' ? "Write a Review" : "Update Review";
-   return (
-     <div className="review-main">
-       <h2 className="review-form-type">{text}</h2>
-       <h3
-         className = "review-form-title">
-         <Link to={`/businesses/${business.id}`}>
-           {business.biz_name}</Link>
-       </h3>
-       <ul>
-         <li>{this.renderErrors()}</li>
-       </ul>
-       <form
-         className="review-form-container" onSubmit={this.handleSubmit}>
-         <div className="review-input-container">
-           <div className="review-star-container">
-               {this.starReview()}
-               <label>
-                 {this.starText(this.state.user_rating)}
-               </label>
-           </div>
-
-           <label>
-             <textarea className="review-body"
-               value={this.state.body}
-               placeholder="Your review will help others find great local businesses. Please don't review this business if you have received a freebie or are in anyway connected to the establishment :)"
-               onChange={this.update('body')} />
-           </label>
-
-           <div className="review-form-button-container">
-             <button
-               className="submit-review-button"
-               type="submit"
-               value="submit">{text}
-             </button>
-            </div>
+    const review = this.props.review;
+    if (!business || !review) {
+        return (
+          <div className="loading-container">
+            <h2 className="loading">Loading...
+            </h2>
           </div>
-         </form>
+        );
+      } else {
+     const text = this.props.formType === 'new' ? "Write a Review" : "Update Review";
+     return (
+       <div className="review-main">
+         <h2 className="review-form-type">{text}</h2>
+         <h3
+           className = "review-form-title">
+           <Link to={`/businesses/${business.id}`}>
+             {business.biz_name}</Link>
+         </h3>
+         <ul>
+           <li>{this.renderErrors()}</li>
+         </ul>
+         <form
+           className="review-form-container" onSubmit={this.handleSubmit}>
+           <div className="review-input-container">
+             <div className="review-star-container">
+                 {this.starReview()}
+                 <label>
+                   {this.starText(review.user_rating)}
+                 </label>
+             </div>
 
-     </div>
-   );
+             <label>
+               <textarea className="review-body"
+                 value={review.body}
+                 placeholder="Your review will help others find great local businesses. Please don't review this business if you have received a freebie or are in anyway connected to the establishment :)"
+                 onChange={this.update('body')} />
+             </label>
+
+             <div className="review-form-button-container">
+               <button
+                 className="submit-review-button"
+                 type="submit"
+                 value="submit">{text}
+               </button>
+              </div>
+            </div>
+           </form>
+
+       </div>
+     );
+   }
  }
 }
 
