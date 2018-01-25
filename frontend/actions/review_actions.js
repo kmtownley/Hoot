@@ -19,16 +19,18 @@ export const fetchReview = id => dispatch => {
 };
 
 export const createReview = review => dispatch => {
+  debugger
   return (
     ReviewAPIUtil.createReview(review).then(review = dispatch(receiveReview(review)), err => dispatch(receiveErrors(err.responseJSON)))
   );
 };
 
-export const updateReview = review => dispatch => {
-  return (
-    ReviewAPIUtil.updateReview(review).then(review = dispatch(receiveReview(review)), err => dispatch(receiveErrors(err.responseJSON)))
-  );
-};
+// export const updateReview = review => dispatch => {
+//   debugger
+//   return (
+//     ReviewAPIUtil.updateReview(review).then(review = dispatch(receiveReview(review)), err => dispatch(receiveErrors(err.responseJSON)))
+//   );
+// };
 
 export const deleteReview = reviewId => dispatch => {
   return (
@@ -41,20 +43,26 @@ const removeReview = reviewId => ({
   reviewId
 });
 
-const receiveReview = review => ({
+const receiveReview = review => {
+  debugger
+  return {
   type: RECEIVE_REVIEW,
   review
-});
+  };
+};
 
 const receiveAllReviews = reviews => ({
     type: RECEIVE_ALL_REVIEWS,
     reviews
 });
 
-export const receiveErrors = err => ({
+export const receiveErrors = err => {
+  debugger
+  return {
   type: RECEIVE_REVIEW_ERRORS,
   err
-});
+  };
+};
 
 export const clearErrors = () => (
   {type: CLEAR_ERRORS}

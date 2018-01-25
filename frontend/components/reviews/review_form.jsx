@@ -6,7 +6,7 @@ class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = {body: this.props.review.body, user_rating: this.props.review.user_rating};
+    this.state = {body: this.props.review.body, user_rating: this.props.review.user_rating, business_id: this.props.review.business_id, user_id: this.props.review.user_id};
     this.starText = this.starText.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.update = this.update.bind(this);
@@ -39,7 +39,6 @@ class ReviewForm extends React.Component {
   }
 
   update(field) {
-    debugger
     return (e) => {
       this.setState({[field]: e.target.value});
     };
@@ -59,11 +58,9 @@ class ReviewForm extends React.Component {
   }
 
   handleSubmit(e) {
+    debugger
     e.preventDefault();
-    if (this.props.formType === 'edit') {
-
-    }
-    this.props.action(this.state).then(() => this.props.history.push(`/businesses/${this.props.business.id}`));
+    this.props.action(this.state).then(() => this.props.history.push(`/businesses/${this.props.review.business_id}`));
   }
 
   starText(value) {
@@ -157,7 +154,6 @@ class ReviewForm extends React.Component {
   }
 
   render () {
-    debugger
     const business = this.props.business;
     const review = this.props.review;
     if (!business || !review) {
