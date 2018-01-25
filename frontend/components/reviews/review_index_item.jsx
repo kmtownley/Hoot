@@ -49,7 +49,7 @@ class ReviewIndexItem extends React.Component {
     } else if (this.props.currentUser.id === this.props.review.user_id) {
       return (
         <div>
-          <button onClick={deleteReview(this.props.review.id)}>
+          <button onClick={() => this.props.deleteReview(this.props.review.id)}>
             <i className="fa fa-trash-o fa-2x" aria-hidden="true"></i>
           </button>
           <Link to={`/businesses/${this.props.businessId}/reviews/${this.props.review.id}/edit`}>

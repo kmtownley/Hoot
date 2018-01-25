@@ -29,6 +29,7 @@ export default class ReviewIndex extends React.Component {
             businessId={this.props.business.id}
             review={review}
             currentUser={this.props.currentUser}
+            deleteReview={this.props.deleteReview}
             />
         </div>
       );
