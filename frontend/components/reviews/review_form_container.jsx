@@ -26,7 +26,6 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  debugger
   const action = ownProps.match.path === "/businesses/:businessId/reviews/new" ? createReview : updateReview;
 
   return {

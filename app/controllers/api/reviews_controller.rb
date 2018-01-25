@@ -39,6 +39,7 @@ class Api::ReviewsController < ApplicationController
     debugger
     @review = current_user.reviews.find(params[:id])
     if @review.update(review_params)
+      business = @review.business
       render json: business
     else
       render json: @review.errors.full_messages, status: 422
@@ -47,6 +48,6 @@ class Api::ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:user_rating, :body, :user_id, :business_id)
+    params.require(:review).permit(:user_rating, :body, :user_id, :business_id, :id)
   end
 end

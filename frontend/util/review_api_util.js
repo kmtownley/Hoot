@@ -13,7 +13,7 @@ export const fetchReview = id => (
 );
 
 export const createReview = review => {
-  
+
   return $.ajax({
     method: "POST",
     url: `api/businesses/${review.business_id}/reviews`,
@@ -21,13 +21,14 @@ export const createReview = review => {
   });
 };
 
-export const updateReview = review => (
+export const updateReview = review => {
+  debugger
   $.ajax({
-    method: "UPDATE",
-    url: `api/businesses/${review.business_id}/reviews/${review.id}`,
+    method: "PATCH",
+    url: `api/businesses/${review.business_id}/reviews/${review.id}/`,
     data: { review }
-  })
-);
+  });
+};
 
 
 export const deleteReview = reviewId => (

@@ -19,18 +19,17 @@ export const fetchReview = id => dispatch => {
 };
 
 export const createReview = review => dispatch => {
-  debugger
   return (
     ReviewAPIUtil.createReview(review).then(review = dispatch(receiveReview(review)), err => dispatch(receiveErrors(err.responseJSON)))
   );
 };
 
-// export const updateReview = review => dispatch => {
-//   debugger
-//   return (
-//     ReviewAPIUtil.updateReview(review).then(review = dispatch(receiveReview(review)), err => dispatch(receiveErrors(err.responseJSON)))
-//   );
-// };
+export const updateReview = review => dispatch => {
+  debugger
+  return (
+    ReviewAPIUtil.updateReview(review).then(review = dispatch(receiveReview(review)), err => dispatch(receiveErrors(err.responseJSON)))
+  );
+};
 
 export const deleteReview = reviewId => dispatch => {
   return (
