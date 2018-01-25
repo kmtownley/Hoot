@@ -10,13 +10,11 @@ import ReviewForm from './review_form';
 const mapStateToProps = (state, ownProps) => {
 
   let formType = 'new';
-  debugger
   let review = { user_rating: "", body: "", business_id: ownProps.match.params.businessId, user_id: state.session.currentUser.id};
   if (ownProps.match.path === '/businesses/:businessId/reviews/:reviewId/edit/') {
-    debugger
     review = state.entities.reviews[ownProps.match.params.reviewId];
     // formType = 'edit';
-    formType = "edit"
+    formType = "edit";
      // review = state.entities.reviews[ownProps.match.params.reviewId]
    }
   return {
@@ -28,6 +26,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
+  debugger
   const action = ownProps.match.path === "/businesses/:businessId/reviews/new" ? createReview : updateReview;
 
   return {

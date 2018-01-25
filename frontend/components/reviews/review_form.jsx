@@ -6,12 +6,10 @@ class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = this.props.review;
+    this.state = {body: this.props.review.body, user_rating: this.props.review.user_rating};
     this.starText = this.starText.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
-
-    debugger
-
+    this.update = this.update.bind(this);
   }
 
   clearState() {
@@ -24,10 +22,8 @@ class ReviewForm extends React.Component {
   componentDidMount() {
     if (this.props.match.params.reviewId) {
       this.props.fetchReview(this.props.match.params.reviewId);
-      debugger
     }
     this.props.fetchBusiness(this.props.match.params.businessId);
-    debugger
   }
 
 
@@ -43,6 +39,7 @@ class ReviewForm extends React.Component {
   }
 
   update(field) {
+    debugger
     return (e) => {
       this.setState({[field]: e.target.value});
     };
@@ -189,13 +186,13 @@ class ReviewForm extends React.Component {
              <div className="review-star-container">
                  {this.starReview()}
                  <label>
-                   {this.starText(review.user_rating)}
+                   {this.starText(this.state.user_rating)}
                  </label>
              </div>
 
              <label>
                <textarea className="review-body"
-                 value={review.body}
+                 value={this.state.body}
                  placeholder="Your review will help others find great local businesses. Please don't review this business if you have received a freebie or are in anyway connected to the establishment :)"
                  onChange={this.update('body')} />
              </label>
