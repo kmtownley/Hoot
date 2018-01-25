@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import dateFormat from 'dateformat';
-import { deleteReview } from '../../actions/review_actions';
 
 
 class ReviewIndexItem extends React.Component {
