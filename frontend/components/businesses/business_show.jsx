@@ -9,7 +9,8 @@ class BusinessShow extends React.Component {
     this.state = this.props.business;
   }
 
-  componentDidMount() {         this.props.fetchBusiness(this.props.match.params.businessId);
+  componentDidMount() {
+    this.props.fetchBusiness(this.props.match.params.businessId);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -57,11 +58,26 @@ class BusinessShow extends React.Component {
     );
   }
 
+  renderMoney() {
+    let n = this.props.business.rating;
+    let dollars = Array(n).join("$");
+    return (
+      <div>
+        {dollars}
+      </div>
+    )
+  }
+
   businessDetails() {
     return (
       <div className="biz-details-container">
         <ul className="biz-details">
-          <div>Soon to be Details</div>
+          <div className={`price-range-${this.props.business.price}`}>Price:
+            <i class="fa fa-usd" aria-hidden="true"></i>
+            <i class="fa fa-usd" aria-hidden="true"></i>
+            <i class="fa fa-usd" aria-hidden="true"></i>
+            <i class="fa fa-usd" aria-hidden="true"></i>
+          </div>
         </ul>
       </div>
     );
@@ -71,9 +87,11 @@ class BusinessShow extends React.Component {
 
     const business = this.props.business;
     if (!business) {
-      return <div>Loading...
+      return (
+        <div>Loading...
          <i className="fa fa-spinner fa-pulse"></i>
-        </div>
+      </div>
+      );
     }
     return (
         <main className="main-content-container">

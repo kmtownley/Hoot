@@ -13,7 +13,7 @@ file=File.open("./app/assets/images/chip1.jpg")
 biz1.image = file
 biz1.save!
 
-biz2 = Business.create!(biz_name: "Ginger and Lemongrass", phone_number: "(212) 432-1688", address: "816 Broadway", city: "New York",  state: "NY", zipcode: "10003", cuisine: "Thai", price: 2, rating: 3, latitude: 40.732762, longitude: -73.990936)
+biz2 = Business.create!(biz_name: "Ginger and Lemongrass", phone_number: "(212) 432-1688", address: "816 Broadway", city: "New York",  state: "NY", zipcode: "10003", cuisine: "Thai", price: 3, rating: 5, latitude: 40.732762, longitude: -73.990936)
 file=File.open("./app/assets/images/lemon_ginger.jpg")
 biz2.image = file
 biz2.save!
@@ -42,7 +42,7 @@ biz8 = Business.create!(biz_name: "Thai Villa", phone_number: "(212) 645-2720", 
 file=File.open("./app/assets/images/thai_villa.jpg")
 biz8.image = file
 biz8.save!
-biz9 = Business.create!(biz_name: "Wafa's", phone_number: "(212) 644-2700", address: "812 Grand St", city: "Brooklyn",  state: "NY", zipcode: "11211", cuisine: "Vegetarian", price: 2, rating: 1, latitude: 40.714770, longitude: -74.072011 )
+biz9 = Business.create!(biz_name: "Wafa's", phone_number: "(212) 644-2700", address: "812 Grand St", city: "Jersey City",  state: "NJ", zipcode: "11211", cuisine: "Vegetarian", price: 2, rating: 1, latitude: 40.714770, longitude: -74.072011 )
 file=File.open("./app/assets/images/wafas.jpg")
 biz9.image = file
 biz9.save!
@@ -50,6 +50,14 @@ biz10 = Business.create!(biz_name: "Soco", phone_number: "(212) 634-2900", addre
 file=File.open("./app/assets/images/soco.jpg")
 biz10.image = file
 biz10.save!
+biz11 = Business.create!(biz_name: "Peeled N' Pressed'", phone_number: "(929) 634-2900", address: "808B Union St", city: "Brooklyn",  state: "NY", zipcode: "11215", cuisine: "Juice Bar", price: 2, rating: 5, latitude: 40.704007, longitude: -73.986759 )
+file=File.open("./app/assets/images/peeled1.jpg")
+biz11.image = file
+biz11.save!
+biz12 = Business.create!(biz_name: "La Bella Vita'", phone_number: "(718) 369-9318", address: "524 4th Ave", city: "Brooklyn",  state: "NY", zipcode: "11215", cuisine: "Pizza", price: 3, rating: 4, latitude: 40.667626, longitude: -73.991370 )
+file=File.open("./app/assets/images/bella1.jpg")
+biz12.image = file
+biz12.save!
 
 
 
@@ -102,6 +110,8 @@ Review.create!(user_id: user6.id, business_id: biz9.id, user_rating: 4, body: "W
 Review.create!(user_id: user5.id, business_id: biz10.id, user_rating: 4, body: "Soco is generally delicious but a tad overpriced for the versy small portion sizes. However, they make up for it with their incredible dessert options.")
 Review.create!(user_id: user6.id, business_id: biz10.id, user_rating: 4, body: "Soco is so great! Highly recommend it!")
 Review.create!(user_id: user3.id, business_id: biz9.id, user_rating: 3, body: "Wafa is decent! Though the service could be improved.")
+Review.create!(user_id: user7.id, business_id: biz11.id, user_rating: 3, body: "3 stars for the poke bowl; 5 stars for the pitaya bowl and the lovely staff.Their acai and pitaya bowls are on point--great toppings, nicely balanced, usual (high) prices.  They didn't peel the kiwi, but the peel is edible I suppose. The poke bowls were a bit of a disappointment. The fish was fresh, and very generously scooped on--but that was it.  Fish mixed up in a heavy sauce, on a bed of rice/cauliflower rice. Cauliflower rice seems to just be food processed cauliflower--it's not steamed or cooked.   wheelhouse perhaps?  It's an easy fix--add sauce and toppings, and they might get the hang of it soon.  I think they've only been open a few weeks.  In the meantime, go for their pitaya bowls, and their smoothies are also probably yummy.")
+Review.create!(user_id: user3.id, business_id: biz9.id, user_rating: 3, body: "Wafa is decent! Though the service could be improved.")
 
 Photo.destroy_all
 Photo.create!(business_id: biz1.id, image: File.open('./app/assets/images/chip2.jpg'))
@@ -134,3 +144,9 @@ Photo.create!(business_id: biz9.id, image: File.open('./app/assets/images/wafas3
 
 Photo.create!(business_id: biz10.id, image: File.open('./app/assets/images/socos2.jpg'))
 Photo.create!(business_id: biz10.id, image: File.open('./app/assets/images/socos3.jpg'))
+
+Photo.create!(business_id: biz11.id, image: File.open('./app/assets/images/peeled2.jpg'))
+Photo.create!(business_id: biz11.id, image: File.open('./app/assets/images/peeled3.jpg'))
+
+Photo.create!(business_id: biz11.id, image: File.open('./app/assets/images/bella2.jpg'))
+Photo.create!(business_id: biz11.id, image: File.open('./app/assets/images/bella3.jpg'))

@@ -7,10 +7,13 @@ class ReviewForm extends React.Component {
     super(props);
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = {body: this.props.review.body, user_rating: this.props.review.user_rating, business_id: this.props.business.id, user_id: this.props.review.user_id};
     this.starText = this.starText.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.update = this.update.bind(this);
+    debugger
+    if (this.props.business !== undefined) {
+      this.state = {body: this.props.review.body, user_rating: this.props.review.user_rating, business_id: this.props.business.id, user_id: this.props.review.user_id};
+    }
   }
 
   clearState() {
@@ -25,14 +28,24 @@ class ReviewForm extends React.Component {
       this.props.fetchReview(this.props.match.params.reviewId);
     }
     this.props.fetchBusiness(this.props.match.params.businessId);
+
+
   }
 
 
   componentWillReceiveProps(newProps) {
-    if (this.props.formType != newProps.formType) {
-      this.setState(newProps.review);
-      this.props.clearErrors();
+    debugger
+
+    if (!this.state) {
+      this.props.fetchBusiness(this.props.match.params.businessId);
+      this.setState(
+      {body: newProps.review.body, user_rating: newProps.review.user_rating, business_id: newProps.business.id, user_id: newProps.review.user_id});
     }
+    // this.props.history.push(`/businesses/${this.props.business.id}/reviews/new`);
+  }
+
+  componentDidUpdate() {
+
   }
 
   componentWillUnmount() {
@@ -165,9 +178,10 @@ class ReviewForm extends React.Component {
   }
 
   render () {
+    debugger
     const business = this.props.business;
     const review = this.props.review;
-    if (!business || !review) {
+    if (!business || !review || !this.state) {
         return (
           <div className="loading-container">
             <h2 className="loading">Loading...
