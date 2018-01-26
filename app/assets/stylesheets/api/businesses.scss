@@ -111,12 +111,15 @@
   display: flex
 }
 
-.biz-image {
-  height: 250px;
-  width: 250px;
-  display: flex;
-
+.biz-index-img {
+  height: 90px;
+  width: 90px;
+  background-size: cover;
+  background-position: center;
+  transition-property: transform, box-shadow;
 }
+
+
 
 .business-index-map {
   padding: 5px;

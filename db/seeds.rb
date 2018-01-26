@@ -106,3 +106,31 @@ Review.create!(user_id: user3.id, business_id: biz9.id, user_rating: 3, body: "W
 Photo.destroy_all
 Photo.create!(business_id: biz1.id, image: File.open('./app/assets/images/chip2.jpg'))
 Photo.create!(business_id: biz1.id, image: File.open('./app/assets/images/chip3.jpg'))
+
+Photo.create!(business_id: biz2.id, image: File.open('./app/assets/images/gandl2.jpg'))
+Photo.create!(business_id: biz2.id, image: File.open('./app/assets/images/gandl3.jpg'))
+
+Photo.create!(business_id: biz3.id, image: File.open('./app/assets/images/chip2.jpg'))
+Photo.create!(business_id: biz3.id, image: File.open('./app/assets/images/chip3.jpg'))
+
+Photo.create!(business_id: biz4.id, image: File.open('./app/assets/images/chip2.jpg'))
+Photo.create!(business_id: biz4.id, image: File.open('./app/assets/images/chip3.jpg'))
+
+Photo.create!(business_id: biz5.id, image: File.open('./app/assets/images/chip2.jpg'))
+Photo.create!(business_id: biz5.id, image: File.open('./app/assets/images/chip3.jpg'))
+
+Photo.create!(business_id: biz6.id, image: File.open('./app/assets/images/chip2.jpg'))
+Photo.create!(business_id: biz6.id, image: File.open('./app/assets/images/chip3.jpg'))
+
+Photo.create!(business_id: biz7.id, image: File.open('./app/assets/images/chip2.jpg'))
+Photo.create!(business_id: biz7.id, image: File.open('./app/assets/images/chip3.jpg'))
+
+
+Photo.create!(business_id: biz8.id, image: File.open('./app/assets/images/chip2.jpg'))
+Photo.create!(business_id: biz8.id, image: File.open('./app/assets/images/chip3.jpg'))
+
+Photo.create!(business_id: biz9.id, image: File.open('./app/assets/images/chip2.jpg'))
+Photo.create!(business_id: biz9.id, image: File.open('./app/assets/images/chip3.jpg'))
+
+Photo.create!(business_id: biz10.id, image: File.open('./app/assets/images/chip2.jpg'))
+Photo.create!(business_id: biz10.id, image: File.open('./app/assets/images/chip3.jpg'))

@@ -101,9 +101,11 @@ class BusinessShow extends React.Component {
                 <li>{this.phone()}</li>
               </ul>
             </div>
-            <img className="biz-image"  src={this.props.business.image_url} />
-            <img className="biz-image" src={this.props.business.image0}/>
-            <img className="biz-image" src={this.props.business.image1} />
+            <div className="biz-image-container">
+              <img className="biz-image" src={this.props.business.image0}/>
+              <img className="biz-image"  src={this.props.business.image_url} />
+              <img className="biz-image" src={this.props.business.image1} />
+            </div>
           </span>
           <section>
             {this.businessDetails()}

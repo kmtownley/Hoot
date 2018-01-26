@@ -48,7 +48,7 @@ export default class Homepage extends React.Component {
       <li className="footer-list-content" >
         <label  className="footer-title"> MEET THE AUTHOR
           <a className="git-link" href="https://www.linkedin.com/in/kathleen-townley-83b039b8/">
-            <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+            <i className="fa fa-linkedin fa-2x" aria-hidden="true"></i>
           </a>
         </label>
       </li>
