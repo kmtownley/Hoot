@@ -26,8 +26,8 @@ biz4 = Business.create!(biz_name: "Amelie", phone_number: "(212)
 file=File.open("./app/assets/images/amelie.jpg")
 biz4.image = file
 biz4.save!
-biz5 = Business.create!(biz_name: "Tonchin NEW YORK", phone_number: "(646) 692-9912", address: "13 W 36th", city: "New York",  state: "NY", zipcode: "10018", cuisine: "American (New)", price: 5, rating: 4)
-file=File.open("./app/assets/images/tonchin.jpg", latitude: 40.759223, longitude: -73.952605 )
+biz5 = Business.create!(biz_name: "Tonchin NEW YORK", phone_number: "(646) 692-9912", address: "13 W 36th", city: "New York",  state: "NY", zipcode: "10018", cuisine: "American (New)", price: 5, rating: 4, latitude: 40.759223, longitude: -73.935242 )
+file=File.open("./app/assets/images/tonchin.jpg")
 biz5.image = file
 biz5.save!
 biz6 = Business.create!(biz_name: "The Smith", phone_number: "(212) 644-2700", address: "956 2nd Ave", city: "New York",  state: "NY", zipcode: "10022", cuisine: "Tapas Bar", price: 4, rating: 3, latitude: 40.740905, longitude: -74.004708 )
