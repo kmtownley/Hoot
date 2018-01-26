@@ -65,20 +65,20 @@ class BusinessShow extends React.Component {
       <div>
         {dollars}
       </div>
-    )
+    );
   }
 
   businessDetails() {
     return (
       <div className="biz-details-container">
-        <ul className="biz-details">
-          <div className={`price-range-${this.props.business.price}`}>Price:
-            <i class="fa fa-usd" aria-hidden="true"></i>
-            <i class="fa fa-usd" aria-hidden="true"></i>
-            <i class="fa fa-usd" aria-hidden="true"></i>
-            <i class="fa fa-usd" aria-hidden="true"></i>
-          </div>
-        </ul>
+          <ul className="biz-details">
+            <div className={`price-range-${this.props.business.price}`}>
+              <i className="fa fa-usd" id="dollar-1" aria-hidden="true"></i>
+              <i className="fa fa-usd" id="dollar-2" aria-hidden="true"></i>
+              <i className="fa fa-usd" id="dollar-3" aria-hidden="true"></i>
+              <i className="fa fa-usd" id="dollar-4" aria-hidden="true"></i>
+            </div>
+          </ul>
       </div>
     );
   }
