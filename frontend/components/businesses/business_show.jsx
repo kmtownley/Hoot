@@ -68,7 +68,7 @@ class BusinessShow extends React.Component {
   }
 
   render() {
-
+    debugger
     const business = this.props.business;
     if (!business) {
       return <div>Loading...
@@ -81,7 +81,10 @@ class BusinessShow extends React.Component {
             <div className="biz-header">
               <span className="biz-show-title">{business.biz_name}</span>
               <ul>
-                <li className="biz-rating">Rating: {business.rating}</li>
+                <li className="biz-rating">
+                    <div className={`star-rating-search-${this.props.business.rating}`}>
+                  </div>
+                </li>
                 <li className="biz-cuisine">{business.cuisine}</li>
               </ul>
             </div>
@@ -113,6 +116,7 @@ class BusinessShow extends React.Component {
               <ReviewIndexContainer />
             </div>
           </section>
+
         </main>
 
     );
