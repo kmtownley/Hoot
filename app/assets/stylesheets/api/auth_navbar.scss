@@ -27,6 +27,8 @@
 .header-button-container {
   display: flex;
   height: 47px;
+  padding-left: 42px;
+   // can remove!!! //
 }
 
 .nav-main-container {
@@ -56,7 +58,7 @@
 .nav-landing-container {
   display: flex;
   height: 100%;
-  width: 80%;
+  width: 86%;
   align-items: center;
   justify-content: flex-end;
 }
@@ -67,7 +69,7 @@
 }
 
 .hoot-logo-container-left {
-  width: 960px;
+  width: 993px;
   margin: 0 auto;
   padding: 0 15px;
   display: flex;
@@ -177,7 +179,7 @@
   line-height: 24px;
   padding: 8px 24px;
   position: absolute;
-  right: 300px;
+  right: 287px;
 }
 
 button.login:hover {
@@ -185,7 +187,10 @@ button.login:hover {
   padding-bottom: 8px;
 }
 
-
+button.signup:hover {
+  background-color: #ffffff;
+  color: #666;;
+}
 .login-signup:hover {
   color: grey;
   cursor: pointer;
