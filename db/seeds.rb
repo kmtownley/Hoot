@@ -110,27 +110,27 @@ Photo.create!(business_id: biz1.id, image: File.open('./app/assets/images/chip3.
 Photo.create!(business_id: biz2.id, image: File.open('./app/assets/images/gandl2.jpg'))
 Photo.create!(business_id: biz2.id, image: File.open('./app/assets/images/gandl3.jpg'))
 
-Photo.create!(business_id: biz3.id, image: File.open('./app/assets/images/chip2.jpg'))
-Photo.create!(business_id: biz3.id, image: File.open('./app/assets/images/chip3.jpg'))
+Photo.create!(business_id: biz3.id, image: File.open('./app/assets/images/outro2.jpg'))
+Photo.create!(business_id: biz3.id, image: File.open('./app/assets/images/outro3.jpg'))
 
-Photo.create!(business_id: biz4.id, image: File.open('./app/assets/images/chip2.jpg'))
-Photo.create!(business_id: biz4.id, image: File.open('./app/assets/images/chip3.jpg'))
+Photo.create!(business_id: biz4.id, image: File.open('./app/assets/images/amelie2.jpg'))
+Photo.create!(business_id: biz4.id, image: File.open('./app/assets/images/amelie3.jpg'))
 
-Photo.create!(business_id: biz5.id, image: File.open('./app/assets/images/chip2.jpg'))
-Photo.create!(business_id: biz5.id, image: File.open('./app/assets/images/chip3.jpg'))
+Photo.create!(business_id: biz5.id, image: File.open('./app/assets/images/ton1.jpg'))
+Photo.create!(business_id: biz5.id, image: File.open('./app/assets/images/ton2.jpg'))
 
-Photo.create!(business_id: biz6.id, image: File.open('./app/assets/images/chip2.jpg'))
-Photo.create!(business_id: biz6.id, image: File.open('./app/assets/images/chip3.jpg'))
+Photo.create!(business_id: biz6.id, image: File.open('./app/assets/images/smith2.jpg'))
+Photo.create!(business_id: biz6.id, image: File.open('./app/assets/images/smith3.jpg'))
 
-Photo.create!(business_id: biz7.id, image: File.open('./app/assets/images/chip2.jpg'))
-Photo.create!(business_id: biz7.id, image: File.open('./app/assets/images/chip3.jpg'))
+Photo.create!(business_id: biz7.id, image: File.open('./app/assets/images/contenta2.jpg'))
+Photo.create!(business_id: biz7.id, image: File.open('./app/assets/images/contenta3.jpg'))
 
 
-Photo.create!(business_id: biz8.id, image: File.open('./app/assets/images/chip2.jpg'))
-Photo.create!(business_id: biz8.id, image: File.open('./app/assets/images/chip3.jpg'))
+Photo.create!(business_id: biz8.id, image: File.open('./app/assets/images/thai2.jpg'))
+Photo.create!(business_id: biz8.id, image: File.open('./app/assets/images/thai3.jpeg'))
 
-Photo.create!(business_id: biz9.id, image: File.open('./app/assets/images/chip2.jpg'))
-Photo.create!(business_id: biz9.id, image: File.open('./app/assets/images/chip3.jpg'))
+Photo.create!(business_id: biz9.id, image: File.open('./app/assets/images/wafas2.jpg'))
+Photo.create!(business_id: biz9.id, image: File.open('./app/assets/images/wafas3.jpg'))
 
-Photo.create!(business_id: biz10.id, image: File.open('./app/assets/images/chip2.jpg'))
-Photo.create!(business_id: biz10.id, image: File.open('./app/assets/images/chip3.jpg'))
+Photo.create!(business_id: biz10.id, image: File.open('./app/assets/images/socos2.jpg'))
+Photo.create!(business_id: biz10.id, image: File.open('./app/assets/images/socos3.jpg'))
