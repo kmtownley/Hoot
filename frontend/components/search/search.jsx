@@ -6,9 +6,11 @@ import BusinessMap from '../business_map/business_map';
 class Search extends React.Component {
   constructor(props) {
     super(props);
+
   }
 
   componentDidMount() {
+    debugger
     const queries = this.props.location.search.split("&");
     const contentQuery = queries[0].slice(queries[0].indexOf("=") + 1);
     const areaQuery = queries[1].slice(queries[1].indexOf("=") + 1);
@@ -34,8 +36,15 @@ class Search extends React.Component {
     }
   }
 
+  startSearch() {
+     let input = document.getElementById('autocomplete');
+    this.autocomplete = new google.maps.places.Autocomplete(input);
+   }
+
+
 
   render() {
+    debugger
     const businesses = this.props.businesses;
     return (
       <div>
@@ -46,6 +55,7 @@ class Search extends React.Component {
               businesses={businesses}
               pathname={this.props.location.pathname}
               fetchReviews={this.props.fetchReviews}
+              updateBounds={this.props.updateBounds}
             />
           </div>
       </div>

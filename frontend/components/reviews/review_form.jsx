@@ -34,19 +34,13 @@ class ReviewForm extends React.Component {
 
 
   componentWillReceiveProps(newProps) {
-    debugger
-
     if (!this.state) {
       this.props.fetchBusiness(this.props.match.params.businessId);
       this.setState(
       {body: newProps.review.body, user_rating: newProps.review.user_rating, business_id: newProps.business.id, user_id: newProps.review.user_id});
     }
-    // this.props.history.push(`/businesses/${this.props.business.id}/reviews/new`);
   }
 
-  componentDidUpdate() {
-
-  }
 
   componentWillUnmount() {
     this.props.clearErrors();
@@ -178,7 +172,6 @@ class ReviewForm extends React.Component {
   }
 
   render () {
-    debugger
     const business = this.props.business;
     const review = this.props.review;
     if (!business || !review || !this.state) {

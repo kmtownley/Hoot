@@ -7,9 +7,10 @@ class SearchBar extends React.Component {
       contentQuery: "",
       areaQuery: ""
     };
-
+    this.autocomplete;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange.bind(this);
+    this.startSearch = this.startSearch.bind(this);
   }
 
   clearInputs() {
@@ -20,10 +21,18 @@ class SearchBar extends React.Component {
   }
 
   handleChange(query){
+    // return (e) => {
+    //  this.setState({[query]: e.target.value});
+    // };
     return (e) => {
-     this.setState({[query]: e.target.value});
+      if (query === "areaQuery") {
+        this.setState({[query]: e.target.value});
+      } else {
+      this.setState({contentQuery: e.target.value, areaQuery: document.getElementById("autocomplete").value});
+      }
     };
   }
+
 
 
 
@@ -64,6 +73,27 @@ class SearchBar extends React.Component {
 
   }
 
+  startSearch() {
+   let locale = document.getElementById('autocomplete');
+    this.autocomplete = new google.maps.places.Autocomplete(locale);
+   }
+
+  geolocate() {
+  if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        let geolocation = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        let circle = new google.maps.Circle({
+          center: geolocation,
+          radius: position.coords.accuracy
+        });
+        autocomplete.setBounds(circle.getBounds());
+      });
+    }
+  }
+
   render() {
     return (
     <div className={this.switchContainerStyle()}>
@@ -78,6 +108,9 @@ class SearchBar extends React.Component {
             onChange={this.handleChange("contentQuery")}
           />
           <input
+            id="autocomplete"
+            autoComplete="on"
+            onFocus={this.startSearch}
             className="search-text-area"
             type="text"
             placeholder="Near"

@@ -61,8 +61,7 @@ export default class Homepage extends React.Component {
     return (
       <main className="landing-main-content">
         <div className="logo-title">
-          <Link to="/search"><img src={window.staticImages.headerImage} />
-          </Link>
+          <img src={window.staticImages.headerImage} />
         </div>
         <div className="home-search-bar">
           <SearchbarContainer

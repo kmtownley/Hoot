@@ -33,7 +33,14 @@
   padding-left: 6px;
   border-radius: 0px;
 }
+.pac-container {
+  position: relative;
+  z-index: 20;
+}
 
+#autocomplete {
+  z-index: 10;
+}
 .searchbar-form button {
   display: flex;
   color: white;

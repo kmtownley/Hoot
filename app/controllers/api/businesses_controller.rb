@@ -36,7 +36,7 @@ class Api::BusinessesController < ApplicationController
   end
 
   def index
-
+    rendered_bizs = []
     if (!params[:areaQuery] || !params[:contentQuery])
       @businesses = Business.all
     elsif (params[:contentQuery] != "" && params[:areaQuery] != "")
@@ -52,6 +52,10 @@ class Api::BusinessesController < ApplicationController
     else
       @businesses = Business.all
     end
+    # @businesses.each do |business|
+
+    # end
+
   end
 
   private
