@@ -31,14 +31,14 @@ export const updateReview = review => dispatch => {
 };
 
 export const deleteReview = reviewId => dispatch => {
-  debugger
+
   return (
   ReviewAPIUtil.deleteReview(reviewId).then(review => dispatch(removeReview(reviewId)))
   );
 };
 
 const removeReview = reviewId => {
-  debugger
+
   return {
   type: REMOVE_REVIEW,
   reviewId
@@ -46,7 +46,7 @@ const removeReview = reviewId => {
 };
 
 const receiveReview = review => {
-  debugger
+
   return {
   type: RECEIVE_REVIEW,
   review
@@ -59,7 +59,7 @@ const receiveAllReviews = reviews => ({
 });
 
 export const receiveErrors = err => {
-  debugger
+
   return {
   type: RECEIVE_REVIEW_ERRORS,
   err

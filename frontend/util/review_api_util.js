@@ -31,7 +31,7 @@ export const updateReview = review => {
 
 
 export const deleteReview = reviewId => {
-    debugger
+
     return $.ajax({
     method: "DELETE",
     url: `api/reviews/${reviewId}`

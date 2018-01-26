@@ -2,3 +2,5 @@ json.extract! business, :id, :biz_name, :rating, :cuisine, :address, :city, :sta
 
 
 json.image_url image_url(business.image.url)
+
+debugger

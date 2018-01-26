@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
-    debugger
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {body: this.props.review.body, user_rating: this.props.review.user_rating, business_id: this.props.business.id, user_id: this.props.review.user_id};
     this.starText = this.starText.bind(this);
@@ -59,7 +59,7 @@ class ReviewForm extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger
+
     e.preventDefault();
     if (this.props.location.pathname.includes("edit")) {
       this.props.action({id: this.props.review.id,

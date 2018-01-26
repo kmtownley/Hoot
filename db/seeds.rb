@@ -102,3 +102,7 @@ Review.create!(user_id: user6.id, business_id: biz9.id, user_rating: 4, body: "W
 Review.create!(user_id: user5.id, business_id: biz10.id, user_rating: 4, body: "Soco is generally delicious but a tad overpriced for the versy small portion sizes. However, they make up for it with their incredible dessert options.")
 Review.create!(user_id: user6.id, business_id: biz10.id, user_rating: 4, body: "Soco is so great! Highly recommend it!")
 Review.create!(user_id: user3.id, business_id: biz9.id, user_rating: 3, body: "Wafa is decent! Though the service could be improved.")
+
+Photo.destroy_all
+Photo.create!(business_id: biz1.id, image: File.open('./app/assets/images/chip2.jpg'))
+Photo.create!(business_id: biz1.id, image: File.open('./app/assets/images/chip3.jpg'))

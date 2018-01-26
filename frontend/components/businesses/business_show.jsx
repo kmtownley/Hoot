@@ -102,6 +102,8 @@ class BusinessShow extends React.Component {
               </ul>
             </div>
             <img className="biz-image"  src={this.props.business.image_url} />
+            <img className="biz-image" src={this.props.business.image0}/>
+            <img className="biz-image" src={this.props.business.image1} />
           </span>
           <section>
             {this.businessDetails()}
