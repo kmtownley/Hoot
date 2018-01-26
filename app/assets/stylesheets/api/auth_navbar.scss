@@ -127,6 +127,7 @@
   color: #f5f5f5;
 }
 
+
 .signup-no-user {
   font-size: 15px;
   font-weight: bold;
@@ -176,8 +177,14 @@
   line-height: 24px;
   padding: 8px 24px;
   position: absolute;
-  right: 320px;
+  right: 300px;
 }
+
+button.login:hover {
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 8px;
+}
+
 
 .login-signup:hover {
   color: grey;
@@ -205,6 +212,8 @@
   margin-right: 6px;
   margin-right: 6px;
 }
+
+
 
 .header-button:hover {
   background-color: #fff;

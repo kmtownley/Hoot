@@ -86,7 +86,7 @@ class ReviewIndexItem extends React.Component {
             </div>
             <p className="review-body-biz"> {this.props.review.body}</p>
           </div>
-          <div class="edit-button">
+          <div className="edit-button">
             {this.renderUpdate()}
           </div>
         </li>
