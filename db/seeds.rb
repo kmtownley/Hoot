@@ -14,48 +14,59 @@ file=File.open("./app/assets/images/chip1.jpg")
 biz1.image = file
 biz1.save!
 
-biz2 = Business.create!(biz_name: "Ginger and Lemongrass", phone_number: "(212) 432-1688", address: "816 Broadway", city: "New York",  state: "NY", zipcode: "10003", cuisine: "Thai", price: 3, rating: 5, latitude: 40.732762, longitude: -73.990936)
+biz2 = Business.create!(biz_name: "Ginger and Lemongrass", phone_number: "(212) 432-1688", address: "816 Broadway", city: "New York",  state: "NY", zipcode: "10003", cuisine: "Thai", price: 3, rating: 5, latitude: 40.732762, longitude: -73.990936, mon_start_hr: 8, mon_end_hr: 20,
+tue_start_hr: 10, tue_end_hr: 22, wed_start_hr: 10, wed_end_hr: 22, thur_start_hr: 10, thur_end_hr: 22, fri_start_hr: 10, fri_end_hr: 23, sat_start_hr: 8, sat_end_hr: 23, sun_start_hr: 12, sun_end_hr: 18)
 file=File.open("./app/assets/images/lemon_ginger.jpg")
 biz2.image = file
 biz2.save!
-biz3 = Business.create!(biz_name: "Outro", phone_number: "(646) 876-1237", address: "153 Rivington St", city: "New York",  state: "NY", zipcode: "10002", cuisine: "Cafe", price: 4, rating: 5, latitude: 40.719116, longitude: -73.985672)
+biz3 = Business.create!(biz_name: "Outro", phone_number: "(646) 876-1237", address: "153 Rivington St", city: "New York",  state: "NY", zipcode: "10002", cuisine: "Cafe", price: 4, rating: 5, latitude: 40.719116, longitude: -73.985672, mon_start_hr: 11, mon_end_hr: 20,
+tue_start_hr: 11, tue_end_hr: 20, wed_start_hr: 11, wed_end_hr: 20, thur_start_hr: 11, thur_end_hr: 20, fri_start_hr: 11, fri_end_hr: 22, sat_start_hr: 11, sat_end_hr: 23, sun_start_hr: 12, sun_end_hr: 18)
 file=File.open("./app/assets/images/example_biz.jpg")
 biz3.image = file
 biz3.save!
 biz4 = Business.create!(biz_name: "Amelie", phone_number: "(212)
-533-2962", address: "22 W 8th St", city: "New York",  state: "NY", zipcode: "10011", cuisine: "French", price: 4, rating: 4,latitude: 40.7629471996736, longitude: -73.97823811645509)
+533-2962", address: "22 W 8th St", city: "New York",  state: "NY", zipcode: "10011", cuisine: "French", price: 4, rating: 4,latitude: 40.7629471996736, longitude: -73.97823811645509, mon_start_hr: 8, mon_end_hr: 20,
+tue_start_hr: 8, tue_end_hr: 20, wed_start_hr: 8, wed_end_hr: 20, thur_start_hr: 8, thur_end_hr: 20, fri_start_hr: 8, fri_end_hr: 22, sat_start_hr: 8, sat_end_hr: 23, sun_start_hr: 12, sun_end_hr: 20)
 file=File.open("./app/assets/images/amelie.jpg")
 biz4.image = file
 biz4.save!
-biz5 = Business.create!(biz_name: "Tonchin NEW YORK", phone_number: "(646) 692-9912", address: "13 W 36th", city: "New York",  state: "NY", zipcode: "10018", cuisine: "American (New)", price: 5, rating: 4, latitude: 40.759223, longitude: -73.935242 )
+biz5 = Business.create!(biz_name: "Tonchin NEW YORK", phone_number: "(646) 692-9912", address: "13 W 36th", city: "New York",  state: "NY", zipcode: "10018", cuisine: "American (New)", price: 5, rating: 4, latitude: 40.759223, longitude: -73.935242, mon_start_hr: 10, mon_end_hr: 20,
+tue_start_hr: 10, tue_end_hr: 20, wed_start_hr: 10, wed_end_hr: 20, thur_start_hr: 10, thur_end_hr: 20, fri_start_hr: 10, fri_end_hr: 24, sat_start_hr: 10, sat_end_hr: 24, sun_start_hr: 12, sun_end_hr: 20)
 file=File.open("./app/assets/images/tonchin.jpg")
 biz5.image = file
 biz5.save!
-biz6 = Business.create!(biz_name: "The Smith", phone_number: "(212) 644-2700", address: "956 2nd Ave", city: "New York",  state: "NY", zipcode: "10022", cuisine: "Tapas Bar", price: 4, rating: 3, latitude: 40.740905, longitude: -74.004708 )
+biz6 = Business.create!(biz_name: "The Smith", phone_number: "(212) 644-2700", address: "956 2nd Ave", city: "New York",  state: "NY", zipcode: "10022", cuisine: "Tapas Bar", price: 4, rating: 3, latitude: 40.740905, longitude: -74.004708, mon_start_hr: 8, mon_end_hr: 20,
+tue_start_hr: 8, tue_end_hr: 20, wed_start_hr: 8, wed_end_hr: 20, thur_start_hr: 8, thur_end_hr: 20, fri_start_hr: 8, fri_end_hr: 22, sat_start_hr: 8, sat_end_hr: 23, sun_start_hr: 12, sun_end_hr: 20)
 file=File.open("./app/assets/images/smith.jpg")
 biz6.image = file
 biz6.save!
-biz7 = Business.create!(biz_name: "La Contenta Oeste", phone_number: "(212) 544-2740", address: "78 W 11th St", city: "New York",  state: "NY", zipcode: "10022", cuisine: "Mexican", price: 2, rating: 3, latitude: 40.735148, longitude: -73.998075)
+biz7 = Business.create!(biz_name: "La Contenta Oeste", phone_number: "(212) 544-2740", address: "78 W 11th St", city: "New York",  state: "NY", zipcode: "10022", cuisine: "Mexican", price: 2, rating: 3, latitude: 40.735148, longitude: -73.998075, mon_start_hr: 8, mon_end_hr: 20,
+tue_start_hr: 7, tue_end_hr: 20, wed_start_hr: 7, wed_end_hr: 20, thur_start_hr: 7, thur_end_hr: 20, fri_start_hr: 7, fri_end_hr: 22, sat_start_hr: 7, sat_end_hr: 23, sun_start_hr: 10, sun_end_hr: 20)
 file=File.open("./app/assets/images/oeste.jpg")
 biz7.image = file
 biz7.save!
-biz8 = Business.create!(biz_name: "Thai Villa", phone_number: "(212) 645-2720", address: "5 E 19th St", city: "New York",  state: "NY", zipcode: "10042", cuisine: "Thai", price: 3, rating: 3, latitude: 40.739008, longitude: -73.990664 )
+biz8 = Business.create!(biz_name: "Thai Villa", phone_number: "(212) 645-2720", address: "5 E 19th St", city: "New York",  state: "NY", zipcode: "10042", cuisine: "Thai", price: 3, rating: 3, latitude: 40.739008, longitude: -73.990664, mon_start_hr: 11, mon_end_hr: 20,
+tue_start_hr: 11, tue_end_hr: 20, wed_start_hr: 11, wed_end_hr: 20, thur_start_hr: 11, thur_end_hr: 20, fri_start_hr: 11, fri_end_hr: 22, sat_start_hr: 11, sat_end_hr: 23, sun_start_hr: 10, sun_end_hr: 18)
 file=File.open("./app/assets/images/thai_villa.jpg")
 biz8.image = file
 biz8.save!
-biz9 = Business.create!(biz_name: "Wafa's", phone_number: "(212) 644-2700", address: "812 Grand St", city: "Jersey City",  state: "NJ", zipcode: "11211", cuisine: "Vegetarian", price: 2, rating: 1, latitude: 40.714770, longitude: -74.072011 )
+biz9 = Business.create!(biz_name: "Wafa's", phone_number: "(212) 644-2700", address: "812 Grand St", city: "Jersey City",  state: "NJ", zipcode: "11211", cuisine: "Vegetarian", price: 2, rating: 1, latitude: 40.714770, longitude: -74.072011, mon_start_hr: 8, mon_end_hr: 20,
+tue_start_hr: 8, tue_end_hr: 20, wed_start_hr: 8, wed_end_hr: 20, thur_start_hr: 8, thur_end_hr: 20, fri_start_hr: 8, fri_end_hr: 22, sat_start_hr: 8, sat_end_hr: 23, sun_start_hr: 9, sun_end_hr: 22)
 file=File.open("./app/assets/images/wafas.jpg")
 biz9.image = file
 biz9.save!
-biz10 = Business.create!(biz_name: "Soco", phone_number: "(212) 634-2900", address: "509 Myrtle Ave", city: "Brooklyn",  state: "NY", zipcode: "10044", cuisine: "Cajun", price: 3, rating: 4, latitude: 40.693846, longitude: -73.964513 )
+biz10 = Business.create!(biz_name: "Soco", phone_number: "(212) 634-2900", address: "509 Myrtle Ave", city: "Brooklyn",  state: "NY", zipcode: "10044", cuisine: "Cajun", price: 3, rating: 4, latitude: 40.693846, longitude: -73.964513, mon_start_hr: 9, mon_end_hr: 20,
+tue_start_hr: 9, tue_end_hr: 22, wed_start_hr: 9, wed_end_hr: 22, thur_start_hr: 9, thur_end_hr: 22, fri_start_hr: 9, fri_end_hr: 22, sat_start_hr: 9, sat_end_hr: 23, sun_start_hr: 12, sun_end_hr: 20)
 file=File.open("./app/assets/images/soco.jpg")
 biz10.image = file
 biz10.save!
-biz11 = Business.create!(biz_name: "Peeled N' Pressed'", phone_number: "(929) 634-2900", address: "808B Union St", city: "Brooklyn",  state: "NY", zipcode: "11215", cuisine: "Juice Bar", price: 2, rating: 5, latitude: 40.704007, longitude: -73.986759 )
+biz11 = Business.create!(biz_name: "Peeled N' Pressed'", phone_number: "(929) 634-2900", address: "808B Union St", city: "Brooklyn",  state: "NY", zipcode: "11215", cuisine: "Juice Bar", price: 2, rating: 5, latitude: 40.704007, longitude: -73.986759, mon_start_hr: 8, mon_end_hr: 20,
+tue_start_hr: 8, tue_end_hr: 20, wed_start_hr: 8, wed_end_hr: 20, thur_start_hr: 8, thur_end_hr: 20, fri_start_hr: 8, fri_end_hr: 22, sat_start_hr: 8, sat_end_hr: 23, sun_start_hr: 12, sun_end_hr: 20)
 file=File.open("./app/assets/images/peeled1.jpg")
 biz11.image = file
 biz11.save!
-biz12 = Business.create!(biz_name: "La Bella Vita", phone_number: "(718) 369-9318", address: "524 4th Ave", city: "Brooklyn",  state: "NY", zipcode: "11215", cuisine: "Pizza", price: 3, rating: 4, latitude: 40.667626, longitude: -73.991370 )
+biz12 = Business.create!(biz_name: "La Bella Vita", phone_number: "(718) 369-9318", address: "524 4th Ave", city: "Brooklyn",  state: "NY", zipcode: "11215", cuisine: "Pizza", price: 3, rating: 4, latitude: 40.667626, longitude: -73.991370, mon_start_hr: 8, mon_end_hr: 20,
+tue_start_hr: 10, tue_end_hr: 23, wed_start_hr: 10, wed_end_hr: 23, thur_start_hr: 10, thur_end_hr: 23, fri_start_hr: 10, fri_end_hr: 1, sat_start_hr: 10, sat_end_hr: 1, sun_start_hr: 12, sun_end_hr: 23)
 file=File.open("./app/assets/images/bella1.jpg")
 biz12.image = file
 biz12.save!
