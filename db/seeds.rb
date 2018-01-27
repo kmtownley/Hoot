@@ -8,7 +8,8 @@
 
 Business.destroy_all
 
-biz1 = Business.new(biz_name: "Chip NYC", address: "353 W 14th St Gansevoort Market", phone_number: "(212) 546-0978", city: "New York",  state: "NY", zipcode: "10014", cuisine: "Desert", price: 2, rating: 4, latitude: 40.740905, longitude: -74.004708)
+biz1 = Business.new(biz_name: "Chip NYC", address: "353 W 14th St Gansevoort Market", phone_number: "(212) 546-0978", city: "New York",  state: "NY", zipcode: "10014", cuisine: "Desert", price: 2, rating: 4, latitude: 40.740905, longitude: -74.004708, mon_start_hr: 8, mon_end_hr: 20,
+tue_start_hr: 8, tue_end_hr: 20, wed_start_hr: 8, wed_end_hr: 20, thur_start_hr: 8, thur_end_hr: 20, fri_start_hr: 8, fri_end_hr: 22, sat_start_hr: 8, sat_end_hr: 23, sun_start_hr: 12, sun_end_hr: 20)
 file=File.open("./app/assets/images/chip1.jpg")
 biz1.image = file
 biz1.save!

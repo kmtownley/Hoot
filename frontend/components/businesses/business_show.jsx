@@ -69,17 +69,60 @@ class BusinessShow extends React.Component {
     );
   }
 
-  businessDetails() {
+  businessPrice() {
     return (
-      <div className="biz-details-container">
-          <ul className="biz-details">
-            <li className="price-range">Price Range: 
-              <i className="fa fa-usd" id={`dollar-${this.props.business.price}`} aria-hidden="true"></i>
-              <i className="fa fa-usd" id={`dollar-${this.props.business.price}`} aria-hidden="true"></i>
-              <i className="fa fa-usd" id={`dollar-${this.props.business.price}`} aria-hidden="true"></i>
-              <i className="fa fa-usd" id={`dollar-${this.props.business.price}`} aria-hidden="true"></i>
-            </li>
-          </ul>
+      <div>Price Range:
+        <i className="fa fa-usd" id={`dollar-${this.props.business.price}`} aria-hidden="true"></i>
+        <i className="fa fa-usd" id={`dollar-${this.props.business.price}`} aria-hidden="true"></i>
+        <i className="fa fa-usd" id={`dollar-${this.props.business.price}`} aria-hidden="true"></i>
+        <i className="fa fa-usd" id={`dollar-${this.props.business.price}`} aria-hidden="true"></i>
+      </div>
+    );
+  }
+
+  findAmPm(bizHour){
+    if (bizHour >= 12 && bizHour < 24) {
+      return "pm";
+    } else {
+      return "am";
+    }
+  }
+
+  businessDelivery() {
+    return (
+      <div> Delivery: Yes
+      </div>
+    );
+  }
+
+  businessHours() {
+    const biz = this.props.business;
+    return (
+      <div className="hours-container">
+        <h3 className="red-text">Hours</h3>
+        <tbody>
+          <tr><th scope="row">Mon</th>
+            <td><span className="nowrap">{biz.mon_start_hr}:00  {this.findAmPm(biz.mon_start_hr)}</span> - <span>{biz.mon_end_hr - 12}:00 pm</span></td>
+          </tr>
+          <tr><th score="row">Tue</th>
+            <td><span>{biz.tue_start_hr}:00  {this.findAmPm(biz.tue_start_hr)} - {biz.tue_end_hr - 12}:00 {this.findAmPm(biz.tue_end_hr)}</span></td>
+          </tr>
+          <tr><th score="row">Wed</th>
+            <td><span>{biz.wed_start_hr}:00  {this.findAmPm(biz.wed_start_hr)} - {biz.wed_end_hr - 12}:00 {this.findAmPm(biz.wed_end_hr)}</span></td>
+          </tr>
+          <tr><th score="row">Thurs</th>
+            <td><span>{biz.thur_start_hr}:00  {this.findAmPm(biz.thur_start_hr)} - {biz.thur_end_hr - 12}:00 {this.findAmPm(biz.thur_end_hr)}</span></td>
+          </tr>
+          <tr><th score="row">Fri</th>
+            <td><span>{biz.fri_start_hr}:00  {this.findAmPm(biz.fir_start_hr)} - {biz.fri_end_hr - 12}:00 {this.findAmPm(biz.fri_end_hr)}</span></td>
+          </tr>
+          <tr><th score="row">Sat</th>
+            <td><span>{biz.sat_start_hr}:00  {this.findAmPm(biz.sat_start_hr)} - {biz.sat_end_hr - 12}:00 {this.findAmPm(biz.sun_end_hr)}</span></td>
+          </tr>
+          <tr><th score="row">Sun</th>
+            <td><span>{biz.sun_start_hr}:00  {this.findAmPm(biz.sun_start_hr)} - {biz.sun_end_hr - 12}:00 {this.findAmPm(biz.sun_end_hr)}</span></td>
+          </tr>
+      </tbody>
       </div>
     );
   }
@@ -127,7 +170,15 @@ class BusinessShow extends React.Component {
             </div>
           </span>
           <section>
-            {this.businessDetails()}
+            <div className="biz-details-container">
+              <ul className="biz-details">
+                <li className="sum-island">
+                <div className="takeout">{this.businessDelivery()}</div>
+                <div>{this.businessPrice()}</div>
+                </li>
+                <li>{this.businessHours()}</li>
+              </ul>
+            </div>
             <div className="reviews-main">
               <ReviewIndexContainer />
             </div>

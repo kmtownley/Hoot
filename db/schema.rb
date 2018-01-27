@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180125231533) do
+ActiveRecord::Schema.define(version: 20180127153841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,20 @@ ActiveRecord::Schema.define(version: 20180125231533) do
     t.float "latitude"
     t.float "longitude"
     t.integer "price"
+    t.integer "mon_start_hr"
+    t.integer "mon_end_hr"
+    t.integer "tue_start_hr"
+    t.integer "tue_end_hr"
+    t.integer "wed_start_hr"
+    t.integer "wed_end_hr"
+    t.integer "thur_start_hr"
+    t.integer "thur_end_hr"
+    t.integer "fri_start_hr"
+    t.integer "fri_end_hr"
+    t.integer "sat_start_hr"
+    t.integer "sat_end_hr"
+    t.integer "sun_start_hr"
+    t.integer "sun_end_hr"
     t.index ["city"], name: "index_businesses_on_city"
     t.index ["cuisine"], name: "index_businesses_on_cuisine"
     t.index ["rating"], name: "index_businesses_on_rating"
