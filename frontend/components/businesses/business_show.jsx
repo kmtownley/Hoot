@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ReviewIndexContainer from '../reviews/review_index_container';
 import BusinessShowMap from '../business_map/business_show_map';
+import Footer from '../footer/footer';
 
 class BusinessShow extends React.Component {
   constructor(props) {
@@ -72,12 +73,12 @@ class BusinessShow extends React.Component {
     return (
       <div className="biz-details-container">
           <ul className="biz-details">
-            <div className={`price-range-${this.props.business.price}`}>
-              <i className="fa fa-usd" id="dollar-1" aria-hidden="true"></i>
-              <i className="fa fa-usd" id="dollar-2" aria-hidden="true"></i>
-              <i className="fa fa-usd" id="dollar-3" aria-hidden="true"></i>
-              <i className="fa fa-usd" id="dollar-4" aria-hidden="true"></i>
-            </div>
+            <li className="price-range">Price Range: 
+              <i className="fa fa-usd" id={`dollar-${this.props.business.price}`} aria-hidden="true"></i>
+              <i className="fa fa-usd" id={`dollar-${this.props.business.price}`} aria-hidden="true"></i>
+              <i className="fa fa-usd" id={`dollar-${this.props.business.price}`} aria-hidden="true"></i>
+              <i className="fa fa-usd" id={`dollar-${this.props.business.price}`} aria-hidden="true"></i>
+            </li>
           </ul>
       </div>
     );
@@ -87,14 +88,11 @@ class BusinessShow extends React.Component {
 
     const business = this.props.business;
     if (!business) {
-      return (
-        <div>Loading...
-         <i className="fa fa-spinner fa-pulse"></i>
-      </div>
-      );
+      return null;
     }
     return (
-        <main className="main-content-container">
+      <main>
+        <div className="main-content-container">
           <section className="biz-header-container">
             <div className="biz-header">
               <span className="biz-show-title">{business.biz_name}</span>
@@ -134,9 +132,9 @@ class BusinessShow extends React.Component {
               <ReviewIndexContainer />
             </div>
           </section>
-
-        </main>
-
+        </div>
+        <Footer />
+      </main>
     );
   }
 }

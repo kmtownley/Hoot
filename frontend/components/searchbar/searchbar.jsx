@@ -27,13 +27,11 @@ class SearchBar extends React.Component {
     return (e) => {
       if (query === "areaQuery") {
         this.setState({[query]: e.target.value});
-      } else {
+      }  else {
       this.setState({contentQuery: e.target.value, areaQuery: document.getElementById("autocomplete").value});
       }
     };
   }
-
-
 
 
   switchContainerStyle() {
@@ -66,7 +64,6 @@ class SearchBar extends React.Component {
 
 
   handleSubmit(e) {
-
     const state1 = Object.assign({}, this.state);
     e.preventDefault(); this.props.history.push(`/search?contentQuery=${this.state.contentQuery}&areaQuery=${this.state.areaQuery}`);
     this.clearInputs();

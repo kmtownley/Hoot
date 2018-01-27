@@ -52,9 +52,9 @@ class Api::BusinessesController < ApplicationController
     else
       @businesses = Business.all
     end
-    @businesses.each do |business|
-
-    end
+    # @businesses.each do |business|
+    #
+    # end
 
   end
 

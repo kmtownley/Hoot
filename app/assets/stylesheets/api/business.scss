@@ -51,6 +51,7 @@
 
 .street-address span {
   display: block;
+  padding-left: 2px;
 }
 
 .street-address div {
@@ -121,10 +122,46 @@
   padding: 3px 11px 3px 6px;
   width: 100%;
 }
-.price-range-4 {
+
+// .price-range-1 {
+// } #dollar-1 {
+//   color: #3cb52e;
+// }
+
+// .price-range-2 {
+// } #dollar-1 {
+//   color: #3cb52e;
+// } #dollar-2 {
+//   color: #3cb52e;
+// }
+#dollar-3:nth-child(-n+1) {
   color: #3cb52e;
 }
 
+#dollar-2:nth-child(-n+2) {
+  color: #3cb52e;
+}
+
+#dollar-3:nth-child(-n+3) {
+  color: #3cb52e;
+}
+
+#dollar-4:nth-child(-n+4) {
+  color: #3cb52e;
+}
+
+// .price-range-4 {
+// } #dollar-1 {
+//   color: #3cb52e;
+// } #dollar-2 {
+//   color: #3cb52e;
+// } #dollar-3 {
+//   color: #3cb52e;
+// }
+
+.fa-usd {
+  color: grey;
+}
 .biz-image-container {
   display: flex;
 

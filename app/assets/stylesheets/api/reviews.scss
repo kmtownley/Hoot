@@ -4,6 +4,7 @@
 .review-main {
   width: 80%;
   margin-left: 120px;
+  margin-bottom: 161px;
 }
 .review-form-container {
   background-color: #fff;
@@ -123,7 +124,6 @@
 
 .review-form-button-container {
   padding: 0;
-  background-color: #fff;
   height: 80px;
   position: absolute;
   margin-top: 30px;
@@ -179,4 +179,10 @@
 .review-errors-container {
   padding-left: 120px;
   padding-bottom: 10px;
+}
+
+.first-review-text {
+  font-size: 20px;
+  color: grey;
+  font-weight: bold;
 }

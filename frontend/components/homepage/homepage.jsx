@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import SearchbarContainer from '../searchbar/searchbar_container';
 import BusinessIndexContainer from '../businesses/business_index_container';
 import BusinessIndexItem from '../businesses/business_index_item';
+import Footer from '../footer/footer';
 
 export default class Homepage extends React.Component {
   constructor(props) {
@@ -73,10 +74,7 @@ export default class Homepage extends React.Component {
           Hot & Awesome Businesses
           <div>{this.awesomeBizs()}</div>
         </section>
-        <footer className="footer">
-          {this.renderFooter()}
-          <div className="footer-image"></div>
-        </footer>
+        <Footer />
       </main>
 
     );

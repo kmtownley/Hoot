@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import Footer from '../footer/footer';
 
 class UserShow extends React.Component {
   constructor(props) {
@@ -103,20 +104,23 @@ class UserShow extends React.Component {
   render() {
     const currentUser = this.props.currentUser;
     return (
-      <div className="user-show-container">
-        <div className="account-settings-container">
-          <img src={this.state.imageUrl}></img>
-          <div className="title-nav-content"
-            >{currentUser.first_name}
-            <br/>
-            <span>Account Settings</span>
-          </div>
-          <div className="user-profile-container">
-            <div className="profile-text">Profile</div>
-            <div>{this.updateUserInfo()}</div>
+      <main>
+        <div className="user-show-container">
+          <div className="account-settings-container">
+            <img src={this.state.imageUrl}></img>
+            <div className="title-nav-content"
+              >{currentUser.first_name}
+              <br/>
+              <span>Account Settings</span>
+            </div>
+            <div className="user-profile-container">
+              <div className="profile-text">Profile</div>
+              <div>{this.updateUserInfo()}</div>
+            </div>
           </div>
         </div>
-      </div>
+        <Footer />
+      </main>
     );
   }
 }

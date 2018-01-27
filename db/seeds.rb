@@ -54,7 +54,7 @@ biz11 = Business.create!(biz_name: "Peeled N' Pressed'", phone_number: "(929) 63
 file=File.open("./app/assets/images/peeled1.jpg")
 biz11.image = file
 biz11.save!
-biz12 = Business.create!(biz_name: "La Bella Vita'", phone_number: "(718) 369-9318", address: "524 4th Ave", city: "Brooklyn",  state: "NY", zipcode: "11215", cuisine: "Pizza", price: 3, rating: 4, latitude: 40.667626, longitude: -73.991370 )
+biz12 = Business.create!(biz_name: "La Bella Vita", phone_number: "(718) 369-9318", address: "524 4th Ave", city: "Brooklyn",  state: "NY", zipcode: "11215", cuisine: "Pizza", price: 3, rating: 4, latitude: 40.667626, longitude: -73.991370 )
 file=File.open("./app/assets/images/bella1.jpg")
 biz12.image = file
 biz12.save!
@@ -148,5 +148,5 @@ Photo.create!(business_id: biz10.id, image: File.open('./app/assets/images/socos
 Photo.create!(business_id: biz11.id, image: File.open('./app/assets/images/peeled2.jpg'))
 Photo.create!(business_id: biz11.id, image: File.open('./app/assets/images/peeled3.jpg'))
 
-Photo.create!(business_id: biz11.id, image: File.open('./app/assets/images/bella2.jpg'))
-Photo.create!(business_id: biz11.id, image: File.open('./app/assets/images/bella3.jpg'))
+Photo.create!(business_id: biz12.id, image: File.open('./app/assets/images/bella2.jpg'))
+Photo.create!(business_id: biz12.id, image: File.open('./app/assets/images/bella3.jpg'))

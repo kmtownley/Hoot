@@ -1,6 +1,7 @@
 import React from 'react';
 import BusinessIndexContainer from '../businesses/business_index_container';
 import BusinessMap from '../business_map/business_map';
+import Footer from '../footer/footer';
 
 
 class Search extends React.Component {
@@ -10,7 +11,7 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
-    debugger
+
     const queries = this.props.location.search.split("&");
     const contentQuery = queries[0].slice(queries[0].indexOf("=") + 1);
     const areaQuery = queries[1].slice(queries[1].indexOf("=") + 1);
@@ -44,10 +45,9 @@ class Search extends React.Component {
 
 
   render() {
-    debugger
     const businesses = this.props.businesses;
     return (
-      <div>
+      <main>
         <div className="search-businesses-container">
           {this.findBusinesses()}
           <div className="main-search-container">
@@ -59,7 +59,8 @@ class Search extends React.Component {
             />
           </div>
       </div>
-    </div>
+      <Footer />
+    </main>
   );
   }
 }

@@ -36,8 +36,8 @@ export default class ReviewIndex extends React.Component {
     });
     if (reviews.length === 0) {
       return (
-        <div>Loading...
-           <i className="fa fa-spinner fa-pulse"></i>
+        <div className="first-review-text">
+          Be the first to review this business!
         </div>
       );
     }
