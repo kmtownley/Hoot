@@ -89,8 +89,13 @@ class BusinessShow extends React.Component {
   }
 
   businessDelivery() {
+    let delivers = "No";
+    if (this.props.business.delivery === true) {
+      delivers = "Yes";
+    }
+
     return (
-      <div> Delivery: Yes
+      <div> Delivery: {delivers}
       </div>
     );
   }
