@@ -15,7 +15,7 @@ class Footer extends React.Component {
           </label>
         </li>
         <li className="footer-list-content" >
-          <label  className="footer-title"> MEET THE AUTHOR
+          <label  className="footer-title"> MEET THE ENGINEER
             <a className="git-link" href="https://www.linkedin.com/in/kathleen-townley-83b039b8/">
               <i className="fa fa-linkedin fa-2x" aria-hidden="true"></i>
             </a>
