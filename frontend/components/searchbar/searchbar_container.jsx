@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import SearchBar from './searchbar';
 import { withRouter } from 'react-router-dom';
 import { fetchBusinesses } from '../../actions/business_actions';
-import { updateBounds } from '../../actions/filter_actions';
+import { updateFilter } from '../../actions/filter_actions';
 import { logout } from '../../actions/session_actions';
 
 
@@ -17,7 +17,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
 
   return {
-  updateBounds: (bounds) => dispatch(updateBounds(bounds)),
+  updateFilter: (bounds) => dispatch(updateFilter(bounds)),
   fetchBusinesses: (areaQuery, contentQuery) => dispatch(fetchBusinesses(areaQuery, contentQuery)),
   clearErrors: () => dispatch(clearErrors())
   };

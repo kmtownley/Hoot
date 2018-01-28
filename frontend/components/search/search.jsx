@@ -7,6 +7,7 @@ import Footer from '../footer/footer';
 class Search extends React.Component {
   constructor(props) {
     super(props);
+    // this.state = ({areaQuery: "", contentQuery: "", price: 4, delivery: false});
 
   }
 
@@ -44,10 +45,12 @@ class Search extends React.Component {
 
 
 
+
   render() {
     const businesses = this.props.businesses;
     return (
       <main>
+        <div className="filter-box"></div>
         <div className="search-businesses-container">
           {this.findBusinesses()}
           <div className="main-search-container">

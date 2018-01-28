@@ -1,15 +1,17 @@
 import merge from 'lodash/merge';
 
 import {
-  UPDATE_BOUNDS
+  UPDATE_FILTER, CLEAR_FILTER
 } from '../actions/filter_actions';
 
-const filterReducer = (state = {}, action ) => {
+const filterReducer = (state = null, action ) => {
   Object.freeze(state);
 
   switch(action.type) {
-    case UPDATE_BOUNDS:
-      return merge({}, { [action.filter]: action.value });
+    case UPDATE_FILTER:
+      return merge({}, state, action.bounds );
+    case CLEAR_FILTER:
+      return {};
     default:
       return state;
   }

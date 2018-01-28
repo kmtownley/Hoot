@@ -3,27 +3,34 @@ import React from 'react';
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      contentQuery: "",
-      areaQuery: ""
-    };
+    // this.state = {
+    //   contentQuery: "",
+    //   areaQuery: ""
+    // };
+    this.state = ({areaQuery: "", contentQuery: "", price: "", delivery: false});
     this.autocomplete;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange.bind(this);
     this.startSearch = this.startSearch.bind(this);
+    this.filterPrice = this.filterPrice.bind(this);
+    this.renderFilter = this.renderFilter.bind(this);
+    this.queries = this.props.location.search.split("&");
+    this.content = this.queries[0].slice(this.queries[0].indexOf("=") + 1);
+    this.area = this.queries[1].slice(this.queries[1].indexOf("=") + 1);
+    this.renderTitle = this.renderTitle.bind(this);
+
   }
 
   clearInputs() {
     this.setState({
       contentQuery: "",
-      areaQuery: ""
+      areaQuery: "",
+      price: 5,
+      delivery: false
     });
   }
 
   handleChange(query){
-    // return (e) => {
-    //  this.setState({[query]: e.target.value});
-    // };
     return (e) => {
       if (query === "areaQuery") {
         this.setState({[query]: e.target.value});
@@ -49,7 +56,6 @@ class SearchBar extends React.Component {
   }
 
   switchButtonStyle() {
-
     let buttonStyle;
     if (this.props.location.pathname.length !== 14 || this.props.location.pathname !== '/search' ) {
       return (
@@ -75,6 +81,34 @@ class SearchBar extends React.Component {
     this.autocomplete = new google.maps.places.Autocomplete(locale);
    }
 
+   renderTitle() {
+    if (this.content && this.area) {
+      return (
+        <h3>Best {this.content} <span>in {this.area.toUpperCase()} </span></h3>
+      );
+    } else if (this.content) {
+      return (
+        <h3>Best {this.content}</h3>
+      );
+    } else if (this.area) {
+        return (
+          <h3>Best in {this.area.toUpperCase()}</h3>
+        );
+      } else {
+        return null;
+      }
+   }
+
+  filterDelivery(e) {
+    this.setState({delivery: e.target.value});
+    this.props.updateFilter({delivery: e.target.value});
+  }
+
+  filterPrice(e) {
+    this.setState({price: e.target.value});
+    this.props.updateFilter({price: e.target.value});
+  }
+
   geolocate() {
   if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
@@ -91,12 +125,51 @@ class SearchBar extends React.Component {
     }
   }
 
+  renderFilter() {
+    let priceInt;
+    if (this.state.price !== undefined) {
+      priceInt = parseInt(this.state.price);
+    }
+    debugger
+    return (
+      <div className="filter-container">
+        {this.renderTitle()}
+        <ul className="filter-list-content">
+          <ul className="filter-list-price">
+              <label id={(priceInt >= 1) ? "green" : ""}>$
+              <li className="filter-price">
+                <input type="radio" value="1" name="dollar-signs" onChange={this.filterPrice} />
+              </li>
+              </label>
+            <label id={priceInt >= 2 ? "green" : ""}>$$
+              <li className="filter-price">
+                <input type="radio" value="2" name="dollar-signs" onChange={this.filterPrice} />
+              </li>
+            </label>
+            <label id={priceInt >= 3 ? "green" : ""}>$$$
+            <li className="filter-price">
+              <input type="radio" value="3" name="dollar-signs" onChange={this.filterPrice} />
+            </li>
+            </label>
+            <label id={priceInt === 4 ? "green" : ""}>$$$$
+              <li className="filter-price">
+                <input type="radio" value="4" name="dollar-signs" onChange={this.filterPrice} />
+              </li>
+            </label>
+        </ul>
+        </ul>
+      </div>
+    );
+  }
+
   render() {
+    debugger
     return (
     <div className={this.switchContainerStyle()}>
       <form
         className="searchbar-form"
         onSubmit={this.handleSubmit}>
+          <div className="searchbar-container">
           <input
             className="search-type"
             type="text"
@@ -120,6 +193,8 @@ class SearchBar extends React.Component {
           value="submit">
           <i className="fa fa-search" aria-hidden="true"></i>
         </button>
+        </div>
+        {this.props.location.pathname === "/search" ? this.renderFilter() : ""}
       </form>
     </div>
     );
