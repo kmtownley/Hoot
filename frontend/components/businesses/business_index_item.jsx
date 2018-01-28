@@ -37,11 +37,19 @@ class BusinessIndexItem extends React.Component {
             className={`star-rating-search-${rating}`}>
           </span>
           <br/>
-          <span>{cuisine}</span>
+          <span>{this.renderPrice()} - {cuisine}</span>
             <div className="biz-index-city">{city}</div>
           <br/>
         </section>
       </li>
+    );
+  }
+
+  renderPrice() {
+    return (
+      <span className="money-signs-biz-idx">
+        {Array(this.props.business.price).join("$")}
+      </span>
     );
   }
 
@@ -64,7 +72,7 @@ class BusinessIndexItem extends React.Component {
           <span
             className={`star-rating-search-${rating}`}>
           </span>
-          <div className="search-biz-cuisine">{cuisine}</div>
+          <div className="search-biz-cuisine">{this.renderPrice()} - {cuisine}</div>
           <br/>
           </section>
           <section className="search-biz-address-container">

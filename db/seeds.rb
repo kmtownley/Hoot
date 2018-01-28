@@ -30,7 +30,7 @@ tue_start_hr: 8, tue_end_hr: 20, wed_start_hr: 8, wed_end_hr: 20, thur_start_hr:
 file=File.open("./app/assets/images/amelie.jpg")
 biz4.image = file
 biz4.save!
-biz5 = Business.create!(biz_name: "Tonchin NEW YORK", phone_number: "(646) 692-9912", address: "13 W 36th", city: "New York",  state: "NY", zipcode: "10018", cuisine: "American (New)", price: 5, rating: 4, latitude: 40.759223, longitude: -73.935242, mon_start_hr: 10, mon_end_hr: 20,
+biz5 = Business.create!(biz_name: "Tonchin NEW YORK", phone_number: "(646) 692-9912", address: "13 W 36th", city: "New York",  state: "NY", zipcode: "10018", cuisine: "American (New)", price: 4, rating: 4, latitude: 40.759223, longitude: -73.935242, mon_start_hr: 10, mon_end_hr: 20,
 tue_start_hr: 10, tue_end_hr: 20, wed_start_hr: 10, wed_end_hr: 20, thur_start_hr: 10, thur_end_hr: 20, fri_start_hr: 10, fri_end_hr: 24, sat_start_hr: 10, sat_end_hr: 24, sun_start_hr: 12, sun_end_hr: 20, delivery: true)
 file=File.open("./app/assets/images/tonchin.jpg")
 biz5.image = file

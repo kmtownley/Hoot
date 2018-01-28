@@ -7,17 +7,20 @@ class SearchBar extends React.Component {
     //   contentQuery: "",
     //   areaQuery: ""
     // };
-    this.state = ({areaQuery: "", contentQuery: "", price: "", delivery: false});
+    this.state = ({areaQuery: "", contentQuery: "", price: null, delivery: false});
     this.autocomplete;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange.bind(this);
     this.startSearch = this.startSearch.bind(this);
     this.filterPrice = this.filterPrice.bind(this);
     this.renderFilter = this.renderFilter.bind(this);
-    this.queries = this.props.location.search.split("&");
-    this.content = this.queries[0].slice(this.queries[0].indexOf("=") + 1);
-    this.area = this.queries[1].slice(this.queries[1].indexOf("=") + 1);
     this.renderTitle = this.renderTitle.bind(this);
+
+    if (this.props.location.search !== "" ) {
+      this.queries = this.props.location.search.split("&");
+      this.content = this.queries[0].slice(this.queries[0].indexOf("=") + 1);
+      this.area = this.queries[1].slice(this.queries[1].indexOf("=") + 1);
+    }
 
   }
 
@@ -25,7 +28,7 @@ class SearchBar extends React.Component {
     this.setState({
       contentQuery: "",
       areaQuery: "",
-      price: 5,
+      price: "",
       delivery: false
     });
   }
@@ -70,6 +73,7 @@ class SearchBar extends React.Component {
 
 
   handleSubmit(e) {
+    debugger
     const state1 = Object.assign({}, this.state);
     e.preventDefault(); this.props.history.push(`/search?contentQuery=${this.state.contentQuery}&areaQuery=${this.state.areaQuery}`);
     this.clearInputs();
@@ -126,11 +130,12 @@ class SearchBar extends React.Component {
   }
 
   renderFilter() {
+    debugger
     let priceInt;
     if (this.state.price !== undefined) {
       priceInt = parseInt(this.state.price);
     }
-    debugger
+
     return (
       <div className="filter-container">
         {this.renderTitle()}
@@ -163,7 +168,7 @@ class SearchBar extends React.Component {
   }
 
   render() {
-    debugger
+
     return (
     <div className={this.switchContainerStyle()}>
       <form

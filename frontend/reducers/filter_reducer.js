@@ -6,7 +6,6 @@ import {
 
 const filterReducer = (state = null, action ) => {
   Object.freeze(state);
-
   switch(action.type) {
     case UPDATE_FILTER:
       return merge({}, state, action.bounds );

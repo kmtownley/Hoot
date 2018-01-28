@@ -16,7 +16,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
 
   return {
-  updateFIlter: (bounds) => dispatch(updateBounds(bounds)),
+  updateFilter: (bounds) => dispatch(updateFilter(bounds)),
   clearFilter: () => dispatch(clearFilter()),
   fetchReviews: businessId => dispatch(fetchReviews(businessId)),
   fetchBusinesses: (areaQuery, contentQuery) => dispatch(fetchBusinesses(areaQuery, contentQuery)),

@@ -24,7 +24,7 @@ export const deleteBusiness = businessId => dispatch => {
 };
 
 export const searchBusinesses = bounds => dispatch => {
-  
+
   return (
   BizAPIUtil.searchBusinesses(bounds).then(businesses => dispatch(receiveSearchedBusinesses(businesses)))
   );

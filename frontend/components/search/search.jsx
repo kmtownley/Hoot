@@ -7,7 +7,7 @@ import Footer from '../footer/footer';
 class Search extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = ({areaQuery: "", contentQuery: "", price: 4, delivery: false});
+    this.state = ({areaQuery: "", contentQuery: "", price: "", delivery: false});
 
   }
 
