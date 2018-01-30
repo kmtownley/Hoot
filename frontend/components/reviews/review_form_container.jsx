@@ -17,6 +17,7 @@ const mapStateToProps = (state, ownProps) => {
     formType = "edit";
      // review = state.entities.reviews[ownProps.match.params.reviewId]
    }
+   debugger
   return {
     business: state.entities.businesses[ownProps.match.params.businessId],
     errors: state.errors.review,

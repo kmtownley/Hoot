@@ -34,10 +34,12 @@ class ReviewForm extends React.Component {
 
 
   componentWillReceiveProps(newProps) {
+    debugger
     if (!this.state) {
-      this.props.fetchBusiness(this.props.match.params.businessId);
+      this.props.fetchBusiness(newProps.match.params.businessId);
+      this.props.fetchReview(newProps.match.params.reviewId);
       this.setState(
-      {body: newProps.review.body, user_rating: newProps.review.user_rating, business_id: newProps.business.id, user_id: newProps.review.user_id});
+      {body: newProps.review.body, user_rating: newProps.review.user_rating, business_id: newProps.match.params.businessId, user_id: newProps.review.user_id});
     }
   }
 
