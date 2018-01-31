@@ -111,6 +111,7 @@
   z-index: 10;
   background-color: #c4f3a4;
   color: #348c42;
+  box-shadow: 0px 3px lightgrey;
 }
 
 #green {
@@ -171,6 +172,11 @@
 label.delivery-container {
   border-radius: 4px;
   height: 17px;
+
+}
+
+label.delivery-container:hover {
+   box-shadow: 0px 3px lightgrey;
 }
 
 .fa-truck {
