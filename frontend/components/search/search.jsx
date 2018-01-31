@@ -46,20 +46,20 @@ class Search extends React.Component {
    }
 
   filterBusinesses() {
-    debugger
+
       this.businesses = this.props.businesses;
       if (this.props.priceFilter < 5) {
         this.businesses = this.props.businesses.filter(biz => biz.price <= this.props.priceFilter);
       }
       if (this.props.deliveryFilter != undefined) {
-        debugger
+
        this.businesses = this.businesses.filter(biz => (biz.delivery.toString() === this.props.deliveryFilter || biz.delivery === true));
      }
   }
 
 
   render() {
-    debugger
+
     // const businesses = this.props.businesses;
     this.filterBusinesses();
     const businesses = this.businesses;

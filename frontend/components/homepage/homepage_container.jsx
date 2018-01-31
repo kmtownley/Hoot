@@ -4,7 +4,7 @@ import Homepage from './homepage';
 import { fetchBusinesses } from '../../actions/business_actions';
 
 export const mapStateToProps = state => {
-  debugger
+  
   return {
   businesses: Object.values(state.entities.businesses)
   };

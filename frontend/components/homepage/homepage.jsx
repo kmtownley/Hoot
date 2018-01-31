@@ -21,7 +21,7 @@ export default class Homepage extends React.Component {
     console.log(bizLength)
     const rand = Math.floor(Math.random() * bizLength);
     console.log(rand)
-    debugger
+
     return (
         <main className="business-index-list">
         <ul>

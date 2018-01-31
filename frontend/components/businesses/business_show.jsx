@@ -169,9 +169,15 @@ class BusinessShow extends React.Component {
               </ul>
             </div>
             <div className="biz-image-container">
-              <img className="biz-image" src={this.props.business.image0}/>
-              <img className="biz-image"  src={this.props.business.image_url} />
-              <img className="biz-image" src={this.props.business.image1} />
+              <div className="biz-image"
+                style={{backgroundImage: `url(${this.props.business.image0})`}}>
+              </div>
+              <div className="biz-image"
+                style={{backgroundImage: `url(${this.props.business.image_url})`}}>
+              </div>
+              <div className="biz-image"
+                style={{backgroundImage: `url(${this.props.business.image1})`}}>
+              </div>
             </div>
           </span>
           <section>

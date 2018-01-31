@@ -18,14 +18,28 @@ class SearchBar extends React.Component {
     this.deliveryFilter = this.deliveryFilter.bind(this);
     this.deliveryValue = false;
 
+    // if (this.props.location.search !== "" ) {
+    //   this.queries = this.props.location.search.split("&");
+    //   this.content = this.queries[0].slice(this.queries[0].indexOf("=") + 1);
+    //   this.area = this.queries[1].slice(this.queries[1].indexOf("=") + 1);
+    // }
+    this.getSearchInfo();
+
+  }
+
+  getSearchInfo() {
     if (this.props.location.search !== "" ) {
       this.queries = this.props.location.search.split("&");
       this.content = this.queries[0].slice(this.queries[0].indexOf("=") + 1);
       this.area = this.queries[1].slice(this.queries[1].indexOf("=") + 1);
     }
-
   }
 
+  componentWillReceiveProps(newProps) {
+    if (this.area !== newProps.area || this.conent !== newProps.content) {
+      this.area = newProps.area && this.content === newProps.content;
+    }
+  }
   clearInputs() {
     this.setState({
       contentQuery: "",
@@ -88,6 +102,8 @@ class SearchBar extends React.Component {
    }
 
    renderTitle() {
+     debugger
+     this.getSearchInfo();
     if (this.content && this.area) {
       return (
         <h3>Best {this.content} <span>in {this.area.toUpperCase()} </span></h3>
@@ -108,7 +124,7 @@ class SearchBar extends React.Component {
    }
 
   toggleDelivery() {
-    debugger
+
     if (this.deliveryValue === false) {
       this.deliveryValue = "true";
     } else {
@@ -117,7 +133,7 @@ class SearchBar extends React.Component {
   }
 
   deliveryFilter(e) {
-    debugger
+
     this.toggleDelivery(this.deliveryValue);
     this.setState({delivery: this.deliveryValue});
     this.props.updateFilter({delivery: this.deliveryValue});
@@ -145,7 +161,6 @@ class SearchBar extends React.Component {
   }
 
   renderFilter() {
-
     let priceInt;
     if (this.state.price !== undefined) {
       priceInt = parseInt(this.state.price);
@@ -188,7 +203,6 @@ class SearchBar extends React.Component {
   }
 
   render() {
-    debugger
     return (
     <div className={this.switchContainerStyle()}>
       <form
