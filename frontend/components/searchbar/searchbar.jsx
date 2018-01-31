@@ -178,6 +178,8 @@ class SearchBar extends React.Component {
             </label>
           </ul>
             <label className="delivery-container">
+              <i class="fa fa-truck" aria-hidden="true"></i>
+              Order Delivery
               <input type="checkbox" value={this.deliveryValue} onChange={this.deliveryFilter} />
             </label>
         </ul>
