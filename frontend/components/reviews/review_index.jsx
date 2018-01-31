@@ -20,13 +20,12 @@ export default class ReviewIndex extends React.Component {
   }
 
   render() {
-
-    const reviews = this.props.reviews.map((review) => {
+    const reviews = this.props.reviews.map((rev) => {
       return (
         <div className="review-wrapper">
           <ReviewIndexItem
-            review={review}
-            key={review.id}
+            key={rev.id}
+            review={rev}
             businessId={this.props.business.id}
             currentUser={this.props.currentUser}
             deleteReview={this.props.deleteReview}

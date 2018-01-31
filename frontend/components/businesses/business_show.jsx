@@ -105,29 +105,31 @@ class BusinessShow extends React.Component {
     return (
       <div className="hours-container">
         <h3 className="red-text">Hours</h3>
-        <tbody>
-          <tr><th scope="row">Mon</th>
-            <td><span className="nowrap">{biz.mon_start_hr}:00  {this.findAmPm(biz.mon_start_hr)}</span> - <span>{biz.mon_end_hr - 12}:00 pm</span></td>
-          </tr>
-          <tr><th score="row">Tue</th>
-            <td><span>{biz.tue_start_hr}:00  {this.findAmPm(biz.tue_start_hr)} - {biz.tue_end_hr - 12}:00 {this.findAmPm(biz.tue_end_hr)}</span></td>
-          </tr>
-          <tr><th score="row">Wed</th>
-            <td><span>{biz.wed_start_hr}:00  {this.findAmPm(biz.wed_start_hr)} - {biz.wed_end_hr - 12}:00 {this.findAmPm(biz.wed_end_hr)}</span></td>
-          </tr>
-          <tr><th score="row">Thurs</th>
-            <td><span>{biz.thur_start_hr}:00  {this.findAmPm(biz.thur_start_hr)} - {biz.thur_end_hr - 12}:00 {this.findAmPm(biz.thur_end_hr)}</span></td>
-          </tr>
-          <tr><th score="row">Fri</th>
-            <td><span>{biz.fri_start_hr}:00  {this.findAmPm(biz.fir_start_hr)} - {biz.fri_end_hr - 12}:00 {this.findAmPm(biz.fri_end_hr)}</span></td>
-          </tr>
-          <tr><th score="row">Sat</th>
-            <td><span>{biz.sat_start_hr}:00  {this.findAmPm(biz.sat_start_hr)} - {biz.sat_end_hr - 12}:00 {this.findAmPm(biz.sun_end_hr)}</span></td>
-          </tr>
-          <tr><th score="row">Sun</th>
-            <td><span>{biz.sun_start_hr}:00  {this.findAmPm(biz.sun_start_hr)} - {biz.sun_end_hr - 12}:00 {this.findAmPm(biz.sun_end_hr)}</span></td>
-          </tr>
-      </tbody>
+        <table>
+          <tbody>
+            <tr><th scope="row">Mon</th>
+              <td><span className="nowrap">{biz.mon_start_hr}:00  {this.findAmPm(biz.mon_start_hr)}</span> - <span>{biz.mon_end_hr - 12}:00 pm</span></td>
+            </tr>
+            <tr><th score="row">Tue</th>
+              <td><span>{biz.tue_start_hr}:00  {this.findAmPm(biz.tue_start_hr)} - {biz.tue_end_hr - 12}:00 {this.findAmPm(biz.tue_end_hr)}</span></td>
+            </tr>
+            <tr><th score="row">Wed</th>
+              <td><span>{biz.wed_start_hr}:00  {this.findAmPm(biz.wed_start_hr)} - {biz.wed_end_hr - 12}:00 {this.findAmPm(biz.wed_end_hr)}</span></td>
+            </tr>
+            <tr><th score="row">Thurs</th>
+              <td><span>{biz.thur_start_hr}:00  {this.findAmPm(biz.thur_start_hr)} - {biz.thur_end_hr - 12}:00 {this.findAmPm(biz.thur_end_hr)}</span></td>
+            </tr>
+            <tr><th score="row">Fri</th>
+              <td><span>{biz.fri_start_hr}:00  {this.findAmPm(biz.fir_start_hr)} - {biz.fri_end_hr - 12}:00 {this.findAmPm(biz.fri_end_hr)}</span></td>
+            </tr>
+            <tr><th score="row">Sat</th>
+              <td><span>{biz.sat_start_hr}:00  {this.findAmPm(biz.sat_start_hr)} - {biz.sat_end_hr - 12}:00 {this.findAmPm(biz.sun_end_hr)}</span></td>
+            </tr>
+            <tr><th score="row">Sun</th>
+              <td><span>{biz.sun_start_hr}:00  {this.findAmPm(biz.sun_start_hr)} - {biz.sun_end_hr - 12}:00 {this.findAmPm(biz.sun_end_hr)}</span></td>
+            </tr>
+        </tbody>
+      </table>
       </div>
     );
   }
