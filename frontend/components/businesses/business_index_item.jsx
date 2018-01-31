@@ -48,7 +48,8 @@ class BusinessIndexItem extends React.Component {
   renderPrice() {
     return (
       <span className="money-signs-biz-idx">
-        {Array(this.props.business.price).join("$")}
+        {Array(this.props.business.price + 1).join("$")}
+
       </span>
     );
   }
@@ -89,6 +90,7 @@ class BusinessIndexItem extends React.Component {
   }
 
   render() {
+    debugger
     if (this.props.pathname === "/businesses/:businessId" || this.props.pathname === "/search") {
     return (
       <div>

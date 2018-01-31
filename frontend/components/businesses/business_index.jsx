@@ -24,7 +24,6 @@ class BusinessIndex extends React.Component {
   }
 
   render() {
-
     const businesses = this.props.businesses;
     return (
       <main className="business-index-container">

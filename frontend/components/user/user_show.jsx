@@ -107,7 +107,7 @@ class UserShow extends React.Component {
       <main>
         <div className="user-show-container">
           <div className="account-settings-container">
-            <img src={this.state.imageUrl}></img>
+        
             <div className="title-nav-content"
               >{currentUser.first_name}
               <br/>

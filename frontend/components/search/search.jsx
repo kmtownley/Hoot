@@ -8,6 +8,7 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = ({areaQuery: "", contentQuery: "", price: "", delivery: false});
+    this.businesses;
 
   }
 
@@ -20,7 +21,7 @@ class Search extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    debugger
+
     const queries = nextProps.location.search.split("&");
     const contentQuery = queries[0].slice(queries[0].indexOf("=") + 1);
     const areaQuery = queries[1].slice(queries[1].indexOf("=") + 1);
@@ -45,15 +46,25 @@ class Search extends React.Component {
    }
 
   filterBusinesses() {
-    return (this.props.businesses.filter(biz => biz.price <= this.props.priceFilter)
-    );
+
+      this.businesses = this.props.businesses.filter(biz => biz.price <= this.props.priceFilter);
   }
 
 
   render() {
-    debugger
+
     // const businesses = this.props.businesses;
-    const businesses = this.filterBusinesses();
+    this.filterBusinesses();
+    const businesses = this.businesses;
+    if (businesses.length === 0 ) {
+      return (
+        <div className="no-biz-container">
+        <h1 className="no-biz-result">Sorry, no businesses match your specifications. Try broadening your search criteria. </h1>
+        <img src={window.staticImages.hootGif} />
+        <Footer />
+        </div>
+      );
+    }
     return (
       <main>
         <div className="filter-box"></div>
