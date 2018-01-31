@@ -70,6 +70,11 @@ tue_start_hr: 10, tue_end_hr: 23, wed_start_hr: 10, wed_end_hr: 23, thur_start_h
 file=File.open("./app/assets/images/bella1.jpg")
 biz12.image = file
 biz12.save!
+biz13 = Business.create!(biz_name: "Nyonya", phone_number: "(718) 369-9343", address: "199 Grand St", city: "New York",  state: "NY", zipcode: "10013", cuisine: "Asian", price: 1, rating: 4, latitude: 40.719002, longitude: -73.997027, mon_start_hr: 8, mon_end_hr: 20,
+tue_start_hr: 10, tue_end_hr: 23, wed_start_hr: 10, wed_end_hr: 23, thur_start_hr: 10, thur_end_hr: 23, fri_start_hr: 10, fri_end_hr: 1, sat_start_hr: 10, sat_end_hr: 1, sun_start_hr: 12, sun_end_hr: 23, delivery: true)
+file=File.open("./app/assets/images/nyonya1.jpg")
+biz13.image = file
+biz13.save!
 
 
 
@@ -124,6 +129,10 @@ Review.create!(user_id: user6.id, business_id: biz10.id, user_rating: 4, body: "
 Review.create!(user_id: user3.id, business_id: biz9.id, user_rating: 3, body: "Wafa is decent! Though the service could be improved.")
 Review.create!(user_id: user7.id, business_id: biz11.id, user_rating: 3, body: "3 stars for the poke bowl; 5 stars for the pitaya bowl and the lovely staff.Their acai and pitaya bowls are on point--great toppings, nicely balanced, usual (high) prices.  They didn't peel the kiwi, but the peel is edible I suppose. The poke bowls were a bit of a disappointment. The fish was fresh, and very generously scooped on--but that was it.  Fish mixed up in a heavy sauce, on a bed of rice/cauliflower rice. Cauliflower rice seems to just be food processed cauliflower--it's not steamed or cooked.   wheelhouse perhaps?  It's an easy fix--add sauce and toppings, and they might get the hang of it soon.  I think they've only been open a few weeks.  In the meantime, go for their pitaya bowls, and their smoothies are also probably yummy.")
 Review.create!(user_id: user3.id, business_id: biz9.id, user_rating: 3, body: "Wafa is decent! Though the service could be improved.")
+Review.create!(user_id: user7.id, business_id: biz13.id, user_rating: 3, body: "The food is really good. I came here last night with a party of 9. We ordered 7 dishes and 4 appetizers which we thought would be too much food. However to our surprise, the dishes are all quite small.
+I think the food is excellent and the price per dish is reasonable. However when you look at the plates you get, its actually not a lot of food. So the price is very reasonable, but you don't get a lot of food in return. So I guess that means its overpriced for what you get in return. Get the house special squid and the half chicken.")
+Review.create!(user_id: user4.id, business_id: biz13.id, user_rating: 3, body: "Nyonya is decent! Reasonably-priced Asian fusion food in Chinatown. Really good tea and yellow rice.")
+
 
 Photo.destroy_all
 Photo.create!(business_id: biz1.id, image: File.open('./app/assets/images/chip2.jpg'))
@@ -162,3 +171,6 @@ Photo.create!(business_id: biz11.id, image: File.open('./app/assets/images/peele
 
 Photo.create!(business_id: biz12.id, image: File.open('./app/assets/images/bella2.jpg'))
 Photo.create!(business_id: biz12.id, image: File.open('./app/assets/images/bella3.jpg'))
+
+Photo.create!(business_id: biz13.id, image: File.open('./app/assets/images/nyonya2.jpg'))
+Photo.create!(business_id: biz13.id, image: File.open('./app/assets/images/nyonya3.jpg'))

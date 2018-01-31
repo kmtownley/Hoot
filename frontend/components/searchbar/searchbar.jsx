@@ -73,7 +73,7 @@ class SearchBar extends React.Component {
 
 
   handleSubmit(e) {
-    
+
     const state1 = Object.assign({}, this.state);
     e.preventDefault(); this.props.history.push(`/search?contentQuery=${this.state.contentQuery}&areaQuery=${this.state.areaQuery}`);
     this.clearInputs();
@@ -99,7 +99,10 @@ class SearchBar extends React.Component {
           <h3>Best in {this.area.toUpperCase()}</h3>
         );
       } else {
-        return null;
+        return (
+          <h3>Best Options</h3>
+        );
+
       }
    }
 
@@ -130,7 +133,7 @@ class SearchBar extends React.Component {
   }
 
   renderFilter() {
-    
+
     let priceInt;
     if (this.state.price !== undefined) {
       priceInt = parseInt(this.state.price);
