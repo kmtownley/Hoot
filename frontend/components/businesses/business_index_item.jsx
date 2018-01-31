@@ -32,7 +32,7 @@ class BusinessIndexItem extends React.Component {
         </div>
         <section
           className="hot-biz-category">
-            <Link to={`businesses/${business.id}`}  className="biz-hot-name">{this.props.num}{biz_name}</Link>
+            <div className="biz-hot-name">{biz_name}</div>
           <br/>
           <span
             className={`star-rating-search-${rating}`}>

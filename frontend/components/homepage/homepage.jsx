@@ -18,9 +18,9 @@ export default class Homepage extends React.Component {
   awesomeBizs() {
     let hotBizs;
     let bizLength = this.props.businesses.length - 4;
-    console.log(bizLength)
+    (bizLength)
     const rand = Math.floor(Math.random() * bizLength);
-    console.log(rand)
+    (rand)
 
     return (
         <main className="business-index-list">
