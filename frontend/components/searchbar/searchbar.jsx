@@ -15,6 +15,8 @@ class SearchBar extends React.Component {
     this.filterPrice = this.filterPrice.bind(this);
     this.renderFilter = this.renderFilter.bind(this);
     this.renderTitle = this.renderTitle.bind(this);
+    this.deliveryFilter = this.deliveryFilter.bind(this);
+    this.deliveryValue = false;
 
     if (this.props.location.search !== "" ) {
       this.queries = this.props.location.search.split("&");
@@ -102,13 +104,23 @@ class SearchBar extends React.Component {
         return (
           <h3>Best Options</h3>
         );
-
       }
    }
 
-  filterDelivery(e) {
-    this.setState({delivery: e.target.value});
-    this.props.updateFilter({delivery: e.target.value});
+  toggleDelivery() {
+    debugger
+    if (this.deliveryValue === false) {
+      this.deliveryValue = "true";
+    } else {
+      this.deliveryValue = "false";
+    }
+  }
+
+  deliveryFilter(e) {
+    debugger
+    this.toggleDelivery(this.deliveryValue);
+    this.setState({delivery: this.deliveryValue});
+    this.props.updateFilter({delivery: this.deliveryValue});
   }
 
   filterPrice(e) {
@@ -164,14 +176,17 @@ class SearchBar extends React.Component {
                 <input type="radio" value="4" name="dollar-signs" onChange={this.filterPrice} />
               </li>
             </label>
-        </ul>
+          </ul>
+            <label className="delivery-container">
+              <input type="checkbox" value={this.deliveryValue} onChange={this.deliveryFilter} />
+            </label>
         </ul>
       </div>
     );
   }
 
   render() {
-
+    debugger
     return (
     <div className={this.switchContainerStyle()}>
       <form

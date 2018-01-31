@@ -17,11 +17,16 @@ export default class Homepage extends React.Component {
 
   awesomeBizs() {
     let hotBizs;
+    let bizLength = this.props.businesses.length - 4;
+    console.log(bizLength)
+    const rand = Math.floor(Math.random() * bizLength);
+    console.log(rand)
+    debugger
     return (
         <main className="business-index-list">
         <ul>
           {
-          this.props.businesses.slice(0, 3).map((biz, idx) => (
+          this.props.businesses.slice(rand, rand + 3).map((biz, idx) => (
             <ul key={`${idx}`}>
               <BusinessIndexItem
                 className="business-index-item"
