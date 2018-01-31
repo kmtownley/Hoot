@@ -25,6 +25,7 @@ class BusinessIndexItem extends React.Component {
       <li
         className="biz-hot-item"
         onClick={this.handleClick}>
+        <Link to={`businesses/${business.id}`}>
         <div
           className="biz-hot-img"
           style={{backgroundImage: `url(${image_url})`}}>
@@ -41,6 +42,7 @@ class BusinessIndexItem extends React.Component {
             <div className="biz-index-city">{city}</div>
           <br/>
         </section>
+      </Link>
       </li>
     );
   }
