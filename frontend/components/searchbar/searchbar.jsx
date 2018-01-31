@@ -127,7 +127,7 @@ class SearchBar extends React.Component {
 
   toggleDelivery() {
 
-    if (this.deliveryValue === false) {
+    if (this.deliveryValue === "false") {
       this.deliveryValue = "true";
     } else {
       this.deliveryValue = "false";
@@ -136,7 +136,9 @@ class SearchBar extends React.Component {
 
   deliveryFilter(e) {
 
+    const newState = merge({}, this.state);
     this.toggleDelivery(this.deliveryValue);
+    newState.delivery = this.deliveryValue;
     this.setState({delivery: this.deliveryValue});
     this.props.updateFilter({delivery: this.deliveryValue});
   }
@@ -203,7 +205,7 @@ class SearchBar extends React.Component {
               </li>
             </label>
           </ul>
-            <label className="delivery-container">
+            <label className="delivery-container" id={this.state.delivery === "true" ? "green" : ""}>
               <i className="fa fa-truck" aria-hidden="true"></i>
               Order Delivery
               <input type="checkbox" value={this.deliveryValue} onChange={this.deliveryFilter} />

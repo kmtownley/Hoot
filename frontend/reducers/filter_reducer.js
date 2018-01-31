@@ -9,7 +9,7 @@ const filterReducer = (state = null, action ) => {
   Object.freeze(state);
   switch(action.type) {
     case UPDATE_FILTER:
-    debugger
+
 
       return action.bounds
     case CLEAR_FILTER:

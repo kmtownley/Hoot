@@ -6,7 +6,7 @@ import { logout, clearErrors } from '../../actions/session_actions';
 import { fetchReviews} from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
-
+  
   let priceFilter = [1,2,3,4];
   let deliveryFilter;
   if (state.entities.filters !== null) {
