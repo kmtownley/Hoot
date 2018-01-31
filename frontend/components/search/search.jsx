@@ -20,6 +20,7 @@ class Search extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    debugger
     const queries = nextProps.location.search.split("&");
     const contentQuery = queries[0].slice(queries[0].indexOf("=") + 1);
     const areaQuery = queries[1].slice(queries[1].indexOf("=") + 1);
@@ -43,11 +44,16 @@ class Search extends React.Component {
     this.autocomplete = new google.maps.places.Autocomplete(input);
    }
 
-
+  filterBusinesses() {
+    return (this.props.businesses.filter(biz => biz.price <= this.props.priceFilter)
+    );
+  }
 
 
   render() {
-    const businesses = this.props.businesses;
+    debugger
+    // const businesses = this.props.businesses;
+    const businesses = this.filterBusinesses();
     return (
       <main>
         <div className="filter-box"></div>

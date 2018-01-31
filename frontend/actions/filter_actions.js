@@ -9,7 +9,7 @@ export const updateBounds = (bounds, value) => ({
 });
 
 export const updateFilter = (bounds) => {
-  debugger
+  
   return {
   type: UPDATE_FILTER,
   bounds

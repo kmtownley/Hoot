@@ -73,7 +73,7 @@ class SearchBar extends React.Component {
 
 
   handleSubmit(e) {
-    debugger
+    
     const state1 = Object.assign({}, this.state);
     e.preventDefault(); this.props.history.push(`/search?contentQuery=${this.state.contentQuery}&areaQuery=${this.state.areaQuery}`);
     this.clearInputs();
@@ -130,7 +130,7 @@ class SearchBar extends React.Component {
   }
 
   renderFilter() {
-    debugger
+    
     let priceInt;
     if (this.state.price !== undefined) {
       priceInt = parseInt(this.state.price);

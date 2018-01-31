@@ -6,10 +6,16 @@ import { logout, clearErrors } from '../../actions/session_actions';
 import { fetchReviews} from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
-
+  debugger
+  let priceFilter = 5;
+  if (state.entities.filters !== null) {
+    priceFilter = state.entities.filters.price;
+  }
   return {
     businesses: Object.values(state.entities.businesses),
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    priceFilter
+
   };
 };
 
