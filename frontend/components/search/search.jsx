@@ -46,9 +46,10 @@ class Search extends React.Component {
    }
 
   filterBusinesses() {
-
+    debugger
       this.businesses = this.props.businesses;
-      if (this.props.priceFilter !== undefined) {
+      if (this.props.priceFilter !== undefined && this.props.priceFilter.length !== 0) {
+        debugger
         this.businesses = this.props.businesses.filter(biz =>  this.props.priceFilter.includes(biz.price));
 
       }
