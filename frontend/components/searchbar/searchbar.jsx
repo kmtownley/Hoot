@@ -1,4 +1,5 @@
 import React from 'react';
+import { merge } from 'lodash';
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -7,7 +8,7 @@ class SearchBar extends React.Component {
     //   contentQuery: "",
     //   areaQuery: ""
     // };
-    this.state = ({areaQuery: "", contentQuery: "", price: null, delivery: false});
+
     this.autocomplete;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange.bind(this);
@@ -17,6 +18,7 @@ class SearchBar extends React.Component {
     this.renderTitle = this.renderTitle.bind(this);
     this.deliveryFilter = this.deliveryFilter.bind(this);
     this.deliveryValue = false;
+    this.state = ({areaQuery: "", contentQuery: "", priceArray: [], delivery: false});
 
     // if (this.props.location.search !== "" ) {
     //   this.queries = this.props.location.search.split("&");
@@ -44,7 +46,7 @@ class SearchBar extends React.Component {
     this.setState({
       contentQuery: "",
       areaQuery: "",
-      price: "",
+      price: [],
       delivery: false
     });
   }
@@ -102,7 +104,7 @@ class SearchBar extends React.Component {
    }
 
    renderTitle() {
-     
+
      this.getSearchInfo();
     if (this.content && this.area) {
       return (
@@ -140,8 +142,17 @@ class SearchBar extends React.Component {
   }
 
   filterPrice(e) {
-    this.setState({price: e.target.value});
-    this.props.updateFilter({price: e.target.value});
+    const newState = merge({}, this.state);
+    if (newState.priceArray.includes(parseInt(e.target.value))) {
+      newState.priceArray = newState.priceArray.filter(num => num !== parseInt(e.target.value));
+    } else {
+      newState.priceArray.push(parseInt(e.target.value));
+    }
+
+    this.setState({priceArray: newState.priceArray});
+    this.props.updateFilter({priceArray: newState.priceArray});
+
+
   }
 
   geolocate() {
@@ -171,29 +182,29 @@ class SearchBar extends React.Component {
         {this.renderTitle()}
         <ul className="filter-list-content">
           <ul className="filter-list-price">
-              <label id={(priceInt >= 1) ? "green" : ""}>$
+              <label id={(this.state.priceArray.includes(1)) ? "green" : ""}>$
               <li className="filter-price">
-                <input type="radio" value="1" name="dollar-signs" onChange={this.filterPrice} />
+                <input type="checkbox" value="1"  onChange={this.filterPrice} />
               </li>
               </label>
-            <label id={priceInt >= 2 ? "green" : ""}>$$
+            <label id={this.state.priceArray.includes(2) ? "green" : ""}>$$
               <li className="filter-price">
-                <input type="radio" value="2" name="dollar-signs" onChange={this.filterPrice} />
+                <input type="checkbox" value="2"  onChange={this.filterPrice} />
               </li>
             </label>
-            <label id={priceInt >= 3 ? "green" : ""}>$$$
+            <label id={this.state.priceArray.includes(3) ? "green" : ""}>$$$
             <li className="filter-price">
-              <input type="radio" value="3" name="dollar-signs" onChange={this.filterPrice} />
+              <input type="checkbox" value="3"  onChange={this.filterPrice} />
             </li>
             </label>
-            <label id={priceInt === 4 ? "green" : ""}>$$$$
+            <label id={this.state.priceArray.includes(4) ? "green" : ""}>$$$$
               <li className="filter-price">
-                <input type="radio" value="4" name="dollar-signs" onChange={this.filterPrice} />
+                <input type="checkbox" value="4"  onChange={this.filterPrice} />
               </li>
             </label>
           </ul>
             <label className="delivery-container">
-              <i class="fa fa-truck" aria-hidden="true"></i>
+              <i className="fa fa-truck" aria-hidden="true"></i>
               Order Delivery
               <input type="checkbox" value={this.deliveryValue} onChange={this.deliveryFilter} />
             </label>

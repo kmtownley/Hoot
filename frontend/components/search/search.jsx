@@ -7,7 +7,7 @@ import Footer from '../footer/footer';
 class Search extends React.Component {
   constructor(props) {
     super(props);
-    this.state = ({areaQuery: "", contentQuery: "", price: "", delivery: false});
+    this.state = ({areaQuery: "", contentQuery: "", price: [1,2,3,4], delivery: false});
     this.businesses;
 
   }
@@ -48,8 +48,9 @@ class Search extends React.Component {
   filterBusinesses() {
 
       this.businesses = this.props.businesses;
-      if (this.props.priceFilter < 5) {
-        this.businesses = this.props.businesses.filter(biz => biz.price <= this.props.priceFilter);
+      if (this.props.priceFilter.length > 0) {
+        this.businesses = this.props.businesses.filter(biz =>  this.props.priceFilter.includes(biz.price));
+
       }
       if (this.props.deliveryFilter != undefined) {
 
@@ -59,7 +60,7 @@ class Search extends React.Component {
 
 
   render() {
-
+    console.log(this.businesses)
     // const businesses = this.props.businesses;
     this.filterBusinesses();
     const businesses = this.businesses;

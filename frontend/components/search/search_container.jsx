@@ -6,11 +6,11 @@ import { logout, clearErrors } from '../../actions/session_actions';
 import { fetchReviews} from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  
-  let priceFilter = 5;
+
+  let priceFilter = [1,2,3,4];
   let deliveryFilter;
   if (state.entities.filters !== null) {
-    priceFilter = state.entities.filters.price;
+    priceFilter = state.entities.filters.priceArray;
     deliveryFilter = state.entities.filters.delivery;
   }
   return {
