@@ -90,7 +90,7 @@ class BusinessIndexItem extends React.Component {
   }
 
   render() {
-    debugger
+
     if (this.props.pathname === "/businesses/:businessId" || this.props.pathname === "/search") {
     return (
       <div>
