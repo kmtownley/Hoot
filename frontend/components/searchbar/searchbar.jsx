@@ -102,7 +102,7 @@ class SearchBar extends React.Component {
    }
 
    renderTitle() {
-     debugger
+     
      this.getSearchInfo();
     if (this.content && this.area) {
       return (
