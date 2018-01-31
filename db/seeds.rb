@@ -66,12 +66,12 @@ file=File.open("./app/assets/images/peeled1.jpg")
 biz11.image = file
 biz11.save!
 biz12 = Business.create!(biz_name: "La Bella Vita", phone_number: "(718) 369-9318", address: "524 4th Ave", city: "Brooklyn",  state: "NY", zipcode: "11215", cuisine: "Pizza", price: 3, rating: 4, latitude: 40.667626, longitude: -73.991370, mon_start_hr: 8, mon_end_hr: 20,
-tue_start_hr: 10, tue_end_hr: 23, wed_start_hr: 10, wed_end_hr: 23, thur_start_hr: 10, thur_end_hr: 23, fri_start_hr: 10, fri_end_hr: 1, sat_start_hr: 10, sat_end_hr: 1, sun_start_hr: 12, sun_end_hr: 23, delivery: true)
+tue_start_hr: 10, tue_end_hr: 23, wed_start_hr: 10, wed_end_hr: 23, thur_start_hr: 10, thur_end_hr: 23, fri_start_hr: 10, fri_end_hr: 24, sat_start_hr: 10, sat_end_hr: 24, sun_start_hr: 12, sun_end_hr: 23, delivery: true)
 file=File.open("./app/assets/images/bella1.jpg")
 biz12.image = file
 biz12.save!
-biz13 = Business.create!(biz_name: "Nyonya", phone_number: "(718) 369-9343", address: "199 Grand St", city: "New York",  state: "NY", zipcode: "10013", cuisine: "Asian", price: 1, rating: 4, latitude: 40.719002, longitude: -73.997027, mon_start_hr: 8, mon_end_hr: 20,
-tue_start_hr: 10, tue_end_hr: 23, wed_start_hr: 10, wed_end_hr: 23, thur_start_hr: 10, thur_end_hr: 23, fri_start_hr: 10, fri_end_hr: 1, sat_start_hr: 10, sat_end_hr: 1, sun_start_hr: 12, sun_end_hr: 23, delivery: true)
+biz13 = Business.create!(biz_name: "Nyonya", phone_number: "(718) 369-9343", address: "199 Grand St", city: "New York",  state: "NY", zipcode: "10013", cuisine: "Asian", price: 1, rating: 3, latitude: 40.719002, longitude: -73.997027, mon_start_hr: 8, mon_end_hr: 20,
+tue_start_hr: 10, tue_end_hr: 23, wed_start_hr: 10, wed_end_hr: 23, thur_start_hr: 10, thur_end_hr: 23, fri_start_hr: 10, fri_end_hr: 24, sat_start_hr: 10, sat_end_hr: 24, sun_start_hr: 12, sun_end_hr: 23, delivery: true)
 file=File.open("./app/assets/images/nyonya1.jpg")
 biz13.image = file
 biz13.save!
@@ -106,6 +106,9 @@ file=File.open("./app/assets/images/mcgon.jpg")
 user6.user_img = file
 user6.save!
 user7 = User.create!(email: 'stevo@yahoo.com', password: "broncos", first_name: "Steve", last_name: "Cookie", city: "Indianapolis", state: "IN", zipcode: "10013")
+file=File.open("./app/assets/images/steve.jpg")
+user7.user_img = file
+user7.save!
 
 Review.destroy_all
 
