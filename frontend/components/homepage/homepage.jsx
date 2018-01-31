@@ -61,6 +61,7 @@ export default class Homepage extends React.Component {
 
     return (
       <main className="landing-main-content">
+        <div className="landing-img"></div>
         <div className="logo-title">
           <img src={window.staticImages.headerImage} />
         </div>
