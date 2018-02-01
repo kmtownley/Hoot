@@ -121,7 +121,7 @@ class SearchBar extends React.Component {
     const newState = merge({}, this.state);
     newState.delivery = this.deliveryValue;
     this.setState({delivery: this.deliveryValue});
-    this.props.updateFilter({delivery: this.deliveryValue});
+    this.props.updateFilter({priceArray: this.state.priceArray, delivery: this.deliveryValue});
   }
 
   filterPrice(e) {
@@ -132,7 +132,7 @@ class SearchBar extends React.Component {
       newState.priceArray.push(parseInt(e.target.value));
     }
     this.setState({priceArray: newState.priceArray});
-    this.props.updateFilter({priceArray: newState.priceArray});
+    this.props.updateFilter({priceArray: newState.priceArray, delivery: this.state.delivery});
   }
 
   // geolocate() {
