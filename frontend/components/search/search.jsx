@@ -48,18 +48,12 @@ class Search extends React.Component {
    }
 
   filterBusinesses() {
-    debugger
+
     this.businesses = this.props.businesses;
-      // this.updateMapBounds();
-      // if (this.businesses === null) {
-      //   debugger
-      //   this.businesses = this.props.businesses;
-      // }
       if (this.props.priceFilter !== undefined && this.props.priceFilter.length !== 0) {
         this.businesses = this.businesses.filter(biz =>  this.props.priceFilter.includes(biz.price));
       }
       if (this.props.deliveryFilter != undefined) {
-
        this.businesses = this.businesses.filter(biz => (biz.delivery.toString() === this.props.deliveryFilter || biz.delivery === true));
      }
 
@@ -67,7 +61,7 @@ class Search extends React.Component {
 
   updateMapBounds() {
     if (this.props.northBound) {
-      debugger
+
       this.businesses = this.businesses.filter(biz => ((biz.latitude < this.props.northBound && biz.latitude > this.props.southBound) && (biz.longitude < this.props.eastBound && biz.longitude > this.props.westBound)));
     }
   }

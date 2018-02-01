@@ -4,11 +4,6 @@ import { merge } from 'lodash';
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   contentQuery: "",
-    //   areaQuery: ""
-    // };
-
     this.autocomplete;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange.bind(this);
@@ -20,13 +15,7 @@ class SearchBar extends React.Component {
     this.deliveryValue = false;
     this.state = ({areaQuery: "", contentQuery: "", priceArray: [], delivery: false});
 
-    // if (this.props.location.search !== "" ) {
-    //   this.queries = this.props.location.search.split("&");
-    //   this.content = this.queries[0].slice(this.queries[0].indexOf("=") + 1);
-    //   this.area = this.queries[1].slice(this.queries[1].indexOf("=") + 1);
-    // }
     this.getSearchInfo();
-
   }
 
   getSearchInfo() {
@@ -61,9 +50,7 @@ class SearchBar extends React.Component {
     };
   }
 
-
   switchContainerStyle() {
-
     let className;
     if (this.props.location.pathname !== "/" || this.props.location.pathname === '/search' ) {
       return (
@@ -89,13 +76,10 @@ class SearchBar extends React.Component {
     }
   }
 
-
   handleSubmit(e) {
-
     const state1 = Object.assign({}, this.state);
     e.preventDefault(); this.props.history.push(`/search?contentQuery=${this.state.contentQuery}&areaQuery=${this.state.areaQuery}`);
     this.clearInputs();
-
   }
 
   startSearch() {
@@ -104,7 +88,6 @@ class SearchBar extends React.Component {
    }
 
    renderTitle() {
-
      this.getSearchInfo();
     if (this.content && this.area) {
       return (
@@ -126,7 +109,6 @@ class SearchBar extends React.Component {
    }
 
   toggleDelivery() {
-
     if (this.deliveryValue === "false") {
       this.deliveryValue = "true";
     } else {
@@ -136,7 +118,6 @@ class SearchBar extends React.Component {
 
   deliveryFilter(e) {
     this.toggleDelivery();
-
     const newState = merge({}, this.state);
     newState.delivery = this.deliveryValue;
     this.setState({delivery: this.deliveryValue});
@@ -146,33 +127,31 @@ class SearchBar extends React.Component {
   filterPrice(e) {
     const newState = merge({}, this.state);
     if (newState.priceArray.includes(parseInt(e.target.value))) {
+      debugger
       newState.priceArray = newState.priceArray.filter(num => num !== parseInt(e.target.value));
-
     } else {
+      debugger
       newState.priceArray.push(parseInt(e.target.value));
     }
-
     this.setState({priceArray: newState.priceArray});
     this.props.updateFilter({priceArray: newState.priceArray});
-
-
   }
 
-  geolocate() {
-  if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        let geolocation = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        };
-        let circle = new google.maps.Circle({
-          center: geolocation,
-          radius: position.coords.accuracy
-        });
-        autocomplete.setBounds(circle.getBounds());
-      });
-    }
-  }
+  // geolocate() {
+  // if (navigator.geolocation) {
+  //     navigator.geolocation.getCurrentPosition(function(position) {
+  //       let geolocation = {
+  //         lat: position.coords.latitude,
+  //         lng: position.coords.longitude
+  //       };
+  //       let circle = new google.maps.Circle({
+  //         center: geolocation,
+  //         radius: position.coords.accuracy
+  //       });
+  //       autocomplete.setBounds(circle.getBounds());
+  //     });
+  //   }
+  // }
 
   renderFilter() {
     let priceInt;

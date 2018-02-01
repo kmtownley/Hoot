@@ -19,3 +19,8 @@
   padding: 5px;
   border: 1px solid #ccc;
 }
+
+.gmnoprint div {
+  display: flex;
+  flex-direction: column;
+}

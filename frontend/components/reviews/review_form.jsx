@@ -189,7 +189,7 @@ class ReviewForm extends React.Component {
            <h2 className="review-form-type">{text}</h2>
            <h3
              className = "review-form-title">
-             <Link to={`/businesses/${business.id}`}>
+             <Link id="biz-name-link" to={`/businesses/${business.id}`}>
                {business.biz_name}</Link>
            </h3>
            <ul>

@@ -6,7 +6,7 @@ import { logout, clearErrors } from '../../actions/session_actions';
 import { fetchReviews} from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
+
   let priceFilter = [1,2,3,4];
   let deliveryFilter;
   let northBound;
@@ -17,7 +17,6 @@ const mapStateToProps = (state, ownProps) => {
     priceFilter = state.entities.filters.priceArray;
     deliveryFilter = state.entities.filters.delivery;
   }
-  debugger
   if (state.entities.filters !== null && state.entities.filters.north) {
     northBound = state.entities.filters.north;
     southBound = state.entities.filters.south;

@@ -8,11 +8,12 @@ export const updateBounds = (bounds, value) => ({
   value
 });
 
-export const updateFilter = (bounds) => {
-  
+export const updateFilter = (priceArray, delivery) => {
+  debugger
   return {
   type: UPDATE_FILTER,
-  bounds
+  priceArray,
+  delivery
   };
 };
 

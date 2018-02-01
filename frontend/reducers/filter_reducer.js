@@ -9,13 +9,14 @@ const filterReducer = (state = null, action ) => {
   Object.freeze(state);
   switch(action.type) {
     case UPDATE_FILTER:
+    debugger
       let newState;
-      newState = merge({}, state, action.bounds);
-      // return action.bounds;
+      newState = merge({}, state, action.priceArray, action.delivery);
+      // newState.priceArray.filter((el, idx) => (el === newState.priceArray[idx + 1]));
       return newState;
+      // return action.priceArray, action.delivery;
     case UPDATE_BOUNDS:
       newState = merge({}, state, action.bounds);
-      // return action.bounds;
       return newState;
       // return action.bounds;
     case CLEAR_FILTER:
