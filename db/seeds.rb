@@ -95,11 +95,16 @@ tue_start_hr: 10, tue_end_hr: 23, wed_start_hr: 10, wed_end_hr: 23, thur_start_h
 file=File.open("./app/assets/images/sofias1.jpg")
 biz16.image = file
 biz16.save!
-biz16 = Business.create!(biz_name: "Sofia's Pizza Shoppe", phone_number: "(718) 269-3424", address: "989 1st Ave", city: "New York",  state: "NY", zipcode: "10022", cuisine: "Pizza", price: 1, rating: 4, latitude: 40.756676, longitude: -73.964351, mon_start_hr: 8, mon_end_hr: 20,
-tue_start_hr: 10, tue_end_hr: 23, wed_start_hr: 10, wed_end_hr: 23, thur_start_hr: 10, thur_end_hr: 23, fri_start_hr: 10, fri_end_hr: 24, sat_start_hr: 10, sat_end_hr: 24, sun_start_hr: 12, sun_end_hr: 23, delivery: true)
-file=File.open("./app/assets/images/sofias1.jpg")
-biz16.image = file
-biz16.save!
+biz17 = Business.create!(biz_name: "Yaar Indian Restaurant", phone_number: "(718) 288-1424", address: "22-55 31st Ste", city: "Astoria",  state: "NY", zipcode: "11105", cuisine: "Indian", price: 2, rating: 4, latitude: 40.774797, longitude: -73.911866, mon_start_hr: 8, mon_end_hr: 20,
+tue_start_hr: 10, tue_end_hr: 23, wed_start_hr: 10, wed_end_hr: 23, thur_start_hr: 10, thur_end_hr: 23, fri_start_hr: 10, fri_end_hr: 24, sat_start_hr: 10, sat_end_hr: 24, sun_start_hr: 12, sun_end_hr: 23, delivery: false)
+file=File.open("./app/assets/images/yaar1.jpg")
+biz17.image = file
+biz17.save!
+biz18 = Business.create!(biz_name: "Gaijin", phone_number: "(718) 288-3544", address: "37-12 31st Ave", city: "Astoria",  state: "NY", zipcode: "11103", cuisine: "Japanese", price: 4, rating: 4, latitude: 40.761643, longitude: -73.918380, mon_start_hr: 8, mon_end_hr: 20,
+tue_start_hr: 10, tue_end_hr: 23, wed_start_hr: 10, wed_end_hr: 23, thur_start_hr: 10, thur_end_hr: 23, fri_start_hr: 10, fri_end_hr: 24, sat_start_hr: 10, sat_end_hr: 24, sun_start_hr: 12, sun_end_hr: 23, delivery: false)
+file=File.open("./app/assets/images/gaijin1.jpg")
+biz18.image = file
+biz18.save!
 
 
 
@@ -173,9 +178,23 @@ Review.create!(user_id: user5.id, business_id: biz14.id, user_rating: 3, body: "
 Review.create!(user_id: user2.id, business_id: biz14.id, user_rating: 3, body: "This was SO good. Got the jalapeño infused gin cocktail w cucumber and cilantro- so well blended and good!!! The traditional guacamole is BOMB, impressed w the chorizo quesadilla, and the pastor tacos-
 Amazing spot!!! And I'm from CA so I was very happy to find this spot!")
 Review.create!(user_id: user1.id, business_id: biz14.id, user_rating: 3, body: "I love the atmosphere! It's small and quaint, service is prompt and the music is always great. The drinks are what you would expect from a small taco spot, usually strong and tasty. The food itself is, unfortunately, is pretty mediocre. The shrimp tacos are pretty terrible as are the steak tacos. The steak tacos always have an abundance of fat and the shrimp tacos are ill seasoned and rubbery. The chicken tacos are yummy with a kick of spice and the guac is really really good. The menu is a hit or miss, and the reason for the three stars. A huge plus and the main reason I continuously go back to this place are the hours. They are open super late which makes it nice late night taco spot around the way, there aren't many of those.")
-Review.create!(user_id: user7.id, business_id: biz14.id, user_rating: 5, body: "When guacamole is served six inches atop the brim of your bowl, you know you've just landed at the $$$$$$ Mexican spot. I only got to try the enchilada and the guacamole with chips here and both were divine. The enchilada is full of flavor, is juicy, saucy and everything your palette could hope for all at once.
+Review.create!(user_id: user7.id, business_id: biz14.id, user_rating: 5, body: "When guacamole is served six inches atop the brim of your bowl, you know you've just landed at the $$$$$$ Mexican spot. I only got to try the enchilada and the guacamole with chips here and both were divine. The enchilada is full of flavor, is juicy, saucy and everything your palette could hope for all at once. SO good - I highly recommend.")
+Review.create!(user_id: user6.id, business_id: biz17.id, user_rating: 3, body: "This place makes Astoria complete! I eat here probably 5-6 times a month and show this place off when my manhaddy pals stroll through to visit me.
+The samosas are amazing, and just about everything on the menu taste authentic. I recommend the chicken Tikka masalas and lamb vindaloo. :)")
+Review.create!(user_id: user7.id, business_id: biz17.id, user_rating: 4, body: "Pretty Good :)")
+Review.create!(user_id: user3.id, business_id: biz17.id, user_rating: 4, body: "The food was as good as the owner. She was friendly and the service was great. I loved the food esp the naan. The cheese naan was the best and went with all the curry. I will visit soon")
+Review.create!(user_id: user1.id, business_id: biz17.id, user_rating: 3, body: "very fast and reliable delivery.  The soup and appetizers were delicious. I am not used to Indian food and found the entrees spicy. the price fixe deal is very good. choice of appetizer, entree and dessert 14.95")
+Review.create!(user_id: user1.id, business_id: biz18.id, user_rating: 4, body: "Made reservations for my girlfriend's birthday last month and it was one of the best meals I've ever had. We opted for the Premier Omakese, 15 pcs at 160/pp.
+Favorite pieces: Otoro and Blue Fin Tuna
+Each piece was unique designed and full of explosive flavors. Chef Mark and his staff were incredibly entertaining and made sure we were warm on that cold evening. The experience was memorable and I am definitely coming back.")
+Review.create!(user_id: user2.id, business_id: biz18.id, user_rating: 4, body: "It was girls/sushi-lovers night out on a Monday. The three of us trekked all the way from Brooklyn to Astoria to try Gaijin. We were not disappointed. We each came hungry and left with a full tummy and a full heart. =)")
+Review.create!(user_id: user3.id, business_id: biz18.id, user_rating: 4, body: "Gaijin is a tasty Japanese restaurant that serves fancy nigiri with assorted unique garnishes on each, plus grilled items, and more.
 
-SO good - I highly recommend.")
+Service was friendly and efficient.  The ambiance is relaxed and the place is decorated with light wood- it make me feel like I am in the Sushi Yasuda of Astoria.")
+Review.create!(user_id: user4.id, business_id: biz18.id, user_rating: 4, body: "Best Sashimi in Astoria. Go already!!! You will not regret it.
+Omakase is pretty much what you'd get at some of the best places in Manhattan, and then some. Chef is super friendly and easy to talk to, down to earth type of guy. Went to celebrate my brother's birthday and he made our food with love. My brother is allergic to crustaceans so I had shrimp as one of my courses but he got something completely different yet equally delicious. We were truly blown away. I'm planning on taking my mom there for her birthday as she's visiting from overseas, it's that good.")
+Review.create!(user_id: user5.id, business_id: biz18.id, user_rating: 4, body: "This was a such a treat we stopped in for dinner. My husband and I loved everything we had. Spicy tuna hand roll was my favorite. The freshness of the fish and delicate rolls full of deliciousness. Talented chef and great service. A well appointed place in Astoria. I highly recommend Gaijin.")
+Review.create!(user_id: user6.id, business_id: biz18.id, user_rating: 2, body: "I've def had better.")
 
 
 
@@ -228,3 +247,9 @@ Photo.create!(business_id: biz15.id, image: File.open('./app/assets/images/julia
 
 Photo.create!(business_id: biz16.id, image: File.open('./app/assets/images/sofias2.jpg'))
 Photo.create!(business_id: biz16.id, image: File.open('./app/assets/images/sofias3.jpeg'))
+
+Photo.create!(business_id: biz17.id, image: File.open('./app/assets/images/yaar2.jpg'))
+Photo.create!(business_id: biz17.id, image: File.open('./app/assets/images/yaar3.jpg'))
+
+Photo.create!(business_id: biz18.id, image: File.open('./app/assets/images/gaijin2.jpg'))
+Photo.create!(business_id: biz18.id, image: File.open('./app/assets/images/gaijin3.jpg'))
