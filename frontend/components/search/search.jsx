@@ -2,12 +2,13 @@ import React from 'react';
 import BusinessIndexContainer from '../businesses/business_index_container';
 import BusinessMap from '../business_map/business_map';
 import Footer from '../footer/footer';
+import { merge } from 'lodash';
 
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
-    this.state = ({areaQuery: "", contentQuery: "", price: [1,2,3,4], delivery: false});
+    this.state = ({areaQuery: "", contentQuery: "", price: [1,2,3,4], delivery: false, bounds: []});
     this.businesses;
 
   }
@@ -18,6 +19,7 @@ class Search extends React.Component {
     const contentQuery = queries[0].slice(queries[0].indexOf("=") + 1);
     const areaQuery = queries[1].slice(queries[1].indexOf("=") + 1);
     this.props.fetchBusinesses(areaQuery, contentQuery);
+
   }
 
   componentWillReceiveProps(nextProps) {
@@ -46,21 +48,35 @@ class Search extends React.Component {
    }
 
   filterBusinesses() {
-      this.businesses = this.props.businesses;
+    debugger
+    this.businesses = this.props.businesses;
+      // this.updateMapBounds();
+      // if (this.businesses === null) {
+      //   debugger
+      //   this.businesses = this.props.businesses;
+      // }
       if (this.props.priceFilter !== undefined && this.props.priceFilter.length !== 0) {
-        this.businesses = this.props.businesses.filter(biz =>  this.props.priceFilter.includes(biz.price));
-
+        this.businesses = this.businesses.filter(biz =>  this.props.priceFilter.includes(biz.price));
       }
       if (this.props.deliveryFilter != undefined) {
 
        this.businesses = this.businesses.filter(biz => (biz.delivery.toString() === this.props.deliveryFilter || biz.delivery === true));
      }
+
+  }
+
+  updateMapBounds() {
+    if (this.props.northBound) {
+      debugger
+      this.businesses = this.businesses.filter(biz => ((biz.latitude < this.props.northBound && biz.latitude > this.props.southBound) && (biz.longitude < this.props.eastBound && biz.longitude > this.props.westBound)));
+    }
   }
 
 
   render() {
     // const businesses = this.props.businesses;
     this.filterBusinesses();
+    this.updateMapBounds();
     const businesses = this.businesses;
     if (this.props.businesses.length === 0) {
       return (
