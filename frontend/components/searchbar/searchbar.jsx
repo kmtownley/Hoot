@@ -135,9 +135,9 @@ class SearchBar extends React.Component {
   }
 
   deliveryFilter(e) {
+    this.toggleDelivery();
 
     const newState = merge({}, this.state);
-    this.toggleDelivery(this.deliveryValue);
     newState.delivery = this.deliveryValue;
     this.setState({delivery: this.deliveryValue});
     this.props.updateFilter({delivery: this.deliveryValue});
@@ -147,7 +147,7 @@ class SearchBar extends React.Component {
     const newState = merge({}, this.state);
     if (newState.priceArray.includes(parseInt(e.target.value))) {
       newState.priceArray = newState.priceArray.filter(num => num !== parseInt(e.target.value));
-      
+
     } else {
       newState.priceArray.push(parseInt(e.target.value));
     }

@@ -46,10 +46,8 @@ class Search extends React.Component {
    }
 
   filterBusinesses() {
-    debugger
       this.businesses = this.props.businesses;
       if (this.props.priceFilter !== undefined && this.props.priceFilter.length !== 0) {
-        debugger
         this.businesses = this.props.businesses.filter(biz =>  this.props.priceFilter.includes(biz.price));
 
       }
@@ -61,11 +59,10 @@ class Search extends React.Component {
 
 
   render() {
-    console.log(this.businesses)
     // const businesses = this.props.businesses;
     this.filterBusinesses();
     const businesses = this.businesses;
-    if (businesses.length === 0 ) {
+    if (this.props.businesses.length === 0) {
       return (
         <div className="no-biz-container">
         <h1 className="no-biz-result">Sorry, no businesses match your specifications. Try broadening your search criteria. </h1>
