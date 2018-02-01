@@ -9,7 +9,7 @@ export const updateBounds = (bounds, value) => ({
 });
 
 export const updateFilter = ({priceArray, delivery}) => {
-  debugger
+
   return {
   type: UPDATE_FILTER,
   priceArray,

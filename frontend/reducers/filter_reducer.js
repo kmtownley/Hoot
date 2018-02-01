@@ -9,7 +9,7 @@ const filterReducer = (state = null, action ) => {
   Object.freeze(state);
   switch(action.type) {
     case UPDATE_FILTER:
-    debugger
+
       let newState = merge({}, state);
       newState.priceArray = action.priceArray;
       newState.delivery = action.delivery;
