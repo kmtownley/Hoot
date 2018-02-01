@@ -42,7 +42,7 @@ export default class MarkerManager {
     '<li class="star-rating-search-' + business.rating +'"></li>' +
     '</div>' +
     '<li>' + business.cuisine + '</li>' +
-    '<li>' + business.address + '</li>' +
+    '<li>' + business.address + ", " + business.city + ", " + business.state +'</li>' +
     '<li>' + '<img id="biz-map-image" src="' + business.image_url + '"/>' + '</li>' +
     '</ul>' +
     '</div>';
