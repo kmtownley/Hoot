@@ -12,7 +12,7 @@ class SearchBar extends React.Component {
     this.renderFilter = this.renderFilter.bind(this);
     this.renderTitle = this.renderTitle.bind(this);
     this.deliveryFilter = this.deliveryFilter.bind(this);
-    this.deliveryValue = false;
+    this.deliveryValue = "false";
     this.state = ({areaQuery: "", contentQuery: "", priceArray: [], delivery: false});
 
     this.getSearchInfo();
@@ -127,10 +127,8 @@ class SearchBar extends React.Component {
   filterPrice(e) {
     const newState = merge({}, this.state);
     if (newState.priceArray.includes(parseInt(e.target.value))) {
-      debugger
       newState.priceArray = newState.priceArray.filter(num => num !== parseInt(e.target.value));
     } else {
-      debugger
       newState.priceArray.push(parseInt(e.target.value));
     }
     this.setState({priceArray: newState.priceArray});

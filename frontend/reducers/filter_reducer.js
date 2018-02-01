@@ -10,8 +10,10 @@ const filterReducer = (state = null, action ) => {
   switch(action.type) {
     case UPDATE_FILTER:
     debugger
-      let newState;
-      newState = merge({}, state, action.priceArray, action.delivery);
+      let newState = merge({}, state);
+      newState.priceArray = action.priceArray;
+      newState.delivery = action.delivery;
+      // newState = ({}, state, action.priceArray, action.delivery);
       // newState.priceArray.filter((el, idx) => (el === newState.priceArray[idx + 1]));
       return newState;
       // return action.priceArray, action.delivery;
