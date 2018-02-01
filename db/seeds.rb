@@ -88,8 +88,18 @@ biz15.save!
 biz16 = Business.create!(biz_name: "Sofia's Pizza Shoppe", phone_number: "(718) 269-3424", address: "989 1st Ave", city: "New York",  state: "NY", zipcode: "10022", cuisine: "Pizza", price: 1, rating: 4, latitude: 40.756676, longitude: -73.964351, mon_start_hr: 8, mon_end_hr: 20,
 tue_start_hr: 10, tue_end_hr: 23, wed_start_hr: 10, wed_end_hr: 23, thur_start_hr: 10, thur_end_hr: 23, fri_start_hr: 10, fri_end_hr: 24, sat_start_hr: 10, sat_end_hr: 24, sun_start_hr: 12, sun_end_hr: 23, delivery: true)
 file=File.open("./app/assets/images/sofias1.jpg")
-biz13.image = file
-biz13.save!
+biz16.image = file
+biz16.save!
+biz16 = Business.create!(biz_name: "Sofia's Pizza Shoppe", phone_number: "(718) 269-3424", address: "989 1st Ave", city: "New York",  state: "NY", zipcode: "10022", cuisine: "Pizza", price: 1, rating: 4, latitude: 40.756676, longitude: -73.964351, mon_start_hr: 8, mon_end_hr: 20,
+tue_start_hr: 10, tue_end_hr: 23, wed_start_hr: 10, wed_end_hr: 23, thur_start_hr: 10, thur_end_hr: 23, fri_start_hr: 10, fri_end_hr: 24, sat_start_hr: 10, sat_end_hr: 24, sun_start_hr: 12, sun_end_hr: 23, delivery: true)
+file=File.open("./app/assets/images/sofias1.jpg")
+biz16.image = file
+biz16.save!
+biz16 = Business.create!(biz_name: "Sofia's Pizza Shoppe", phone_number: "(718) 269-3424", address: "989 1st Ave", city: "New York",  state: "NY", zipcode: "10022", cuisine: "Pizza", price: 1, rating: 4, latitude: 40.756676, longitude: -73.964351, mon_start_hr: 8, mon_end_hr: 20,
+tue_start_hr: 10, tue_end_hr: 23, wed_start_hr: 10, wed_end_hr: 23, thur_start_hr: 10, thur_end_hr: 23, fri_start_hr: 10, fri_end_hr: 24, sat_start_hr: 10, sat_end_hr: 24, sun_start_hr: 12, sun_end_hr: 23, delivery: true)
+file=File.open("./app/assets/images/sofias1.jpg")
+biz16.image = file
+biz16.save!
 
 
 

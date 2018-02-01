@@ -35,9 +35,20 @@ export default class MarkerManager {
       map: this.map,
       businessId: business.id
     });
+    let markerInfo = '<div class="window-info">' +
+    '<ul>' +
+    '<li>' + business.biz_name + '</li>' +
+    '<div class="star-map-container">' +
+    '<li class="star-rating-search-' + business.rating +'"></li>' +
+    '</div>' +
+    '<li>' + business.cuisine + '</li>' +
+    '<li>' + business.address + '</li>' +
+    '<li>' + '<img id="biz-map-image" src="' + business.image_url + '"/>' + '</li>' +
+    '</ul>' +
+    '</div>';
 
     let infoWindow = new google.maps.InfoWindow({
-        content: business.biz_name
+        content: markerInfo
     });
     marker.addListener('click', () => {
       infoWindow.open(this.map, marker);
