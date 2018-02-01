@@ -105,6 +105,11 @@ tue_start_hr: 10, tue_end_hr: 23, wed_start_hr: 10, wed_end_hr: 23, thur_start_h
 file=File.open("./app/assets/images/gaijin1.jpg")
 biz18.image = file
 biz18.save!
+biz19 = Business.create!(biz_name: "Los Portales", phone_number: "(718) 288-3234", address: "2508 Broadway", city: "Astoria",  state: "NY", zipcode: "11105", cuisine: "Mexican", price: 2, rating: 4, latitude: 40.792833, longitude: -73.972619, mon_start_hr: 8, mon_end_hr: 20,
+tue_start_hr: 10, tue_end_hr: 23, wed_start_hr: 10, wed_end_hr: 23, thur_start_hr: 10, thur_end_hr: 23, fri_start_hr: 10, fri_end_hr: 24, sat_start_hr: 10, sat_end_hr: 24, sun_start_hr: 12, sun_end_hr: 23, delivery: true)
+file=File.open("./app/assets/images/losp1.jpg")
+biz19.image = file
+biz19.save!
 
 
 
@@ -195,6 +200,14 @@ Review.create!(user_id: user4.id, business_id: biz18.id, user_rating: 4, body: "
 Omakase is pretty much what you'd get at some of the best places in Manhattan, and then some. Chef is super friendly and easy to talk to, down to earth type of guy. Went to celebrate my brother's birthday and he made our food with love. My brother is allergic to crustaceans so I had shrimp as one of my courses but he got something completely different yet equally delicious. We were truly blown away. I'm planning on taking my mom there for her birthday as she's visiting from overseas, it's that good.")
 Review.create!(user_id: user5.id, business_id: biz18.id, user_rating: 4, body: "This was a such a treat we stopped in for dinner. My husband and I loved everything we had. Spicy tuna hand roll was my favorite. The freshness of the fish and delicate rolls full of deliciousness. Talented chef and great service. A well appointed place in Astoria. I highly recommend Gaijin.")
 Review.create!(user_id: user6.id, business_id: biz18.id, user_rating: 2, body: "I've def had better.")
+Review.create!(user_id: user1.id, business_id: biz19.id, user_rating: 4, body: "High-quality, authentic Mexican food for a great price -- I recommend the chicken burrito.
+The only reason why this is 4 stars instead of 5 is that one time I asked for a steak quesadilla well done, and they gave me a chicken and broccoli.  No es bueno, mis amigos, no es bueno.")
+Review.create!(user_id: user3.id, business_id: biz19.id, user_rating: 3, body: "Tasty :)")
+Review.create!(user_id: user7.id, business_id: biz19.id, user_rating: 3, body: "Pretty Good :)")
+Review.create!(user_id: user6.id, business_id: biz19.id, user_rating: 4, body: "I do love their tacos")
+Review.create!(user_id: user5.id, business_id: biz19.id, user_rating: 3, body: "Pretty Good :)")
+Review.create!(user_id: user3.id, business_id: biz19.id, user_rating: 5, body: "Cheap authentic Mexican place with good portions (burritos are huge). Waited for it to open for an hour with my family today and ordered 4 tacos (chorizo, al pastor, chicken-chorizo is my favorite), a chicken cutlet cemita, steak torta (my go to sandwich) and chicken & mushroom quesadilla. My fam loved it, even my mother who's a very picky asian lady. The service is always quick and nice. A lot of people come and eat by themselves too  and they deliver!")
+Review.create!(user_id: user1.id, business_id: biz19.id, user_rating: 3, body: "First time... will definitely be comming back.")
 
 
 
@@ -253,3 +266,7 @@ Photo.create!(business_id: biz17.id, image: File.open('./app/assets/images/yaar3
 
 Photo.create!(business_id: biz18.id, image: File.open('./app/assets/images/gaijin2.jpg'))
 Photo.create!(business_id: biz18.id, image: File.open('./app/assets/images/gaijin3.jpg'))
+
+
+Photo.create!(business_id: biz19.id, image: File.open('./app/assets/images/losp2.jpg'))
+Photo.create!(business_id: biz19.id, image: File.open('./app/assets/images/losp3.jpg'))

@@ -232,18 +232,20 @@ td {
   background-size: cover;
   background-position: center;
   transition-property: transform, box-shadow;
+
   vertical-align: middle;
 }
 
+
+
 .biz-image-container div:hover {
   position:relative;
-  width:280px;
-  height:280px;
+  transform: scale(1.1);
   display:block;
   z-index:1001;
-  transition: all 0.2s ease-out;
-  transition-property: transform, box-shadow;
-  margin: -15px;
+  transition: all 2s ease-out;
+  transition-duration: 0.2s;
+  // transition-property: transform, box-shadow;
 }
 .biz-image-1 {
   z-index: 999;
