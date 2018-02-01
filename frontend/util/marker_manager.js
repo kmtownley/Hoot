@@ -37,7 +37,7 @@ export default class MarkerManager {
     });
     let markerInfo = '<div class="window-info">' +
     '<ul>' +
-    '<li>' + business.biz_name + '</li>' +
+    '<li class="biz-index-name"> <a href="/#/businesses/'+ business.id +'">' + business.biz_name + '</a></li>' +
     '<div class="star-map-container">' +
     '<li class="star-rating-search-' + business.rating +'"></li>' +
     '</div>' +
